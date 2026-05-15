@@ -178,6 +178,110 @@ body.start-page::after {
   }
 }
 
+/* Layered ambient: four blurred orbs drifting independently at different
+   speeds and directions. Sits above the static gradient backdrop, below the
+   page content. Reads as soft, breathing motion rather than coordinated
+   sweep. Hidden during the arrival sequence (when the solid green overlay
+   would expose blob bounding-box edges against its flat backdrop), then
+   fades in once the overlay is mostly gone. */
+.start-page .start-ambient {
+  position: fixed;
+  inset: -6rem -6vw;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 800ms var(--ease-out);
+}
+
+html.start-arriving body.start-page .start-ambient {
+  opacity: 0;
+}
+
+html.start-arriving body.start-page.start-arrived .start-ambient {
+  opacity: 1;
+  transition-delay: 1400ms;
+}
+
+.start-page .ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  will-change: transform, opacity;
+  mix-blend-mode: multiply;
+}
+
+.start-page .ambient-blob--a {
+  width: 38rem;
+  height: 38rem;
+  top: -10rem;
+  left: -12rem;
+  background: radial-gradient(circle, rgba(106, 163, 111, 0.55) 0%, rgba(106, 163, 111, 0.18) 45%, transparent 70%);
+  animation: ambient-float-a 22s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.start-page .ambient-blob--b {
+  width: 34rem;
+  height: 34rem;
+  top: -8rem;
+  right: -10rem;
+  background: radial-gradient(circle, rgba(99, 144, 119, 0.5) 0%, rgba(99, 144, 119, 0.16) 45%, transparent 70%);
+  animation: ambient-float-b 28s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.start-page .ambient-blob--c {
+  width: 44rem;
+  height: 44rem;
+  bottom: -16rem;
+  left: 24%;
+  background: radial-gradient(circle, rgba(168, 212, 168, 0.45) 0%, rgba(168, 212, 168, 0.14) 45%, transparent 70%);
+  animation: ambient-float-c 34s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.start-page .ambient-blob--d {
+  width: 24rem;
+  height: 24rem;
+  top: 36%;
+  right: 18%;
+  background: radial-gradient(circle, rgba(143, 184, 143, 0.4) 0%, rgba(143, 184, 143, 0.12) 45%, transparent 70%);
+  animation: ambient-float-d 19s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+@keyframes ambient-float-a {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(7rem, 4rem, 0) scale(1.14); }
+}
+
+@keyframes ambient-float-b {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-6rem, 5rem, 0) scale(1.09); }
+}
+
+@keyframes ambient-float-c {
+  0% { transform: translate3d(0, 0, 0) scale(0.94); }
+  100% { transform: translate3d(5rem, -7rem, 0) scale(1.12); }
+}
+
+@keyframes ambient-float-d {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-4rem, 6rem, 0) scale(0.88); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .start-page .ambient-blob {
+    animation: none;
+  }
+}
+
+.start-page main {
+  position: relative;
+  z-index: 1;
+}
+
+.start-page .start-page-nav {
+  position: relative;
+  z-index: 1;
+}
+
 .home-page {
   --home-bg: #2a3a2a;
   --home-paper: #1e2b1e;
@@ -3245,40 +3349,6 @@ blockquote.excerpt {
     linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.14) 100%);
 }
 
-.home-page .page-transition::before,
-.home-page .page-transition::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: min(58rem, 82vw);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(168, 212, 168, 0.42), transparent);
-  transform: translateX(-50%) scaleX(0.72);
-  opacity: 0;
-  transition:
-    opacity 650ms var(--ease-out),
-    transform 860ms var(--ease-in-out);
-}
-
-.home-page .page-transition.is-washing::before,
-.home-page .page-transition.is-washing::after {
-  background: linear-gradient(90deg, transparent, rgba(42, 58, 42, 0.22), transparent);
-}
-
-.home-page .page-transition::before {
-  top: 28%;
-}
-
-.home-page .page-transition::after {
-  bottom: 28%;
-}
-
-.home-page .page-transition.is-active::before,
-.home-page .page-transition.is-active::after {
-  opacity: 1;
-  transform: translateX(-50%) scaleX(1);
-}
-
 .home-page .page-transition-inner {
   display: flex;
   align-items: baseline;
@@ -3421,8 +3491,6 @@ blockquote.excerpt {
 
 @media (prefers-reduced-motion: reduce) {
   .home-page .page-transition,
-  .home-page .page-transition::before,
-  .home-page .page-transition::after,
   .home-page .page-transition-inner,
   .home-page .transition-real,
   .home-page.home-transitioning .snap-viewport {
