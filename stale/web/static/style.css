@@ -2873,7 +2873,7 @@ blockquote.excerpt {
 .home-page .demo-issue {
   margin-top: 14px;
   padding-top: 12px;
-  border-top: 1px solid rgba(212, 117, 106, 0.18);
+  border-top: 1px solid rgba(143, 184, 143, 0.1);
   display: flex;
   align-items: baseline;
   gap: 10px;
@@ -2883,8 +2883,9 @@ blockquote.excerpt {
 }
 
 .home-page .demo-issue-tag {
-  color: #e89a90;
-  font-weight: 500;
+  color: rgba(240, 244, 240, 0.62);
+  font-size: 10.5px;
+  font-weight: 600;
   flex-shrink: 0;
 }
 
@@ -3343,6 +3344,26 @@ blockquote.excerpt {
 .home-page .page-transition.is-washing .transition-word {
   opacity: 0;
   filter: blur(0);
+}
+
+/* Pragmatic fast path: two-stage transition that avoids the dark-to-light
+   flash. The overlay's background-color stays inherited (dark home-bg) while
+   opacity fades in over 420ms — invisible to the user because the overlay
+   matches the home page underneath. After a 240ms delay (so opacity is most
+   of the way in), background-color shifts to the destination over 560ms.
+   Total ~800ms, but the eye never sees a discrete color jump. */
+.home-page .page-transition.is-active.fast-mode {
+  background-color: #f6f8f0;
+  transition:
+    opacity 420ms var(--ease-out),
+    background-color 560ms var(--ease-in-out) 240ms,
+    visibility 0ms;
+}
+
+.home-page .page-transition.fast-mode .page-transition-inner,
+.home-page .page-transition.fast-mode::before,
+.home-page .page-transition.fast-mode::after {
+  display: none;
 }
 
 .home-page .transition-real {

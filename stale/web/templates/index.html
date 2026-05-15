@@ -6,6 +6,19 @@
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
   rel="stylesheet">
+<script>
+  // Re-arm cinematic when the user explicitly refreshes the home page.
+  // Plain back-button returns (with or without bfcache) do NOT re-arm —
+  // those are "same visit" in the user's mental model. First-ever click
+  // in the session is handled by absence of staleVisitedStart in the CTA
+  // handler below.
+  try {
+    const nav = performance.getEntriesByType('navigation')[0];
+    if (nav && nav.type === 'reload') {
+      window.sessionStorage.setItem('staleHomeFreshSinceLastClick', '1');
+    }
+  } catch {}
+</script>
 {% endblock %}
 {% block body_class %}home-page{% endblock %}
 {% block header %}{% endblock %}
@@ -289,6 +302,19 @@
       return;
     }
 
+    // Cinematic on first CTA click of the session. Pragmatic on repeats.
+    // Refreshing the home page re-arms cinematic (staleHomeFreshSinceLastClick
+    // is set by the inline head script above when nav type is 'reload'). Back
+    // button / bfcache restores do NOT re-arm.
+    let isFreshVisit = false;
+    try {
+      const everClicked = window.sessionStorage.getItem('staleVisitedStart') === '1';
+      const refreshedSince = window.sessionStorage.getItem('staleHomeFreshSinceLastClick') === '1';
+      isFreshVisit = !everClicked || refreshedSince;
+      window.sessionStorage.removeItem('staleHomeFreshSinceLastClick');
+      window.sessionStorage.setItem('staleVisitedStart', '1');
+    } catch {}
+
     transitionOverlay.removeAttribute('aria-hidden');
     transitionOverlay.classList.add('is-active');
     document.body.classList.add('home-transitioning');
@@ -296,25 +322,31 @@
       window.sessionStorage.setItem('staleStartArrival', 'green-wash');
     } catch {}
 
-    if (prefersReducedMotion) {
-      transitionOverlay.classList.add('with-real');
-      transitionOverlay.classList.add('is-washing');
-    } else {
+    if (prefersReducedMotion || !isFreshVisit) {
+      // Pragmatic fast path: light-green overlay crossfades in directly,
+      // then we navigate. ~500ms total instead of 5.9s.
+      transitionOverlay.classList.add('fast-mode');
       window.setTimeout(() => {
-        transitionOverlay.classList.add('with-real');
-      }, 1000);
-      window.setTimeout(() => {
-        transitionOverlay.classList.add('is-washing');
-      }, 2500);
+        window.location.href = link.href;
+      }, prefersReducedMotion ? 200 : 850);
+      return;
     }
+
+    // Cinematic path (original 5.9s sequence).
+    window.setTimeout(() => {
+      transitionOverlay.classList.add('with-real');
+    }, 1000);
+    window.setTimeout(() => {
+      transitionOverlay.classList.add('is-washing');
+    }, 2500);
 
     window.setTimeout(() => {
       transitionOverlay.classList.add('is-leaving');
-    }, prefersReducedMotion ? 220 : 5400);
+    }, 5400);
 
     window.setTimeout(() => {
       window.location.href = link.href;
-    }, prefersReducedMotion ? 360 : 5900);
+    }, 5900);
   }, { capture: true });
 </script>
 {% endblock %}
