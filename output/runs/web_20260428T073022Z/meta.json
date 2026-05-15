@@ -1,0 +1,25 @@
+{
+  "course": "Software Engineering",
+  "course_dir_name": "Software Engineering",
+  "files_saved": [
+    "Ch1 Introduction.pptx",
+    "Ch3. Agile SW Dev-V2.pptx",
+    "Ch4 Req Eng.pptx",
+    "Ch5 System modeling.pptx",
+    "Ch6 Architectural design.pptx",
+    "Ch7 Implementation.pptx",
+    "Ch8.Testing.pptx",
+    "Ch9 Evolution.pptx",
+    "L2-Ch2 SW Processes.pptx",
+    "L3-Ch22 Project management.pptx",
+    "L4-Ch23 Project planning-v2.pptx"
+  ],
+  "files_skipped": [],
+  "started_at": "2026-04-28T07:30:22.610033+00:00",
+  "role_text": "backend engineer working on real-time distributed systems",
+  "role": "backend",
+  "specialization": "real-time distributed systems",
+  "role_confidence": "high",
+  "role_reasoning": "Real-time distributed systems are a core backend specialization involving server-side APIs, databases, and system design at scale.",
+  "role_resolved_at": "2026-04-28T07:30:45.074046+00:00"
+}

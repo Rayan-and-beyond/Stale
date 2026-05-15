@@ -1,0 +1,448 @@
+{
+  "target_role": "ml_data",
+  "taught_skillset": [
+    {
+      "skill": "SQL DDL (CREATE TABLE with typed columns and constraints)",
+      "courses": [
+        "Week 8 - Basic Query"
+      ],
+      "evidence": "Week 8, Page 5: 'CREATE statement \u2014 Main SQL command for data definition'; Week 10 page shows 'CREATE TABLE employees ( name VARCHAR(50), ...)'."
+    },
+    {
+      "skill": "SQL SELECT-FROM-WHERE basic retrieval",
+      "courses": [
+        "Week 8 - Basic Query"
+      ],
+      "evidence": "Week 8, Page 7: 'Basic form of the SELECT statement: SELECT <attribute list> FROM <table list> WHERE <condition>;'"
+    },
+    {
+      "skill": "SQL JOINs (INNER / EQUIJOIN / NATURAL / OUTER)",
+      "courses": [
+        "Week 9 - Complex Query",
+        "Week 11 - Relational Algebra"
+      ],
+      "evidence": "Week 9, Page 4: 'Nested queries, joined tables, and outer joins (in the FROM clause), aggregate functions, and grouping'; Week 11 covers EQUIJOIN, NATURAL JOIN, THETA JOIN."
+    },
+    {
+      "skill": "SQL aggregate functions and GROUP BY / HAVING",
+      "courses": [
+        "Week 9 - Complex Query",
+        "Week 10 - Database Views and Authorization"
+      ],
+      "evidence": "Week 10 view example: 'SELECT S.ID, S.Name, Count(*) AS Num ... GROUP BY S.ID, S.Name'; Week 9 lists 'aggregate functions, and grouping' as in-scope."
+    },
+    {
+      "skill": "SQL nested subqueries and IN comparison",
+      "courses": [
+        "Week 9 - Complex Query"
+      ],
+      "evidence": "Week 9, Page 8: 'Nested queries \u2014 Complete select-from-where blocks within WHERE clause of another query ... Comparison operator IN'."
+    },
+    {
+      "skill": "SQL NULL handling / three-valued logic (IS NULL)",
+      "courses": [
+        "Week 9 - Complex Query"
+      ],
+      "evidence": "Week 9, Page 5\u20137: 'SQL uses a three-valued logic: TRUE, FALSE, and UNKNOWN ... IS or IS NOT NULL'."
+    },
+    {
+      "skill": "SQL views (CREATE VIEW, view updatability rules)",
+      "courses": [
+        "Week 10 - Database Views and Authorization"
+      ],
+      "evidence": "Week 10: 'CREATE VIEW OwnDept AS SELECT Name, Phone FROM Employee WHERE Department = (SELECT Department FROM Employee WHERE name = USER)'."
+    },
+    {
+      "skill": "SQL authorization with GRANT / REVOKE and privileges",
+      "courses": [
+        "Week 10 - Database Views and Authorization"
+      ],
+      "evidence": "Week 10: 'GRANT <privileges> ON <object> TO <users> [WITH GRANT OPTION]' covering SELECT, INSERT, UPDATE, DELETE privileges; REVOKE syntax also taught."
+    },
+    {
+      "skill": "Triggers (concept and intent)",
+      "courses": [
+        "Week 1 - Introduction to Database Concepts",
+        "Week 9 - Complex Query"
+      ],
+      "evidence": "Week 1 lists 'Trigger' as a constraint mechanism; Week 9 chapter title: 'More SQL: Complex Queries, Triggers, Views, and Schema Modification'."
+    },
+    {
+      "skill": "ER conceptual modeling (entities, attributes, relationships, cardinality)",
+      "courses": [
+        "Week 4 _ 5 - Data Modeling Using different types"
+      ],
+      "evidence": "Week 4/5 chapter is 'Data Modeling Using different types' covering entity sets, attributes, relationship types, and cardinality constraints."
+    },
+    {
+      "skill": "EER modeling (specialization, generalization, inheritance)",
+      "courses": [
+        "Week 6 - Enhanced Entity-Relationship _EER_ Model"
+      ],
+      "evidence": "Week 6 chapter title: 'Enhanced Entity-Relationship (EER) Model' covering specialization/generalization hierarchies."
+    },
+    {
+      "skill": "Conceptual-to-logical schema mapping (ER \u2192 relations)",
+      "courses": [
+        "Week 7 - Mapping Conceptual Design into logical Design"
+      ],
+      "evidence": "Week 7 chapter title: 'Mapping Conceptual Design into logical Design'."
+    },
+    {
+      "skill": "Relational algebra (\u03c3, \u03c0, \u22c8, \u222a, \u2229, \u2212, \u00d7, \u00f7)",
+      "courses": [
+        "Week 11 - Relational Algebra"
+      ],
+      "evidence": "Week 11, Page 3: 'UNION (\u222a), INTERSECTION (\u2229), DIFFERENCE (or MINUS, \u2013) ... JOIN (several variations of JOIN exist)'; full chapter covers SELECT \u03c3, PROJECT \u03c0, JOIN \u2a1d, DIVISION \u00f7, CARTESIAN PRODUCT \u00d7."
+    },
+    {
+      "skill": "Functional dependencies and normalization (1NF, 2NF, 3NF, BCNF)",
+      "courses": [
+        "Week 12 - Normalization"
+      ],
+      "evidence": "Week 12 covers UNF \u2192 1NF \u2192 2NF (partial deps: 'CourseID \u2192 Instructor (Partial dependency)') \u2192 3NF (transitive deps) \u2192 BCNF ('A relation schema R is in Boyce-Codd Normal Form (BCNF) if whenever an FD X \u2192 A holds in R, then X is a super key of R')."
+    },
+    {
+      "skill": "File organization (heap / ordered-sequential / hashed)",
+      "courses": [
+        "Week 13 - File Organization"
+      ],
+      "evidence": "Week 13 enumerates: '1. Unordered or Heap files. 2. Ordered or sequential files. 3. Hash files.' with operations and trade-offs for each."
+    },
+    {
+      "skill": "External hashing and collision handling (linear probing, chaining, extendible hashing)",
+      "courses": [
+        "Week 13 - File Organization"
+      ],
+      "evidence": "Week 13: 'Hashing for disk files is called External Hashing ... h(K)=K mod M ... Open Addressing \u2014 Linear Probing ... Chaining ... extendible hashing \u2014 directories ... reducing the need for a separate overflow area'."
+    },
+    {
+      "skill": "Indexing (primary, clustering, secondary, multilevel, B+-tree concept)",
+      "courses": [
+        "Week 14 - Physical Database Design Index"
+      ],
+      "evidence": "Week 14, Page 3: 'Primary Indexes ... Clustering Indexes ... Secondary Indexes ... Multilevel Indexes ... Tree Data Structures (Multilevel Indexes, B+-Trees)'; dense vs sparse, blocking factor calculations included."
+    },
+    {
+      "skill": "Transaction concept and ACID basics (conceptual)",
+      "courses": [
+        "Week 1 - Introduction to Database Concepts",
+        "Week 2 - Database System Concepts and Architecture"
+      ],
+      "evidence": "Week 1, Page 9: 'Transaction \u2014 May cause some data to be read and some data to be written'; Week 2 covers multi-user transaction processing concepts: 'Each transaction appears to execute in isolation ... Either all the database operations in a transaction are executed or [none]'."
+    },
+    {
+      "skill": "Brief survey mentions of OLAP / data warehouses / NoSQL / distributed DBMSs (single slides only, not developed)",
+      "courses": [
+        "Week 1 - Introduction to Database Concepts",
+        "Week 2 - Database System Concepts and Architecture"
+      ],
+      "evidence": "Week 1, Page 4: 'Data warehouses and online analytical processing (OLAP) systems'; Week 2, Page 6: 'Self-Describing Data Models ... Examples include XML, key-value stores and some NOSQL systems'; Week 2, Page 31: 'Variations of Distributed DBMSs (DDBMSs)'."
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "git",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "python",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "sql",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "numpy",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_037",
+        "post_039",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "pandas",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "scikit-learn",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "statistics",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_045",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "docker",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_042",
+        "post_043",
+        "post_046",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "pytorch",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_044",
+        "post_045",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "aws",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_037",
+        "post_039",
+        "post_041",
+        "post_043",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "dbt",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_043",
+        "post_046"
+      ]
+    },
+    {
+      "skill": "hugging face",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_037",
+        "post_041",
+        "post_043",
+        "post_044",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "bigquery",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_038",
+        "post_041",
+        "post_042",
+        "post_044",
+        "post_047"
+      ]
+    },
+    {
+      "skill": "spark",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_043",
+        "post_046"
+      ]
+    },
+    {
+      "skill": "rag",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_039",
+        "post_044",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "snowflake",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_039",
+        "post_041",
+        "post_043",
+        "post_045",
+        "post_047"
+      ]
+    },
+    {
+      "skill": "vector databases",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_039",
+        "post_040",
+        "post_042",
+        "post_044",
+        "post_046"
+      ]
+    },
+    {
+      "skill": "ray",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_041",
+        "post_043",
+        "post_044",
+        "post_046",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "tensorflow",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_037",
+        "post_041",
+        "post_042",
+        "post_045"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_040",
+        "post_043",
+        "post_045",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "airflow",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_041",
+        "post_042",
+        "post_046",
+        "post_048"
+      ]
+    }
+  ],
+  "gaps": [],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 19,
+    "skills_market_demands": 21,
+    "gap_count": 0,
+    "headline": "No in-scope gaps: this single-node relational-fundamentals curriculum teaches the one ml_data skill it shares with the market (SQL) thoroughly, while every other \u226530%-demanded skill \u2014 Python and the pandas/numpy/scikit-learn/pytorch/tensorflow/hugging-face stack, git/docker/kubernetes/aws, and the distributed/NoSQL data layer (bigquery, snowflake, spark, vector databases, dbt, airflow, ray) \u2014 is excluded by Rule 3 (cross-domain) or by the course's depth bound (which explicitly rules out distributed databases and NoSQL engines), so there is no partially-covered topic to extend."
+  }
+}

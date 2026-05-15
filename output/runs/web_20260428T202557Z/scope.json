@@ -1,0 +1,32 @@
+{
+  "subject_area": "Computer security \u2014 principles, management, and defensive controls",
+  "pedagogical_level": "undergraduate fundamentals course",
+  "course_intent": "Teach the principles and practices of computer security across access control, risk management, intrusion detection, and related defensive controls \u2014 students should leave able to explain core security mechanisms, identify threats, and reason about how organizations select and deploy controls to protect IT assets.",
+  "depth_bound": "Recommendations stay at the conceptual + mechanism level grounded in standards (NIST, ISO 27000, RFCs) and canonical examples (UNIX permissions, Snort rules, RBAC/ABAC models). Hands-on exploit development, deep cryptographic math, secure-coding labs in specific languages, and red-team penetration walkthroughs are beyond this course's depth bound.",
+  "key_topics": [
+    "Access control models (DAC, MAC, RBAC, ABAC) and access matrix",
+    "UNIX file access control with traditional permissions and ACLs",
+    "RBAC reference models (RBAC0\u2013RBAC3), role hierarchies, and constraints",
+    "IT security management process and ISO 27000 / NIST SP 800 standards",
+    "Security risk assessment approaches (baseline, informal, formal, combined)",
+    "Intruder classification, skill levels, and attack methodology stages",
+    "Intrusion detection systems (HIDS, NIDS, distributed/hybrid IDS)",
+    "Anomaly vs signature/heuristic detection approaches",
+    "Honeypots (low- vs high-interaction) and deployment locations",
+    "Snort architecture and rule format for network intrusion detection"
+  ],
+  "one_liner": "Undergraduate computer-security fundamentals covering access control models, IT security management/risk assessment, intruder behavior, and intrusion detection systems at a principles-and-mechanisms level \u2014 does NOT include hands-on exploitation labs, cryptographic deep dives, or framework-specific secure-coding tutorials.",
+  "relevant_roles": [
+    "security",
+    "devops_sre",
+    "backend"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 60351,
+    "cache_creation_input_tokens": 4684,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 737
+  }
+}

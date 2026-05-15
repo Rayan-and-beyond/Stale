@@ -1,0 +1,143 @@
+{
+  "target_role": "fullstack",
+  "prescriptions": [
+    {
+      "rank": 1,
+      "topic": "Distributed version control workflows with Git \u2014 branching strategies (trunk-based vs. GitFlow) and pull-request code review as a process artifact",
+      "skill_keywords": [
+        "git",
+        "distributed version control",
+        "branching",
+        "pull request",
+        "code review",
+        "trunk-based development",
+        "gitflow"
+      ],
+      "market_frequency_pct": 0.92,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_030",
+        "post_031",
+        "post_033",
+        "post_034",
+        "post_035",
+        "post_036"
+      ],
+      "fits_in_course": "Ch7 Implementation.pptx \u2014 Slide 46 (Configuration management activities)",
+      "fits_in_course_rationale": "Ch7 already teaches configuration management generically ('Version management... include facilities to coordinate development by several programmers. System integration... Problem tracking...'). The natural extension is to name distributed VCS (Git) as the dominant model and to introduce the pull-request review loop as a process artifact that connects version management, problem tracking, and quality control. This stays at the methodology/process level the course operates at \u2014 no `git` syntax, no GitHub-specific UI walkthrough.",
+      "prerequisite_chain": [
+        {
+          "skill": "Version management / configuration management concepts",
+          "already_taught_in": "Ch7 Implementation.pptx (Slide 46)"
+        },
+        {
+          "skill": "Incremental development lifecycle",
+          "already_taught_in": "L2-Ch2 SW Processes.pptx (Slide 7)"
+        },
+        {
+          "skill": "Software inspection / review as a quality activity",
+          "already_taught_in": "Ch8.Testing.pptx"
+        }
+      ],
+      "estimated_learning_hours": 6,
+      "headline_one_liner": "Extend the configuration-management slide from generic 'version management' to the Git branching + pull-request review workflow that 11 of 12 fullstack postings assume students already understand."
+    },
+    {
+      "rank": 2,
+      "topic": "REST as an architectural style for HTTP APIs \u2014 resources, statelessness, uniform interface via HTTP verbs (conceptual extension of client-server)",
+      "skill_keywords": [
+        "rest",
+        "http",
+        "resources",
+        "statelessness",
+        "uniform interface",
+        "api design",
+        "client-server"
+      ],
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_025",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_031",
+        "post_032",
+        "post_033",
+        "post_034",
+        "post_035"
+      ],
+      "fits_in_course": "Ch6 Architectural design.pptx \u2014 Slide 33 (Client-server architecture) and Slide 51 (Multi-tier web/application architecture)",
+      "fits_in_course_rationale": "Ch6 already teaches client-server architecture abstractly and introduces multi-tier web systems (web server / app server / database server). Ch5 Slide 55 mentions APIs at the conceptual level ('Integrated services... offer an API... can be accessed by other services'). The natural extension is to name REST as the dominant architectural style of modern client-server APIs and treat it as an architectural-pattern entry alongside MVC, Layered, and Pipe-and-Filter. This stays conceptual (resource modelling, statelessness, HTTP verbs as a uniform interface) without descending into Express/Spring endpoint coding, which would breach the depth bound.",
+      "prerequisite_chain": [
+        {
+          "skill": "Client-server architectural pattern",
+          "already_taught_in": "Ch6 Architectural design.pptx (Slide 33)"
+        },
+        {
+          "skill": "Multi-tier web/application architecture",
+          "already_taught_in": "Ch6 Architectural design.pptx (Slide 51)"
+        },
+        {
+          "skill": "Service-oriented systems and APIs (conceptual)",
+          "already_taught_in": "Ch5 System modeling.pptx (Slide 55)"
+        }
+      ],
+      "estimated_learning_hours": 4,
+      "headline_one_liner": "Promote REST from an unnamed background assumption to a first-class architectural pattern in Ch6 \u2014 9 of 12 fullstack postings demand it, and the course already teaches every prerequisite (client-server, multi-tier, service APIs)."
+    },
+    {
+      "rank": 3,
+      "topic": "Continuous integration and continuous delivery as a process discipline \u2014 assembling frequent builds, automated regression tests, staging vs. production environments, and the release-vs-deploy distinction",
+      "skill_keywords": [
+        "continuous integration",
+        "continuous delivery",
+        "ci/cd",
+        "automated build",
+        "deployment pipeline",
+        "staging environment",
+        "release management"
+      ],
+      "market_frequency_pct": 0.58,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_030",
+        "post_031",
+        "post_032",
+        "post_035"
+      ],
+      "fits_in_course": "Ch3. Agile SW Dev-V2.pptx \u2014 Slide 53 (Scaling up) and Slide 9 (XP build cadence), reinforced in Ch8.Testing.pptx Slide 48 (Regression testing)",
+      "fits_in_course_rationale": "The course teaches the constituent pieces piecemeal \u2014 XP's 'New versions may be built several times per day... All tests must be run for every build' (Ch3 Slide 9), automated regression testing (Ch8 Slide 48), and incremental delivery (L2-Ch2). It also explicitly says 'Continuous integration is practically impossible' at scale (Ch3 Slide 53), framing CI as a problem rather than today's standard practice. The natural extension is to update Slide 53 and assemble the existing pieces into the modern CI/CD pipeline as a process model: build + test + deploy on every commit, environment promotion, and decoupling release from deploy. Implementation tooling (GitHub Actions YAML, Jenkinsfile internals) is correctly out of scope for this methodology course.",
+      "prerequisite_chain": [
+        {
+          "skill": "Automated regression testing",
+          "already_taught_in": "Ch8.Testing.pptx (Slide 48)"
+        },
+        {
+          "skill": "XP frequent-build cadence / TDD",
+          "already_taught_in": "Ch3. Agile SW Dev-V2.pptx (Slides 9, 22)"
+        },
+        {
+          "skill": "Incremental development and release planning",
+          "already_taught_in": "L2-Ch2 SW Processes.pptx (Slide 7); L4-Ch23 Project planning-v2.pptx"
+        },
+        {
+          "skill": "Tool-agnostic configuration management / system integration",
+          "already_taught_in": "Ch7 Implementation.pptx (Slide 46)"
+        }
+      ],
+      "estimated_learning_hours": 4,
+      "headline_one_liner": "Rewrite Ch3's 'CI is practically impossible' note into the modern CI/CD pipeline concept \u2014 the course already teaches every ingredient (frequent builds, automated regression, incremental releases); 7 of 12 fullstack postings now name the assembled pipeline by name."
+    }
+  ],
+  "summary": {
+    "total_prescriptions": 3,
+    "top_3_headline": "The three prescriptions \u2014 Git/PR workflows (rank 1, 92% of postings), REST as a named architectural style (rank 2, 75%), and CI/CD as an assembled process discipline (rank 3, 58%) \u2014 together close every gap surfaced by Market-fit. Each one extends a slide that already exists (Ch7 Slide 46, Ch6 Slides 33/51, Ch3 Slides 9/53) and adds only conceptual/process-level content, respecting the course's methodology depth bound.",
+    "coverage_note": "These three prescriptions cover 3 of 3 gaps (100%) surfaced by Market-fit. They do NOT close the larger market-fit deficit on framework/language demands (Node.js, TypeScript, Postgres, React, CSS/Tailwind, Docker, Jest, Next.js, GraphQL, Kubernetes, AWS) \u2014 those are correctly omitted per Rule 2 because they exceed this course's process/methodology depth bound and would belong in a hands-on web-development or DevOps course instead. Honest framing: this course can be made market-aware in its process vocabulary, but cannot by itself prepare a fullstack hire \u2014 the curriculum needs a complementary implementation course."
+  }
+}

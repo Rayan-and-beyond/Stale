@@ -1,0 +1,473 @@
+{
+  "target_role": "mobile",
+  "taught_skillset": [
+    {
+      "skill": "Java (for Android)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L2 p9: 'All applications are written using the Java language.' L1 p46: 'User applications are built for Android in Java'."
+    },
+    {
+      "skill": "Android SDK",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L1 p50 'Android SDK Features': Access to Hardware including Camera, GPS etc; Data Transfer using Wifi; SQLite Database for Data Storage and Retrieval; Background Services."
+    },
+    {
+      "skill": "Android Studio IDE",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L1 p66: 'Android Studio — Google's official Android IDE … Once installed open the SDK Manager … Create an Android Virtual Device (AVD)'."
+    },
+    {
+      "skill": "AndroidManifest.xml configuration",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L3 p14: 'Every application must have an AndroidManifest.xml file … provides essential information about your app to the Android system'."
+    },
+    {
+      "skill": "Gradle build system (introductory)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L1 p71: 'Gradle — a build/compile management system — build.gradle = main build config file'."
+    },
+    {
+      "skill": "Activity lifecycle (onCreate/onStart/onResume/onPause/onStop/onDestroy)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L3 p38: 'protected void onCreate(Bundle savedInstanceState); … onStart(); … onResume(); … onPause(); … onStop(); … onDestroy();'"
+    },
+    {
+      "skill": "Fragments and FragmentManager/FragmentTransaction",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L5 p14: 'Every Activity has its own Fragment Manager Accessible through getFragmentManager()' and L5 p17 'transaction.replace(R.id.fragment_container, newFragment); transaction.addToBackStack(null); transaction.commit();'"
+    },
+    {
+      "skill": "XML view layouts (LinearLayout/RelativeLayout/TableLayout/AbsoluteLayout)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L4 p15: 'Commonly-used Android containers are: Absolute Layout, Linear Layout, Relative Layout, Frame Layout, Table Layout, Grid Layout'."
+    },
+    {
+      "skill": "Widget access via findViewById",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L1 p75: 'TextView obj = findViewById(R.id.mytextview); obj.setText(\"You clicked it!\");'"
+    },
+    {
+      "skill": "SQLite on Android (SQLiteDatabase / execSQL / rawQuery / Cursor)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L6 p7-8: 'SQLiteDatabase db=openOrCreateDatabase(\"StudentDB\",Context.MODE_PRIVATE,null); db.execSQL(\"CREATE TABLE IF NOT EXISTS … \");' and L6 p12 'Database queries are returned as Cursor objects.'"
+    },
+    {
+      "skill": "Content Providers and ContentResolver",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L7 p22: 'ContentProvider will never be accessed directly, but accessed indirectly via a ContentResolver … ContentResolver cr = getContentResolver();'"
+    },
+    {
+      "skill": "Implicit and explicit Intents",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L8 p10: 'Intent intent = new Intent(MyActivity.this, MyOtherActivity.class); startActivity(intent);' and L8 p7 ACTION_DIAL/ACTION_VIEW examples."
+    },
+    {
+      "skill": "Bundle/extras passing data between activities",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L8 p12: 'Bundle b = new Bundle(); b.putString(\"myname\", anystring); … in.putExtras(b); startActivityForResult(in, 1);'"
+    },
+    {
+      "skill": "BroadcastReceiver (system + custom intents)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L9 p6: 'public class MyReceiver extends BroadcastReceiver { @Override public void onReceive(Context context, Intent intent) { … } }' and L9 p14 sendBroadcast(intent)."
+    },
+    {
+      "skill": "Google Maps Android API (GoogleMap / LatLng / Marker / Geocoder)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L10 p8: 'public void onMapReady(GoogleMap googleMap) { mMap = googleMap; LatLng iaucampus = new LatLng(26.3564625, 50.1774613); mMap.addMarker(new MarkerOptions().position(iaucampus).title(\"IAU Campus\"));'"
+    },
+    {
+      "skill": "Location permissions (ACCESS_COARSE_LOCATION/ACCESS_FINE_LOCATION)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L10 p10: 'android.permission.ACCESS_COARSE_LOCATION — Allows the API to return the device's approximate location. android.permission.ACCESS_FINE_LOCATION — Allows … as precise a location as possible.'"
+    },
+    {
+      "skill": "AsyncTask for background work",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L11 p40: 'doInBackground — the main operation. Write your heavy operation here.' and L11 p52 'private class MyTask extends AsyncTask<String, Integer, String>'."
+    },
+    {
+      "skill": "Threads and Handler / runOnUiThread / post(Runnable)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L11 p59: 'final Handler myHandler = new Handler() { @Override public void handleMessage(Message msg) { updateUI((String) msg.obj); } };' and L11 p64 lists 'runOnUiThread(Runnable)', 'post(Runnable)', 'handler framework'."
+    },
+    {
+      "skill": "Notification Manager (concept of system notifications)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L2 p22: 'Application Framework- Notification Manager — Alerts the user about occurring important events. Enabling all applications to display customer alerts in the status bar, flashing lights, vibrations etc.'"
+    },
+    {
+      "skill": "Internet permission for network operations",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L10 p22: 'For network transactions we need to define Internet … <uses-permission android:name=\"android.permission.INTERNET\" />' and L11 p12 lists 'Network lookups' as a time-consuming/blocking operation."
+    },
+    {
+      "skill": "Xcode (installation/intro)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L12 p3: '1. Downloading and installing XCode — https://developer.apple.com/documentation/safari-developer-tools/installing-xcode-and-simulators'."
+    },
+    {
+      "skill": "Swift language basics (var/let, types, control flow, arrays, dictionaries, functions, classes, optionals)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L12 p6-23: 'var age:Int … let age = 10', switch statement, for-in, 'class Character { var name = \"The Dude\" }', 'var score:Int? … if score != nil'."
+    },
+    {
+      "skill": "App publishing/distribution (concept)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L1 p70 development-process diagram: 'Prepare your application for release … Configure, build, and test your application in release mode. … Release your application — Publicize, sell, and distribute your application' and L1 p23 'Normally distributed through huge application portals (App Store, Google Play, Windows Phone Store etc.)'"
+    },
+    {
+      "skill": "App testing (concept-only mention)",
+      "courses": [
+        "Mobile Application Programming"
+      ],
+      "evidence": "L1 p70 development-process diagram: 'Test your application using the Android testing and instrumentation framework.'"
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "git",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_049",
+        "post_050",
+        "post_051",
+        "post_052",
+        "post_053",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_057",
+        "post_058",
+        "post_059",
+        "post_060"
+      ]
+    },
+    {
+      "skill": "rest api",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_049",
+        "post_050",
+        "post_051",
+        "post_053",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_057",
+        "post_059",
+        "post_060"
+      ]
+    },
+    {
+      "skill": "unit testing",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_049",
+        "post_050",
+        "post_052",
+        "post_053",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_058",
+        "post_059"
+      ]
+    },
+    {
+      "skill": "android studio",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_049",
+        "post_051",
+        "post_052",
+        "post_053",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_059",
+        "post_060"
+      ]
+    },
+    {
+      "skill": "xcode",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_049",
+        "post_050",
+        "post_051",
+        "post_052",
+        "post_053",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_058"
+      ]
+    },
+    {
+      "skill": "push notifications",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_052",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_057",
+        "post_058",
+        "post_059",
+        "post_060"
+      ]
+    },
+    {
+      "skill": "swiftui",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_049",
+        "post_052",
+        "post_053",
+        "post_054",
+        "post_056",
+        "post_057",
+        "post_059"
+      ]
+    },
+    {
+      "skill": "uikit",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_051",
+        "post_054",
+        "post_055",
+        "post_057",
+        "post_058",
+        "post_059",
+        "post_060"
+      ]
+    },
+    {
+      "skill": "swift",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_049",
+        "post_051",
+        "post_053",
+        "post_055",
+        "post_056",
+        "post_059"
+      ]
+    },
+    {
+      "skill": "jetpack compose",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_049",
+        "post_050",
+        "post_052",
+        "post_054",
+        "post_056",
+        "post_059"
+      ]
+    },
+    {
+      "skill": "mvvm",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_050",
+        "post_051",
+        "post_053",
+        "post_054",
+        "post_057",
+        "post_058"
+      ]
+    },
+    {
+      "skill": "ci/cd",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_051",
+        "post_053",
+        "post_054",
+        "post_056",
+        "post_058",
+        "post_059"
+      ]
+    },
+    {
+      "skill": "react native",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_049",
+        "post_053",
+        "post_054",
+        "post_056",
+        "post_057"
+      ]
+    },
+    {
+      "skill": "app store deployment",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_050",
+        "post_051",
+        "post_054",
+        "post_056",
+        "post_058"
+      ]
+    },
+    {
+      "skill": "kotlin",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_050",
+        "post_052",
+        "post_057",
+        "post_060"
+      ]
+    },
+    {
+      "skill": "firebase",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_054",
+        "post_056",
+        "post_057",
+        "post_060"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "REST API consumption (HTTP client usage from Android, e.g. HttpURLConnection)",
+      "market_frequency_pct": 0.83,
+      "posting_refs": [
+        "post_049",
+        "post_050",
+        "post_051",
+        "post_053",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_057",
+        "post_059",
+        "post_060"
+      ],
+      "rationale": "Networking is partially covered: L10 p22 declares the INTERNET permission ('For network transactions we need to define Internet … <uses-permission android:name=\"android.permission.INTERNET\" />') and L11 p12 lists 'Network lookups' / 'accessing data from the Internet' as canonical time-consuming/blocking operations to push onto a background thread. The course never shows how to actually issue an HTTP request, parse a JSON response, or hit a REST endpoint — yet 10/12 mobile postings demand REST API skills. Extension: in the existing background-thread unit, walk through a concrete HttpURLConnection (or built-in URL/JSONObject) GET/POST against a REST endpoint, executed on a java.util.concurrent.Executor with results delivered back to the UI thread via Handler(Looper.getMainLooper()). Note: the course's current AsyncTask scaffolding (L11 p52) is deprecated as of API 30 and should be replaced — not extended — when adding this REST lab. Stays at SDK-fundamentals depth (no Retrofit/OkHttp/Coroutines per depth bound).",
+      "severity": "critical"
+    },
+    {
+      "skill": "Unit testing of Android code (JUnit + Android instrumentation)",
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_049",
+        "post_050",
+        "post_052",
+        "post_053",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_058",
+        "post_059"
+      ],
+      "rationale": "Testing is mentioned but not taught: L1 p70 lists in the Android dev-process diagram 'Test your application using the Android testing and instrumentation framework' but no lecture, lab, or example actually writes a test. 9/12 mobile postings require unit testing. Extension: in the existing dev-process treatment, add a hands-on JUnit test of a plain helper class plus one Android-instrumented test (e.g. assertEquals on a util used by an existing activity). Stays at hands-on Android-SDK depth — no Espresso/Mockito/CI per depth bound.",
+      "severity": "high"
+    },
+    {
+      "skill": "Push notifications (Firebase Cloud Messaging-style remote notifications)",
+      "market_frequency_pct": 0.67,
+      "posting_refs": [
+        "post_052",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_057",
+        "post_058",
+        "post_059",
+        "post_060"
+      ],
+      "rationale": "Notifications and cloud messaging are partially covered: L2 p22 'Application Framework- Notification Manager — Alerts the user about occurring important events. Enabling all applications to display customer alerts in the status bar, flashing lights, vibrations etc.' and L1 p50 lists 'Cloud to Device Messaging' as an Android SDK feature. Neither slide shows how to display a NotificationCompat.Builder notification or receive a server-sent push. 8/12 postings demand push notifications. Extension: extend the Notification Manager slide to a worked example that builds and posts a local notification via NotificationCompat.Builder + NotificationManager.notify(), and conceptually link 'Cloud to Device Messaging' to FCM-delivered remote notifications received in a BroadcastReceiver — reusing the BroadcastReceiver content already in L9.",
+      "severity": "high"
+    },
+    {
+      "skill": "App store deployment (signing + Google Play / App Store upload workflow)",
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_050",
+        "post_051",
+        "post_054",
+        "post_056",
+        "post_058"
+      ],
+      "rationale": "Distribution is partially covered: L1 p70 development-process diagram explicitly includes 'Prepare your application for release — Configure, build, and test your application in release mode' and 'Release your application — Publicize, sell, and distribute your application', and L1 p23 names the App Store / Google Play as the distribution channels. The course stops at the concept; it never walks through generating a signed APK/AAB or the Play Console upload. 5/12 postings demand app store deployment skills. Extension: in the existing release-step slide, add a concrete walk-through of generating a release-keystore-signed APK/AAB in Android Studio and uploading it to the Google Play Console (and the Xcode archive → App Store Connect equivalent for the iOS side). Stays at hands-on SDK depth — no CI/CD/Fastlane per depth bound.",
+      "severity": "medium"
+    }
+  ],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 23,
+    "skills_market_demands": 16,
+    "gap_count": 4,
+    "headline": "This curriculum prepares the student for an early-2010s Java/AsyncTask Android developer role — strong on activities, fragments, intents, SQLite, Maps and broadcast receivers, but missing the REST/HTTP, unit-testing, push-notification and store-deployment plumbing that 40–80% of today's mobile postings expect, while modern Kotlin/Compose/MVVM/CI-CD demands sit outside the course's stated depth bound."
+  }
+}

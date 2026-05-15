@@ -1,0 +1,42 @@
+{
+  "skipped": [
+    {
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 11",
+      "snippet": "Instead you can use integrated development environment (IDE) such as: NetBeans, BlueJ,..",
+      "skip_reason": "no_primary_source",
+      "explanation": "NetBeans (now Apache NetBeans) and BlueJ are both still actively maintained and released; neither has been declared end-of-life by an authoritative source. The complaint is curricular taste \u2014 that IntelliJ/Eclipse/VS Code dominate industry \u2014 not staleness backed by a deprecation notice. Without a primary source declaring these tools dead, this is a SKIP."
+    },
+    {
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 25",
+      "snippet": "Scanner input = new Scanner(System.in); ... double d = input.nextDouble();",
+      "skip_reason": "no_primary_source",
+      "explanation": "There is no primary Java SE source that prescribes try-with-resources for a `Scanner` wrapping `System.in`; in fact closing such a Scanner also closes `System.in`, which is generally not desired. The 'leak' framing is a stylistic preference rather than a documented antipattern with an authoritative deprecation."
+    },
+    {
+      "slide_ref": "Lecture 06 - Inheritance.pdf page 8, Lecture 06 - Inheritance.pdf page 9",
+      "snippet": "public void Subtraction(int x, int y) { ... } / class My_Calculation extends Calculation",
+      "skip_reason": "no_primary_source",
+      "explanation": "Capitalized method names (`Subtraction`) and underscore-containing class names (`My_Calculation`) violate Java's conventional style guide but compile and run correctly. There is no JLS rule or formal deprecation that makes this 'stale'; it is just disagreement with the Oracle Code Conventions style guide. Style violations are out of scope for a staleness audit."
+    },
+    {
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 41",
+      "snippet": "cout << \"Wear light weight rain coat\" << endl; ... cout << \"Wear fleece and rain coat \" << endl;",
+      "skip_reason": "ocr_uncorroborated",
+      "explanation": "The candidate is marked `from_ocr: true` and the only visible cout/endl text in the curriculum dump comes from the OCR layer of slide 41's image. There is no non-OCR Java text on this or surrounding slides that confirms the underlying slide actually shows C++ syntax \u2014 the OCR could be misrendering an embedded C++ comparison image, or the slide could be an unrelated picture. Per the OCR caution rule, raise the bar and skip."
+    }
+  ],
+  "summary": {
+    "total_candidates": 25,
+    "flagged": 21,
+    "skipped": 4,
+    "by_skip_reason": {
+      "counterexample": 0,
+      "paired_correction_nearby": 0,
+      "no_primary_source": 3,
+      "other": 1
+    },
+    "courses_audited": [
+      "object_oriented_programming_1"
+    ]
+  }
+}

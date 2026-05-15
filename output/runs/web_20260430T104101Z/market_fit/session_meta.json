@@ -1,0 +1,15 @@
+{
+  "run_id": "20260430T104825Z",
+  "role": "backend",
+  "courses": {
+    "Algorithm Analysis and Design": {
+      "filename": "algorithm_analysis_and_design.txt",
+      "mount_path": "/workspace/curriculum/algorithm_analysis_and_design.txt"
+    }
+  },
+  "postings": {
+    "filename": "job_postings.json",
+    "mount_path": "/workspace/data/job_postings.json"
+  },
+  "started_at": "2026-04-30T10:48:31.019156+00:00"
+}

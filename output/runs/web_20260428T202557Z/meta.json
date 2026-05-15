@@ -1,0 +1,24 @@
+{
+  "course": "Computer and Data Security",
+  "course_dir_name": "Computer and Data Security",
+  "files_saved": [
+    "CH04-Access Control.pptx",
+    "Chapter14.pptx",
+    "Chapter15.pptx",
+    "Chapter17.pptx",
+    "Chapter18.pptx",
+    "Chapter9.pptx",
+    "chapter1.pptx",
+    "chapter2.pptx",
+    "chapter3.pptx",
+    "chapter8.pptx"
+  ],
+  "files_skipped": [],
+  "started_at": "2026-04-28T20:25:57.063809+00:00",
+  "role_text": "security engineer",
+  "role": "security",
+  "specialization": "security engineer",
+  "role_confidence": "low",
+  "role_reasoning": "heuristic substring match (Haiku call failed)",
+  "role_resolved_at": "2026-04-28T20:35:02.480788+00:00"
+}

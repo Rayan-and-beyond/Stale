@@ -1,0 +1,738 @@
+{
+  "target_role": "security",
+  "taught_skillset": [
+    {
+      "skill": "Discretionary Access Control (DAC), MAC, RBAC, ABAC models",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch4 Slide 12: 'Discretionary access control (DAC) ... Mandatory access control (MAC) ... Role-based access control (RBAC) ... Attribute-based access control (ABAC)' \u2014 each policy family is defined and contrasted."
+    },
+    {
+      "skill": "UNIX file permissions, setuid/setgid, sticky bit, ACLs (FreeBSD setfacl)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch4 Slides 26\u201328: '12 protection bits ... read, write, and execute permission for the owner, group, and other ... SetUID / SetGID / sticky bit ... FreeBSD allows the administrator to assign a list of UNIX user IDs and groups to a file by using the setfacl command.'"
+    },
+    {
+      "skill": "XACML (eXtensible Access Control Markup Language) for ABAC",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch4 Slide 35: 'Web services have been pioneering technologies through the introduction of the eXtensible Access Control Markup Language (XAMCL).'"
+    },
+    {
+      "skill": "NIST SP 800-53 control families (catalog-level familiarity)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch15 Slides 11\u201320 (Tables 15.3 a\u2013j): 'Detailed NIST SP 800-53 Security Controls \u2014 Access Control, Audit and Accountability, Configuration Management, Contingency Planning, Incident Response, Risk Assessment, System and Communications Protection ...'"
+    },
+    {
+      "skill": "ISO/IEC 27000 series (27001/27002/27005) standards landscape",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch14 Slides 3\u20134: 'ISO/IEC 27000 Series of Standards on IT Security Techniques ... ISO 27005 (Information security risk management)'."
+    },
+    {
+      "skill": "Qualitative risk assessment (likelihood \u00d7 consequence matrix, risk register)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch14 Slides 27\u201331: 'use qualitative, not quantitative, ratings ... Table 14.4 Risk Level Determination ... Table 14.5 Risk Register'."
+    },
+    {
+      "skill": "ISO 31000 / NIST SP 800-30 risk-management process and Plan-Do-Check-Act",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch14 Slide 7: 'ISO 27005 ... Plan: Establish security policy ... Do: Implement the risk treatment plan ... Check ... Act'."
+    },
+    {
+      "skill": "Risk treatment options: accept, avoid, transfer, reduce consequence/likelihood",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch14 Slide 33: 'Risk acceptance ... Risk avoidance ... Risk transfer ... Reduce consequence ... Reduce likelihood'."
+    },
+    {
+      "skill": "Security awareness, role-based training, education hierarchy (NIST SP 800-50)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch17 Slides 5, 11\u201314: 'NIST SP 800-50 ... Security awareness ... Cybersecurity basics and literacy ... Role-based training ... Security education and certification'."
+    },
+    {
+      "skill": "Incident response lifecycle and CSIRT (NIST SP 800-61)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch17 Slides 15\u201325: 'NIST SP 800-61 ... Computer security incident response team (CSIRT) ... Triage function ... Responding to incidents ... Documenting incidents'."
+    },
+    {
+      "skill": "Security audit trails, syslog, Windows Event Log",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch18 Slides 17\u201327: 'Windows Event Log ... three types of event logs: System / Application / Security ... UNIX Syslog ... syslog(), logger, /etc/syslog.conf, syslogd ... BSD syslog format: PRI / Header / Msg'."
+    },
+    {
+      "skill": "SIEM (Security Information and Event Management) \u2014 agentless vs agent-based",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch18 Slide 38: 'SIEM software is a centralized logging software package similar to, but much more complex than, syslog ... Agentless ... Agent-based.'"
+    },
+    {
+      "skill": "Audit data analysis: baselining, thresholding, windowing, correlation",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch18 Slide 37: 'Basic alerting ... Baselining ... Thresholding ... Windowing ... Correlation seeks relationships among events.'"
+    },
+    {
+      "skill": "Packet-filter, stateful, application-proxy, circuit-level firewalls",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch9 Slides 9\u201317: 'Packet Filtering Firewall ... Stateful Inspection Firewall ... Application-Level Gateway ... Circuit-Level Gateway ... SOCKS v5 defined in RFC 1928'."
+    },
+    {
+      "skill": "Bastion hosts, DMZ topologies, VPN/IPSec, distributed firewalls",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch9 Slides 18, 21\u201324: 'Bastion Hosts ... DMZ (demilitarized zone) network ... a VPN consists of a set of computers that interconnect by means of a relatively unsecure network and that make use of encryption ... Distributed Firewall Configuration'."
+    },
+    {
+      "skill": "Host-based and network-based IDS/IPS (HIDS, NIDS, HIPS, NIPS)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch8 Slide 20 + Ch9 Slides 26\u201332: 'Host-based IDS (HIDS) ... Network-based IDS (NIDS) ... Distributed or hybrid IDS ... Host-Based IPS (HIPS) ... Network-Based IPS (NIPS)'."
+    },
+    {
+      "skill": "Anomaly vs signature/heuristic intrusion detection (statistical, knowledge-based, ML)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch8 Slides 23\u201325: 'Anomaly detection ... Signature/heuristic detection ... Statistical ... Knowledge based ... Machine-learning ... SNORT is an example of a rule-based NIDS'."
+    },
+    {
+      "skill": "Snort rule format and Snort Inline (drop/reject/sdrop)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch8 Slides 47\u201352 + Ch9 Slide 35: 'Snort Architecture ... rule header (Action, Protocol, Source IP, Source port, Direction, Dest IP, Dest port) ... Snort Inline ... Drop / Reject / Sdrop'."
+    },
+    {
+      "skill": "Honeypots (low- vs high-interaction, deployment locations)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch8 Slides 43\u201346: 'Honeypots are decoy systems ... Low-interaction honeypot ... High-interaction honeypot ... a honeypot outside the external firewall (location 1) is useful for tracking attempts to connect to unused IP addresses'."
+    },
+    {
+      "skill": "MITRE ATT&CK (named, used as reference for intruder tactics)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch8 Slide 11: 'A more recent, detailed list of intruder tactics and techniques is provided in the MITRE Attack matrix site.'"
+    },
+    {
+      "skill": "Attack trees and security design principles (least privilege, complete mediation, defense in depth)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch1 Slides 17\u201322: 'Least privilege ... Complete mediation: Every access must be checked against the access control mechanism ... Layering ... An Attack Tree for Internet Banking Authentication'."
+    },
+    {
+      "skill": "Symmetric crypto: DES, 3DES, AES; ECB / modes of operation",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch2 Slides 5\u201311: 'Data Encryption Standard (DES) ... Triple DES ... Advanced Encryption Standard (AES) ... Selected Rijndael in November 2001 ... Electronic codebook (ECB) mode'."
+    },
+    {
+      "skill": "Hash functions (MD5, SHA-1/2/3), HMAC, CMAC for message authentication",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch2 Slides 16\u201318: 'Secure Hash Algorithm (SHA) family ... SHA-2 ... SHA-3 ... Cipher-based Message Authentication Code (CMAC) ... HMAC'."
+    },
+    {
+      "skill": "Public-key crypto (RSA, Diffie-Hellman, DSA/ECDSA, ECC), X.509 certificates, digital envelopes",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch2 Slides 24\u201329: 'RSA ... Diffie-Hellman key exchange ... Digital Signature Algorithm (DSA) ... Elliptic Curve Digital Signature Algorithm (ECDSA) ... X.509 standard ... Digital Envelopes'."
+    },
+    {
+      "skill": "Password hashing (UNIX crypt(3), MD5 crypt, Bcrypt) and salting",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch3 Slides 13\u201315: 'recommended hash function for many UNIX systems ... is based on the MD5 secure hash algorithm ... OpenBSD uses Blowfish block cipher based hash algorithm called Bcrypt ... 128-bit salt to create 192-bit hash value'."
+    },
+    {
+      "skill": "Password attacks: dictionary, rainbow tables, John the Ripper",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch3 Slide 16: 'Rainbow table attacks ... John the Ripper, an open-source password cracker first developed in 1996'."
+    },
+    {
+      "skill": "Multifactor authentication, TOTP, FIDO2/WebAuthn, hardware tokens, smart cards, eID",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch3 Slides 7, 34\u201337, 22\u201332: 'Multifactor authentication (MFA) ... Time-based one-time password (TOTP) uses HMAC with a hash function ... RFC 6238 ... FIDO2 ... WebAuthn ... Client to Authenticator Protocol 2 (CTAP2) ... Smart Cards ... Electronic Identity Cards (eID)'."
+    },
+    {
+      "skill": "NIST SP 800-63-3 identity model (CSP, claimant, verifier, relying party; IAL/AAL)",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch3 Slides 5, 8\u201310: 'an applicant applies to a registration authority (RA) to become a subscriber of a credential service provider (CSP) ... verifier ... relying party (RP) ... three separate levels for each of Identity Assurance Level (IAL) and Authenticator Assurance Level (AAL)'."
+    },
+    {
+      "skill": "Biometric authentication and challenge-response remote auth",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch3 Slides 40\u201347: 'Biometric Authentication ... fingerprint ... iris ... operating characteristic curves ... Basic Challenge-Response Protocols for Remote User Authentication'."
+    },
+    {
+      "skill": "File-integrity monitoring with Tripwire",
+      "courses": [
+        "Computer and Data Security"
+      ],
+      "evidence": "Ch8 Slide 28: 'Tripwire is a well-known system using this approach ... cryptographic checksum to check for any changes from the known good baseline'."
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "python",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_075",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_083",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "owasp top 10",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_083"
+      ]
+    },
+    {
+      "skill": "git",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_073",
+        "post_075",
+        "post_077",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_083",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "oauth",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_073",
+        "post_075",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_083",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "tls",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_080",
+        "post_082",
+        "post_083",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "secrets management",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "sast",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_075",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_081"
+      ]
+    },
+    {
+      "skill": "threat modeling",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_074",
+        "post_075",
+        "post_077",
+        "post_079",
+        "post_080",
+        "post_082",
+        "post_083"
+      ]
+    },
+    {
+      "skill": "aws iam",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_074",
+        "post_075",
+        "post_076",
+        "post_078",
+        "post_081",
+        "post_082",
+        "post_083"
+      ]
+    },
+    {
+      "skill": "siem",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_075",
+        "post_078",
+        "post_081",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_077",
+        "post_079",
+        "post_080",
+        "post_081"
+      ]
+    },
+    {
+      "skill": "zero trust",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_073",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082"
+      ]
+    },
+    {
+      "skill": "oidc",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_073",
+        "post_075",
+        "post_078",
+        "post_080",
+        "post_082",
+        "post_083"
+      ]
+    },
+    {
+      "skill": "incident response",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_073",
+        "post_078",
+        "post_080",
+        "post_081",
+        "post_083",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "sso / saml",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_080",
+        "post_081",
+        "post_083"
+      ]
+    },
+    {
+      "skill": "burp suite",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_074",
+        "post_078",
+        "post_080",
+        "post_082",
+        "post_083",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "vault",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_080",
+        "post_082",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "snyk",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_073",
+        "post_075",
+        "post_078",
+        "post_082",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "dast",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_075",
+        "post_078",
+        "post_083"
+      ]
+    },
+    {
+      "skill": "dependabot",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_073",
+        "post_079",
+        "post_080",
+        "post_082",
+        "post_083"
+      ]
+    },
+    {
+      "skill": "pci-dss",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_074",
+        "post_078",
+        "post_080",
+        "post_081",
+        "post_083"
+      ]
+    },
+    {
+      "skill": "bcrypt",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_075",
+        "post_076",
+        "post_078",
+        "post_081",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "ci/cd",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_075",
+        "post_078",
+        "post_079",
+        "post_081",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "iso 27001",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_075",
+        "post_078",
+        "post_081",
+        "post_082",
+        "post_083"
+      ]
+    },
+    {
+      "skill": "argon2",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_075",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_079"
+      ]
+    },
+    {
+      "skill": "bash",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_075",
+        "post_079",
+        "post_081",
+        "post_082",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "soc2 compliance",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_073",
+        "post_075",
+        "post_078",
+        "post_084"
+      ]
+    },
+    {
+      "skill": "go",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_073",
+        "post_076",
+        "post_077",
+        "post_078"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "OWASP Top 10 web-application risks (enumerate-and-map)",
+      "market_frequency_pct": 0.83,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_083"
+      ],
+      "rationale": "The course names OWASP twice but never enumerates the list. Ch4 Slide 1 (speaker notes) cites 'The Open Web Application Security Project's 2021 report [OWAS21] on the 10 most critical Web application security risks listed broken access control in first place,' and Ch2 Slide 1 cites the same report listing 'cryptographic failures ... as the second highest risk.' Two of the ten categories are already implicitly framed by the existing access-control and cryptography units. Conceptual extension: dedicate one slide that enumerates the 2021 OWASP Top 10 categories and maps each back to a unit already in the course (A01 Broken Access Control \u2192 Ch4; A02 Cryptographic Failures \u2192 Ch2; A07 Identification & Authentication Failures \u2192 Ch3; A09 Logging & Monitoring Failures \u2192 Ch18; etc.). This stays at the principles/mechanism level required by the depth bound and turns two passing references into an organising framework. 10 of 12 security postings explicitly demand it.",
+      "severity": "critical"
+    },
+    {
+      "skill": "TLS handshake, certificate validation, and modern transport security configuration",
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_080",
+        "post_082",
+        "post_083",
+        "post_084"
+      ],
+      "rationale": "TLS is named only once in the course \u2014 Ch2 Slide 28 lists 'X.509 certificates are used in most network security applications, including IP Security (IPsec), Transport Layer Security (TLS), Secure Shell (SSH), and Secure/Multipurpose Internet Mail Extension (S/MIME).' The course already teaches the underlying primitives (X.509, RSA/ECC, AES, HMAC, digital signatures, certificate authorities). Conceptual extension: add 1\u20132 slides explaining the TLS handshake as an application of those primitives \u2014 server-cert validation chain, ephemeral key agreement (Diffie-Hellman), AEAD record-layer encryption \u2014 plus one slide on common deployment failures (expired certs, weak ciphers, downgrade) and the role of mTLS in zero-trust architectures. No protocol implementation work is needed; this stays at the mechanism level. 9 of 12 security postings demand TLS competence.",
+      "severity": "critical"
+    },
+    {
+      "skill": "OAuth 2.0 / OpenID Connect federated identity flows",
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_073",
+        "post_075",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_083",
+        "post_084"
+      ],
+      "rationale": "The course already teaches the conceptual framework that OAuth/OIDC implements but never names the protocols. Ch3 Slide 5 introduces the NIST SP 800-63-3 model with 'Registration authority (RA), Credential service provider (CSP) ... Relying party (RP) ... Verifier ... Authenticated assertion between RP and verifier' \u2014 these are exactly the OAuth/OIDC roles (Authorization Server, Resource Server, Relying Party). Ch3 Slide 32 then walks through a concrete redirect-based authentication flow for the German eID. Conceptual extension: present OAuth 2.0 (authorization-code + PKCE) and OIDC ID tokens as the dominant web realisation of the NIST 800-63-3 federation roles already taught \u2014 at the mechanism/sequence-diagram level used elsewhere in the chapter. 9 of 12 security postings explicitly require OAuth.",
+      "severity": "critical"
+    },
+    {
+      "skill": "SAML / SSO federation patterns",
+      "market_frequency_pct": 0.5,
+      "posting_refs": [
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_080",
+        "post_081",
+        "post_083"
+      ],
+      "rationale": "Same partial-coverage anchor as OAuth/OIDC \u2014 Ch3 Slide 5's NIST 800-63-3 'Identity proofing ... assertion about the identity of the subscriber to the relying party' is the SAML assertion model in textbook form. Ch3 Slide 36 already discusses 'WebAuthn ... user agent, such as a web browser ... as an intermediary between the authenticator and the authenticating service' \u2014 the same broker pattern SAML uses. Conceptual extension: add one slide presenting SAML SP-initiated SSO as an XML-based realisation of the same RP/IdP/verifier triad, contrasted against OIDC for protocol selection. Stays at the protocol-flow level the course already uses. 6 of 12 security postings demand it.",
+      "severity": "high"
+    },
+    {
+      "skill": "Threat modeling methodologies (STRIDE, systematic attack-tree analysis)",
+      "market_frequency_pct": 0.58,
+      "posting_refs": [
+        "post_074",
+        "post_075",
+        "post_077",
+        "post_079",
+        "post_080",
+        "post_082",
+        "post_083"
+      ],
+      "rationale": "The course teaches the raw materials of threat modeling but never names the methodology. Ch1 Slide 22 already presents 'An Attack Tree for Internet Banking Authentication' with an explicit hierarchical breakdown (User credential compromise \u2192 Malicious software installation \u2192 Vulnerability exploit, etc.), and Ch14 Slide 23 'Threat Sources' frames threats by 'Motivation / Capability / Resources / Probability of attack / Deterrence' and cites NIST SP 800-30 threat-source taxonomy. Conceptual extension: introduce STRIDE (Spoofing/Tampering/Repudiation/Information disclosure/DoS/Elevation of privilege) as a structured threat-elicitation taxonomy that complements the attack tree already taught, and walk through one worked example using the Ch14 Silver Star Mines case study. No tool-specific lab work needed. 7 of 12 security postings demand it; this is one of the most universally listed core skills for security engineers.",
+      "severity": "critical"
+    },
+    {
+      "skill": "Zero-trust architecture (perimeter-less access, continuous verification)",
+      "market_frequency_pct": 0.5,
+      "posting_refs": [
+        "post_073",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082"
+      ],
+      "rationale": "The course already teaches the principles that zero trust operationalises but stops at the classical perimeter-defence model. Ch9 Slide 8 explicitly states firewalls' limits \u2014 'cannot protect against attacks bypassing firewall ... may not protect fully against internal threats ... laptop ... may be infected outside the corporate network and then used internally' \u2014 and Ch9 Slide 30 notes 'enterprise endpoint, including desktop and laptop systems, as the main target.' Ch1 Slide 17 already teaches 'Complete mediation: Every access must be checked against the access control mechanism' and 'Least privilege.' Conceptual extension: present zero-trust architecture as the architectural realisation of complete mediation + least privilege in a perimeter-less / cloud era \u2014 every request authenticated, authorised, and encrypted regardless of network location. Builds directly on slides already in the course; no specific vendor framework needed. 6 of 12 security postings list it.",
+      "severity": "high"
+    },
+    {
+      "skill": "Secrets management as a discipline (centralised vaults, rotation, scoping)",
+      "market_frequency_pct": 0.67,
+      "posting_refs": [
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_084"
+      ],
+      "rationale": "The course teaches cryptographic key management but stops short of operational secrets management. Ch15 Slide 19 (NIST SP 800-53 family 'System and Communications Protection') explicitly lists 'Cryptographic Key Establishment and Management' as a control family, Ch2 Slide 33 discusses 'effective encryption key management scheme' for data at rest, and Ch3 covers shadow password files (separating credentials from application code). Conceptual extension: extend the existing key-management slides by introducing the modern operational pattern \u2014 central secrets store, short-lived credentials, automated rotation, machine identity \u2014 as the contemporary realisation of the NIST 800-53 key-management control. Stays at the mechanism level (no Vault / AWS-KMS lab walkthrough needed). 8 of 12 security postings demand it.",
+      "severity": "high"
+    },
+    {
+      "skill": "Argon2 password hashing (modern PHC-winner alongside bcrypt)",
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_075",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_079"
+      ],
+      "rationale": "The course already teaches the password-hash progression but stops in 1999. Ch3 Slide 15 explicitly enumerates 'crypt(3) ... MD5 ... OpenBSD uses Blowfish block cipher based hash algorithm called Bcrypt ... Bcrypt also includes a cost variable; an increase in the cost variable causes a corresponding increase in the time required.' Conceptual extension: extend that same slide to include Argon2 (Password Hashing Competition winner, 2015) as the current OWASP-recommended algorithm, with a one-sentence note on its memory-hard parameters (m, t, p) and why memory-hardness defeats GPU/ASIC attacks of the kind already discussed on Slide 17 ('AMD Radeon HD7970 GPU ... 8.2 \u00d7 10\u2079 password combinations each second'). Pure conceptual extension of an existing slide. 5 of 12 security postings demand Argon2 specifically.",
+      "severity": "medium"
+    },
+    {
+      "skill": "PCI-DSS / SOC 2 commercial compliance regimes",
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_074",
+        "post_078",
+        "post_080",
+        "post_081",
+        "post_083"
+      ],
+      "rationale": "The course teaches the government / international standards landscape extensively but does not extend it to the commercial compliance regimes security engineers most often encounter. Ch14 Slides 3\u20134 catalogue the 'ISO/IEC 27000 Series of Standards on IT Security Techniques,' Ch15 Slides 11\u201320 walk through 'NIST SP 800-53 Security Controls,' and Ch18 Slide 28 'Security Compliance' already frames audit as 'a process to review the organization's security processes ... verify compliance with the security plan ... use checklists.' Conceptual extension: add one slide to the standards survey naming PCI-DSS (cardholder-data scope) and SOC 2 (trust-services criteria) as the dominant commercial regimes that map onto the same NIST/ISO control families already taught \u2014 including which existing 800-53 control families satisfy the most common SOC 2 / PCI requirements. Stays at the standards-and-mappings level the course already operates at. PCI-DSS appears in 5/12 and SOC 2 in 4/12 postings.",
+      "severity": "medium"
+    }
+  ],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 30,
+    "skills_market_demands": 28,
+    "gap_count": 9,
+    "headline": "A solid 2010-era defensive-security syllabus (NIST/ISO standards, RBAC/ABAC, DES/AES/RSA, IDS/IPS, syslog/SIEM) that prepares the student to think like a security analyst \u2014 but leaves the modern security engineer's day-to-day vocabulary (OWASP Top 10, TLS, OAuth/OIDC/SAML, threat modeling, zero trust, secrets management, Argon2, PCI/SOC2) as named-but-not-taught."
+  }
+}

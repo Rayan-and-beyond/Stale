@@ -1,0 +1,104 @@
+{
+  "target_role": "backend",
+  "prescriptions": [
+    {
+      "rank": 1,
+      "topic": "Re-point the JDBC labs from Apache Derby to PostgreSQL, with credentials read from environment variables and PreparedStatement used from the first user-input query",
+      "skill_keywords": [
+        "postgresql",
+        "jdbc",
+        "postgresql jdbc driver",
+        "preparedstatement",
+        "environment-variable credentials"
+      ],
+      "market_frequency_pct": 0.917,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_012"
+      ],
+      "fits_in_course": "Week 8 - Accessing DB Part 2",
+      "fits_in_course_rationale": "Week 8 is where the course first turns the JDBC API into a runnable lab (DATABASE_URL, Connection, Statement, ResultSet). Fig. 24.24 on Week 8 Page 34 already lists 'PostgreSQL  jdbc:postgresql://hostname:portNumber/databaseName' alongside the Derby URL \u2014 the partial-coverage anchor is explicit. The extension is to pivot every concrete code sample from 'jdbc:derby://localhost:1527/books' to a PostgreSQL URL using the same Connection/Statement/PreparedStatement surface. Two Auditor-flagged patterns sit in this same unit and must be replaced, not extended: (a) the hardcoded 'private static final String PASSWORD = \"deitel\";' on Week 9 pages 6 and 24 must be replaced with credentials read from environment variables (or a properties file outside source control) on the very first PostgreSQL example, per the Auditor's suggested_replacement; (b) the string-concatenated 'SELECT * FROM AUTHORS WHERE FIRSTNAME LIKE ...' on Week 8 page 9 must be replaced with a PreparedStatement using '?' placeholders and setString \u2014 not deferred to Week 9. Week 7 Page 11's dead 'Java DB Developer's Guide' link should also be dropped in favor of the PostgreSQL JDBC driver docs.",
+      "prerequisite_chain": [
+        {
+          "skill": "JDBC API surface (DriverManager, Connection, Statement, ResultSet)",
+          "already_taught_in": "Week 7 - Accessing DB Part 1"
+        },
+        {
+          "skill": "SQL SELECT/WHERE/ORDER BY/INNER JOIN/INSERT/UPDATE/DELETE",
+          "already_taught_in": "Week 7 - Accessing DB Part 1"
+        },
+        {
+          "skill": "PreparedStatement parameter binding (used here from day one, not deferred)",
+          "already_taught_in": "Week 9 - Accessing DB Part 3"
+        },
+        {
+          "skill": "JDBC transaction processing (setAutoCommit/commit/rollback)",
+          "already_taught_in": "Week 9 - Accessing DB Part 3"
+        },
+        {
+          "skill": "Reading credentials from environment variables / external config",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 6,
+      "headline_one_liner": "Swap the Derby labs for PostgreSQL using the same JDBC API the course already teaches \u2014 and bake in env-var credentials and PreparedStatement from the first query, not bolted on later."
+    },
+    {
+      "rank": 2,
+      "topic": "Lift the existing Java 'assert' / Section 11.11 Assertions material into a JUnit 5 @Test introduction (assertEquals, assertThrows) applied to the course's existing Account/Employee classes",
+      "skill_keywords": [
+        "junit",
+        "junit 5",
+        "@test",
+        "assertequals",
+        "assertthrows",
+        "unit testing"
+      ],
+      "market_frequency_pct": 0.833,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ],
+      "fits_in_course": "Week 2+3 - Exception Handling",
+      "fits_in_course_rationale": "Section 11.11 of Week 2+3 (Pages 86\u201390) already teaches the language-level 'assert' statement with the explicit pedagogical framing that 'Assertions help ensure a program's validity by catching potential bugs and identifying possible logic errors during development' and shows AssertTest.java run via 'java -ea'. That is the same intent as a unit test, just stuck at the keyword-and-VM-flag level. The natural extension \u2014 well within standard-library/applied-API depth \u2014 is to introduce a single JUnit 5 test class with @Test methods that call assertEquals on, e.g., the deposit/withdraw behaviour of the Account class and assertThrows on the user-defined exceptions the course already builds. This stays inside the course's hands-on standard-library scope (JUnit ships as a single jar on the classpath) and does not push into Maven/Gradle/CI build tooling, which the depth bound excludes. The Auditor-flagged items in this unit (Web Start screenshot on page 91, the Applet getImage Javadoc example on page 79, the finalize() row on page 57) are not used as prerequisites here and are not extended by this prescription.",
+      "prerequisite_chain": [
+        {
+          "skill": "Java OOP (classes, methods, constructors)",
+          "already_taught_in": "Week 1 - Revision"
+        },
+        {
+          "skill": "Exception handling and user-defined exceptions (for assertThrows examples)",
+          "already_taught_in": "Week 2+3 - Exception Handling"
+        },
+        {
+          "skill": "Java built-in 'assert' statement (the partial-coverage anchor being lifted)",
+          "already_taught_in": "Week 2+3 - Exception Handling"
+        }
+      ],
+      "estimated_learning_hours": 6,
+      "headline_one_liner": "Promote the existing 'assert' lecture into a one-class JUnit @Test walkthrough on the Account/Employee classes the course already builds \u2014 same intent, the form the market actually writes."
+    }
+  ],
+  "summary": {
+    "total_prescriptions": 2,
+    "top_3_headline": "Only two prescriptions survive the depth bound and the partial-coverage rule: (1) re-pointing the JDBC labs from Apache Derby to PostgreSQL with env-var credentials and PreparedStatement-from-day-one (0.917 of postings), and (2) lifting the existing Java 'assert' section into a JUnit @Test introduction (0.833 of postings). Together they touch the two highest-frequency demands the course has any partial-coverage anchor for.",
+    "coverage_note": "Honestly: these two prescriptions close roughly two of the top backend demands and bring the course's existing JDBC and assertion material in line with the form the market actually uses, but they do not close the bulk of the backend hiring gap. The other high-frequency demands surfaced by Market-fit (Docker 0.917, REST API 0.917, AWS 0.833, Linux 0.75, Git 0.75, CI/CD 0.667, microservices 0.667, OAuth 0.583, Redis 0.583, Kubernetes 0.583, Kafka 0.5, GraphQL 0.5, JWT 0.5) have no partial-coverage anchor in this Java desktop-applications course and are therefore out of scope for it \u2014 they belong in a different course, not as prescriptions here."
+  }
+}

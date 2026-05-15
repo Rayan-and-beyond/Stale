@@ -1,0 +1,463 @@
+{
+  "target_role": "backend",
+  "taught_skillset": [
+    {
+      "skill": "Java OOP fundamentals (classes, inheritance, polymorphism, encapsulation)",
+      "courses": [
+        "Week 1 - Revision"
+      ],
+      "evidence": "LECTURE OUTLINE: Classes, methods; Inheritance; Polymorphism; Overloading methods; Overriding methods (Week 1, Page 1)"
+    },
+    {
+      "skill": "Java exception handling (try/catch/finally, multi-catch, throw, custom exceptions, Throwable hierarchy)",
+      "courses": [
+        "Week 2+3 - Exception Handling"
+      ],
+      "evidence": "'Use try blocks to delimit code in which exceptions might occur. Use throw to indicate a problem. Use catch blocks to specify exception handlers. Use the finally block to release resources. Understand the exception class hierarchy. Create user-defined exceptions.' (Week 2+3, Page 2)"
+    },
+    {
+      "skill": "Java built-in assert statement for runtime validation",
+      "courses": [
+        "Week 2+3 - Exception Handling"
+      ],
+      "evidence": "'Java includes two versions of the assert statement for validating assertions programatically... Assertions help ensure a program's validity by catching potential bugs and identifying possible logic errors during development.' (Week 2+3, Section 11.11 Assertions, Pages 86-90)"
+    },
+    {
+      "skill": "Java Swing GUI components (JFrame, JOptionPane, JLabel, JButton, JTextField, JComboBox, JList, JPanel)",
+      "courses": [
+        "Week 4 - GUI Components Part 1",
+        "Week 5 - GUI Components Part 2",
+        "Week 6 - GUI Components Part 3"
+      ],
+      "evidence": "'Swing GUI components located in package javax.swing... Fig. 12.4 | Some basic Swing GUI components: JLabel, JTextField, JButton, JCheckBox, JComboBox, JList, JPanel.' (Week 4, Pages 17-18)"
+    },
+    {
+      "skill": "Swing event handling (ActionListener, ActionEvent, WindowAdapter)",
+      "courses": [
+        "Week 4 - GUI Components Part 1",
+        "Week 8 - Accessing DB Part 2"
+      ],
+      "evidence": "'submitButton.addActionListener( new ActionListener() { public void actionPerformed(ActionEvent event) { ... } });' (Week 8, Page 7)"
+    },
+    {
+      "skill": "Java NIO file/directory API (Path, Paths, Files, DirectoryStream)",
+      "courses": [
+        "Week 10 - Files Streams and Object Serialization Part 1"
+      ],
+      "evidence": "'Interfaces Path and DirectoryStream and classes Paths and Files (all from package java.nio.file) are useful for retrieving information about files and directories on disk.' (Week 10, Page 9)"
+    },
+    {
+      "skill": "Sequential text-file I/O via Formatter and Scanner",
+      "courses": [
+        "Week 10 - Files Streams and Object Serialization Part 1"
+      ],
+      "evidence": "'Character-based input and output can be performed with classes Scanner and Formatter.' (Week 10, Page 8)"
+    },
+    {
+      "skill": "Java object serialization (Serializable, ObjectOutputStream, ObjectInputStream, transient)",
+      "courses": [
+        "Week 11 - Files Streams and Object Serialization Part 2"
+      ],
+      "evidence": "'Classes ObjectInputStream and ObjectOutputStream (package java.io)... enable entire objects to be read from or written to a stream... A class that implements Serializable is tagged as being a Serializable object.' (Week 11, Pages 4-6)"
+    },
+    {
+      "skill": "Java multithreading (Thread class, Runnable interface, thread life cycle, synchronized keyword, wait/notify)",
+      "courses": [
+        "Week 12 - Concurrency"
+      ],
+      "evidence": "'Understand concurrency, parallelism and multithreading. Learn the thread life cycle. Use ExecutorService to launch concurrent threads that execute Runnables.' (Week 12, Page 2)"
+    },
+    {
+      "skill": "java.util.concurrent ExecutorService / Executors framework",
+      "courses": [
+        "Week 12 - Concurrency"
+      ],
+      "evidence": "'// Fig. 23.4: TaskExecutor.java // Using an ExecutorService to execute Runnables. import java.util.concurrent.Executors; import java.util.concurrent.ExecutorService;' (Week 12, Pages 38-40)"
+    },
+    {
+      "skill": "JDBC API (DriverManager, Connection, Statement, ResultSet, PreparedStatement, RowSet)",
+      "courses": [
+        "Week 7 - Accessing DB Part 1",
+        "Week 8 - Accessing DB Part 2",
+        "Week 9 - Accessing DB Part 3"
+      ],
+      "evidence": "'Java programs interact with databases using the Java Database Connectivity (JDBC\u2122) API.' (Week 7, Page 5)"
+    },
+    {
+      "skill": "SQL (SELECT, WHERE, ORDER BY, INNER JOIN, INSERT, UPDATE, DELETE)",
+      "courses": [
+        "Week 7 - Accessing DB Part 1"
+      ],
+      "evidence": "'Fig. 24.10 | SQL query keywords. SELECT / FROM / WHERE / GROUP BY / ORDER BY / INNER JOIN / INSERT / UPDATE / DELETE.' (Week 7, Page 13)"
+    },
+    {
+      "skill": "Apache Derby / Java DB as the JDBC target database",
+      "courses": [
+        "Week 7 - Accessing DB Part 1",
+        "Week 8 - Accessing DB Part 2",
+        "Week 9 - Accessing DB Part 3"
+      ],
+      "evidence": "'private static final String DATABASE_URL = \"jdbc:derby://localhost:1527/books\";' (Week 8, Page 5) and 'The subprotocol derby indicates that the program uses a Java DB/Apache Derby-specific subprotocol' (Week 8, Pages 33-34)"
+    },
+    {
+      "skill": "PreparedStatement parameter binding for SQL injection prevention",
+      "courses": [
+        "Week 9 - Accessing DB Part 3"
+      ],
+      "evidence": "'Error-Prevention Tip 24.3 PreparedStatements help prevent SQL injection attacks, which typically occur in SQL statements that include user input improperly.' (Week 9, Page 16)"
+    },
+    {
+      "skill": "JDBC transaction processing (setAutoCommit, commit, rollback)",
+      "courses": [
+        "Week 9 - Accessing DB Part 3"
+      ],
+      "evidence": "'Connection method setAutoCommit specifies whether each SQL statement commits after it completes... If the argument to setAutoCommit is false, the program must end the transaction with a call to Connection method commit or Connection method rollback.' (Week 9, Section 24.10 Transaction Processing)"
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "sql",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "docker",
+      "frequency_pct": 0.917,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "postgres",
+      "frequency_pct": 0.917,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "rest api",
+      "frequency_pct": 0.917,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "aws",
+      "frequency_pct": 0.833,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "unit testing",
+      "frequency_pct": 0.833,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "linux",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011"
+      ]
+    },
+    {
+      "skill": "git",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "ci/cd",
+      "frequency_pct": 0.667,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_008",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "microservices",
+      "frequency_pct": 0.667,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011"
+      ]
+    },
+    {
+      "skill": "python",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "oauth",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_005",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "redis",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_009",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "kafka",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_001",
+        "post_004",
+        "post_007",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "graphql",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_008",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "jwt",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_003",
+        "post_004",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "nginx",
+      "frequency_pct": 0.417,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_001",
+        "post_004",
+        "post_005",
+        "post_008",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "prometheus",
+      "frequency_pct": 0.333,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_007",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "go",
+      "frequency_pct": 0.333,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_005",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "PostgreSQL as the JDBC target database (vs. Apache Derby / Java DB)",
+      "market_frequency_pct": 0.917,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_012"
+      ],
+      "rationale": "The JDBC unit teaches database connectivity but pins every concrete example to Apache Derby. PostgreSQL is named only twice \u2014 once in the RDBMS list ('PostgreSQL' alongside Oracle/MySQL/DB2 on Week 7 Page 4) and once as a URL-format row ('PostgreSQL  jdbc:postgresql://hostname:portNumber/databaseName' in Fig. 24.24, Week 8 Page 34). Every code sample uses 'jdbc:derby://localhost:1527/books' (Week 8 Page 5) and 'jdbc:derby:books' (Week 9 Page 6). Extending the existing JDBC labs to point at a Postgres instance \u2014 same Connection/Statement/PreparedStatement API the course already teaches, just a different driver/URL \u2014 would close the gap while staying inside the standard-library JDBC depth bound. The course already lists Postgres in the URL table, so the partial-coverage anchor is explicit.",
+      "severity": "critical"
+    },
+    {
+      "skill": "Unit testing with JUnit (@Test, assertEquals)",
+      "market_frequency_pct": 0.833,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ],
+      "rationale": "Section 11.11 of Week 2+3 already teaches Java's built-in 'assert' statement: 'Assertions help ensure a program's validity by catching potential bugs and identifying possible logic errors during development' and shows AssertTest.java with 'assert (number >= 0 && number <= 10) : \"bad number: \" + number;' (Week 2+3 Pages 86-90). The intent \u2014 programmatically validating expected behaviour during development \u2014 is the same intent as a unit test. The course presently stops at the language-level assert keyword run via 'java -ea'. Extending this section to introduce a JUnit @Test method with assertEquals/assertThrows applied to the existing Employee/Account classes the course already builds would lift the existing assertions material to the standard form the market expects, without crossing into build/deployment tooling. Anchor slide for partial coverage: 'I 1.11 Assertions' (Week 2+3 Page 3) and 'Assertions help ensure a program's validity by catching potential bugs and identifying possible logic errors during development' (Week 2+3 Page 86).",
+      "severity": "high"
+    }
+  ],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 15,
+    "skills_market_demands": 20,
+    "gap_count": 2,
+    "headline": "This is a Java desktop-applications course (Swing GUI + Apache Derby JDBC + object serialization) whose domain barely overlaps backend hiring \u2014 within its own depth bound the only defensible extensions are swapping the JDBC labs from Derby to PostgreSQL and lifting the existing assert-statement section into a JUnit @Test introduction; the rest of the modern backend stack (Docker, AWS, REST/HTTP, microservices, Kubernetes, Redis, Kafka, OAuth/JWT) has zero partial coverage to extend and is therefore out of scope for this course."
+  }
+}

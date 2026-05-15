@@ -1,0 +1,30 @@
+{
+  "subject_area": "Algorithm analysis and design \u2014 classical CS theory",
+  "pedagogical_level": "undergraduate fundamentals course",
+  "course_intent": "Teach students how to design, analyze, and reason about the correctness and asymptotic efficiency of classical algorithms \u2014 students should leave able to apply standard algorithmic paradigms (divide-and-conquer, dynamic programming, greedy), analyze running time using recurrences and asymptotic notation, and understand foundational data-structure and graph algorithms.",
+  "depth_bound": "Recommendations stay at the level of classical algorithmic paradigms, asymptotic analysis, and pseudocode-level algorithm design. Implementation tutorials in specific languages, advanced topics like randomized/approximation algorithms, parallel/distributed algorithms, and competitive-programming-style problem sets are beyond this course's depth bound.",
+  "key_topics": [
+    "Asymptotic notation (\u0398, O, \u03a9, o, \u03c9) and growth-rate analysis",
+    "Recurrence-solving methods (iteration, substitution, recursion tree, master theorem)",
+    "Divide-and-conquer (merge sort, binary search, Strassen's matrix multiplication)",
+    "Dynamic programming (rod cutting, longest common subsequence, memoization vs tabulation)",
+    "Red-black trees (rotations, insertion/deletion fix-up)",
+    "Elementary graph representations (adjacency list vs matrix) and graph traversal",
+    "Correctness proofs via loop invariants and mathematical induction",
+    "Comparison-based sorting algorithms and their analysis"
+  ],
+  "one_liner": "Classical undergraduate algorithms course covering asymptotic analysis, recurrences, divide-and-conquer, dynamic programming, balanced BSTs, and elementary graph algorithms at the pseudocode/analysis level \u2014 does NOT cover language-specific implementation, randomized/approximation algorithms, or advanced topics like network flow, NP-completeness depth, or parallel algorithms.",
+  "relevant_roles": [
+    "backend",
+    "ml_data",
+    "fullstack"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 86505,
+    "cache_creation_input_tokens": 4684,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 736
+  }
+}

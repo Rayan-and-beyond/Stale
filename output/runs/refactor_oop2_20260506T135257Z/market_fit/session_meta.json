@@ -1,0 +1,15 @@
+{
+  "run_id": "20260506T191315Z",
+  "role": "backend",
+  "courses": {
+    "Object Oriented Programming 2": {
+      "filename": "object_oriented_programming_2.txt",
+      "mount_path": "/workspace/curriculum/object_oriented_programming_2.txt"
+    }
+  },
+  "postings": {
+    "filename": "job_postings.json",
+    "mount_path": "/workspace/data/job_postings.json"
+  },
+  "started_at": "2026-05-06T19:16:51.441675+00:00"
+}

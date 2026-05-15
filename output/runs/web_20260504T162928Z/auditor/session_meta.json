@@ -1,0 +1,10 @@
+{
+  "run_id": "20260504T162928Z",
+  "courses": {
+    "Software Engineering": {
+      "filename": "software_engineering.txt",
+      "mount_path": "/workspace/curriculum/software_engineering.txt"
+    }
+  },
+  "started_at": "2026-05-04T16:29:33.918491+00:00"
+}

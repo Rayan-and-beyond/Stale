@@ -1,0 +1,410 @@
+{
+  "candidates": [
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 10",
+      "snippet": "Java Standard Edition (Java SE) to develop client-side applications. The applications  can run standalone or as applets running from a Web browser.\nJava Enterprise Edition (Java EE) to develop server-side applications, such as Java servlets, JavaServer Pages (JSP), and JavaServer Faces (JSF).",
+      "from_ocr": false,
+      "pattern_kind": "dead_library",
+      "prima_facie_concern": "Lists Java applets running in a web browser as a current capability of Java SE. Java applets have been deprecated since JDK 9 and removed entirely from JDK 17. Also still uses 'Java EE' terminology \u2014 Java EE was renamed to Jakarta EE in 2018 when stewardship moved to the Eclipse Foundation.",
+      "context_before": "Slide 9 lists buzzword 'Features of Java' (Distributed, Multithreaded, Performance, Interpreted, Dynamic, Architecture Neutral, Simple, Secured, Platform Independent).",
+      "context_after": "Slide 11 lists JDK and IDEs (NetBeans, BlueJ); slide 12 shows compile/run flow.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 11",
+      "snippet": "Instead you can use integrated development environment (IDE)  such as: NetBeans, BlueJ,.. Editing, compiling, building, debugging, and online help are integrated in one graphical user interface.",
+      "from_ocr": false,
+      "pattern_kind": "obsolete_tool",
+      "prima_facie_concern": "Recommends only NetBeans and BlueJ as Java IDEs in a 2020s-style intro course while omitting IntelliJ IDEA, Eclipse, or VS Code, which are the dominant Java IDEs today; BlueJ in particular is a niche educational tool that has fallen out of mainstream use.",
+      "context_before": "Slide 10 introduces Java SE/EE/ME editions and applets.",
+      "context_after": "Slide 12 shows the compile/run flow with JAVAC.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 17",
+          "note": "Same NetBeans/BlueJ wording is repeated on the 'Objectives' slide for the Elementary Programming section."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 21",
+      "snippet": "Declaring Variables\nint x;\ndouble radius;\nchar a;\nAssignment Statements\nDeclare & Initialization\nX = 10;\nRadius = 3.49;\na = 'A';\nInt X = 10;\nDouble Radius = 3.49;\nChar a = 'A';",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "Java is case-sensitive. The slide declares lowercase variables (`int x`, `double radius`) but then assigns to capitalized identifiers (`X = 10`, `Radius = 3.49`) that were never declared. The 'Declare & Initialization' block uses capitalized type names (`Int X = 10;`, `Double Radius = 3.49;`, `Char a = 'A';`) which are not valid Java types and will not compile.",
+      "context_before": "Slide 20 introduces variables/identifiers.",
+      "context_after": "Slide 22 covers `final` named constants with the example `final double PI = 3.14159;`.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 63",
+      "snippet": "Java characters use Unicode, a 16-bit encoding scheme established by the Unicode Consortium to support the interchange, processing, and display of written texts in the world's diverse languages. Unicode takes two bytes, preceded by \\u, expressed in four hexadecimal numbers that run from '\\u0000' to '\\uFFFF'. So, Unicode can represent 65535 + 1 characters.",
+      "from_ocr": false,
+      "pattern_kind": "factual_error",
+      "prima_facie_concern": "Conflates Unicode with UTF-16 / Java's `char` type. Unicode itself is not a 16-bit encoding scheme \u2014 it defines code points up to U+10FFFF (\u22481.1 million), far more than 65,536. Java's `char` is a 16-bit UTF-16 code unit and characters outside the Basic Multilingual Plane require surrogate pairs. The claim 'Unicode can represent 65535 + 1 characters' has been factually wrong since Unicode 2.0 (1996).",
+      "context_before": "Slide 62 introduces the `char` data type with `\\u0041` etc.",
+      "context_after": "Slide 64 shows ASCII codes and escape sequences.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 03 - Java Basics - Part 2.pdf page 92",
+      "snippet": "int [][][] matrix = new int[3][3][3];  // it will define 3D array\ndouble [][][][] matrix = new int[4][4][4][4]; // it will define 4D array",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "The declared type is `double[][][][]` but the allocation is `new int[4][4][4][4]`. Element types do not match \u2014 Java will reject this with a compile error. Students copying the slide cannot run the example as written.",
+      "context_before": "Page 91 (Activity-19) demos a printArray over a 2D `int[][]` matrix using nested for-each loops.",
+      "context_after": "Page 93 explains how Java represents multi-dimensional arrays as arrays-of-references.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 04 - OOP Basics.pdf page 26",
+      "snippet": "java.util.Date date = new java.util.Date();\nSystem.out.println(date.toString());\nOutput:\nSun Mar 09 13:50:19 EST 2003.\n... +Date() Constructs a Date object for the current time.\n+Date(elapseTime: long) Constructs a Date object for a given time in milliseconds elapsed since January 1, 1970, GMT.",
+      "from_ocr": false,
+      "pattern_kind": "deprecated_api",
+      "prima_facie_concern": "Teaches `java.util.Date` as the way to represent dates and times. Most of `java.util.Date`'s API has been deprecated since JDK 1.1, and Java 8 (2014) introduced the modern `java.time` package (`Instant`, `LocalDate`, `ZonedDateTime`) which is now the recommended way. Students learning only `java.util.Date` learn an outdated API.",
+      "context_before": "Page 25 covers garbage collection.",
+      "context_after": "Page 27 introduces `java.util.Random` for random numbers.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 13",
+          "note": "Activity-01 uses `new Date()` together with `new GregorianCalendar()`."
+        },
+        {
+          "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 20",
+          "note": "Uses the deprecated three-int Date constructor `new java.util.Date(2013, 1, 1)`."
+        },
+        {
+          "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 21",
+          "note": "Shows `public class Date extends Object implements Comparable<Date>` template."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 04 - OOP Basics.pdf page 35",
+      "snippet": "public class Cat {\n    private int Age;\n    public int getAge() {\n        return this.Age;\n    }\n    public void set Age(int Age) {\n        this.Age = Age;\n    }\n}",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "The setter is written `public void set Age(int Age)` \u2014 a space appears between `set` and `Age`, which is a syntax error. Java method names cannot contain spaces. Also the field is `Age` with a capital A, which violates Java naming conventions taught earlier in the same course.",
+      "context_before": "Page 35 introduces accessor/mutator methods (getters/setters) using an `Employee` example.",
+      "context_after": "Page 36 shows a Circle class UML with private radius and accessor/mutator methods.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 04 - OOP Basics.pdf page 39",
+      "snippet": "class ObjectPass { \n  int a, b; \n  ObjectPassDemo(int i, int j) { \n    a = i; \n    b = j; \n  } \n  // return true if inObj is equal  \n  boolean equalTo(ObjectPass inObj) { \n    return (inObj.a == a && inObj.b == b); \n  } \n} \n// Driver class \npublic class Test { \n  public static void main(String args[]) { \n    ObjectPass ob1 = new ObjectPass (100, 22);",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "The class is named `ObjectPass` but the constructor is named `ObjectPassDemo`. In Java a constructor must have exactly the same name as the class, so this is a compile error: `ObjectPassDemo` is parsed as a method declaration with no return type, and the call `new ObjectPass(100, 22)` will not resolve to any constructor because none takes `(int, int)`.",
+      "context_before": "Page 38 shows `CircleWithPrivateDataFields` with proper constructors.",
+      "context_after": "Page 40 traces the same `ob1.equalTo(ob2)` calls visually.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 7",
+      "snippet": "public static final double KGPER_POUND = 0.45359237; \npublic static final double METERS_PER_INCH = 0.0254; \n...\npublic double getBMI() { \n  double bmi = weight * KG_PER_POUND / ((height * METERS_PER_INCH) * (height * METERS_PER_INCH)); \n  return Math.round(bmi * 100) / 100.0; \n}",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "The constant is *defined* as `KGPER_POUND` (no underscore between KG and PER) but is *used* as `KG_PER_POUND` (with underscore) inside `getBMI()`. Java is case- and underscore-sensitive, so the slide's example will not compile: 'cannot find symbol KG_PER_POUND'.",
+      "context_before": "Page 6 describes encapsulation with all-private fields.",
+      "context_after": "Page 8 introduces class relationships (Association/Aggregation/Composition) for the next lessons.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 10",
+      "snippet": "class Employee { \n    private String name; \n    Employee(String name) {this.name = name;}\n    public String getEmp(){return this.name;}\n} \nclass Association\n{ \n    public static void main (String[] args)\n    { \n        Bank bank = new Bank(\"Ali\"); \n        Employee emp = new Employee(\"Waleed\"); \n        System.out.println(emp.getEmployeeName() +\n            \" is employee of \" + bank.getBankName()); \n    } \n}",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "The `Employee` class defines a method named `getEmp()` (returning `this.name`), but the `main` method calls `emp.getEmployeeName()`. The method `getEmployeeName()` is never declared anywhere in the example, so this is a phantom method call and will produce a compile error 'cannot find symbol method getEmployeeName()'.",
+      "context_before": "Page 9 introduces Association as a relation between two classes.",
+      "context_after": "Page 11 introduces Aggregation and Composition.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 18",
+      "snippet": "java.lang.Integer \n-value: int \n+MAX_VALUE: int \n+MIN_VALUE: int \n+Integer(value: int) \n+Integer(s: String) \n+byteValue(): byte \n+shortValue(): short \n+intValue(): int \n+longVlaue(): long \n+floatValue(): float \n+doubleValue():double \n+compareTo(o: Integer): int  \n+toString(): String \n+valueOf(s: String): Integer \n+valueOf(s: String, radix: int): Integer \n+parseInt(s: String): int \n+parseInt(s: String, radix: int): int \njava.lang.Double \n... \n+valueOf(s: String): Double \n+valueOf(s: String, radix: int): Double \n+parseDouble(s: String): double \n+parseDouble(s: String, radix: int): double",
+      "from_ocr": false,
+      "pattern_kind": "factual_error",
+      "prima_facie_concern": "Two problems on the same UML slide. (1) Method label `+longVlaue(): long` is a typo of `longValue()` \u2014 the printed name does not exist on `Integer`/`Double`. (2) The `Double` UML lists phantom radix overloads `+valueOf(s: String, radix: int): Double` and `+parseDouble(s: String, radix: int): double`. The standard JDK has no such overloads; `Double.valueOf(String)` and `Double.parseDouble(String)` are single-argument only \u2014 radix only applies to `Integer`/`Long`/etc. for integer parsing.",
+      "context_before": "Page 17 introduces wrapper classes (boolean\u2192Boolean, char\u2192Character, \u2026).",
+      "context_after": "Page 19 shows `new Integer(1)` and autoboxing examples and references the constructors listed on page 18.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 23",
+          "note": "Same phantom signature reappears as concrete code: `Double.parseDouble(number, 23); // with default Base 23`."
+        },
+        {
+          "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 9",
+          "note": "Number-class UML in OCR'd image again shows `+longVlaue(): long`."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 19",
+      "snippet": "Integer Val1 = new Integer(1);\nInteger Val2 = Integer.valueOf(1);\nInteger Val3 = Integer.valueOf(\"10.3\");\nautoboxing\nint intVal1 = Val1;\nint intVal2 = Val2;\nint intVal3 = Val3;\nunboxing",
+      "from_ocr": false,
+      "pattern_kind": "deprecated_api",
+      "prima_facie_concern": "Two issues. (1) `new Integer(1)` \u2014 the `Integer(int)` constructor has been deprecated since JDK 9 in favor of `Integer.valueOf(int)`; preferred since boxing was added in Java 5. (2) `Integer.valueOf(\"10.3\")` does not return 10 \u2014 it throws `NumberFormatException` because '10.3' is not a valid integer literal. The slide presents this as a working autoboxing example.",
+      "context_before": "Page 18 shows the `Integer`/`Double` UML class diagrams (with `longVlaue` typo and phantom radix overloads).",
+      "context_after": "Page 20 covers MAX_VALUE/MIN_VALUE constants of wrapper classes.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 20",
+          "note": "Same `new Integer(...)` deprecated constructor reappears: `new Integer(3).compareTo(new Integer(5))`."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 22",
+      "snippet": "Integer Val2 = Integer.valueOf(1);\nInteger Val3 = Integer.valueOf(\"103\");\nDouble DVal1 = Double.ValueOf(34.5);\nDouble DVal2 = Double.ValueOf(\"10.3\");",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "`Double.ValueOf(...)` (capital V) is not a method on `java.lang.Double`. The correct name is `Double.valueOf(...)` (lowercase v). Java is case-sensitive \u2014 students typing this verbatim will get a compile error 'cannot find symbol method ValueOf'.",
+      "context_before": "Page 21 (Activity-03) lists `Byte.TYPE`, `Byte.SIZE`, `MIN_VALUE`/`MAX_VALUE` for the wrapper classes.",
+      "context_after": "Page 23 covers parsing strings into numbers, including the phantom `Double.parseDouble(number, 23)` call.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 23",
+      "snippet": "Integer.parseInt(number); // with default Base 10\nInteger.parseInt(number, 16); // with Base 16\nDouble.parseDouble(number); // with default Base 10\nDouble.parseDouble(number, 23); // with default Base 23",
+      "from_ocr": false,
+      "pattern_kind": "factual_error",
+      "prima_facie_concern": "`Double.parseDouble(String, int)` does not exist in the standard JDK \u2014 `Double.parseDouble` only accepts a single `String` argument. The slide explicitly tells students they can call it with a radix to parse base-23 floating-point numbers, which is wrong and will not compile.",
+      "context_before": "Page 22 shows wrapper-class `valueOf` examples (with the `Double.ValueOf` capital-V mistake).",
+      "context_after": "Page 24 (Activity-04) shows parsing '10A' with and without radix 16.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 18",
+          "note": "Same phantom `+parseDouble(s: String, radix: int): double` overload appears in the UML diagram for Double."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 26",
+      "snippet": "BigDecimal a = new BigDecimal(1.0);\nBigDecimal b = new BigDecimal(3);\nBigDecimal c = a.divide(b, 20, BigDecimal.ROUND_UP);\nSystem.out.println(c);",
+      "from_ocr": false,
+      "pattern_kind": "deprecated_api",
+      "prima_facie_concern": "Uses the integer rounding-mode constant `BigDecimal.ROUND_UP`. These integer rounding-mode constants on `BigDecimal` (`ROUND_UP`, `ROUND_HALF_EVEN`, etc.) have been deprecated since JDK 9 in favor of the `java.math.RoundingMode` enum (e.g., `RoundingMode.UP`). Also `new BigDecimal(1.0)` is itself problematic because it preserves the binary float's full inexact value \u2014 `BigDecimal.valueOf(1.0)` or the String constructor is recommended.",
+      "context_before": "Page 25 introduces `BigInteger` and `BigDecimal` for large numbers.",
+      "context_after": "Page 27 (Activity-05) computes a factorial with `BigInteger`.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 28",
+      "snippet": "Creating a String:\nString message = \"Welcome to Java\";\nString message = new String(\"Welcome to Java\");\nString s = new String();",
+      "from_ocr": false,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Teaches `new String(\"...\")` and `new String()` as standard ways to construct a String. This is widely considered an anti-pattern in modern Java because it bypasses the string-pool interning and creates needless duplicate objects; modern style guides and IDE inspections (IntelliJ, Sonar) flag `new String(literal)` as a code smell.",
+      "context_before": "Page 27 (Activity-05) ends the BigInteger factorial example.",
+      "context_after": "Page 29 (Activity-06) demonstrates string immutability with `String s = \"Java\"; s = \"HTML\";`.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 30",
+          "note": "`String s2 = new String(\"Welcome to Java\");` \u2014 used in the interning example, which is an OK *contrast*, but the same constructor recurs."
+        },
+        {
+          "slide_ref": "Lecture 07 - Polymorphism.pdf page 21",
+          "note": "`String s1 = new String(\"John\"); String s2 = new String(\"John\");` is reused for the equals() example."
+        }
+      ],
+      "intentional_contrast_signals": [
+        "On page 30 the example explicitly compares `new String(...)` against an interned literal to demonstrate the difference; that comparison is legitimately educational, but page 28 introduces `new String()` as a recommended construction style with no such caveat."
+      ]
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 07 - Polymorphism.pdf page 11",
+      "snippet": "class TestPolymorphism3{\npublic static void main(String[] args){\nAnimal a;\na.eat(); //output?\na=new Dog();\na.eat();\na=new Cat();\na.eat();\na=new Lion(); a.eat();\n}\n}",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "Local variable `Animal a;` is declared but never assigned before `a.eat();` is invoked. Java requires definite assignment of local variables before use; this is a compile error ('variable a might not have been initialized'), not a runtime NullPointerException as the slide's '//output?' comment seems to suggest.",
+      "context_before": "Page 10 demonstrates dynamic binding with a `m(Object x)` polymorphic method.",
+      "context_after": "Page 12 contrasts static vs. dynamic binding.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": [
+        "The slide is titled 'Activity-02' and asks 'Explain the Dynamic Binding'; the trailing `//output?` comment after `a.eat();` may be a deliberate trap question, but no answer/correction is shown on subsequent slides."
+      ]
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 07 - Polymorphism.pdf page 27",
+      "snippet": "String[] array = {\"red\", \"green\", \"blue\"};\nSystem.out.pritnln(java.util.Collections.max(new ArrayList<>(Arrays.asList(array)));\nSystem.out.pritnln(java.util.Collections.min(new ArrayList<>(Arrays.asList(array)));\nSystem.out.pritnln(java.util.Collections. shuffle(new ArrayList<>(Arrays.asList(array)));",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "Several compile errors in three lines. (1) `pritnln` is a typo for `println`. (2) Each line has unbalanced parentheses \u2014 `pritnln(...max(...asList(array)))` has 4 open parens and only 3 closes. (3) `Collections.shuffle(List)` returns `void`, so passing it to `System.out.println(...)` is a compile error ('void cannot be converted to ...'). Students cannot run the example as written.",
+      "context_before": "Page 26 shows a working ArrayList example with Game-of-Thrones character names.",
+      "context_after": "Page 28 (Activity-06) asks 'what is the wrong of the following' for an Object[]/int[] mismatch.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 9",
+      "snippet": "[OCR from page image]\n+byteValue(): byte\n+shortValue(): short\n+intValue(): int\n+longVlaue(): long\n+floatValue(): float\n+doubleValue(): double\n... Double Float Long Integer | Short | Byte BigInteger | BigDecimal |",
+      "from_ocr": true,
+      "pattern_kind": "factual_error",
+      "prima_facie_concern": "OCR'd UML diagram for the abstract `Number` class lists `+longVlaue(): long` as a method. That misspelling matches what is shown in plain (non-OCR) slide text on Lecture 05 page 18, suggesting the same typo exists on the underlying slide rather than being a pure OCR artifact. The standard `Number` class declares `longValue()` (correctly spelled), not `longVlaue()`.",
+      "context_before": "Page 8 covers abstract classes (concrete subclass restriction, `AnimalObj[] aObj = new AnimalObj[10]`).",
+      "context_after": "Page 10 introduces the abstract `Calendar` class and `GregorianCalendar` subclass.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 18",
+          "note": "Same `+longVlaue(): long` typo appears in the Integer/Double UML \u2014 this confirms the misspelling is on the slides, not just OCR noise."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 10",
+      "snippet": "Abstract Calendar Class and Its GregorianCalendar subclass\n+Calendar() ... +get(field: int): int ... +set(year: int, month: int, dayOfMonth: int): void ... +getActualMaximum(field: int): int ... +add(field: int, amount: int): void ... +getTime(): java.util.Date ... +setTime(date: java.util.Date): void ... +GregorianCalendar() ... +GregorianCalendar(year: int, month: int, dayOfMonth: int) ...",
+      "from_ocr": false,
+      "pattern_kind": "deprecated_api",
+      "prima_facie_concern": "Course teaches `java.util.Calendar` / `java.util.GregorianCalendar` as the standard date-and-time abstraction. Since Java 8 (2014), this API has been effectively superseded by the `java.time` package (`LocalDate`, `LocalDateTime`, `ZonedDateTime`, `Instant`). The legacy Calendar API is widely regarded as a 'do not use' API for new code (mutable, 0-based months, awkward field constants).",
+      "context_before": "Page 9 shows the abstract `Number` class hierarchy.",
+      "context_after": "Pages 11\u201313 expand on `GregorianCalendar` use, including `calendar.get(Calendar.MONTH)` and the 0-based month gotcha.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 11",
+          "note": "Discusses `java.util.GregorianCalendar` for the Gregorian calendar in Java API."
+        },
+        {
+          "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 12",
+          "note": "Lists Calendar field constants (YEAR, MONTH, DATE, HOUR, etc.)."
+        },
+        {
+          "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 13",
+          "note": "Activity-01 walks through `new GregorianCalendar()` and accessing its fields."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 13",
+      "snippet": "public class TestCalendar { \n    public static void main() { \n        // Construct a Gregorian calendar for the current date and time\n        Calendar calendar = new GregorianCalendar(); \n        System.out.println(\"Current time is \" + new Date()); \n        ...\n        // Construct a calendar for December 25, 1997\n        Calendar calendar1 = new GregorianCalendar(1997, 11, 25); \n        ...\n    }\n}",
+      "from_ocr": false,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "`public static void main()` is declared with no parameters. Java's program entry point requires `public static void main(String[] args)`; without the `String[] args` parameter the JVM will not recognize this as the main method and `java TestCalendar` will fail with 'main method not found'. The slide presents this as runnable code.",
+      "context_before": "Page 12 lists Calendar field constants.",
+      "context_after": "Page 14 introduces interfaces.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 06 - Inheritance.pdf page 16",
+          "note": "Activity-03 also has `class Test { public static void main() { Student s = new Student(); s.display(); } }` \u2014 same missing String[] args parameter."
+        },
+        {
+          "slide_ref": "Lecture 07 - Polymorphism.pdf page 30",
+          "note": "Activity-08 again has `public class Test { public static void main() { new A(); new B(); } }` with no String[] args."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 20",
+      "snippet": "System.out.println(new Integer(3).compareTo(new Integer(5)));   \nSystem.out.println(\"ABC\".compareTo(\"ABE\"));    \njava.util.Date date1 = new java.util.Date(2013, 1, 1);    \njava.util.Date date2 = new java.util.Date(2012, 1, 1);    \nSystem.out.println(date1.compareTo(date2));",
+      "from_ocr": false,
+      "pattern_kind": "deprecated_api",
+      "prima_facie_concern": "Two deprecated APIs side by side. (1) `new Integer(3)` and `new Integer(5)` \u2014 the `Integer(int)` constructor has been deprecated since JDK 9; `Integer.valueOf(3)` (or simple boxing) is preferred. (2) `new java.util.Date(int, int, int)` \u2014 this 3-int Date constructor has been deprecated since *JDK 1.1* (1997); the replacement is `Calendar`/`GregorianCalendar` and now the `java.time` package. Year semantics are also non-obvious (year is offset from 1900). Students will see deprecation warnings and learn an obsolete API.",
+      "context_before": "Page 19 (`The Comparable Interface`) shows the interface declaration `public interface Comparable<E> { public int compareTo(E o); }`.",
+      "context_after": "Page 21 shows `Integer`, `BigInteger`, `String`, and `Date` declared as `implements Comparable<...>` with `@Override compareTo`.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 19",
+          "note": "Same `new Integer(...)` constructor used in autoboxing examples."
+        },
+        {
+          "slide_ref": "Lecture 04 - OOP Basics.pdf page 26",
+          "note": "Date class introduced with `new java.util.Date()` (no-arg form)."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 06 - Inheritance.pdf page 8",
+      "snippet": "class Calculation {\n    int z;\n    public void addition(int x, int y) { z = x + y; \n        System.out.println(\"Addition: \"+z); }\n    public void Subtraction(int x, int y) { z = x - y;\n        System.out.println(\"Subtract: \"+z); } }\npublic class My_Calculation extends Calculation {\n    public void multiplication(int x, int y) { z = x * y;\n        System.out.println(\"Product: \"+z);\n    }\n    public static void main(String args[]) {\n        int a = 20, b = 10;\n        My_Calculation demo = new My_Calculation();\n        demo.addition(a, b);\n        demo.Subtraction(a, b);\n        demo.multiplication(a, b); } }",
+      "from_ocr": false,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Method names violate Java naming conventions in a way that looks like a compile error to learners and produces inconsistent style: `addition`, `Subtraction` (capital S), `multiplication`. The slide simultaneously teaches that 'Variables and method names: Use lowercase' (Lecture 02 slide 23-24), so the example contradicts the rule it taught earlier. Class name `My_Calculation` similarly violates the 'no underscores in class names' convention.",
+      "context_before": "Page 7 introduces inheritance terminology and types.",
+      "context_after": "Page 9 (Activity-01) reuses the same Calculation/My_Calculation example and asks the student to identify Sub/Super classes.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 06 - Inheritance.pdf page 9",
+          "note": "Same code with `public void Subtraction(int x, int y)` is repeated for Activity-01."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 25",
+      "snippet": "Create a Scanner object \nScanner input = new Scanner(System.in);\nUse the method nextDouble() to obtain a double value. For example,\nSystem.out.print(\"Enter a double value: \");\nScanner input = new Scanner(System.in);\ndouble d = input.nextDouble();",
+      "from_ocr": false,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Teaches `Scanner` from `System.in` as the canonical way to read user input but never closes the Scanner (no try-with-resources). For lab examples this is benign, but post-Java 7 the recommended idiom is `try (Scanner input = new Scanner(System.in)) { ... }`, and modern courses commonly note that creating multiple Scanners on `System.in` (as several activities in this course do) leaks resources.",
+      "context_before": "Slide 24 covers variable naming conventions.",
+      "context_after": "Slide 26 introduces `System.out.print` / `println`.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Lecture 03 - Java Basics - Part 2.pdf page 14",
+          "note": "`Scanner in = new Scanner(System.in);` reused in Activity-03 for sentinel-loop example, also never closed."
+        },
+        {
+          "slide_ref": "Lecture 03 - Java Basics - Part 2.pdf page 70",
+          "note": "`Scanner input = new Scanner(System.in);` inside `getData()` of an activity \u2014 Scanner created per call, never closed."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 41",
+      "snippet": "[OCR from picture]\nif (isRaining)\n{\n  if (temp > 45)\n    Inner iff cout << \"Wear light weight rain coat\" << endl;\n    ele | else\n      cout << \"Wear fleece and rain coat \" << endl;\n  }\nelse if (isSnowing)\n{\n  if (temp > 20)\n    Outer iff cout << \"Wear soft shell jacket\" << endl;\n  else if }\n  else if (temp > 0)\n    Inner iff | \u00a3\n    'else if cout << \"Wear down jacket\" << endl;\n  }\n  else\n  {\n    cout << \"Wear base layers and down jacket\" << endl;\n  }\n  37\nelse\n  cout << \"It is hard to come up with interesting examples\" << endl;",
+      "from_ocr": true,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "The slide is in a Java-only course but the example uses C++ syntax (`cout << ... << endl;`) instead of Java's `System.out.println(...)`. Students learning Java will not recognise nor be able to compile `cout`/`endl` in any Java file. The OCR is messy but the underlying `cout << ... << endl` is unambiguous.",
+      "context_before": "Slide 40 (Short Quiz - 02) shows nested-if pseudocode for a sales bonus calculation.",
+      "context_after": "Slide 42 (Short Quiz - 03) returns to Java with `int i = 1; int j = 2; int k = 3;`.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    }
+  ],
+  "summary": {
+    "total_candidates": 25,
+    "courses_scanned": [
+      "object_oriented_programming_1"
+    ]
+  }
+}

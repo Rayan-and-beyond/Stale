@@ -1,0 +1,27 @@
+{
+  "course": "Database Concepts and Design",
+  "course_dir_name": "Database Concepts and Design",
+  "files_saved": [
+    "Week 1 - Introduction to Database Concepts.pdf",
+    "Week 10 - Database Views and Authorization_.pdf",
+    "Week 11 - Relational Algebra.pdf",
+    "Week 12 - Normalization.pdf",
+    "Week 13 - File Organization.pdf",
+    "Week 14 - Physical Database Design Index_.pdf",
+    "Week 2 - Database System Concepts and Architecture.pdf",
+    "Week 3 - The Relational Data Model and Relational Database Constraints.pdf",
+    "Week 4 _ 5 - Data Modeling Using different types_.pdf",
+    "Week 6 - Enhanced Entity-Relationship _EER_ Model.pdf",
+    "Week 7 - Mapping Conceptual Design into logical Design.pdf",
+    "Week 8 - Basic Query.pdf",
+    "Week 9 - Complex Query.pdf"
+  ],
+  "files_skipped": [],
+  "started_at": "2026-05-04T21:08:35.763207+00:00",
+  "role_text": "data engineer",
+  "role": "ml_data",
+  "specialization": null,
+  "role_confidence": "high",
+  "role_reasoning": "Data engineer is a core competency within the ml_data role category, which encompasses data engineering, MLOps, and analytics.",
+  "role_resolved_at": "2026-05-04T21:16:11.860111+00:00"
+}

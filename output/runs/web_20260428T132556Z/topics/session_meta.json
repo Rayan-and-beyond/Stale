@@ -1,0 +1,16 @@
+{
+  "run_id": "20260428T133210Z",
+  "role": "ml_data",
+  "course_list": [
+    "Artificial Intelligence (Week 1 — Intro to AI)",
+    "Artificial Intelligence (Week 10 — Intro to NLP)",
+    "Artificial Intelligence (Week 11 — Fuzzy Logic)",
+    "Artificial Intelligence (Week 12 — Intro to DS and ML)",
+    "Artificial Intelligence (Week 2 — Intelligent Agents)",
+    "Artificial Intelligence (Week 3 — Problem Solving Agents; Week 4 — Informed Search)",
+    "Artificial Intelligence (Week 6 — Logical Agents 2; Week 7 — Knowledge Representation)",
+    "Artificial Intelligence (Week 8 — Knowledge Representation: Ontology)",
+    "Artificial Intelligence (Week 9 — Expert Systems)"
+  ],
+  "started_at": "2026-04-28T13:32:12.350891+00:00"
+}

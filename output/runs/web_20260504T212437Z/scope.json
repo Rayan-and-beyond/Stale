@@ -1,0 +1,32 @@
+{
+  "subject_area": "Computer networks \u2014 TCP/IP layered protocol stack",
+  "pedagogical_level": "undergraduate fundamentals course",
+  "course_intent": "Teach the foundational concepts of computer networking through the TCP/IP layered model \u2014 students should leave able to explain how data moves across networks layer-by-layer, reason about core protocols (HTTP, TCP, UDP, IP, Ethernet, ARP, DNS), and understand addressing, routing, and basic performance/impairment concepts.",
+  "depth_bound": "Recommendations stay at the conceptual + protocol-mechanics level appropriate to a top-down/bottom-up networking fundamentals course. Hands-on socket-programming projects, router-configuration labs, deep queueing-theory math, SDN controller implementation, and advanced wireless/cellular PHY internals are beyond this course's depth.",
+  "key_topics": [
+    "Network topologies and LAN/WAN/MAN classification",
+    "Analog/digital signals, bandwidth, and signal impairment",
+    "Link-layer framing, CRC error detection, and CSMA/CD Ethernet",
+    "ARP and MAC vs IP addressing",
+    "IP datagram format, subnetting, CIDR, and NAT",
+    "IPv4-to-IPv6 transition and tunneling",
+    "TCP three-way handshake, reliable transfer, flow and congestion control (AIMD, slow start)",
+    "UDP connectionless transport",
+    "HTTP (persistent/non-persistent), SMTP/IMAP, FTP, DNS hierarchy",
+    "BitTorrent P2P and video streaming basics"
+  ],
+  "one_liner": "Undergraduate computer-networking fundamentals taught top-to-bottom across the TCP/IP stack (physical, link, network, transport, application) plus a brief VPN unit \u2014 does NOT include socket programming labs, router/switch configuration, SDN implementation, or advanced wireless PHY/cellular depth.",
+  "relevant_roles": [
+    "backend",
+    "devops_sre",
+    "security"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 58698,
+    "cache_creation_input_tokens": 4684,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 738
+  }
+}

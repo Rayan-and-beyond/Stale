@@ -1,0 +1,2735 @@
+{
+  "metadata": {
+    "version": "0.1",
+    "generated_with": "data/build_postings.py",
+    "seed": 42,
+    "postings_per_role": 12,
+    "total_postings": 108,
+    "roles": [
+      "backend",
+      "frontend",
+      "fullstack",
+      "ml_data",
+      "mobile",
+      "devops_sre",
+      "security",
+      "embedded",
+      "game"
+    ],
+    "note": "Synthetic dataset compiled from public industry surveys (Stack Overflow Developer Survey, GitHub Octoverse, LinkedIn hiring trends 2025). Skill frequencies are calibrated to real 2026 job-market patterns; URLs are synthetic (.invalid TLD). Re-run build_postings.py to regenerate."
+  },
+  "postings": [
+    {
+      "id": "post_001",
+      "role": "backend",
+      "company": "Beacon Analytics",
+      "title": "Server Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_001",
+      "skills_required": [
+        "aws",
+        "ci/cd",
+        "docker",
+        "linux",
+        "microservices",
+        "postgres",
+        "python",
+        "rest api",
+        "sql",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "kafka",
+        "nginx",
+        "oauth",
+        "prometheus",
+        "redis"
+      ],
+      "raw_text": "Beacon Analytics is hiring a Server Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws, ci/cd, docker, linux, microservices, postgres, python, rest api, sql, unit testing. Nice to have: kafka, nginx, oauth, prometheus, redis."
+    },
+    {
+      "id": "post_002",
+      "role": "backend",
+      "company": "Bluestone Insurance",
+      "title": "Backend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_002",
+      "skills_required": [
+        "aws",
+        "docker",
+        "git",
+        "kubernetes",
+        "linux",
+        "microservices",
+        "postgres",
+        "python",
+        "rest api",
+        "sql",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "grpc",
+        "redis"
+      ],
+      "raw_text": "Bluestone Insurance is hiring a Backend Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws, docker, git, kubernetes, linux, microservices, postgres, python, rest api, sql, unit testing. Nice to have: graphql, grpc, redis."
+    },
+    {
+      "id": "post_003",
+      "role": "backend",
+      "company": "Kestrel Energy",
+      "title": "Senior Backend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_003",
+      "skills_required": [
+        "ci/cd",
+        "docker",
+        "git",
+        "java",
+        "kotlin",
+        "kubernetes",
+        "linux",
+        "postgres",
+        "rest api",
+        "sql",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "jwt",
+        "oauth",
+        "prometheus",
+        "terraform"
+      ],
+      "raw_text": "Kestrel Energy is hiring a Senior Backend Engineer to join our engineering org. You will own production systems written primarily in kotlin, java and ship features to customers continuously. Required: ci/cd, docker, git, java, kotlin, kubernetes, linux, postgres, rest api, sql, unit testing. Nice to have: graphql, jwt, oauth, prometheus, terraform."
+    },
+    {
+      "id": "post_004",
+      "role": "backend",
+      "company": "Lumen Genomics",
+      "title": "Backend Software Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_004",
+      "skills_required": [
+        "ci/cd",
+        "docker",
+        "java",
+        "linux",
+        "microservices",
+        "postgres",
+        "rest api",
+        "sql",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "jwt",
+        "kafka",
+        "nginx",
+        "redis"
+      ],
+      "raw_text": "Lumen Genomics is hiring a Backend Software Engineer to join our engineering org. You will own production systems written primarily in java and ship features to customers continuously. Required: ci/cd, docker, java, linux, microservices, postgres, rest api, sql, unit testing. Nice to have: jwt, kafka, nginx, redis."
+    },
+    {
+      "id": "post_005",
+      "role": "backend",
+      "company": "Aurora Retail",
+      "title": "Software Engineer, Backend Platform",
+      "url": "https://stale-dataset.invalid/postings/post_005",
+      "skills_required": [
+        "aws",
+        "ci/cd",
+        "docker",
+        "go",
+        "kubernetes",
+        "microservices",
+        "postgres",
+        "python",
+        "rest api",
+        "sql"
+      ],
+      "skills_preferred": [
+        "nginx",
+        "oauth",
+        "rabbitmq",
+        "redis"
+      ],
+      "raw_text": "Aurora Retail is hiring a Software Engineer, Backend Platform to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: aws, ci/cd, docker, go, kubernetes, microservices, postgres, python, rest api, sql. Nice to have: nginx, oauth, rabbitmq, redis."
+    },
+    {
+      "id": "post_006",
+      "role": "backend",
+      "company": "Nimbus Health",
+      "title": "Senior Backend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_006",
+      "skills_required": [
+        "aws",
+        "ci/cd",
+        "docker",
+        "git",
+        "linux",
+        "postgres",
+        "python",
+        "rest api",
+        "sql",
+        "unit testing"
+      ],
+      "skills_preferred": [],
+      "raw_text": "Nimbus Health is hiring a Senior Backend Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws, ci/cd, docker, git, linux, postgres, python, rest api, sql, unit testing. Nice to have: ."
+    },
+    {
+      "id": "post_007",
+      "role": "backend",
+      "company": "Lumen Genomics",
+      "title": "Staff Backend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_007",
+      "skills_required": [
+        "aws",
+        "docker",
+        "git",
+        "kubernetes",
+        "microservices",
+        "postgres",
+        "python",
+        "rest api",
+        "sql",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "kafka",
+        "mongodb",
+        "prometheus",
+        "redis"
+      ],
+      "raw_text": "Lumen Genomics is hiring a Staff Backend Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws, docker, git, kubernetes, microservices, postgres, python, rest api, sql, unit testing. Nice to have: kafka, mongodb, prometheus, redis."
+    },
+    {
+      "id": "post_008",
+      "role": "backend",
+      "company": "Northwind Labs",
+      "title": "Server Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_008",
+      "skills_required": [
+        "aws",
+        "ci/cd",
+        "git",
+        "java",
+        "kotlin",
+        "kubernetes",
+        "linux",
+        "microservices",
+        "postgres",
+        "rest api",
+        "sql"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "nginx"
+      ],
+      "raw_text": "Northwind Labs is hiring a Server Engineer to join our engineering org. You will own production systems written primarily in kotlin, java and ship features to customers continuously. Required: aws, ci/cd, git, java, kotlin, kubernetes, linux, microservices, postgres, rest api, sql. Nice to have: graphql, nginx."
+    },
+    {
+      "id": "post_009",
+      "role": "backend",
+      "company": "Nimbus Health",
+      "title": "Senior Backend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_009",
+      "skills_required": [
+        "aws",
+        "docker",
+        "git",
+        "kubernetes",
+        "linux",
+        "microservices",
+        "node.js",
+        "postgres",
+        "rest api",
+        "sql",
+        "typescript",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "jwt",
+        "kafka",
+        "oauth",
+        "rabbitmq",
+        "redis",
+        "snowflake"
+      ],
+      "raw_text": "Nimbus Health is hiring a Senior Backend Engineer to join our engineering org. You will own production systems written primarily in typescript, node.js and ship features to customers continuously. Required: aws, docker, git, kubernetes, linux, microservices, node.js, postgres, rest api, sql, typescript, unit testing. Nice to have: graphql, jwt, kafka, oauth, rabbitmq, redis."
+    },
+    {
+      "id": "post_010",
+      "role": "backend",
+      "company": "Helios Mobility",
+      "title": "Server Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_010",
+      "skills_required": [
+        "aws",
+        "ci/cd",
+        "docker",
+        "git",
+        "go",
+        "linux",
+        "postgres",
+        "python",
+        "sql",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "jwt",
+        "nginx",
+        "oauth",
+        "prometheus",
+        "redis"
+      ],
+      "raw_text": "Helios Mobility is hiring a Server Engineer to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: aws, ci/cd, docker, git, go, linux, postgres, python, sql, unit testing. Nice to have: jwt, nginx, oauth, prometheus, redis."
+    },
+    {
+      "id": "post_011",
+      "role": "backend",
+      "company": "Fjord Logistics",
+      "title": "Senior Backend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_011",
+      "skills_required": [
+        "aws",
+        "docker",
+        "git",
+        "go",
+        "linux",
+        "microservices",
+        "rest api",
+        "sql",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "elasticsearch",
+        "graphql",
+        "jwt",
+        "kafka",
+        "oauth"
+      ],
+      "raw_text": "Fjord Logistics is hiring a Senior Backend Engineer to join our engineering org. You will own production systems written primarily in go and ship features to customers continuously. Required: aws, docker, git, go, linux, microservices, rest api, sql, unit testing. Nice to have: elasticsearch, graphql, jwt, kafka, oauth."
+    },
+    {
+      "id": "post_012",
+      "role": "backend",
+      "company": "Bluestone Insurance",
+      "title": "Staff Backend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_012",
+      "skills_required": [
+        "aws",
+        "ci/cd",
+        "docker",
+        "git",
+        "go",
+        "kubernetes",
+        "postgres",
+        "python",
+        "rest api",
+        "sql",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "jwt",
+        "kafka",
+        "mongodb",
+        "oauth",
+        "snowflake"
+      ],
+      "raw_text": "Bluestone Insurance is hiring a Staff Backend Engineer to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: aws, ci/cd, docker, git, go, kubernetes, postgres, python, rest api, sql, unit testing. Nice to have: graphql, jwt, kafka, mongodb, oauth, snowflake."
+    },
+    {
+      "id": "post_013",
+      "role": "frontend",
+      "company": "Echo Networks",
+      "title": "Senior Frontend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_013",
+      "skills_required": [
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "cypress",
+        "ssr",
+        "tailwind css",
+        "vue"
+      ],
+      "raw_text": "Echo Networks is hiring a Senior Frontend Engineer to join our engineering org. You will own production systems written primarily in typescript and ship features to customers continuously. Required: css, git, html, javascript, react, rest api, typescript. Nice to have: cypress, ssr, tailwind css, vue."
+    },
+    {
+      "id": "post_014",
+      "role": "frontend",
+      "company": "Indigo Travel",
+      "title": "UI Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_014",
+      "skills_required": [
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "responsive design",
+        "rest api"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "jest",
+        "ssr",
+        "tailwind css"
+      ],
+      "raw_text": "Indigo Travel is hiring a UI Engineer to join our engineering org. You will own production systems written primarily in javascript and ship features to customers continuously. Required: css, git, html, javascript, react, responsive design, rest api. Nice to have: graphql, jest, ssr, tailwind css."
+    },
+    {
+      "id": "post_015",
+      "role": "frontend",
+      "company": "Indigo Travel",
+      "title": "Senior Frontend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_015",
+      "skills_required": [
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "responsive design",
+        "rest api",
+        "typescript",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "jest",
+        "sass",
+        "ssr"
+      ],
+      "raw_text": "Indigo Travel is hiring a Senior Frontend Engineer to join our engineering org. You will own production systems written primarily in javascript and ship features to customers continuously. Required: css, git, html, javascript, react, responsive design, rest api, typescript, unit testing. Nice to have: jest, sass, ssr."
+    },
+    {
+      "id": "post_016",
+      "role": "frontend",
+      "company": "Obsidian Auto",
+      "title": "UI Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_016",
+      "skills_required": [
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "responsive design",
+        "rest api",
+        "typescript",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "jest",
+        "performance optimization",
+        "sass",
+        "svelte",
+        "tailwind css"
+      ],
+      "raw_text": "Obsidian Auto is hiring a UI Engineer to join our engineering org. You will own production systems written primarily in javascript and ship features to customers continuously. Required: css, git, html, javascript, react, responsive design, rest api, typescript, unit testing. Nice to have: jest, performance optimization, sass, svelte, tailwind css."
+    },
+    {
+      "id": "post_017",
+      "role": "frontend",
+      "company": "Junction AI",
+      "title": "Frontend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_017",
+      "skills_required": [
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "rest api",
+        "typescript",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "next.js",
+        "playwright",
+        "tailwind css",
+        "vite"
+      ],
+      "raw_text": "Junction AI is hiring a Frontend Engineer to join our engineering org. You will own production systems written primarily in javascript and ship features to customers continuously. Required: css, git, html, javascript, react, rest api, typescript, unit testing. Nice to have: next.js, playwright, tailwind css, vite."
+    },
+    {
+      "id": "post_018",
+      "role": "frontend",
+      "company": "Northwind Labs",
+      "title": "React Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_018",
+      "skills_required": [
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "responsive design",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "cypress",
+        "graphql",
+        "next.js",
+        "performance optimization",
+        "redux",
+        "sass",
+        "tailwind css",
+        "webpack"
+      ],
+      "raw_text": "Northwind Labs is hiring a React Engineer to join our engineering org. You will own production systems written primarily in typescript and ship features to customers continuously. Required: css, git, html, javascript, react, responsive design, typescript. Nice to have: cypress, graphql, next.js, performance optimization, redux, sass."
+    },
+    {
+      "id": "post_019",
+      "role": "frontend",
+      "company": "Junction AI",
+      "title": "Senior Frontend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_019",
+      "skills_required": [
+        "accessibility",
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "responsive design",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "tailwind css",
+        "webpack"
+      ],
+      "raw_text": "Junction AI is hiring a Senior Frontend Engineer to join our engineering org. You will own production systems written primarily in javascript and ship features to customers continuously. Required: accessibility, css, git, html, javascript, react, responsive design, rest api, typescript. Nice to have: tailwind css, webpack."
+    },
+    {
+      "id": "post_020",
+      "role": "frontend",
+      "company": "Polaris Media",
+      "title": "Web Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_020",
+      "skills_required": [
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "responsive design",
+        "rest api",
+        "typescript",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "next.js",
+        "performance optimization",
+        "sass",
+        "ssr",
+        "tailwind css",
+        "vue"
+      ],
+      "raw_text": "Polaris Media is hiring a Web Engineer to join our engineering org. You will own production systems written primarily in typescript, javascript and ship features to customers continuously. Required: css, git, html, javascript, responsive design, rest api, typescript, unit testing. Nice to have: graphql, next.js, performance optimization, sass, ssr, tailwind css."
+    },
+    {
+      "id": "post_021",
+      "role": "frontend",
+      "company": "Aurora Retail",
+      "title": "Senior Frontend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_021",
+      "skills_required": [
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "responsive design",
+        "rest api",
+        "typescript",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "jest",
+        "performance optimization",
+        "sass",
+        "tailwind css"
+      ],
+      "raw_text": "Aurora Retail is hiring a Senior Frontend Engineer to join our engineering org. You will own production systems written primarily in typescript, javascript and ship features to customers continuously. Required: css, git, html, javascript, react, responsive design, rest api, typescript, unit testing. Nice to have: jest, performance optimization, sass, tailwind css."
+    },
+    {
+      "id": "post_022",
+      "role": "frontend",
+      "company": "Beacon Analytics",
+      "title": "React Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_022",
+      "skills_required": [
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "responsive design",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "next.js",
+        "playwright",
+        "tailwind css",
+        "vite"
+      ],
+      "raw_text": "Beacon Analytics is hiring a React Engineer to join our engineering org. You will own production systems written primarily in typescript and ship features to customers continuously. Required: css, git, html, javascript, react, responsive design, rest api, typescript. Nice to have: next.js, playwright, tailwind css, vite."
+    },
+    {
+      "id": "post_023",
+      "role": "frontend",
+      "company": "Aurora Retail",
+      "title": "Senior Frontend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_023",
+      "skills_required": [
+        "accessibility",
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "responsive design",
+        "rest api",
+        "typescript",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "next.js",
+        "performance optimization",
+        "redux",
+        "sass",
+        "ssr",
+        "vite",
+        "webpack"
+      ],
+      "raw_text": "Aurora Retail is hiring a Senior Frontend Engineer to join our engineering org. You will own production systems written primarily in typescript, javascript and ship features to customers continuously. Required: accessibility, css, git, html, javascript, react, responsive design, rest api, typescript, unit testing. Nice to have: next.js, performance optimization, redux, sass, ssr, vite."
+    },
+    {
+      "id": "post_024",
+      "role": "frontend",
+      "company": "Polaris Media",
+      "title": "Senior Frontend Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_024",
+      "skills_required": [
+        "accessibility",
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "react",
+        "rest api",
+        "typescript",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "jest",
+        "next.js",
+        "performance optimization",
+        "redux",
+        "ssr",
+        "tailwind css",
+        "vite",
+        "webpack"
+      ],
+      "raw_text": "Polaris Media is hiring a Senior Frontend Engineer to join our engineering org. You will own production systems written primarily in javascript and ship features to customers continuously. Required: accessibility, css, git, html, javascript, react, rest api, typescript, unit testing. Nice to have: jest, next.js, performance optimization, redux, ssr, tailwind css."
+    },
+    {
+      "id": "post_025",
+      "role": "fullstack",
+      "company": "Indigo Travel",
+      "title": "Software Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_025",
+      "skills_required": [
+        "ci/cd",
+        "docker",
+        "git",
+        "html",
+        "javascript",
+        "node.js",
+        "postgres",
+        "react",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "kubernetes",
+        "next.js",
+        "oauth",
+        "redis",
+        "tailwind css",
+        "trpc"
+      ],
+      "raw_text": "Indigo Travel is hiring a Software Engineer to join our engineering org. You will own production systems written primarily in typescript, javascript, node.js and ship features to customers continuously. Required: ci/cd, docker, git, html, javascript, node.js, postgres, react, rest api, typescript. Nice to have: kubernetes, next.js, oauth, redis, tailwind css, trpc."
+    },
+    {
+      "id": "post_026",
+      "role": "fullstack",
+      "company": "Meridian Bank",
+      "title": "Full-Stack Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_026",
+      "skills_required": [
+        "ci/cd",
+        "css",
+        "docker",
+        "git",
+        "javascript",
+        "node.js",
+        "postgres",
+        "react",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "jest",
+        "next.js"
+      ],
+      "raw_text": "Meridian Bank is hiring a Full-Stack Engineer to join our engineering org. You will own production systems written primarily in typescript, javascript, node.js and ship features to customers continuously. Required: ci/cd, css, docker, git, javascript, node.js, postgres, react, typescript. Nice to have: jest, next.js."
+    },
+    {
+      "id": "post_027",
+      "role": "fullstack",
+      "company": "Quantum Edge",
+      "title": "Software Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_027",
+      "skills_required": [
+        "aws",
+        "ci/cd",
+        "css",
+        "docker",
+        "git",
+        "html",
+        "node.js",
+        "postgres",
+        "react",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "oauth",
+        "redis",
+        "tailwind css"
+      ],
+      "raw_text": "Quantum Edge is hiring a Software Engineer to join our engineering org. You will own production systems written primarily in typescript, node.js and ship features to customers continuously. Required: aws, ci/cd, css, docker, git, html, node.js, postgres, react, rest api, typescript. Nice to have: graphql, oauth, redis, tailwind css."
+    },
+    {
+      "id": "post_028",
+      "role": "fullstack",
+      "company": "Indigo Travel",
+      "title": "Software Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_028",
+      "skills_required": [
+        "aws",
+        "css",
+        "docker",
+        "git",
+        "html",
+        "javascript",
+        "node.js",
+        "postgres",
+        "react",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "kubernetes",
+        "tailwind css",
+        "trpc"
+      ],
+      "raw_text": "Indigo Travel is hiring a Software Engineer to join our engineering org. You will own production systems written primarily in typescript, javascript, node.js and ship features to customers continuously. Required: aws, css, docker, git, html, javascript, node.js, postgres, react, rest api, typescript. Nice to have: graphql, kubernetes, tailwind css, trpc."
+    },
+    {
+      "id": "post_029",
+      "role": "fullstack",
+      "company": "Cipher Security",
+      "title": "Product Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_029",
+      "skills_required": [
+        "css",
+        "git",
+        "javascript",
+        "node.js",
+        "postgres",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "jest",
+        "tailwind css"
+      ],
+      "raw_text": "Cipher Security is hiring a Product Engineer to join our engineering org. You will own production systems written primarily in typescript, javascript, node.js and ship features to customers continuously. Required: css, git, javascript, node.js, postgres, rest api, typescript. Nice to have: graphql, jest, tailwind css."
+    },
+    {
+      "id": "post_030",
+      "role": "fullstack",
+      "company": "Vertex Systems",
+      "title": "Product Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_030",
+      "skills_required": [
+        "ci/cd",
+        "css",
+        "docker",
+        "git",
+        "html",
+        "javascript",
+        "node.js",
+        "postgres",
+        "react",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "kubernetes",
+        "next.js"
+      ],
+      "raw_text": "Vertex Systems is hiring a Product Engineer to join our engineering org. You will own production systems written primarily in typescript, javascript, node.js and ship features to customers continuously. Required: ci/cd, css, docker, git, html, javascript, node.js, postgres, react, typescript. Nice to have: kubernetes, next.js."
+    },
+    {
+      "id": "post_031",
+      "role": "fullstack",
+      "company": "Junction AI",
+      "title": "Full-Stack Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_031",
+      "skills_required": [
+        "ci/cd",
+        "css",
+        "docker",
+        "git",
+        "node.js",
+        "postgres",
+        "react",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "jest"
+      ],
+      "raw_text": "Junction AI is hiring a Full-Stack Engineer to join our engineering org. You will own production systems written primarily in typescript, node.js and ship features to customers continuously. Required: ci/cd, css, docker, git, node.js, postgres, react, rest api, typescript. Nice to have: jest."
+    },
+    {
+      "id": "post_032",
+      "role": "fullstack",
+      "company": "Meridian Bank",
+      "title": "Product Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_032",
+      "skills_required": [
+        "aws",
+        "ci/cd",
+        "css",
+        "docker",
+        "node.js",
+        "postgres",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "tailwind css"
+      ],
+      "raw_text": "Meridian Bank is hiring a Product Engineer to join our engineering org. You will own production systems written primarily in typescript, node.js and ship features to customers continuously. Required: aws, ci/cd, css, docker, node.js, postgres, rest api, typescript. Nice to have: tailwind css."
+    },
+    {
+      "id": "post_033",
+      "role": "fullstack",
+      "company": "Quantum Edge",
+      "title": "Senior Full-Stack Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_033",
+      "skills_required": [
+        "aws",
+        "css",
+        "docker",
+        "git",
+        "node.js",
+        "postgres",
+        "react",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "jest",
+        "kubernetes",
+        "next.js",
+        "stripe api",
+        "trpc"
+      ],
+      "raw_text": "Quantum Edge is hiring a Senior Full-Stack Engineer to join our engineering org. You will own production systems written primarily in typescript, node.js and ship features to customers continuously. Required: aws, css, docker, git, node.js, postgres, react, rest api, typescript. Nice to have: graphql, jest, kubernetes, next.js, stripe api, trpc."
+    },
+    {
+      "id": "post_034",
+      "role": "fullstack",
+      "company": "Nimbus Health",
+      "title": "Full-Stack Developer",
+      "url": "https://stale-dataset.invalid/postings/post_034",
+      "skills_required": [
+        "aws",
+        "css",
+        "git",
+        "html",
+        "node.js",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "oauth"
+      ],
+      "raw_text": "Nimbus Health is hiring a Full-Stack Developer to join our engineering org. You will own production systems written primarily in typescript, node.js and ship features to customers continuously. Required: aws, css, git, html, node.js, rest api, typescript. Nice to have: oauth."
+    },
+    {
+      "id": "post_035",
+      "role": "fullstack",
+      "company": "Polaris Media",
+      "title": "Full-Stack Developer",
+      "url": "https://stale-dataset.invalid/postings/post_035",
+      "skills_required": [
+        "aws",
+        "ci/cd",
+        "css",
+        "docker",
+        "git",
+        "html",
+        "javascript",
+        "node.js",
+        "postgres",
+        "rest api",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "jest",
+        "next.js",
+        "tailwind css"
+      ],
+      "raw_text": "Polaris Media is hiring a Full-Stack Developer to join our engineering org. You will own production systems written primarily in typescript, javascript, node.js and ship features to customers continuously. Required: aws, ci/cd, css, docker, git, html, javascript, node.js, postgres, rest api, typescript. Nice to have: jest, next.js, tailwind css."
+    },
+    {
+      "id": "post_036",
+      "role": "fullstack",
+      "company": "Monolith Games",
+      "title": "Full-Stack Developer",
+      "url": "https://stale-dataset.invalid/postings/post_036",
+      "skills_required": [
+        "aws",
+        "css",
+        "git",
+        "html",
+        "node.js",
+        "postgres",
+        "react",
+        "typescript"
+      ],
+      "skills_preferred": [
+        "graphql",
+        "jest"
+      ],
+      "raw_text": "Monolith Games is hiring a Full-Stack Developer to join our engineering org. You will own production systems written primarily in typescript, node.js and ship features to customers continuously. Required: aws, css, git, html, node.js, postgres, react, typescript. Nice to have: graphql, jest."
+    },
+    {
+      "id": "post_037",
+      "role": "ml_data",
+      "company": "Aurora Retail",
+      "title": "Senior Data Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_037",
+      "skills_required": [
+        "aws",
+        "git",
+        "numpy",
+        "pandas",
+        "python",
+        "sql",
+        "statistics"
+      ],
+      "skills_preferred": [
+        "dbt",
+        "feature store",
+        "hugging face",
+        "prompt engineering",
+        "tensorflow"
+      ],
+      "raw_text": "Aurora Retail is hiring a Senior Data Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws, git, numpy, pandas, python, sql, statistics. Nice to have: dbt, feature store, hugging face, prompt engineering, tensorflow."
+    },
+    {
+      "id": "post_038",
+      "role": "ml_data",
+      "company": "Lumen Genomics",
+      "title": "Data Scientist",
+      "url": "https://stale-dataset.invalid/postings/post_038",
+      "skills_required": [
+        "docker",
+        "git",
+        "pandas",
+        "python",
+        "scikit-learn",
+        "sql",
+        "statistics"
+      ],
+      "skills_preferred": [
+        "bigquery",
+        "dbt",
+        "prompt engineering",
+        "spark"
+      ],
+      "raw_text": "Lumen Genomics is hiring a Data Scientist to join our engineering org. You will own production systems written primarily in python, sql and ship features to customers continuously. Required: docker, git, pandas, python, scikit-learn, sql, statistics. Nice to have: bigquery, dbt, prompt engineering, spark."
+    },
+    {
+      "id": "post_039",
+      "role": "ml_data",
+      "company": "Datawave",
+      "title": "Senior Data Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_039",
+      "skills_required": [
+        "aws",
+        "docker",
+        "git",
+        "numpy",
+        "pandas",
+        "python",
+        "scikit-learn",
+        "sql"
+      ],
+      "skills_preferred": [
+        "dbt",
+        "feature store",
+        "kubeflow",
+        "rag",
+        "snowflake",
+        "spark",
+        "vector databases"
+      ],
+      "raw_text": "Datawave is hiring a Senior Data Engineer to join our engineering org. You will own production systems written primarily in python, sql and ship features to customers continuously. Required: aws, docker, git, numpy, pandas, python, scikit-learn, sql. Nice to have: dbt, feature store, kubeflow, rag, snowflake, spark."
+    },
+    {
+      "id": "post_040",
+      "role": "ml_data",
+      "company": "Indigo Travel",
+      "title": "ML Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_040",
+      "skills_required": [
+        "docker",
+        "git",
+        "numpy",
+        "pandas",
+        "python",
+        "pytorch",
+        "scikit-learn",
+        "sql",
+        "statistics"
+      ],
+      "skills_preferred": [
+        "dbt",
+        "kubernetes",
+        "mlflow",
+        "spark",
+        "vector databases"
+      ],
+      "raw_text": "Indigo Travel is hiring a ML Engineer to join our engineering org. You will own production systems written primarily in python, sql and ship features to customers continuously. Required: docker, git, numpy, pandas, python, pytorch, scikit-learn, sql, statistics. Nice to have: dbt, kubernetes, mlflow, spark, vector databases."
+    },
+    {
+      "id": "post_041",
+      "role": "ml_data",
+      "company": "Lumen Genomics",
+      "title": "Data Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_041",
+      "skills_required": [
+        "aws",
+        "git",
+        "numpy",
+        "python",
+        "pytorch",
+        "sql",
+        "statistics"
+      ],
+      "skills_preferred": [
+        "airflow",
+        "bigquery",
+        "dbt",
+        "hugging face",
+        "kafka",
+        "ray",
+        "snowflake",
+        "tensorflow"
+      ],
+      "raw_text": "Lumen Genomics is hiring a Data Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws, git, numpy, python, pytorch, sql, statistics. Nice to have: airflow, bigquery, dbt, hugging face, kafka, ray."
+    },
+    {
+      "id": "post_042",
+      "role": "ml_data",
+      "company": "Datawave",
+      "title": "Senior Data Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_042",
+      "skills_required": [
+        "docker",
+        "git",
+        "numpy",
+        "python",
+        "pytorch",
+        "scikit-learn",
+        "sql",
+        "statistics"
+      ],
+      "skills_preferred": [
+        "airflow",
+        "bigquery",
+        "llms",
+        "mlflow",
+        "tensorflow",
+        "vector databases"
+      ],
+      "raw_text": "Datawave is hiring a Senior Data Engineer to join our engineering org. You will own production systems written primarily in python, sql and ship features to customers continuously. Required: docker, git, numpy, python, pytorch, scikit-learn, sql, statistics. Nice to have: airflow, bigquery, llms, mlflow, tensorflow, vector databases."
+    },
+    {
+      "id": "post_043",
+      "role": "ml_data",
+      "company": "Quantum Edge",
+      "title": "Data Scientist",
+      "url": "https://stale-dataset.invalid/postings/post_043",
+      "skills_required": [
+        "aws",
+        "docker",
+        "git",
+        "numpy",
+        "pandas",
+        "python",
+        "scikit-learn",
+        "sql",
+        "statistics"
+      ],
+      "skills_preferred": [
+        "dbt",
+        "hugging face",
+        "kubernetes",
+        "prompt engineering",
+        "ray",
+        "snowflake",
+        "spark"
+      ],
+      "raw_text": "Quantum Edge is hiring a Data Scientist to join our engineering org. You will own production systems written primarily in python, sql and ship features to customers continuously. Required: aws, docker, git, numpy, pandas, python, scikit-learn, sql, statistics. Nice to have: dbt, hugging face, kubernetes, prompt engineering, ray, snowflake."
+    },
+    {
+      "id": "post_044",
+      "role": "ml_data",
+      "company": "Cipher Security",
+      "title": "AI Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_044",
+      "skills_required": [
+        "git",
+        "numpy",
+        "pandas",
+        "python",
+        "pytorch",
+        "scikit-learn",
+        "sql"
+      ],
+      "skills_preferred": [
+        "bigquery",
+        "hugging face",
+        "llms",
+        "rag",
+        "ray",
+        "vector databases"
+      ],
+      "raw_text": "Cipher Security is hiring a AI Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: git, numpy, pandas, python, pytorch, scikit-learn, sql. Nice to have: bigquery, hugging face, llms, rag, ray, vector databases."
+    },
+    {
+      "id": "post_045",
+      "role": "ml_data",
+      "company": "Quantum Edge",
+      "title": "Applied Scientist",
+      "url": "https://stale-dataset.invalid/postings/post_045",
+      "skills_required": [
+        "git",
+        "pandas",
+        "python",
+        "pytorch",
+        "scikit-learn",
+        "sql",
+        "statistics"
+      ],
+      "skills_preferred": [
+        "kafka",
+        "kubernetes",
+        "langchain",
+        "snowflake",
+        "tensorflow"
+      ],
+      "raw_text": "Quantum Edge is hiring a Applied Scientist to join our engineering org. You will own production systems written primarily in python, sql and ship features to customers continuously. Required: git, pandas, python, pytorch, scikit-learn, sql, statistics. Nice to have: kafka, kubernetes, langchain, snowflake, tensorflow."
+    },
+    {
+      "id": "post_046",
+      "role": "ml_data",
+      "company": "Polaris Media",
+      "title": "Senior Data Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_046",
+      "skills_required": [
+        "docker",
+        "git",
+        "numpy",
+        "pandas",
+        "python",
+        "scikit-learn",
+        "sql"
+      ],
+      "skills_preferred": [
+        "airflow",
+        "llms",
+        "rag",
+        "ray",
+        "spark",
+        "vector databases"
+      ],
+      "raw_text": "Polaris Media is hiring a Senior Data Engineer to join our engineering org. You will own production systems written primarily in python, sql and ship features to customers continuously. Required: docker, git, numpy, pandas, python, scikit-learn, sql. Nice to have: airflow, llms, rag, ray, spark, vector databases."
+    },
+    {
+      "id": "post_047",
+      "role": "ml_data",
+      "company": "Kestrel Energy",
+      "title": "Applied Scientist",
+      "url": "https://stale-dataset.invalid/postings/post_047",
+      "skills_required": [
+        "aws",
+        "git",
+        "numpy",
+        "pandas",
+        "python",
+        "pytorch",
+        "scikit-learn",
+        "sql",
+        "statistics"
+      ],
+      "skills_preferred": [
+        "bigquery",
+        "kafka",
+        "rag",
+        "snowflake"
+      ],
+      "raw_text": "Kestrel Energy is hiring a Applied Scientist to join our engineering org. You will own production systems written primarily in python, sql and ship features to customers continuously. Required: aws, git, numpy, pandas, python, pytorch, scikit-learn, sql, statistics. Nice to have: bigquery, kafka, rag, snowflake."
+    },
+    {
+      "id": "post_048",
+      "role": "ml_data",
+      "company": "Beacon Analytics",
+      "title": "Data Scientist",
+      "url": "https://stale-dataset.invalid/postings/post_048",
+      "skills_required": [
+        "aws",
+        "docker",
+        "git",
+        "numpy",
+        "pandas",
+        "python",
+        "pytorch",
+        "scikit-learn",
+        "sql",
+        "statistics"
+      ],
+      "skills_preferred": [
+        "airflow",
+        "feature store",
+        "hugging face",
+        "kubernetes",
+        "rag",
+        "ray"
+      ],
+      "raw_text": "Beacon Analytics is hiring a Data Scientist to join our engineering org. You will own production systems written primarily in python, sql and ship features to customers continuously. Required: aws, docker, git, numpy, pandas, python, pytorch, scikit-learn, sql, statistics. Nice to have: airflow, feature store, hugging face, kubernetes, rag, ray."
+    },
+    {
+      "id": "post_049",
+      "role": "mobile",
+      "company": "Lumen Genomics",
+      "title": "Mobile Software Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_049",
+      "skills_required": [
+        "git",
+        "rest api",
+        "swift",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "android studio",
+        "flutter",
+        "jetpack compose",
+        "offline-first design",
+        "react native",
+        "swiftui",
+        "xcode"
+      ],
+      "raw_text": "Lumen Genomics is hiring a Mobile Software Engineer to join our engineering org. You will own production systems written primarily in swift and ship features to customers continuously. Required: git, rest api, swift, unit testing. Nice to have: android studio, flutter, jetpack compose, offline-first design, react native, swiftui."
+    },
+    {
+      "id": "post_050",
+      "role": "mobile",
+      "company": "Datawave",
+      "title": "Mobile Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_050",
+      "skills_required": [
+        "git",
+        "kotlin",
+        "mvvm",
+        "rest api",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "app store deployment",
+        "jetpack compose",
+        "xcode"
+      ],
+      "raw_text": "Datawave is hiring a Mobile Engineer to join our engineering org. You will own production systems written primarily in kotlin and ship features to customers continuously. Required: git, kotlin, mvvm, rest api, unit testing. Nice to have: app store deployment, jetpack compose, xcode."
+    },
+    {
+      "id": "post_051",
+      "role": "mobile",
+      "company": "Halcyon Robotics",
+      "title": "Mobile Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_051",
+      "skills_required": [
+        "git",
+        "mvvm",
+        "objective-c",
+        "rest api",
+        "swift"
+      ],
+      "skills_preferred": [
+        "android studio",
+        "app store deployment",
+        "ci/cd",
+        "uikit",
+        "xcode"
+      ],
+      "raw_text": "Halcyon Robotics is hiring a Mobile Engineer to join our engineering org. You will own production systems written primarily in swift, objective-c and ship features to customers continuously. Required: git, mvvm, objective-c, rest api, swift. Nice to have: android studio, app store deployment, ci/cd, uikit, xcode."
+    },
+    {
+      "id": "post_052",
+      "role": "mobile",
+      "company": "Echo Networks",
+      "title": "React Native Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_052",
+      "skills_required": [
+        "git",
+        "java",
+        "kotlin",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "android studio",
+        "jetpack compose",
+        "push notifications",
+        "swiftui",
+        "xcode"
+      ],
+      "raw_text": "Echo Networks is hiring a React Native Engineer to join our engineering org. You will own production systems written primarily in kotlin, java and ship features to customers continuously. Required: git, java, kotlin, unit testing. Nice to have: android studio, jetpack compose, push notifications, swiftui, xcode."
+    },
+    {
+      "id": "post_053",
+      "role": "mobile",
+      "company": "Nimbus Health",
+      "title": "React Native Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_053",
+      "skills_required": [
+        "git",
+        "mvvm",
+        "objective-c",
+        "rest api",
+        "swift",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "android studio",
+        "ci/cd",
+        "flutter",
+        "react native",
+        "swiftui",
+        "xcode"
+      ],
+      "raw_text": "Nimbus Health is hiring a React Native Engineer to join our engineering org. You will own production systems written primarily in swift, objective-c and ship features to customers continuously. Required: git, mvvm, objective-c, rest api, swift, unit testing. Nice to have: android studio, ci/cd, flutter, react native, swiftui, xcode."
+    },
+    {
+      "id": "post_054",
+      "role": "mobile",
+      "company": "Junction AI",
+      "title": "Senior iOS Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_054",
+      "skills_required": [
+        "git",
+        "mvvm",
+        "react native",
+        "rest api",
+        "typescript",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "android studio",
+        "app store deployment",
+        "ci/cd",
+        "firebase",
+        "jetpack compose",
+        "push notifications",
+        "swiftui",
+        "uikit",
+        "xcode",
+        "xcuitest"
+      ],
+      "raw_text": "Junction AI is hiring a Senior iOS Engineer to join our engineering org. You will own production systems written primarily in typescript, react native and ship features to customers continuously. Required: git, mvvm, react native, rest api, typescript, unit testing. Nice to have: android studio, app store deployment, ci/cd, firebase, jetpack compose, push notifications."
+    },
+    {
+      "id": "post_055",
+      "role": "mobile",
+      "company": "Aurora Retail",
+      "title": "iOS Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_055",
+      "skills_required": [
+        "git",
+        "rest api",
+        "swift",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "android studio",
+        "push notifications",
+        "uikit",
+        "xcode",
+        "xcuitest"
+      ],
+      "raw_text": "Aurora Retail is hiring a iOS Engineer to join our engineering org. You will own production systems written primarily in swift and ship features to customers continuously. Required: git, rest api, swift, unit testing. Nice to have: android studio, push notifications, uikit, xcode, xcuitest."
+    },
+    {
+      "id": "post_056",
+      "role": "mobile",
+      "company": "Northshore Pay",
+      "title": "Senior Android Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_056",
+      "skills_required": [
+        "git",
+        "rest api",
+        "swift",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "android studio",
+        "app store deployment",
+        "ci/cd",
+        "firebase",
+        "graphql",
+        "jetpack compose",
+        "push notifications",
+        "react native",
+        "swiftui",
+        "xcode"
+      ],
+      "raw_text": "Northshore Pay is hiring a Senior Android Engineer to join our engineering org. You will own production systems written primarily in swift and ship features to customers continuously. Required: git, rest api, swift, unit testing. Nice to have: android studio, app store deployment, ci/cd, firebase, graphql, jetpack compose."
+    },
+    {
+      "id": "post_057",
+      "role": "mobile",
+      "company": "Beacon Analytics",
+      "title": "Mobile Software Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_057",
+      "skills_required": [
+        "git",
+        "java",
+        "kotlin",
+        "mvvm",
+        "rest api"
+      ],
+      "skills_preferred": [
+        "firebase",
+        "graphql",
+        "push notifications",
+        "react native",
+        "swiftui",
+        "uikit"
+      ],
+      "raw_text": "Beacon Analytics is hiring a Mobile Software Engineer to join our engineering org. You will own production systems written primarily in kotlin, java and ship features to customers continuously. Required: git, java, kotlin, mvvm, rest api. Nice to have: firebase, graphql, push notifications, react native, swiftui, uikit."
+    },
+    {
+      "id": "post_058",
+      "role": "mobile",
+      "company": "Glacier Studios",
+      "title": "Android Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_058",
+      "skills_required": [
+        "dart",
+        "git",
+        "mvvm",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "app store deployment",
+        "ci/cd",
+        "graphql",
+        "push notifications",
+        "uikit",
+        "xcode"
+      ],
+      "raw_text": "Glacier Studios is hiring a Android Engineer to join our engineering org. You will own production systems written primarily in dart and ship features to customers continuously. Required: dart, git, mvvm, unit testing. Nice to have: app store deployment, ci/cd, graphql, push notifications, uikit, xcode."
+    },
+    {
+      "id": "post_059",
+      "role": "mobile",
+      "company": "Northwind Labs",
+      "title": "Android Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_059",
+      "skills_required": [
+        "git",
+        "rest api",
+        "swift",
+        "unit testing"
+      ],
+      "skills_preferred": [
+        "android studio",
+        "ci/cd",
+        "jetpack compose",
+        "offline-first design",
+        "push notifications",
+        "swiftui",
+        "uikit"
+      ],
+      "raw_text": "Northwind Labs is hiring a Android Engineer to join our engineering org. You will own production systems written primarily in swift and ship features to customers continuously. Required: git, rest api, swift, unit testing. Nice to have: android studio, ci/cd, jetpack compose, offline-first design, push notifications, swiftui."
+    },
+    {
+      "id": "post_060",
+      "role": "mobile",
+      "company": "Indigo Travel",
+      "title": "iOS Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_060",
+      "skills_required": [
+        "git",
+        "java",
+        "kotlin",
+        "rest api"
+      ],
+      "skills_preferred": [
+        "android studio",
+        "firebase",
+        "push notifications",
+        "uikit",
+        "xcuitest"
+      ],
+      "raw_text": "Indigo Travel is hiring a iOS Engineer to join our engineering org. You will own production systems written primarily in kotlin, java and ship features to customers continuously. Required: git, java, kotlin, rest api. Nice to have: android studio, firebase, push notifications, uikit, xcuitest."
+    },
+    {
+      "id": "post_061",
+      "role": "devops_sre",
+      "company": "Nimbus Health",
+      "title": "SRE",
+      "url": "https://stale-dataset.invalid/postings/post_061",
+      "skills_required": [
+        "aws",
+        "bash",
+        "ci/cd",
+        "docker",
+        "git",
+        "go",
+        "kubernetes",
+        "linux",
+        "monitoring",
+        "python",
+        "terraform"
+      ],
+      "skills_preferred": [
+        "datadog",
+        "github actions",
+        "helm",
+        "jenkins",
+        "on-call rotation",
+        "prometheus"
+      ],
+      "raw_text": "Nimbus Health is hiring a SRE to join our engineering org. You will own production systems written primarily in go and ship features to customers continuously. Required: aws, bash, ci/cd, docker, git, go, kubernetes, linux, monitoring, python, terraform. Nice to have: datadog, github actions, helm, jenkins, on-call rotation, prometheus."
+    },
+    {
+      "id": "post_062",
+      "role": "devops_sre",
+      "company": "Kestrel Energy",
+      "title": "Senior SRE",
+      "url": "https://stale-dataset.invalid/postings/post_062",
+      "skills_required": [
+        "aws",
+        "bash",
+        "ci/cd",
+        "docker",
+        "git",
+        "go",
+        "kubernetes",
+        "linux",
+        "monitoring",
+        "python"
+      ],
+      "skills_preferred": [
+        "datadog",
+        "github actions",
+        "gitlab ci",
+        "grafana",
+        "on-call rotation",
+        "packer",
+        "prometheus"
+      ],
+      "raw_text": "Kestrel Energy is hiring a Senior SRE to join our engineering org. You will own production systems written primarily in go and ship features to customers continuously. Required: aws, bash, ci/cd, docker, git, go, kubernetes, linux, monitoring, python. Nice to have: datadog, github actions, gitlab ci, grafana, on-call rotation, packer."
+    },
+    {
+      "id": "post_063",
+      "role": "devops_sre",
+      "company": "Nimbus Health",
+      "title": "Senior DevOps Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_063",
+      "skills_required": [
+        "aws",
+        "bash",
+        "ci/cd",
+        "docker",
+        "git",
+        "go",
+        "kubernetes",
+        "linux",
+        "monitoring",
+        "python",
+        "terraform"
+      ],
+      "skills_preferred": [
+        "ansible",
+        "argocd",
+        "datadog",
+        "grafana",
+        "helm",
+        "jenkins",
+        "on-call rotation",
+        "slos/slis"
+      ],
+      "raw_text": "Nimbus Health is hiring a Senior DevOps Engineer to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: aws, bash, ci/cd, docker, git, go, kubernetes, linux, monitoring, python, terraform. Nice to have: ansible, argocd, datadog, grafana, helm, jenkins."
+    },
+    {
+      "id": "post_064",
+      "role": "devops_sre",
+      "company": "Datawave",
+      "title": "SRE",
+      "url": "https://stale-dataset.invalid/postings/post_064",
+      "skills_required": [
+        "aws",
+        "bash",
+        "docker",
+        "git",
+        "kubernetes",
+        "python"
+      ],
+      "skills_preferred": [
+        "argocd",
+        "github actions",
+        "grafana",
+        "helm",
+        "incident response",
+        "prometheus",
+        "slos/slis",
+        "vault"
+      ],
+      "raw_text": "Datawave is hiring a SRE to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws, bash, docker, git, kubernetes, python. Nice to have: argocd, github actions, grafana, helm, incident response, prometheus."
+    },
+    {
+      "id": "post_065",
+      "role": "devops_sre",
+      "company": "Fjord Logistics",
+      "title": "Infrastructure Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_065",
+      "skills_required": [
+        "bash",
+        "docker",
+        "git",
+        "go",
+        "kubernetes",
+        "linux",
+        "monitoring",
+        "python",
+        "terraform"
+      ],
+      "skills_preferred": [
+        "ansible",
+        "argocd",
+        "datadog",
+        "github actions",
+        "grafana",
+        "incident response",
+        "jenkins",
+        "on-call rotation",
+        "prometheus"
+      ],
+      "raw_text": "Fjord Logistics is hiring a Infrastructure Engineer to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: bash, docker, git, go, kubernetes, linux, monitoring, python, terraform. Nice to have: ansible, argocd, datadog, github actions, grafana, incident response."
+    },
+    {
+      "id": "post_066",
+      "role": "devops_sre",
+      "company": "Echo Networks",
+      "title": "Infrastructure Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_066",
+      "skills_required": [
+        "aws",
+        "bash",
+        "ci/cd",
+        "docker",
+        "git",
+        "go",
+        "linux",
+        "monitoring",
+        "python",
+        "terraform"
+      ],
+      "skills_preferred": [
+        "ansible",
+        "datadog",
+        "github actions",
+        "gitlab ci",
+        "helm",
+        "incident response",
+        "jenkins",
+        "on-call rotation",
+        "slos/slis"
+      ],
+      "raw_text": "Echo Networks is hiring a Infrastructure Engineer to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: aws, bash, ci/cd, docker, git, go, linux, monitoring, python, terraform. Nice to have: ansible, datadog, github actions, gitlab ci, helm, incident response."
+    },
+    {
+      "id": "post_067",
+      "role": "devops_sre",
+      "company": "Fjord Logistics",
+      "title": "Senior SRE",
+      "url": "https://stale-dataset.invalid/postings/post_067",
+      "skills_required": [
+        "bash",
+        "ci/cd",
+        "docker",
+        "git",
+        "kubernetes",
+        "linux",
+        "monitoring",
+        "python",
+        "terraform"
+      ],
+      "skills_preferred": [
+        "ansible",
+        "argocd",
+        "github actions",
+        "gitlab ci",
+        "grafana",
+        "helm",
+        "on-call rotation",
+        "prometheus"
+      ],
+      "raw_text": "Fjord Logistics is hiring a Senior SRE to join our engineering org. You will own production systems written primarily in bash, python and ship features to customers continuously. Required: bash, ci/cd, docker, git, kubernetes, linux, monitoring, python, terraform. Nice to have: ansible, argocd, github actions, gitlab ci, grafana, helm."
+    },
+    {
+      "id": "post_068",
+      "role": "devops_sre",
+      "company": "Acme Cloud",
+      "title": "Senior SRE",
+      "url": "https://stale-dataset.invalid/postings/post_068",
+      "skills_required": [
+        "bash",
+        "ci/cd",
+        "docker",
+        "git",
+        "go",
+        "kubernetes",
+        "linux",
+        "monitoring",
+        "python",
+        "terraform"
+      ],
+      "skills_preferred": [
+        "gitlab ci",
+        "incident response",
+        "on-call rotation",
+        "slos/slis",
+        "vault"
+      ],
+      "raw_text": "Acme Cloud is hiring a Senior SRE to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: bash, ci/cd, docker, git, go, kubernetes, linux, monitoring, python, terraform. Nice to have: gitlab ci, incident response, on-call rotation, slos/slis, vault."
+    },
+    {
+      "id": "post_069",
+      "role": "devops_sre",
+      "company": "Helios Mobility",
+      "title": "Infrastructure Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_069",
+      "skills_required": [
+        "aws",
+        "bash",
+        "docker",
+        "git",
+        "go",
+        "kubernetes",
+        "linux",
+        "monitoring",
+        "terraform"
+      ],
+      "skills_preferred": [
+        "ansible",
+        "prometheus",
+        "slos/slis"
+      ],
+      "raw_text": "Helios Mobility is hiring a Infrastructure Engineer to join our engineering org. You will own production systems written primarily in go and ship features to customers continuously. Required: aws, bash, docker, git, go, kubernetes, linux, monitoring, terraform. Nice to have: ansible, prometheus, slos/slis."
+    },
+    {
+      "id": "post_070",
+      "role": "devops_sre",
+      "company": "Hexavault",
+      "title": "Senior SRE",
+      "url": "https://stale-dataset.invalid/postings/post_070",
+      "skills_required": [
+        "aws",
+        "bash",
+        "ci/cd",
+        "docker",
+        "git",
+        "kubernetes",
+        "linux",
+        "monitoring",
+        "python",
+        "terraform"
+      ],
+      "skills_preferred": [
+        "argocd",
+        "github actions",
+        "grafana",
+        "istio",
+        "jenkins",
+        "on-call rotation",
+        "prometheus",
+        "vault"
+      ],
+      "raw_text": "Hexavault is hiring a Senior SRE to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws, bash, ci/cd, docker, git, kubernetes, linux, monitoring, python, terraform. Nice to have: argocd, github actions, grafana, istio, jenkins, on-call rotation."
+    },
+    {
+      "id": "post_071",
+      "role": "devops_sre",
+      "company": "Indigo Travel",
+      "title": "Senior SRE",
+      "url": "https://stale-dataset.invalid/postings/post_071",
+      "skills_required": [
+        "aws",
+        "bash",
+        "ci/cd",
+        "docker",
+        "git",
+        "go",
+        "kubernetes",
+        "linux",
+        "monitoring",
+        "python",
+        "terraform"
+      ],
+      "skills_preferred": [
+        "ansible",
+        "datadog",
+        "helm",
+        "incident response",
+        "jenkins",
+        "prometheus",
+        "vault"
+      ],
+      "raw_text": "Indigo Travel is hiring a Senior SRE to join our engineering org. You will own production systems written primarily in go and ship features to customers continuously. Required: aws, bash, ci/cd, docker, git, go, kubernetes, linux, monitoring, python, terraform. Nice to have: ansible, datadog, helm, incident response, jenkins, prometheus."
+    },
+    {
+      "id": "post_072",
+      "role": "devops_sre",
+      "company": "Halcyon Robotics",
+      "title": "Site Reliability Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_072",
+      "skills_required": [
+        "aws",
+        "bash",
+        "ci/cd",
+        "docker",
+        "python"
+      ],
+      "skills_preferred": [
+        "datadog",
+        "github actions",
+        "gitlab ci",
+        "helm",
+        "slos/slis",
+        "vault"
+      ],
+      "raw_text": "Halcyon Robotics is hiring a Site Reliability Engineer to join our engineering org. You will own production systems written primarily in bash, python and ship features to customers continuously. Required: aws, bash, ci/cd, docker, python. Nice to have: datadog, github actions, gitlab ci, helm, slos/slis, vault."
+    },
+    {
+      "id": "post_073",
+      "role": "security",
+      "company": "Echo Networks",
+      "title": "Product Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_073",
+      "skills_required": [
+        "git",
+        "go",
+        "kubernetes",
+        "oauth",
+        "oidc",
+        "owasp top 10",
+        "python",
+        "tls"
+      ],
+      "skills_preferred": [
+        "dast",
+        "dependabot",
+        "incident response",
+        "sast",
+        "siem",
+        "snyk",
+        "soc2 compliance",
+        "zero trust"
+      ],
+      "raw_text": "Echo Networks is hiring a Product Security Engineer to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: git, go, kubernetes, oauth, oidc, owasp top 10, python, tls. Nice to have: dast, dependabot, incident response, sast, siem, snyk."
+    },
+    {
+      "id": "post_074",
+      "role": "security",
+      "company": "Northwind Labs",
+      "title": "Application Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_074",
+      "skills_required": [
+        "aws iam",
+        "kubernetes",
+        "owasp top 10",
+        "python",
+        "threat modeling",
+        "tls"
+      ],
+      "skills_preferred": [
+        "burp suite",
+        "dast",
+        "pci-dss",
+        "sast",
+        "secrets management",
+        "siem",
+        "sso / saml"
+      ],
+      "raw_text": "Northwind Labs is hiring a Application Security Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws iam, kubernetes, owasp top 10, python, threat modeling, tls. Nice to have: burp suite, dast, pci-dss, sast, secrets management, siem."
+    },
+    {
+      "id": "post_075",
+      "role": "security",
+      "company": "Fjord Logistics",
+      "title": "Offensive Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_075",
+      "skills_required": [
+        "aws iam",
+        "bash",
+        "ci/cd",
+        "git",
+        "oauth",
+        "oidc",
+        "python",
+        "threat modeling"
+      ],
+      "skills_preferred": [
+        "argon2",
+        "bcrypt",
+        "dast",
+        "ebpf / falco",
+        "iso 27001",
+        "sast",
+        "siem",
+        "snyk",
+        "soc2 compliance"
+      ],
+      "raw_text": "Fjord Logistics is hiring a Offensive Security Engineer to join our engineering org. You will own production systems written primarily in python, bash and ship features to customers continuously. Required: aws iam, bash, ci/cd, git, oauth, oidc, python, threat modeling. Nice to have: argon2, bcrypt, dast, ebpf / falco, iso 27001, sast."
+    },
+    {
+      "id": "post_076",
+      "role": "security",
+      "company": "Polaris Media",
+      "title": "Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_076",
+      "skills_required": [
+        "aws iam",
+        "go",
+        "owasp top 10",
+        "python",
+        "tls"
+      ],
+      "skills_preferred": [
+        "argon2",
+        "bcrypt",
+        "sast",
+        "secrets management",
+        "sso / saml",
+        "vault"
+      ],
+      "raw_text": "Polaris Media is hiring a Security Engineer to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: aws iam, go, owasp top 10, python, tls. Nice to have: argon2, bcrypt, sast, secrets management, sso / saml, vault."
+    },
+    {
+      "id": "post_077",
+      "role": "security",
+      "company": "Beacon Analytics",
+      "title": "Cloud Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_077",
+      "skills_required": [
+        "git",
+        "go",
+        "kubernetes",
+        "owasp top 10",
+        "python",
+        "threat modeling",
+        "tls"
+      ],
+      "skills_preferred": [
+        "argon2",
+        "sast",
+        "secrets management",
+        "sso / saml",
+        "vault"
+      ],
+      "raw_text": "Beacon Analytics is hiring a Cloud Security Engineer to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: git, go, kubernetes, owasp top 10, python, threat modeling, tls. Nice to have: argon2, sast, secrets management, sso / saml, vault."
+    },
+    {
+      "id": "post_078",
+      "role": "security",
+      "company": "Datawave",
+      "title": "Senior Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_078",
+      "skills_required": [
+        "aws iam",
+        "ci/cd",
+        "git",
+        "go",
+        "oauth",
+        "oidc",
+        "owasp top 10",
+        "python",
+        "tls"
+      ],
+      "skills_preferred": [
+        "argon2",
+        "bcrypt",
+        "burp suite",
+        "dast",
+        "incident response",
+        "iso 27001",
+        "pci-dss",
+        "sast",
+        "siem",
+        "snyk",
+        "soc2 compliance",
+        "vault",
+        "zero trust"
+      ],
+      "raw_text": "Datawave is hiring a Senior Security Engineer to join our engineering org. You will own production systems written primarily in python, go and ship features to customers continuously. Required: aws iam, ci/cd, git, go, oauth, oidc, owasp top 10, python, tls. Nice to have: argon2, bcrypt, burp suite, dast, incident response, iso 27001."
+    },
+    {
+      "id": "post_079",
+      "role": "security",
+      "company": "Junction AI",
+      "title": "DevSecOps Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_079",
+      "skills_required": [
+        "bash",
+        "ci/cd",
+        "git",
+        "kubernetes",
+        "oauth",
+        "owasp top 10",
+        "python",
+        "threat modeling"
+      ],
+      "skills_preferred": [
+        "argon2",
+        "bug bounty triage",
+        "dependabot",
+        "secrets management",
+        "zero trust"
+      ],
+      "raw_text": "Junction AI is hiring a DevSecOps Engineer to join our engineering org. You will own production systems written primarily in python, bash and ship features to customers continuously. Required: bash, ci/cd, git, kubernetes, oauth, owasp top 10, python, threat modeling. Nice to have: argon2, bug bounty triage, dependabot, secrets management, zero trust."
+    },
+    {
+      "id": "post_080",
+      "role": "security",
+      "company": "Hexavault",
+      "title": "Product Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_080",
+      "skills_required": [
+        "git",
+        "kubernetes",
+        "oauth",
+        "oidc",
+        "owasp top 10",
+        "python",
+        "threat modeling",
+        "tls"
+      ],
+      "skills_preferred": [
+        "bug bounty triage",
+        "burp suite",
+        "dependabot",
+        "incident response",
+        "pci-dss",
+        "secrets management",
+        "sso / saml",
+        "vault",
+        "zero trust"
+      ],
+      "raw_text": "Hexavault is hiring a Product Security Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: git, kubernetes, oauth, oidc, owasp top 10, python, threat modeling, tls. Nice to have: bug bounty triage, burp suite, dependabot, incident response, pci-dss, secrets management."
+    },
+    {
+      "id": "post_081",
+      "role": "security",
+      "company": "Junction AI",
+      "title": "Product Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_081",
+      "skills_required": [
+        "aws iam",
+        "bash",
+        "ci/cd",
+        "git",
+        "kubernetes",
+        "oauth",
+        "owasp top 10",
+        "python"
+      ],
+      "skills_preferred": [
+        "bcrypt",
+        "ebpf / falco",
+        "incident response",
+        "iso 27001",
+        "pci-dss",
+        "sast",
+        "secrets management",
+        "siem",
+        "sso / saml",
+        "zero trust"
+      ],
+      "raw_text": "Junction AI is hiring a Product Security Engineer to join our engineering org. You will own production systems written primarily in python, bash and ship features to customers continuously. Required: aws iam, bash, ci/cd, git, kubernetes, oauth, owasp top 10, python. Nice to have: bcrypt, ebpf / falco, incident response, iso 27001, pci-dss, sast."
+    },
+    {
+      "id": "post_082",
+      "role": "security",
+      "company": "Kestrel Energy",
+      "title": "Cloud Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_082",
+      "skills_required": [
+        "aws iam",
+        "bash",
+        "oauth",
+        "oidc",
+        "owasp top 10",
+        "python",
+        "threat modeling",
+        "tls"
+      ],
+      "skills_preferred": [
+        "burp suite",
+        "dependabot",
+        "iso 27001",
+        "secrets management",
+        "snyk",
+        "vault",
+        "zero trust"
+      ],
+      "raw_text": "Kestrel Energy is hiring a Cloud Security Engineer to join our engineering org. You will own production systems written primarily in python, bash and ship features to customers continuously. Required: aws iam, bash, oauth, oidc, owasp top 10, python, threat modeling, tls. Nice to have: burp suite, dependabot, iso 27001, secrets management, snyk, vault."
+    },
+    {
+      "id": "post_083",
+      "role": "security",
+      "company": "Obsidian Auto",
+      "title": "Offensive Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_083",
+      "skills_required": [
+        "aws iam",
+        "git",
+        "oauth",
+        "oidc",
+        "owasp top 10",
+        "python",
+        "threat modeling",
+        "tls"
+      ],
+      "skills_preferred": [
+        "burp suite",
+        "dast",
+        "dependabot",
+        "incident response",
+        "iso 27001",
+        "pci-dss",
+        "sso / saml"
+      ],
+      "raw_text": "Obsidian Auto is hiring a Offensive Security Engineer to join our engineering org. You will own production systems written primarily in python and ship features to customers continuously. Required: aws iam, git, oauth, oidc, owasp top 10, python, threat modeling, tls. Nice to have: burp suite, dast, dependabot, incident response, iso 27001, pci-dss."
+    },
+    {
+      "id": "post_084",
+      "role": "security",
+      "company": "Cipher Security",
+      "title": "Offensive Security Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_084",
+      "skills_required": [
+        "bash",
+        "ci/cd",
+        "git",
+        "oauth",
+        "python",
+        "tls"
+      ],
+      "skills_preferred": [
+        "bcrypt",
+        "burp suite",
+        "incident response",
+        "secrets management",
+        "siem",
+        "snyk",
+        "soc2 compliance",
+        "vault"
+      ],
+      "raw_text": "Cipher Security is hiring a Offensive Security Engineer to join our engineering org. You will own production systems written primarily in python, bash and ship features to customers continuously. Required: bash, ci/cd, git, oauth, python, tls. Nice to have: bcrypt, burp suite, incident response, secrets management, siem, snyk."
+    },
+    {
+      "id": "post_085",
+      "role": "embedded",
+      "company": "Acme Cloud",
+      "title": "Senior Firmware Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_085",
+      "skills_required": [
+        "c",
+        "c++",
+        "debugging",
+        "git",
+        "linux"
+      ],
+      "skills_preferred": [
+        "buildroot",
+        "can bus",
+        "device drivers",
+        "freertos",
+        "i2c",
+        "memory-constrained programming",
+        "oscilloscope",
+        "rust",
+        "spi",
+        "uart",
+        "yocto"
+      ],
+      "raw_text": "Acme Cloud is hiring a Senior Firmware Engineer to join our engineering org. You will own production systems written primarily in c++ and ship features to customers continuously. Required: c, c++, debugging, git, linux. Nice to have: buildroot, can bus, device drivers, freertos, i2c, memory-constrained programming."
+    },
+    {
+      "id": "post_086",
+      "role": "embedded",
+      "company": "Polaris Media",
+      "title": "Embedded Software Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_086",
+      "skills_required": [
+        "c",
+        "c++",
+        "debugging",
+        "git",
+        "hardware schematics"
+      ],
+      "skills_preferred": [
+        "buildroot",
+        "can bus",
+        "device drivers",
+        "i2c",
+        "logic analyzer",
+        "memory-constrained programming",
+        "oscilloscope",
+        "uart",
+        "yocto"
+      ],
+      "raw_text": "Polaris Media is hiring a Embedded Software Engineer to join our engineering org. You will own production systems written primarily in c, c++ and ship features to customers continuously. Required: c, c++, debugging, git, hardware schematics. Nice to have: buildroot, can bus, device drivers, i2c, logic analyzer, memory-constrained programming."
+    },
+    {
+      "id": "post_087",
+      "role": "embedded",
+      "company": "Fjord Logistics",
+      "title": "Linux Kernel Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_087",
+      "skills_required": [
+        "c",
+        "c++",
+        "git",
+        "hardware schematics",
+        "linux",
+        "rust"
+      ],
+      "skills_preferred": [
+        "arm cortex-m",
+        "can bus",
+        "uart",
+        "yocto"
+      ],
+      "raw_text": "Fjord Logistics is hiring a Linux Kernel Engineer to join our engineering org. You will own production systems written primarily in rust, c and ship features to customers continuously. Required: c, c++, git, hardware schematics, linux, rust. Nice to have: arm cortex-m, can bus, uart, yocto."
+    },
+    {
+      "id": "post_088",
+      "role": "embedded",
+      "company": "Quantum Edge",
+      "title": "Embedded Systems Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_088",
+      "skills_required": [
+        "c",
+        "c++",
+        "git",
+        "hardware schematics",
+        "linux"
+      ],
+      "skills_preferred": [
+        "arm cortex-m",
+        "device drivers",
+        "freertos",
+        "logic analyzer",
+        "memory-constrained programming",
+        "spi"
+      ],
+      "raw_text": "Quantum Edge is hiring a Embedded Systems Engineer to join our engineering org. You will own production systems written primarily in c++ and ship features to customers continuously. Required: c, c++, git, hardware schematics, linux. Nice to have: arm cortex-m, device drivers, freertos, logic analyzer, memory-constrained programming, spi."
+    },
+    {
+      "id": "post_089",
+      "role": "embedded",
+      "company": "Cipher Security",
+      "title": "Linux Kernel Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_089",
+      "skills_required": [
+        "c",
+        "c++",
+        "debugging",
+        "linux",
+        "rust"
+      ],
+      "skills_preferred": [
+        "can bus",
+        "logic analyzer",
+        "spi"
+      ],
+      "raw_text": "Cipher Security is hiring a Linux Kernel Engineer to join our engineering org. You will own production systems written primarily in rust, c and ship features to customers continuously. Required: c, c++, debugging, linux, rust. Nice to have: can bus, logic analyzer, spi."
+    },
+    {
+      "id": "post_090",
+      "role": "embedded",
+      "company": "Echo Networks",
+      "title": "Embedded C++ Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_090",
+      "skills_required": [
+        "c",
+        "c++",
+        "debugging",
+        "git",
+        "linux"
+      ],
+      "skills_preferred": [
+        "arm cortex-m",
+        "can bus",
+        "device drivers",
+        "memory-constrained programming",
+        "misra c",
+        "oscilloscope",
+        "spi",
+        "uart"
+      ],
+      "raw_text": "Echo Networks is hiring a Embedded C++ Engineer to join our engineering org. You will own production systems written primarily in c, c++ and ship features to customers continuously. Required: c, c++, debugging, git, linux. Nice to have: arm cortex-m, can bus, device drivers, memory-constrained programming, misra c, oscilloscope."
+    },
+    {
+      "id": "post_091",
+      "role": "embedded",
+      "company": "Lumen Genomics",
+      "title": "Embedded C++ Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_091",
+      "skills_required": [
+        "c",
+        "c++",
+        "debugging",
+        "git",
+        "hardware schematics"
+      ],
+      "skills_preferred": [
+        "arm cortex-m",
+        "memory-constrained programming",
+        "risc-v",
+        "rust",
+        "zephyr rtos"
+      ],
+      "raw_text": "Lumen Genomics is hiring a Embedded C++ Engineer to join our engineering org. You will own production systems written primarily in c++ and ship features to customers continuously. Required: c, c++, debugging, git, hardware schematics. Nice to have: arm cortex-m, memory-constrained programming, risc-v, rust, zephyr rtos."
+    },
+    {
+      "id": "post_092",
+      "role": "embedded",
+      "company": "Bluestone Insurance",
+      "title": "Senior Firmware Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_092",
+      "skills_required": [
+        "c",
+        "c++",
+        "debugging",
+        "git",
+        "linux",
+        "rust"
+      ],
+      "skills_preferred": [
+        "arm cortex-m",
+        "can bus",
+        "device drivers",
+        "risc-v",
+        "spi",
+        "uart"
+      ],
+      "raw_text": "Bluestone Insurance is hiring a Senior Firmware Engineer to join our engineering org. You will own production systems written primarily in rust, c and ship features to customers continuously. Required: c, c++, debugging, git, linux, rust. Nice to have: arm cortex-m, can bus, device drivers, risc-v, spi, uart."
+    },
+    {
+      "id": "post_093",
+      "role": "embedded",
+      "company": "Quantum Edge",
+      "title": "Firmware Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_093",
+      "skills_required": [
+        "c",
+        "debugging",
+        "git",
+        "hardware schematics",
+        "linux",
+        "rust"
+      ],
+      "skills_preferred": [
+        "arm cortex-m",
+        "can bus",
+        "device drivers",
+        "freertos",
+        "i2c",
+        "spi",
+        "uart"
+      ],
+      "raw_text": "Quantum Edge is hiring a Firmware Engineer to join our engineering org. You will own production systems written primarily in rust, c and ship features to customers continuously. Required: c, debugging, git, hardware schematics, linux, rust. Nice to have: arm cortex-m, can bus, device drivers, freertos, i2c, spi."
+    },
+    {
+      "id": "post_094",
+      "role": "embedded",
+      "company": "Obsidian Auto",
+      "title": "Senior Embedded Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_094",
+      "skills_required": [
+        "c",
+        "c++",
+        "debugging",
+        "git",
+        "hardware schematics"
+      ],
+      "skills_preferred": [
+        "arm cortex-m",
+        "buildroot",
+        "logic analyzer",
+        "oscilloscope",
+        "rust",
+        "spi",
+        "uart",
+        "yocto"
+      ],
+      "raw_text": "Obsidian Auto is hiring a Senior Embedded Engineer to join our engineering org. You will own production systems written primarily in c, c++ and ship features to customers continuously. Required: c, c++, debugging, git, hardware schematics. Nice to have: arm cortex-m, buildroot, logic analyzer, oscilloscope, rust, spi."
+    },
+    {
+      "id": "post_095",
+      "role": "embedded",
+      "company": "Polaris Media",
+      "title": "Embedded C++ Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_095",
+      "skills_required": [
+        "c",
+        "c++",
+        "git",
+        "hardware schematics",
+        "rust"
+      ],
+      "skills_preferred": [
+        "can bus",
+        "freertos",
+        "i2c"
+      ],
+      "raw_text": "Polaris Media is hiring a Embedded C++ Engineer to join our engineering org. You will own production systems written primarily in rust, c and ship features to customers continuously. Required: c, c++, git, hardware schematics, rust. Nice to have: can bus, freertos, i2c."
+    },
+    {
+      "id": "post_096",
+      "role": "embedded",
+      "company": "Helios Mobility",
+      "title": "Senior Embedded Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_096",
+      "skills_required": [
+        "c",
+        "c++",
+        "debugging",
+        "git",
+        "linux"
+      ],
+      "skills_preferred": [
+        "device drivers",
+        "memory-constrained programming",
+        "oscilloscope",
+        "risc-v",
+        "spi",
+        "uart"
+      ],
+      "raw_text": "Helios Mobility is hiring a Senior Embedded Engineer to join our engineering org. You will own production systems written primarily in c, c++ and ship features to customers continuously. Required: c, c++, debugging, git, linux. Nice to have: device drivers, memory-constrained programming, oscilloscope, risc-v, spi, uart."
+    },
+    {
+      "id": "post_097",
+      "role": "game",
+      "company": "Beacon Analytics",
+      "title": "Tools Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_097",
+      "skills_required": [
+        "c#",
+        "c++",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "directx 12",
+        "memory management",
+        "multiplayer architecture",
+        "performance profiling"
+      ],
+      "raw_text": "Beacon Analytics is hiring a Tools Engineer to join our engineering org. You will own production systems written primarily in c++, c# and ship features to customers continuously. Required: c#, c++, git, linear algebra. Nice to have: directx 12, memory management, multiplayer architecture, performance profiling."
+    },
+    {
+      "id": "post_098",
+      "role": "game",
+      "company": "Northwind Labs",
+      "title": "Graphics Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_098",
+      "skills_required": [
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "netcode",
+        "performance profiling",
+        "physics engines"
+      ],
+      "raw_text": "Northwind Labs is hiring a Graphics Engineer to join our engineering org. You will own production systems written primarily in c++ and ship features to customers continuously. Required: c++, debugging, git, linear algebra. Nice to have: netcode, performance profiling, physics engines."
+    },
+    {
+      "id": "post_099",
+      "role": "game",
+      "company": "Aurora Retail",
+      "title": "Game Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_099",
+      "skills_required": [
+        "c#",
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "directx 12",
+        "entity component system",
+        "hlsl/glsl shaders",
+        "memory management",
+        "netcode",
+        "performance profiling",
+        "unity"
+      ],
+      "raw_text": "Aurora Retail is hiring a Game Engineer to join our engineering org. You will own production systems written primarily in c++, c# and ship features to customers continuously. Required: c#, c++, debugging, git, linear algebra. Nice to have: directx 12, entity component system, hlsl/glsl shaders, memory management, netcode, performance profiling."
+    },
+    {
+      "id": "post_100",
+      "role": "game",
+      "company": "Aurora Retail",
+      "title": "Network Programmer",
+      "url": "https://stale-dataset.invalid/postings/post_100",
+      "skills_required": [
+        "3d math",
+        "c#",
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "directx 12",
+        "entity component system",
+        "hlsl/glsl shaders",
+        "memory management",
+        "performance profiling",
+        "unity"
+      ],
+      "raw_text": "Aurora Retail is hiring a Network Programmer to join our engineering org. You will own production systems written primarily in c++, c# and ship features to customers continuously. Required: 3d math, c#, c++, debugging, git, linear algebra. Nice to have: directx 12, entity component system, hlsl/glsl shaders, memory management, performance profiling, unity."
+    },
+    {
+      "id": "post_101",
+      "role": "game",
+      "company": "Datawave",
+      "title": "Senior Game Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_101",
+      "skills_required": [
+        "c#",
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "hlsl/glsl shaders",
+        "memory management",
+        "performance profiling",
+        "physics engines",
+        "unity",
+        "unreal engine"
+      ],
+      "raw_text": "Datawave is hiring a Senior Game Engineer to join our engineering org. You will own production systems written primarily in c# and ship features to customers continuously. Required: c#, c++, debugging, git, linear algebra. Nice to have: hlsl/glsl shaders, memory management, performance profiling, physics engines, unity, unreal engine."
+    },
+    {
+      "id": "post_102",
+      "role": "game",
+      "company": "Kestrel Energy",
+      "title": "Gameplay Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_102",
+      "skills_required": [
+        "3d math",
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "ai/behavior trees",
+        "c#",
+        "data-oriented design",
+        "opengl",
+        "physics engines",
+        "unity"
+      ],
+      "raw_text": "Kestrel Energy is hiring a Gameplay Engineer to join our engineering org. You will own production systems written primarily in c++ and ship features to customers continuously. Required: 3d math, c++, debugging, git, linear algebra. Nice to have: ai/behavior trees, c#, data-oriented design, opengl, physics engines, unity."
+    },
+    {
+      "id": "post_103",
+      "role": "game",
+      "company": "Glacier Studios",
+      "title": "Graphics Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_103",
+      "skills_required": [
+        "c++",
+        "debugging"
+      ],
+      "skills_preferred": [
+        "c#",
+        "memory management",
+        "multiplayer architecture",
+        "netcode",
+        "performance profiling",
+        "physics engines"
+      ],
+      "raw_text": "Glacier Studios is hiring a Graphics Engineer to join our engineering org. You will own production systems written primarily in c++ and ship features to customers continuously. Required: c++, debugging. Nice to have: c#, memory management, multiplayer architecture, netcode, performance profiling, physics engines."
+    },
+    {
+      "id": "post_104",
+      "role": "game",
+      "company": "Datawave",
+      "title": "Tools Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_104",
+      "skills_required": [
+        "3d math",
+        "c#",
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "ai/behavior trees",
+        "directx 12",
+        "entity component system",
+        "memory management",
+        "opengl",
+        "performance profiling",
+        "unity",
+        "unreal engine"
+      ],
+      "raw_text": "Datawave is hiring a Tools Engineer to join our engineering org. You will own production systems written primarily in c# and ship features to customers continuously. Required: 3d math, c#, c++, debugging, git, linear algebra. Nice to have: ai/behavior trees, directx 12, entity component system, memory management, opengl, performance profiling."
+    },
+    {
+      "id": "post_105",
+      "role": "game",
+      "company": "Datawave",
+      "title": "Game Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_105",
+      "skills_required": [
+        "3d math",
+        "c#",
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "data-oriented design",
+        "physics engines",
+        "unity",
+        "unreal engine"
+      ],
+      "raw_text": "Datawave is hiring a Game Engineer to join our engineering org. You will own production systems written primarily in c# and ship features to customers continuously. Required: 3d math, c#, c++, debugging, git, linear algebra. Nice to have: data-oriented design, physics engines, unity, unreal engine."
+    },
+    {
+      "id": "post_106",
+      "role": "game",
+      "company": "Quantum Edge",
+      "title": "Gameplay Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_106",
+      "skills_required": [
+        "3d math",
+        "c#",
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "data-oriented design",
+        "directx 12",
+        "netcode",
+        "opengl",
+        "performance profiling",
+        "unity"
+      ],
+      "raw_text": "Quantum Edge is hiring a Gameplay Engineer to join our engineering org. You will own production systems written primarily in c++, c# and ship features to customers continuously. Required: 3d math, c#, c++, debugging, git, linear algebra. Nice to have: data-oriented design, directx 12, netcode, opengl, performance profiling, unity."
+    },
+    {
+      "id": "post_107",
+      "role": "game",
+      "company": "Beacon Analytics",
+      "title": "Senior Game Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_107",
+      "skills_required": [
+        "3d math",
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "c#",
+        "entity component system",
+        "memory management",
+        "physics engines",
+        "unity",
+        "vulkan"
+      ],
+      "raw_text": "Beacon Analytics is hiring a Senior Game Engineer to join our engineering org. You will own production systems written primarily in c++ and ship features to customers continuously. Required: 3d math, c++, debugging, git, linear algebra. Nice to have: c#, entity component system, memory management, physics engines, unity, vulkan."
+    },
+    {
+      "id": "post_108",
+      "role": "game",
+      "company": "Beacon Analytics",
+      "title": "Game Engineer",
+      "url": "https://stale-dataset.invalid/postings/post_108",
+      "skills_required": [
+        "c#",
+        "c++",
+        "debugging",
+        "git",
+        "linear algebra"
+      ],
+      "skills_preferred": [
+        "ai/behavior trees",
+        "memory management",
+        "netcode",
+        "performance profiling",
+        "unity",
+        "unreal engine"
+      ],
+      "raw_text": "Beacon Analytics is hiring a Game Engineer to join our engineering org. You will own production systems written primarily in c++, c# and ship features to customers continuously. Required: c#, c++, debugging, git, linear algebra. Nice to have: ai/behavior trees, memory management, netcode, performance profiling, unity, unreal engine."
+    }
+  ]
+}

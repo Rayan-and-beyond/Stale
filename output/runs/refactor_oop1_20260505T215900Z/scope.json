@@ -1,0 +1,32 @@
+{
+  "subject_area": "Object-oriented programming with Java \u2014 fundamentals",
+  "pedagogical_level": "undergraduate fundamentals course with hands-on Java practice",
+  "course_intent": "Teach the foundations of object-oriented programming using Java \u2014 students should leave able to write Java programs using classes, inheritance, polymorphism, abstract classes, and interfaces, and to apply core OOP design principles.",
+  "depth_bound": "Recommendations stay at the level of core Java syntax, OOP language mechanics, and introductory class design with hands-on coding. Advanced Java topics (generics internals, concurrency, JVM internals, design patterns at depth, frameworks like Spring, JavaFX/GUI, file I/O, networking, lambdas/streams) and formal type-theory of OOP are beyond this course's depth bound.",
+  "key_topics": [
+    "Java syntax basics (variables, data types, operators, type casting)",
+    "Control flow (if/else, switch, while/do-while/for loops, break/continue)",
+    "Methods, parameter passing, overloading, and variable scope",
+    "Arrays (1D, 2D, multidimensional) and enumerated types",
+    "Classes, objects, constructors, and UML class diagrams",
+    "Class relationships: association, aggregation, composition",
+    "Wrapper classes, String/StringBuilder, BigInteger/BigDecimal, regex basics",
+    "Inheritance with super keyword and constructor chaining",
+    "Polymorphism, dynamic binding, instanceof, and ArrayList",
+    "Abstract classes and interfaces (Comparable, Cloneable)"
+  ],
+  "one_liner": "Introductory object-oriented programming in Java covering syntax, control flow, methods, arrays, classes, inheritance, polymorphism, and abstract classes/interfaces \u2014 does NOT cover generics in depth, lambdas/streams, concurrency, GUI, file I/O, networking, design patterns, or frameworks.",
+  "relevant_roles": [
+    "backend",
+    "fullstack",
+    "mobile"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 80786,
+    "cache_creation_input_tokens": 4684,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 726
+  }
+}

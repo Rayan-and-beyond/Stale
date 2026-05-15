@@ -1,0 +1,53 @@
+{
+  "findings": [
+    {
+      "course": "database_concepts_and_design",
+      "slide_ref": "Week 10 - Database Views and Authorization_.pdf page 9",
+      "claim": "Strong password policies prevent unauthorized user access: ... Implement password expiration and lockout mechanisms",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+      "citation_excerpt": "Verifiers and CSPs SHALL NOT require subscribers to change passwords periodically.",
+      "suggested_replacement": "Drop the periodic password-expiration recommendation. Per NIST SP 800-63B (current revision -4, August 2025), verifiers SHALL force a password change only if there is evidence the authenticator has been compromised. Pair long passwords (\u226515 chars), screening against breach corpus blocklists, salted+hashed storage with a memory-hard KDF, rate-limiting on failed attempts, and phishing-resistant MFA (e.g., WebAuthn/FIDO2) instead of forced rotation.",
+      "verification": {
+        "status": "verified",
+        "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "database_concepts_and_design",
+      "slide_ref": "Week 10 - Database Views and Authorization_.pdf page 9",
+      "claim": "Use complex passwords and multi-factor authentication (MFA).",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+      "citation_excerpt": "Other composition requirements for passwords SHALL NOT be imposed.",
+      "suggested_replacement": "Drop 'complex passwords' guidance based on character-class composition rules (mixed case, digits, symbols). Per NIST SP 800-63B-4 \u00a73.1.1, composition rules SHALL NOT be imposed; instead require a 15-character minimum (8 with MFA), allow up to 64+ characters including spaces and Unicode, screen prospective passwords against a blocklist of breached/common passwords, and keep the MFA recommendation.",
+      "verification": {
+        "status": "verified",
+        "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+        "content_type": "text/html"
+      }
+    }
+  ],
+  "summary": {
+    "total_findings": 2,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 1
+    },
+    "courses_audited": [
+      "database_concepts_and_design"
+    ]
+  },
+  "verification_summary": {
+    "by_status": {
+      "verified": 2
+    },
+    "kept": 2,
+    "dropped": 0
+  }
+}

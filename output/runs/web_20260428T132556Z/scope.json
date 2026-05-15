@@ -1,0 +1,31 @@
+{
+  "subject_area": "Artificial Intelligence \u2014 broad introductory survey",
+  "pedagogical_level": "undergraduate introductory survey",
+  "course_intent": "Introduce students to the breadth of classical AI subfields (agents, knowledge representation, logic, expert systems, NLP, fuzzy logic, and introductory ML/data science) at a conceptual level \u2014 students should leave able to explain what each area is for and how it fits into the AI landscape, not implement any specific algorithm or system in depth.",
+  "depth_bound": "Recommendations stay at the conceptual / overview level grounded in the Russell & Norvig framing. Implementation walkthroughs, framework-specific tutorials (PyTorch, scikit-learn, spaCy code), formal proofs, mathematical deep dives (transformer attention math, optimization theory), and hands-on coding exercises are beyond the course's depth bound.",
+  "key_topics": [
+    "Intelligent agents, PEAS framework, and task-environment properties",
+    "Knowledge representation (propositional logic, FOL, semantic networks, frames, production rules)",
+    "Ontologies and ontology engineering (Prot\u00e9g\u00e9, pizza ontology example)",
+    "Rule-based expert systems with forward and backward chaining",
+    "Classical NLP pipeline (lexical, syntactic, semantic, pragmatic analysis, parse trees, PSGs)",
+    "Type-1 fuzzy logic (membership functions, fuzzification/defuzzification, fuzzy rules)",
+    "Wumpus World as a knowledge-based agent example",
+    "Introductory machine learning concepts (supervised/unsupervised/reinforcement, regression vs classification)",
+    "Data science workflow (collection, preprocessing, EDA, evaluation metrics)",
+    "AI history, Turing test, and AI categorizations (ANI/AGI/ASI)"
+  ],
+  "one_liner": "Broad undergraduate AI survey rooted in the Russell & Norvig textbook, covering classical symbolic AI (agents, logic, KR, ontologies, expert systems, classical NLP, fuzzy logic) plus an introductory tour of ML and data science at a conceptual level \u2014 does NOT teach hands-on implementation, modern deep learning depth, transformer-era NLP internals, or framework-specific coding.",
+  "relevant_roles": [
+    "ml_data",
+    "backend"
+  ],
+  "ambiguity_note": "Survey course spanning symbolic AI through introductory ML and data science \u2014 no single specialization dominates, and ML/DS coverage is conceptual rather than hands-on.",
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 79879,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 4684,
+    "output_tokens": 942
+  }
+}

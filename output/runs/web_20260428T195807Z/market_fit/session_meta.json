@@ -1,0 +1,15 @@
+{
+  "run_id": "20260428T195857Z",
+  "role": "devops_sre",
+  "courses": {
+    "Operating Systems": {
+      "filename": "operating_systems.txt",
+      "mount_path": "/workspace/curriculum/operating_systems.txt"
+    }
+  },
+  "postings": {
+    "filename": "job_postings.json",
+    "mount_path": "/workspace/data/job_postings.json"
+  },
+  "started_at": "2026-04-28T19:59:01.724096+00:00"
+}

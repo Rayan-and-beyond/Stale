@@ -1,0 +1,53 @@
+{
+  "findings": [
+    {
+      "course": "algorithm_analysis_and_design",
+      "slide_ref": "CS 412 - T2311 - Ch 15_part1.pptx, Slide 3",
+      "claim": "Fibonacci Sequence: '0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 114, \u2026.'",
+      "status": "wrong",
+      "severity": "medium",
+      "citation_url": "https://oeis.org/A000045",
+      "citation_excerpt": "A000045 \u00b7 Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1. ... 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, ...",
+      "suggested_replacement": "Replace '114' with '144'. The 13th Fibonacci term (F(12) under the convention F(0)=0) is 89+55=144, which is also self-consistent with the F(n)=F(n-1)+F(n-2) recurrence stated on the same slide.",
+      "verification": {
+        "status": "verified",
+        "url": "https://oeis.org/A000045",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "algorithm_analysis_and_design",
+      "slide_ref": "CS 412 - T2313 - Ch 4_Part2 _1_.pptx, Slide 5",
+      "claim": "Each Fibonacci number is the sum of the two previous ones, yielding the Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 114, \u2026.",
+      "status": "wrong",
+      "severity": "medium",
+      "citation_url": "https://oeis.org/A000045",
+      "citation_excerpt": "A000045 \u00b7 Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1. ... 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, ...",
+      "suggested_replacement": "Replace '114' with '144'. 89 + 55 = 144, not 114; the term shown contradicts the recurrence definition given immediately below it on the same slide.",
+      "verification": {
+        "status": "verified",
+        "url": "https://oeis.org/A000045",
+        "content_type": "text/html"
+      }
+    }
+  ],
+  "summary": {
+    "total_findings": 2,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 2,
+      "low": 0
+    },
+    "courses_audited": [
+      "algorithm_analysis_and_design"
+    ],
+    "verification": {
+      "kept": 2,
+      "dropped_total": 1,
+      "dropped_by_reason": {
+        "excerpt_not_found": 1
+      }
+    }
+  }
+}

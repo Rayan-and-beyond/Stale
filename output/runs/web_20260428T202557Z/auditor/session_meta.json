@@ -1,0 +1,10 @@
+{
+  "run_id": "20260430T100323Z",
+  "courses": {
+    "Computer and Data Security": {
+      "filename": "computer_and_data_security.txt",
+      "mount_path": "/workspace/curriculum/computer_and_data_security.txt"
+    }
+  },
+  "started_at": "2026-04-30T10:03:27.285977+00:00"
+}

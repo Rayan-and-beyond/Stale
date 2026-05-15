@@ -1,0 +1,364 @@
+{
+  "findings": [
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 10",
+      "claim": "Java Standard Edition (Java SE) to develop client-side applications. The applications  can run standalone or as applets running from a Web browser.",
+      "interpretation": "The slide presents Java applets as a current capability of Java SE. Applet support has been deprecated for removal across multiple JDK versions (browsers stopped supporting the plug-in years ago) and the Applet API is being eliminated from the platform \u2014 students should not be told this is a real deployment target.",
+      "category": "dead",
+      "status": "dead",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/25/migrate/removed-tools-and-components.html",
+      "citation_excerpt": "The Applet API has been deprecated for removal as all web-browser vendors have either removed support for Java browser plug-ins or announced plans to do so.",
+      "suggested_replacement": "Drop the applet line entirely. Java SE today targets desktop apps via JavaFX/Swing or command-line/server processes; there is no supported way to run applets in a modern browser. Alternatives are JNLP-less Java Web Start replacements, JPackage-built native installers, or just running Java as a standalone process.",
+      "adjudication_reasoning": "The slide unambiguously presents applets as a current Java SE feature, with no nearby contrast slide marking it as obsolete. Oracle's own migration documentation confirms the Applet API is gone.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 02 - Java Basics - Part I.pptx slide 10"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 21",
+      "claim": "Int X = 10;\nDouble Radius = 3.49;\nChar a = \u2018A';",
+      "interpretation": "Java's primitive type names are lowercase (`int`, `double`, `char`). Capitalized `Int`, `Double`, `Char` are not types \u2014 `Int` and `Char` do not exist at all, and `Double` is the wrapper class which is not what the slide intends. The slide's 'Declare & Initialization' block will not compile as written.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-4.html",
+      "citation_excerpt": "The integral types are byte, short, int, and long, whose values are 8-bit, 16-bit, 32-bit and 64-bit signed two's-complement integers, respectively, and char, whose values are 16-bit unsigned integers representing UTF-16 code units",
+      "suggested_replacement": "Use lowercase primitive type names: `int x = 10; double radius = 3.49; char a = 'A';`. The slide also mixes `x` with `X` and `radius` with `Radius`; pick one identifier and use it consistently because Java identifiers are case-sensitive.",
+      "adjudication_reasoning": "No counterexample marker; the slide title is 'Variable Declaration' and the bottom block is labeled 'Declare & Initialization' \u2014 it is presented as the recommended way. The JLS lists the primitive type names in lowercase only.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 02 - Java Basics - Part I.pptx slide 21"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 63",
+      "claim": "Java characters use Unicode, a 16-bit encoding scheme established by the Unicode Consortium to support the interchange, processing, and display of written texts in the world's diverse languages. Unicode takes two bytes, preceded by \\u, expressed in four hexadecimal numbers that run from '\\u0000' to '\\uFFFF'. So, Unicode can represent 65535 + 1 characters.",
+      "interpretation": "The slide conflates Java's 16-bit `char` with Unicode itself. Unicode is not a 16-bit encoding scheme and is not capped at 65,536 characters; it defines code points up to U+10FFFF. Java's `char` is one UTF-16 code unit, and characters outside the Basic Multilingual Plane require surrogate pairs.",
+      "category": "conceptual",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html",
+      "citation_excerpt": "The char data type (and therefore the value that a Character object encapsulates) are based on the original Unicode specification, which defined characters as fixed-width 16-bit entities. The Unicode Standard has since been changed to allow for characters whose representation requires more than 16 bits. The range of legal code points is now U+0000 to U+10FFFF, known as Unicode scalar value.",
+      "suggested_replacement": "Teach: Unicode defines code points from U+0000 to U+10FFFF. Java's `char` is a 16-bit UTF-16 code unit and only represents BMP code points directly; supplementary characters (U+10000\u2013U+10FFFF) are represented as a surrogate pair of two `char` values. Use `String.codePointAt`, `Character.codePointCount`, or `String.codePoints()` when iterating real characters.",
+      "adjudication_reasoning": "Slide presents the 16-bit/65,536 claim as fact, with no follow-up on supplementary characters or surrogate pairs anywhere in the lecture. Oracle's own Character class documentation explicitly contrasts the original 16-bit assumption with the current U+0000\u2013U+10FFFF range.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 02 - Java Basics - Part I.pptx slide 63"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 03 - Java Basics - Part 2.pdf page 92",
+      "claim": "double [][][][] matrix = new int[4][4][4][4]; // it will define 4D array",
+      "interpretation": "The declared type is `double[][][][]` but the array creation expression yields `int[4][4][4][4]`. Java does not allow assigning an `int[][][][]` value to a `double[][][][]` reference; this fails type checking and will not compile. Students copying the slide cannot run it as written.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-10.html",
+      "citation_excerpt": "An array creation expression creates an object that is a new array whose elements are of the type specified by the PrimitiveType or ClassOrInterfaceType.",
+      "suggested_replacement": "Either declare the array as `int`: `int[][][][] matrix = new int[4][4][4][4];`, or actually create a double array: `double[][][][] matrix = new double[4][4][4][4];`. Element types must agree.",
+      "adjudication_reasoning": "No paired correction shown; this is the single example the slide gives for declaring a 4D array. Java's array creation rules require the element type of the creation expression to be assignment-compatible with the declared array element type.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 03 - Java Basics - Part 2.pdf page 92"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 04 - OOP Basics.pdf page 26",
+      "claim": "java.util.Date date = new java.util.Date();",
+      "interpretation": "The course teaches `java.util.Date`, `java.util.Calendar`, and `java.util.GregorianCalendar` as the standard date/time abstractions. This API has been formally superseded since Java 8 by `java.time` (`LocalDate`, `LocalDateTime`, `Instant`, `ZonedDateTime`). The legacy classes also expose deprecated members (e.g. most date-component getters/setters and several `Date` constructors are `@Deprecated` since JDK 1.1) \u2014 students learning these as the canonical API leave with an outdated mental model.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html",
+      "citation_excerpt": "As of JDK 1.1, the Calendar class should be used to convert between dates and time fields and the DateFormat class should be used to format and parse date strings. The corresponding methods in Date are deprecated.",
+      "suggested_replacement": "Teach `java.time` (introduced in Java 8): `LocalDate.now()`, `LocalDateTime.now()`, `Instant.now()`, `ZonedDateTime.of(...)`. Use `DateTimeFormatter` for formatting and parsing. `java.util.Date`/`Calendar`/`GregorianCalendar` are kept only for legacy-API interop.",
+      "adjudication_reasoning": "Multiple slides introduce these classes as the prescribed API for working with dates and times, with no slide pointing students at `java.time`. Oracle's own Date javadoc has long deprecated most of the API; the modern replacement is the `java.time` package.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Lecture 04 - OOP Basics.pdf page 26, Lecture 08 - Abstract Classes and Interfaces.pdf page 10, Lecture 08 - Abstract Classes and Interfaces.pdf page 11, Lecture 08 - Abstract Classes and Interfaces.pdf page 13, Lecture 08 - Abstract Classes and Interfaces.pdf page 20"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 08 - Abstract Classes and Interfaces.pdf page 20",
+      "claim": "java.util.Date date1 = new java.util.Date(2013, 1, 1);    \njava.util.Date date2 = new java.util.Date(2012, 1, 1);",
+      "interpretation": "The 3-int `Date(int year, int month, int date)` constructor is officially `@Deprecated`. The slide also has a non-obvious year-offset gotcha (the `year` argument is interpreted as `year - 1900`, so `2013` here actually means year 3913). This is a working compile-time deprecation warning the moment students paste the code.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html",
+      "citation_excerpt": "Deprecated.\n    As of JDK version 1.1,\n replaced by `Calendar.set(year + 1900, month, date)` or `GregorianCalendar(year + 1900, month, date)`.",
+      "suggested_replacement": "Use `LocalDate.of(2013, 1, 1)` and `date1.compareTo(date2)`/`date1.isBefore(date2)`. If staying inside legacy API for some reason, use `new GregorianCalendar(2013, Calendar.JANUARY, 1)` and note that month is 0-based.",
+      "adjudication_reasoning": "The slide uses this constructor as a working `compareTo` example with no warning that it is deprecated. The Date javadoc has marked this constructor `@Deprecated` since JDK 1.1, distinct from the broader 'use java.time' issue, so it is reported as a separate deprecated finding.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 08 - Abstract Classes and Interfaces.pdf page 20"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 04 - OOP Basics.pdf page 35",
+      "claim": "public void set Age(int Age) {",
+      "interpretation": "There is a literal space between `set` and `Age`, which makes this two tokens (`set` and `Age`) instead of an identifier. Java method names are single identifiers and cannot contain whitespace, so the class will not compile as printed.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-3.html",
+      "citation_excerpt": "An identifier is an unlimited-length sequence of Java letters and Java digits, the first of which must be a Java letter.",
+      "suggested_replacement": "Remove the space and follow camelCase: `public void setAge(int age) { this.age = age; }`. Also rename the field `Age` \u2192 `age` to match the convention the same course teaches in Lecture 02.",
+      "adjudication_reasoning": "The slide presents this as the worked example of a setter; there is no correction shown later. JLS rules forbid whitespace inside identifiers, so `set Age` cannot be parsed as a method name.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 04 - OOP Basics.pdf page 35"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 04 - OOP Basics.pdf page 39",
+      "claim": "class ObjectPass { \nint a, b; \nObjectPassDemo(int i, int j) {",
+      "interpretation": "The class is `ObjectPass` but the constructor is named `ObjectPassDemo`. In Java a constructor's simple name must match the class's simple name, so `ObjectPassDemo` is parsed as a method declaration with no return type \u2014 which is itself illegal. The example also calls `new ObjectPass(100, 22)` which would not resolve since no `(int,int)` constructor exists.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-8.html",
+      "citation_excerpt": "The SimpleTypeName in a constructor declaration must be the simple name of the class that contains the constructor declaration, or a compile-time error occurs.",
+      "suggested_replacement": "Rename the constructor to match the class: `ObjectPass(int i, int j) { a = i; b = j; }`. Then `new ObjectPass(100, 22)` resolves correctly.",
+      "adjudication_reasoning": "Slide is a 'demonstrate objects passing' example presented without correction. JLS 8.8.2 explicitly requires the constructor name to match the class name.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 04 - OOP Basics.pdf page 39"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 7",
+      "claim": "public static final double KGPER_POUND = 0.45359237;",
+      "interpretation": "The constant is declared as `KGPER_POUND` but referenced inside `getBMI()` as `KG_PER_POUND` (with an extra underscore). Java identifiers are case- and character-sensitive, so the body of `getBMI()` won't compile: 'cannot find symbol KG_PER_POUND'.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-6.html",
+      "citation_excerpt": "Two identifiers are the same only if they are identical, that is, have the same Unicode character for each letter or digit.",
+      "suggested_replacement": "Pick one spelling and use it consistently. The conventional name with an underscore between every word is `KG_PER_POUND`, so change the declaration to `public static final double KG_PER_POUND = 0.45359237;`.",
+      "adjudication_reasoning": "Slide is the 'Code' page of a worked BMI example; there is no later slide noting the typo. Java's identifier-equality rule in JLS 6.6 means the two spellings refer to nothing in common.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 7"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 10",
+      "claim": "public String getEmp(){return this.name;}",
+      "interpretation": "`Employee` only declares a method named `getEmp()`, but the `main` method calls `emp.getEmployeeName()`. No `getEmployeeName` method exists anywhere in the example, so the call is unresolved and the file will not compile.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html",
+      "citation_excerpt": "If no method is applicable, then a compile-time error occurs.",
+      "suggested_replacement": "Either rename the method on `Employee` to `getEmployeeName()` or change the call site to `emp.getEmp()`. The two names must match.",
+      "adjudication_reasoning": "The example is presented as the worked Activity-01 illustration of association, with no follow-up identifying the error. Method invocation resolution in JLS 15.12 fails when no method with the given simple name is in scope.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 10"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 18, Lecture 08 - Abstract Classes and Interfaces.pdf page 9",
+      "claim": "+longVlaue(): long",
+      "interpretation": "The UML method label is misspelled `longVlaue` instead of `longValue`. The standard `Number` superclass declares `longValue()`; `longVlaue()` is not a method on Integer, Double, or Number. A student translating the diagram literally will get 'cannot find symbol method longVlaue'.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html",
+      "citation_excerpt": "abstract long\n  longValue()\n  \n  Returns the value of the specified number as a long.",
+      "suggested_replacement": "Correct the diagram label to `+longValue(): long`. Same for any other UML diagrams in the deck that copy this typo.",
+      "adjudication_reasoning": "The misspelling appears as plain (non-OCR) UML text on Lecture 05 page 18 and is corroborated by the OCR'd Number-class diagram on Lecture 08 page 9, so it is genuinely on the slide and not an OCR artifact. The Number javadoc lists the correct spelling `longValue()`.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 18, Lecture 08 - Abstract Classes and Interfaces.pdf page 9"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 23",
+      "claim": "Double.parseDouble(number, 23); // with default Base 23",
+      "interpretation": "`java.lang.Double` does not have a 2-argument `parseDouble(String, int)` overload, nor a 2-argument `valueOf(String, int)`. Floating-point parsing in the JDK is base-10 only \u2014 radix arguments only exist on integer wrapper classes (`Integer`, `Long`, `Short`, `Byte`). The slide explicitly tells students they can parse base-23 floating point numbers, which is wrong and will not compile.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html",
+      "citation_excerpt": "public static double parseDouble(String s) throws NumberFormatException",
+      "suggested_replacement": "Drop the radix line for `Double`. If the goal is parsing a decimal: `Double.parseDouble(\"10.3\")`. If the goal is integer parsing in another base, use `Integer.parseInt(s, radix)` or `Long.parseLong(s, radix)` and accept that it returns an integral type.",
+      "adjudication_reasoning": "The phantom signature appears both in the page 18 UML and as concrete code on page 23 with no contrast slide. The Double javadoc lists only the single-argument `parseDouble(String)` and the single-argument `valueOf(String)`.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 18, Lecture 05 - Thinking in Objects.pdf page 23"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 19",
+      "claim": "Integer Val3 = Integer.valueOf(\"10.3\");",
+      "interpretation": "`Integer.valueOf(String)` is for integer literals only; `\"10.3\"` is not a parsable integer, so this line throws `NumberFormatException` at runtime. The slide presents it as a working autoboxing example with no error annotation.",
+      "category": "runtime_wrong",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html",
+      "citation_excerpt": "Throws:\nNumberFormatException - if the string cannot be parsed as an integer.",
+      "suggested_replacement": "If the input is `\"10.3\"`, parse with `Double.valueOf(\"10.3\")` or `Double.parseDouble(\"10.3\")`. If the intent is to truncate to an int, do `(int) Double.parseDouble(\"10.3\")`. `Integer.valueOf(String)` only accepts characters that form a valid signed integer in base 10.",
+      "adjudication_reasoning": "Slide groups this with two valid `Integer.valueOf` calls and labels the whole block 'autoboxing' \u2014 it is presented as a runnable demonstration with no warning. The Integer.valueOf(String) javadoc explicitly throws NumberFormatException for non-integer input.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 19"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 19",
+      "claim": "Integer Val1 = new Integer(1);",
+      "interpretation": "The `Integer(int)` and `Integer(String)` constructors have been formally `@Deprecated` since JDK 9 in favor of `Integer.valueOf(int)` (which caches small values). The slide shows `new Integer(1)` as a recommended construction style alongside `Integer.valueOf(1)`.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/javase/9/docs/api/java/lang/Integer.html",
+      "citation_excerpt": "Deprecated. It is rarely appropriate to use this constructor. The static factory valueOf(int) is generally a better choice, as it is likely to yield significantly better space and time performance.",
+      "suggested_replacement": "Replace with `Integer.valueOf(1)` or just rely on autoboxing: `Integer val1 = 1;`. Same idea for `new Integer(3).compareTo(new Integer(5))` on Lecture 08 page 20 \u2014 write `Integer.valueOf(3).compareTo(5)` or `Integer.compare(3, 5)`.",
+      "adjudication_reasoning": "Both slides use `new Integer(...)` as live example code with no note that the constructor is deprecated. Oracle's Integer javadoc has carried the `@Deprecated` annotation since Java 9.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 19, Lecture 08 - Abstract Classes and Interfaces.pdf page 20"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 22",
+      "claim": "Double DVal1 = Double.ValueOf(34.5);\nDouble DVal2 = Double.ValueOf(\u201c10.3\u201d);",
+      "interpretation": "The static factory method on `Double` is `valueOf` (lowercase v), not `ValueOf`. Java is case-sensitive, so `Double.ValueOf(...)` resolves to nothing and produces a compile error 'cannot find symbol method ValueOf'.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html",
+      "citation_excerpt": "public static Double valueOf(String s) throws NumberFormatException",
+      "suggested_replacement": "Use lowercase `valueOf`: `Double dVal1 = Double.valueOf(34.5); Double dVal2 = Double.valueOf(\"10.3\");`. (Also rename the variables to camelCase to match Java convention.)",
+      "adjudication_reasoning": "Same slide shows `Integer.valueOf` with the correct lowercase name two lines earlier, then uses `Double.ValueOf` capitalized \u2014 this is a typo, not a stylistic alternative, and Java's case sensitivity makes it a hard compile error. Double javadoc confirms the correct name is `valueOf`.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 22"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 26",
+      "claim": "BigDecimal c = a.divide(b, 20, BigDecimal.ROUND_UP);",
+      "interpretation": "The integer rounding-mode constants on `BigDecimal` (`ROUND_UP`, `ROUND_HALF_EVEN`, etc.) are formally deprecated since JDK 9; the corresponding `divide(BigDecimal, int, int)` overload is also deprecated. New code should use the `java.math.RoundingMode` enum. The example will compile but emits deprecation warnings.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigDecimal.html",
+      "citation_excerpt": "Using the integer fields in this class (such as ROUND_HALF_UP) to represent rounding mode is deprecated; the enumeration values of the RoundingMode enum, (such as RoundingMode.HALF_UP) should be used instead.",
+      "suggested_replacement": "Replace with the enum form: `BigDecimal c = a.divide(b, 20, RoundingMode.UP);` (and `import java.math.RoundingMode;`). Also prefer `BigDecimal.valueOf(1.0)` or `new BigDecimal(\"1.0\")` over the `double`-taking `BigDecimal(double)` constructor for non-trivial values.",
+      "adjudication_reasoning": "Slide uses `BigDecimal.ROUND_UP` as the recommended rounding mode in a worked example. The BigDecimal javadoc explicitly says the integer rounding-mode fields are deprecated and `RoundingMode` should be used instead.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 26"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 28",
+      "claim": "String s = new String();",
+      "interpretation": "The slide teaches `new String()` and `new String(\"...\")` as standard String construction styles. Both constructors are documented in the JDK as unnecessary because Strings are immutable; `new String(literal)` in particular bypasses string interning and creates a redundant object. Modern Java style guides and IDE inspections flag both as code smells.",
+      "category": "conceptual",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html",
+      "citation_excerpt": "Initializes a newly created String object so that it represents an empty character sequence. Note that use of this constructor is unnecessary since Strings are immutable.",
+      "suggested_replacement": "Use string literals: `String message = \"Welcome to Java\";` for the empty case `String s = \"\";`. Reserve `new String(...)` constructors for the few cases where you really need a fresh object (e.g. defeating string interning intentionally, or copying a substring's underlying char[]).",
+      "adjudication_reasoning": "Page 28 introduces all three forms under the heading 'Creating a String' with no caveat. The Java SE 21 String javadoc explicitly states 'use of this constructor is unnecessary since Strings are immutable' for both `String()` and `String(String original)`.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 28"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 07 - Polymorphism.pdf page 11",
+      "claim": "Animal a;\na.eat(); //output?",
+      "interpretation": "Local variable `a` is declared but never assigned before `a.eat()` is invoked. Java's definite-assignment rule requires every local variable be definitely assigned before use; the compiler rejects this with 'variable a might not have been initialized'. The slide's `//output?` annotation suggests it expects a runtime answer (e.g. NullPointerException), but in fact this is a compile-time error.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-16.html",
+      "citation_excerpt": "Each local variable and every blank final field must have a definitely assigned value when any access of its value occurs.",
+      "suggested_replacement": "Either initialize at declaration (`Animal a = new Animal();`) or remove the offending `a.eat();` line so the example begins with `a = new Dog(); a.eat();`. If the goal is to provoke a runtime NPE, declare `Animal a = null;` explicitly to bypass definite assignment.",
+      "adjudication_reasoning": "The trailing `//output?` is the only contrast hint and there is no answer slide following; the slide presents this as runnable code asking for the output. JLS chapter 16 makes definite assignment a compile-time requirement, so the answer to 'output?' is 'does not compile', which the slide does not say.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 07 - Polymorphism.pdf page 11"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 07 - Polymorphism.pdf page 27",
+      "claim": "System.out.pritnln(java.util.Collections. shuffle(new ArrayList<>(Arrays.asList(array)));",
+      "interpretation": "Three independent compile errors on this slide. (1) `pritnln` is a typo of `println`. (2) Each line has unbalanced parentheses \u2014 four opens, three closes. (3) `Collections.shuffle(List)` returns `void`, so passing it to `System.out.println` would fail with 'void cannot be converted to ...' even after fixing the typos and parens.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collections.html",
+      "citation_excerpt": "public static void shuffle(List<?> list)",
+      "suggested_replacement": "Split into three statements and call `shuffle` for its side effect: `ArrayList<String> list = new ArrayList<>(Arrays.asList(array)); System.out.println(Collections.max(list)); System.out.println(Collections.min(list)); Collections.shuffle(list); System.out.println(list);`. Note the spaces inside `Collections. shuffle` also need removing.",
+      "adjudication_reasoning": "Slide is the 'Examples for ArrayList' page following a working ArrayList demo on page 26 \u2014 it is presented as runnable example code, not a deliberate trick. Collections.shuffle is documented as returning void, so the `println` wrapping is itself a category error.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 07 - Polymorphism.pdf page 27"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 06 - Inheritance.pdf page 16, Lecture 07 - Polymorphism.pdf page 30, Lecture 08 - Abstract Classes and Interfaces.pdf page 13",
+      "claim": "public static void main() {",
+      "interpretation": "All three slides declare the program entry point as `public static void main()` with no parameters. The JVM's launcher only treats `public static void main(String[] args)` as the entry point; a no-arg `main` compiles but `java TestCalendar` (or the equivalent) fails at startup with 'Main method not found'. Students cannot trace the slide's example by running it.",
+      "category": "runtime_wrong",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html",
+      "citation_excerpt": "The method must be declared public and static, it must not return any value, and it must accept a String array as a parameter.",
+      "suggested_replacement": "Restore the `String[] args` parameter on every entry point: `public static void main(String[] args) { ... }`. The body doesn't have to use `args`, but the JVM launcher requires the parameter to identify the method.",
+      "adjudication_reasoning": "All three occurrences are in 'Trace the following code' / 'Activity' contexts where students are asked to predict output, which presupposes the program runs. The Java tooling reference confirms a String[] parameter is mandatory for the entry point.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 06 - Inheritance.pdf page 16, Lecture 07 - Polymorphism.pdf page 30, Lecture 08 - Abstract Classes and Interfaces.pdf page 13"
+      }
+    }
+  ],
+  "summary": {
+    "total_candidates": 25,
+    "flagged": 21,
+    "skipped": 4,
+    "by_skip_reason": {
+      "counterexample": 0,
+      "paired_correction_nearby": 0,
+      "no_primary_source": 3,
+      "other": 1
+    },
+    "courses_audited": [
+      "object_oriented_programming_1"
+    ],
+    "slide_ref_verification": {
+      "total": 20,
+      "matched": 17,
+      "rewritten": 3,
+      "not_found": 0
+    }
+  }
+}

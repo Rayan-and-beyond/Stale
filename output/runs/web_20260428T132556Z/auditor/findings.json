@@ -1,0 +1,36 @@
+{
+  "findings": [
+    {
+      "course": "ai",
+      "slide_ref": "Week 4-Informed Search Algorithms.pdf, Page 37 (Properties of A* Search)",
+      "claim": "Optimal? YES if used Admissible Heuristic",
+      "status": "wrong",
+      "severity": "medium",
+      "citation_url": "https://inst.eecs.berkeley.edu/~cs188/fa22/assets/notes/cs188-fa22-note02.pdf",
+      "citation_excerpt": "An additional caveat of graph search is that it tends to ruin the optimality of A*, even under admissible heuristics. ... Hence, to maintain optimality under A* graph search, we need an even stronger property than admissibility, consistency.",
+      "suggested_replacement": "State the optimality claim conditional on the search variant: A* tree search is optimal with an admissible heuristic; A* graph search (which the course teaches in Week 3 with a closed/reached set to avoid revisiting states) is optimal only with a consistent (monotonic) heuristic h(n) <= c(n,n') + h(n'), because an admissible-but-inconsistent heuristic can cause a state to be locked into the reached set via a suboptimal path before the optimal path is discovered."
+    },
+    {
+      "course": "ai",
+      "slide_ref": "Week 1 - Intro to AI.pdf, Page 40 (History of AI: 'Deep learning, big data and artificial general intelligence (2011-present)')",
+      "claim": "Year 2014: Chatbot 'Eugene Goostman' won a competition in the infamous 'Turing test.'",
+      "status": "wrong",
+      "severity": "low",
+      "citation_url": "https://dl.acm.org/doi/fullHtml/10.1145/2643596",
+      "citation_excerpt": "While one commentator argued that Goostman's win meant that 'we need to start grappling with whether machines with artificial intelligence should be considered persons,' others argued that Goostman did not really pass the Turing Test, or that another chatterbot\u2014Cleverbot\u2014already passed the Turing Test in 2011. ... The reality is the Imitation Game is philosophically the weakest part of Turing's 1950 paper.",
+      "suggested_replacement": "Describe the 2014 University of Reading event accurately: Eugene Goostman, a chatbot personifying a 13-year-old non-native English speaker, convinced ~33% of 30 judges in 5-minute text conversations at a single competition organized by Kevin Warwick. Note that the AI research community (including in Communications of the ACM) widely disputes this as a genuine pass of the Turing Test, both because Turing did not specify a fixed numerical threshold and because the bot's strategy relied on persona-based deflection rather than demonstrating intelligence."
+    }
+  ],
+  "summary": {
+    "total_findings": 2,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 1
+    },
+    "courses_audited": [
+      "ai"
+    ]
+  }
+}

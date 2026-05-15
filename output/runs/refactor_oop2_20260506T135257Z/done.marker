@@ -1,0 +1,6 @@
+{
+  "elapsed_sec": null,
+  "market_fit_ok": true,
+  "topics_ok": true,
+  "_note": "Written post-hoc; this run was driven by the CLI e2e script, not the web orchestrator."
+}

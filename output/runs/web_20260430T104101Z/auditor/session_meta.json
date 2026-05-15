@@ -1,0 +1,10 @@
+{
+  "run_id": "20260430T104101Z",
+  "courses": {
+    "Algorithm Analysis and Design": {
+      "filename": "algorithm_analysis_and_design.txt",
+      "mount_path": "/workspace/curriculum/algorithm_analysis_and_design.txt"
+    }
+  },
+  "started_at": "2026-04-30T10:41:06.611753+00:00"
+}

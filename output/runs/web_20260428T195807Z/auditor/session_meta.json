@@ -1,0 +1,10 @@
+{
+  "run_id": "20260428T195807Z",
+  "courses": {
+    "Operating Systems": {
+      "filename": "operating_systems.txt",
+      "mount_path": "/workspace/curriculum/operating_systems.txt"
+    }
+  },
+  "started_at": "2026-04-28T19:58:10.525739+00:00"
+}

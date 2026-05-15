@@ -1,0 +1,10 @@
+{
+  "run_id": "20260504T212438Z",
+  "courses": {
+    "Fundamentals of Communications and Networks": {
+      "filename": "fundamentals_of_communications_and_networks.txt",
+      "mount_path": "/workspace/curriculum/fundamentals_of_communications_and_networks.txt"
+    }
+  },
+  "started_at": "2026-05-04T21:25:00.273917+00:00"
+}

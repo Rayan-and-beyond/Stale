@@ -1,0 +1,25 @@
+{
+  "course": "Software Engineering",
+  "course_dir_name": "Software Engineering",
+  "files_saved": [
+    "Ch1 Introduction.pptx",
+    "Ch3. Agile SW Dev-V2.pptx",
+    "Ch4 Req Eng.pptx",
+    "Ch5 System modeling.pptx",
+    "Ch6 Architectural design.pptx",
+    "Ch7 Implementation.pptx",
+    "Ch8.Testing.pptx",
+    "Ch9 Evolution.pptx",
+    "L2-Ch2 SW Processes.pptx",
+    "L3-Ch22 Project management.pptx",
+    "L4-Ch23 Project planning-v2.pptx"
+  ],
+  "files_skipped": [],
+  "started_at": "2026-05-04T16:29:28.610860+00:00",
+  "role_text": "software engineer",
+  "role": "fullstack",
+  "specialization": null,
+  "role_confidence": "medium",
+  "role_reasoning": "Generic 'software engineer' title maps to fullstack as the broadest option, though confidence is medium due to lack of specificity.",
+  "role_resolved_at": "2026-05-04T16:35:05.801529+00:00"
+}

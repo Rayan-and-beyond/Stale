@@ -1,0 +1,320 @@
+{% extends "base.html" %}
+{% block title %}Stale: find what aged out of your course slides{% endblock %}
+{% block head_extra %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+  rel="stylesheet">
+{% endblock %}
+{% block body_class %}home-page{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+<div class="snap-viewport">
+  <div class="snap-deck">
+    <section class="hero snap-section">
+      <div class="hero-bg-glow"></div>
+      <div class="hero-icon-wrapper">
+        <div class="hero-icon">
+          <svg class="capsule-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <rect x="18" y="4" width="28" height="56" rx="14" fill="#3a5a3a" stroke="#5a7a5a" stroke-width="1" />
+            <rect x="18" y="32" width="28" height="28" rx="14" fill="#4a6a4a" />
+            <rect x="18" y="4" width="28" height="28" rx="14" fill="#2a4a2a" />
+            <line x1="18" y1="32" x2="46" y2="32" stroke="#5a7a5a" stroke-width="0.5" />
+            <ellipse cx="32" cy="18" rx="6" ry="4" fill="rgba(143,184,143,0.15)" />
+            <ellipse cx="32" cy="46" rx="5" ry="3" fill="rgba(143,184,143,0.2)" />
+          </svg>
+        </div>
+        <div class="hero-icon-shadow"></div>
+      </div>
+      <h1>Stale</h1>
+      <p class="hero-statement">Slides age.<br><span class="hero-line-nowrap">Knowledge&nbsp;<span
+            class="underline-word">shouldn't!</span></span></p>
+      <p>Upload your slides and Stale will catch the parts that have aged out: old frameworks,
+        broken examples, advice that's no longer true. Then it tells you what to learn in their place.</p>
+      <a href="/start" class="hero-btn">
+        <span class="hero-btn-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </span>
+        Try Stale free
+      </a>
+    </section>
+
+    <section class="how-section snap-section" id="how">
+      <div class="how-header reveal">
+        <div class="section-label">How It Works</div>
+        <div class="section-title">Three steps to learning what's current.</div>
+        <p class="section-desc">No manual searching. No guesswork. Just upload and let the engine do the work.</p>
+      </div>
+      <div class="how-steps">
+        <div class="how-step reveal">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              aria-hidden="true">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+          </div>
+          <h3>Upload Slides</h3>
+          <p>Upload your slides and Stale reads through them to understand what's being covered.</p>
+        </div>
+        <div class="how-step reveal">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </div>
+          <h3>Spot what's aged out</h3>
+          <p>Stale checks each slide against what's current online. Anything that's been replaced, deprecated,
+            or no longer works gets flagged, but only if a real source proves it.</p>
+        </div>
+        <div class="how-step reveal">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <h3>Get Replacements</h3>
+          <p>Get a clear report showing what's out of date, why it matters, and what to learn instead.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="snap-section" id="features">
+      <div class="features-section">
+        <div class="reveal">
+          <div class="section-label">Inside Stale</div>
+          <div class="section-title">Every finding has the receipts.</div>
+          <p class="section-desc">Stale doesn't guess. It reads the slides you uploaded, looks up each questionable
+            claim, and only flags something when the source it points to actually backs it up.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-tag">Catch</div>
+            <h3>Two passes, not one</h3>
+            <p>The first pass casts a wide net. Anything that looks wrong gets pulled aside. The second pass
+              only keeps the items where a current source actually proves the slide is out of date.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-tag">Proof</div>
+            <h3>Sources you can click</h3>
+            <p>Before any issue makes it into your report, Stale opens the source page itself and confirms the
+              quoted text really lives there. If it doesn't, the issue is dropped.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-tag">Accuracy</div>
+            <h3>Pinned to the right page</h3>
+            <p>Every issue is tagged with the exact lecture and page it came from. If the wrong page gets cited,
+              Stale searches the slides for the matching text and corrects it.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-tag">Job fit</div>
+            <h3>What jobs actually want</h3>
+            <p>Tell Stale the role you're aiming for, and it compares what your course covers against what
+              real job postings ask for, without ever pushing you toward something it just flagged.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section snap-section" id="demo">
+      <div class="demo-container">
+        <div class="demo-header reveal">
+          <div class="section-title">See it in action.</div>
+          <p class="section-desc">A real finding from one of Stale's audits.</p>
+        </div>
+        <div class="demo-window reveal">
+          <div class="demo-titlebar">
+            <div class="demo-dot r"></div>
+            <div class="demo-dot y"></div>
+            <div class="demo-dot g"></div>
+            <span>Lecture 6 · Database &amp; Content Providers · pages 9, 22</span>
+          </div>
+          <div class="demo-body">
+            <div class="demo-slide">
+              <div class="demo-slide-label">What the slide says</div>
+              <div class="demo-slide-content">
+                <span class="deprecated-line">db.execSQL("INSERT INTO student VALUES('"</span>
+                <span class="deprecated-line">&nbsp;&nbsp;+ editRollno.getText() + "','"</span>
+                <span class="deprecated-line">&nbsp;&nbsp;+ editName.getText() + "','"</span>
+                <span class="deprecated-line">&nbsp;&nbsp;+ editMarks.getText() + "');");</span>
+                <br>
+                <span class="deprecated-line">Cursor c = db.rawQuery(</span>
+                <span class="deprecated-line">&nbsp;&nbsp;"SELECT * FROM student WHERE rollno='"</span>
+                <span class="deprecated-line">&nbsp;&nbsp;+ editRollno.getText() + "'", null);</span>
+              </div>
+              <div class="demo-issue">
+                <span class="demo-issue-tag">Why it's wrong</span>
+                <span class="demo-issue-text">User input is dropped straight into the SQL string. That's a
+                  textbook SQL injection.</span>
+              </div>
+            </div>
+            <div class="demo-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="19 12 12 19 5 12" />
+              </svg>
+            </div>
+            <div class="demo-result">
+              <div class="demo-result-label">What to learn instead</div>
+              <div class="demo-slide-content">
+                <span class="updated-line">// Parameterized queries, safe from injection</span>
+                <span class="updated-line">db.execSQL("INSERT INTO student VALUES(?, ?, ?)",</span>
+                <span class="updated-line">&nbsp;&nbsp;new Object[]{rollno, name, marks});</span>
+                <br>
+                <span class="updated-line">Cursor c = db.rawQuery(</span>
+                <span class="updated-line">&nbsp;&nbsp;"SELECT * FROM student WHERE rollno = ?",</span>
+                <span class="updated-line">&nbsp;&nbsp;new String[]{rollno});</span>
+              </div>
+              <div class="demo-citation">
+                <span class="demo-verify-tag">✓ Source checked</span>
+                <span class="demo-citation-host">owasp.org / SQL_Injection</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section snap-section">
+      <div class="cta-glow"></div>
+      <div class="section-label">Get Started</div>
+      <div class="section-title">What you're learning<br>deserves a second look.</div>
+      <a href="/start" class="cta-btn">
+        Upload Your First Deck
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </a>
+    </section>
+  </div>
+</div>
+
+<div class="page-transition" aria-hidden="true">
+  <div class="page-transition-inner" aria-live="polite">
+    <span class="transition-word">Hello</span>
+    <span class="transition-real">real</span>
+    <span class="transition-word">World!</span>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -15% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Stagger reveal of elements inside section
+        const reveals = entry.target.querySelectorAll('.reveal');
+        if (reveals.length > 0) {
+          reveals.forEach((el, i) => {
+            if (!el.classList.contains('visible')) {
+              setTimeout(() => {
+                el.classList.add('visible');
+              }, prefersReducedMotion ? 0 : i * 150);
+            }
+          });
+        }
+        
+        // If the section itself is a reveal
+        if (entry.target.classList.contains('reveal') && !entry.target.classList.contains('visible')) {
+           entry.target.classList.add('visible');
+        }
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.snap-section, .reveal').forEach((el) => {
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (event) {
+      const target = this.getAttribute('href');
+      if (target === '#') return;
+      const el = document.querySelector(target);
+      if (el) {
+        event.preventDefault();
+        el.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      }
+    });
+  });
+
+  const transitionOverlay = document.querySelector('.page-transition');
+  document.addEventListener('click', (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const link = target ? target.closest('a[href="/start"]') : null;
+    if (!link) {
+      return;
+    }
+
+    if (
+      event.defaultPrevented ||
+      event.button > 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      link.target
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+    if (!transitionOverlay || transitionOverlay.classList.contains('is-active')) {
+      window.location.href = link.href;
+      return;
+    }
+
+    transitionOverlay.removeAttribute('aria-hidden');
+    transitionOverlay.classList.add('is-active');
+    document.body.classList.add('home-transitioning');
+    try {
+      window.sessionStorage.setItem('staleStartArrival', 'green-wash');
+    } catch {}
+
+    if (prefersReducedMotion) {
+      transitionOverlay.classList.add('with-real');
+      transitionOverlay.classList.add('is-washing');
+    } else {
+      window.setTimeout(() => {
+        transitionOverlay.classList.add('with-real');
+      }, 1000);
+      window.setTimeout(() => {
+        transitionOverlay.classList.add('is-washing');
+      }, 2500);
+    }
+
+    window.setTimeout(() => {
+      transitionOverlay.classList.add('is-leaving');
+    }, prefersReducedMotion ? 220 : 5400);
+
+    window.setTimeout(() => {
+      window.location.href = link.href;
+    }, prefersReducedMotion ? 360 : 5900);
+  }, { capture: true });
+</script>
+{% endblock %}

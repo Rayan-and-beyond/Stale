@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Env
+.env
+.env.local
+
+# Curriculum (do not ship the user's real slides publicly)
+curriculum/
+
+# Outputs — ignored by default. Per-user runs (curriculum text, agent
+# transcripts, full slide PDFs) are not safe to ship.
+tmp/stale_outputs/
+output/
+report.html
+report_*.html
+
+# Extracted curriculum text (regenerable)
+extracted/
+
+# ...but ship the curated demo runs so the UI works on a fresh clone with no
+# API key. These have already been stripped of curriculum/, events.jsonl,
+# and agent_text.md — only the structured outputs (findings.json,
+# market_fit.json, topics.json, candidates.json, meta.json, scope.json)
+# remain. ~2 MB total across all 11 runs.
+!output/
+output/*
+!output/runs/
+output/runs/*
+!output/runs/refactor_oop1_20260505T215900Z/
+!output/runs/refactor_oop2_20260506T135257Z/
+!output/runs/web_20260428T073022Z/
+!output/runs/web_20260428T132556Z/
+!output/runs/web_20260428T195807Z/
+!output/runs/web_20260428T202557Z/
+!output/runs/web_20260430T104101Z/
+!output/runs/web_20260504T162848Z/
+!output/runs/web_20260504T162928Z/
+!output/runs/web_20260504T210835Z/
+!output/runs/web_20260504T212437Z/
+
+# Even within the demo runs, never ship these — they always regenerate
+# locally on a re-run, contain heavy debug noise, or carry copyright risk.
+output/runs/*/curriculum/
+output/runs/*/**/events.jsonl
+output/runs/*/**/agent_text.md
+output/runs/*/topics_with_auditor/
+
+# Editor / patch backups — Decision 14 found a stale `.bak` shipping
+# yesterday's contradicted guidance.
+*.bak
+*preauditorwiring*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Local tool / cache directories
+.local/
+.superpowers/
+# Local Claude Code project config (permissions, scheduled tasks)
+.claude/
+# Playwright CLI logs from local debugging sessions
+.playwright-cli/
+.pytest_cache/

@@ -1,0 +1,407 @@
+{% extends "base.html" %}
+{% block title %}{{ meta.course or run_id }} · Stale{% endblock %}
+{% block head_extra %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+  rel="stylesheet">
+{% endblock %}
+{% block body_class %}run-page{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+
+<div class="run-shell">
+  <nav class="run-page-nav" aria-label="Run navigation">
+    <a class="run-back-link" href="/start" data-run-back aria-label="Go back to the previous page">← Back</a>
+    <a class="run-centered-brand" href="/" aria-label="Go to Stale home">Stale</a>
+  </nav>
+
+  <header class="run-hero">
+    <div class="run-hero-copy">
+      <p class="run-kicker">Course audit report</p>
+      <h1>{{ meta.course or run_id }}</h1>
+      <div class="run-meta-row">
+        <span id="run-status" class="status-pill status-{{ status }}">{{ status|status_label }}</span>
+        {% if meta.role %}
+          <span class="run-meta-pill">Role: {{ (meta.role_text or meta.role)|title }}</span>
+        {% endif %}
+        {% if summary %}
+          <span class="run-meta-pill">{{ summary.total_findings or findings|length }} Findings</span>
+        {% endif %}
+        {% if scope %}
+          <span class="run-meta-pill run-focus-pill" tabindex="0"
+                aria-label="Main course topic"
+                data-tooltip="Main course topic">{{ course_focus_label(scope)|title }}</span>
+        {% endif %}
+      </div>
+      {% if source_run_id %}
+        <a href="/run/{{ source_run_id }}" class="muted small source-run-link"
+           title="This run reuses the audit findings from {{ source_run_id }}.">
+          Derived from an earlier run
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="agent-strip run-agent-strip" aria-label="Pipeline status">
+      {% for agent, agent_state in agent_status.items() %}
+        {% if agent_state != 'n/a' %}
+          <span class="agent-chip status-{{ agent_state }}">
+            <span>{{ agent.replace('_', ' ')|title }}</span>
+            <strong>{{ agent_state|status_label }}</strong>
+          </span>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if can_retest %}
+    <div class="run-hero-retest">
+      <details>
+        <summary>
+          <span>Run another role</span>
+        </summary>
+        <form method="post" action="/run/{{ run_id }}/retest" class="role-form run-hero-retest-form">
+          <input type="text" name="role_text" required
+                 placeholder="e.g. mobile developer, security engineer focused on cloud" />
+          <button type="submit">Run</button>
+        </form>
+      </details>
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="run-workspace">
+
+{% if error %}
+<section class="card error-card">
+  <h3>Error</h3>
+  <pre>{{ error }}</pre>
+</section>
+{% endif %}
+
+{% if awaiting_role %}
+<section class="card role-input-card">
+  <h2>What role are you targeting?</h2>
+
+  {% if scope %}
+    <div class="scope-panel">
+      <p class="scope-label">We detected this course is about:</p>
+      <p class="scope-area">{{ scope.subject_area }}</p>
+      {% if scope.pedagogical_level %}
+        <p class="scope-meta">
+          <span class="scope-meta-label">Level:</span>
+          <span>{{ scope.pedagogical_level }}</span>
+        </p>
+      {% endif %}
+      {% if scope.course_intent %}
+        <p class="scope-intent muted">
+          <strong>Intent:</strong> {{ scope.course_intent }}
+        </p>
+      {% endif %}
+      {% if scope.depth_bound %}
+        <p class="scope-depth muted small">
+          <strong>Depth bound:</strong> {{ scope.depth_bound }}
+        </p>
+      {% endif %}
+      {% if scope.one_liner %}
+        <p class="scope-one-liner muted">{{ scope.one_liner }}</p>
+      {% endif %}
+      {% if scope.key_topics %}
+        <details class="scope-topics">
+          <summary>Key topics covered ({{ scope.key_topics|length }})</summary>
+          <ul>
+            {% for t in scope.key_topics %}<li>{{ t }}</li>{% endfor %}
+          </ul>
+        </details>
+      {% endif %}
+      {% if scope.ambiguity_note %}
+        <p class="scope-ambiguity">⚠ {{ scope.ambiguity_note }}</p>
+      {% endif %}
+    </div>
+  {% else %}
+    <p class="muted small">
+      🔍 Detecting the course's actual scope (a small Sonnet call, ~10s).
+      You can submit a role now, the chip suggestions will populate
+      automatically when scope detection finishes.
+    </p>
+  {% endif %}
+
+  {% if role_chips %}
+    <p class="chip-label">Suggested target roles for this course:</p>
+    <div class="role-chips">
+      {% for c in role_chips %}
+        <button type="button" class="role-chip" data-label="{{ c.label }}">{{ c.label }}</button>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <form method="post" action="/run/{{ run_id }}/role" class="role-form">
+    <input type="text" name="role_text" id="role-text-input" required autofocus
+      placeholder="e.g. {% if role_chips %}{{ role_chips[0].label }} working on real-time systems{% else %}backend engineer working on real-time systems{% endif %}">
+    <button type="submit">Find market gaps</button>
+  </form>
+  <p class="muted small">
+    Click a suggestion or type freely. A small Haiku call resolves your
+    description to a job-postings slice and carries any specialization into
+    the gap analysis.
+  </p>
+</section>
+{% endif %}
+
+<nav class="tabs" role="tablist">
+  <button class="tab active" data-tab="findings" role="tab"
+          id="tab-trigger-findings" aria-controls="tab-findings"
+          aria-selected="true" type="button"
+          aria-label="Findings: Issues found in the course content"
+          data-tooltip="Issues found in the course content">Findings</button>
+  {% if not is_legacy %}
+  <button class="tab" data-tab="market-fit" role="tab"
+          id="tab-trigger-market-fit" aria-controls="tab-market-fit"
+          aria-selected="false" type="button" tabindex="-1"
+          aria-label="Market-fit: How well the course fits the target role"
+          data-tooltip="How well the course fits the target role">Market-fit</button>
+  <button class="tab" data-tab="topics" role="tab"
+          id="tab-trigger-topics" aria-controls="tab-topics"
+          aria-selected="false" type="button" tabindex="-1"
+          aria-label="Topics: Suggested updates to make the course stronger"
+          data-tooltip="Suggested updates to make the course stronger">Topics</button>
+  {% endif %}
+</nav>
+
+<!-- ============================ Findings tab ============================ -->
+<section id="tab-findings" class="tab-panel active" role="tabpanel" aria-labelledby="tab-trigger-findings">
+  {% if not findings and status != 'done' %}
+    <div class="card placeholder">
+      <p>Audit in progress. Findings appear here once the Auditor finishes
+      and each citation has been re-fetched and matched word-for-word
+      against the primary source.</p>
+      <p class="muted">Refresh this report to see new results as the audit completes.</p>
+    </div>
+  {% elif not findings %}
+    <div class="card placeholder">
+      <p>No findings.</p>
+    </div>
+  {% else %}
+    {% if summary %}
+    <div class="summary-bar">
+      <strong>{{ summary.total_findings or findings|length }}</strong> findings
+      {% if summary.by_severity %}
+        ·
+        {% if summary.by_severity.critical %}<span class="sev-pill sev-critical">{{ summary.by_severity.critical }} critical</span>{% endif %}
+        {% if summary.by_severity.high %}<span class="sev-pill sev-high">{{ summary.by_severity.high }} high</span>{% endif %}
+        {% if summary.by_severity.medium %}<span class="sev-pill sev-medium">{{ summary.by_severity.medium }} medium</span>{% endif %}
+        {% if summary.by_severity.low %}<span class="sev-pill sev-low">{{ summary.by_severity.low }} low</span>{% endif %}
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% macro render_finding(f) %}
+      <article class="finding card sev-{{ f.severity }}">
+        <header class="finding-head">
+          <span class="status-tag issue-{{ f|issue_class }}">{{ f|issue_label }}</span>
+          <span class="slide-ref">
+            {{ f.slide_ref }}
+          </span>
+        </header>
+
+        <section class="finding-section">
+          <h4 title="Copied word-for-word from the slide.">What the slide says</h4>
+          <blockquote class="claim">{{ f.claim }}</blockquote>
+          {% if f.interpretation or f.adjudication_reasoning %}
+          <details class="reasoning-toggle">
+            <summary>Why this is flagged</summary>
+            {% if f.interpretation %}<p class="interpretation">{{ f.interpretation }}</p>{% endif %}
+            {% if f.adjudication_reasoning %}<p class="muted small adjudication-reasoning"><strong>Adjudicator's note:</strong> {{ f.adjudication_reasoning }}</p>{% endif %}
+          </details>
+          {% endif %}
+        </section>
+
+        <section class="finding-section">
+          <h4>
+            Primary source
+            {% if f.verification and f.verification.status == 'verified' %}
+              <span class="verify-tag verify-ok" title="The source page was reachable and the quoted text was found there.">✓ Source checked</span>
+            {% elif f.verification %}
+              <span class="verify-tag verify-warn">{{ f.verification.status }}</span>
+            {% endif %}
+          </h4>
+          <p class="source-url">
+            <a href="{{ f.citation_url }}" target="_blank" rel="noopener">
+              {{ domain_of(f.citation_url) }}
+              <span class="muted">↗</span>
+            </a>
+          </p>
+          <blockquote class="excerpt">{{ f.citation_excerpt }}</blockquote>
+        </section>
+
+        <section class="finding-section">
+          <h4>What to learn instead</h4>
+          <p class="replacement">{{ f.suggested_replacement }}</p>
+        </section>
+      </article>
+    {% endmacro %}
+
+    <div class="findings-list">
+      {% for f in findings %}{{ render_finding(f) }}{% endfor %}
+    </div>
+  {% endif %}
+</section>
+
+<!-- ============================ Market-fit tab ============================ -->
+{% if not is_legacy %}
+<section id="tab-market-fit" class="tab-panel" role="tabpanel" aria-labelledby="tab-trigger-market-fit">
+  {% if not market_fit %}
+    <div class="card placeholder">
+      <p>Market-fit analysis in progress. Comparing the curriculum
+      against role-tagged job postings for <strong>{{ meta.role or 'the target role' }}</strong>.</p>
+    </div>
+  {% else %}
+    {% if market_fit.summary %}
+    <div class="summary-bar">
+      {% if market_fit.summary.headline %}
+        <p class="headline">{{ market_fit.summary.headline }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if not market_fit.gaps and market_fit.summary %}
+    <section class="card empty-state-card">
+      <h3>No extendable gaps for this role</h3>
+      <p class="muted">
+        Stale only flags gaps that the course already partially covers. It
+        won't push you toward Kubernetes when you're sitting in a Unicode
+        course. For <strong>{{ meta.role or 'this role' }}</strong>, every
+        high-frequency market demand is in a different area from what this
+        course actually teaches.
+      </p>
+      <p class="muted small">
+        Try a different target role on the run page, or run Stale on a course
+        whose subject area overlaps the role you're aiming for.
+      </p>
+    </section>
+    {% endif %}
+
+    {% if market_fit.gaps %}
+    <h3 class="section-h">Gaps</h3>
+    <div class="findings-list">
+      {% for g in market_fit.gaps %}
+      <article class="finding card sev-{{ g.severity }}">
+        <h4 class="gap-skill">{{ g.skill }}</h4>
+        <p class="rationale">{{ g.rationale }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if market_fit.taught_skillset %}
+    <details class="card collapsible">
+      <summary>What the curriculum actually teaches ({{ market_fit.taught_skillset|length }} skills)</summary>
+      <ul class="skill-list">
+        {% for s in market_fit.taught_skillset %}
+        <li>
+          <strong>{{ s.skill }}</strong>
+          <span class="muted small">· {{ s.courses|join(', ') }}</span>
+          {% if s.evidence %}<blockquote class="excerpt small">{{ s.evidence }}</blockquote>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% endif %}
+  {% endif %}
+</section>
+
+<!-- ============================ Topics tab ============================ -->
+<section id="tab-topics" class="tab-panel" role="tabpanel" aria-labelledby="tab-trigger-topics">
+  {% if not topics %}
+    <div class="card placeholder">
+      <p>Topics ranking will appear here once Market-fit produces its gap
+      analysis. Topics ranks the gaps strictly by market demand and names the
+      existing course where each prescription should fit.</p>
+    </div>
+  {% else %}
+    {% if topics.summary %}
+    <div class="summary-bar">
+      {% if topics.summary.top_3_headline %}
+        <p class="headline">{{ topics.summary.top_3_headline }}</p>
+      {% endif %}
+      {% if topics.summary.coverage_note %}
+        <p class="muted small">{{ topics.summary.coverage_note }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if topics.prescriptions %}
+    <div class="findings-list">
+      {% for p in topics.prescriptions %}
+      <article class="finding card prescription">
+        <header class="finding-head">
+          <span class="rank-pill">#{{ p.rank }}</span>
+          {% if p.estimated_learning_hours %}
+          <span class="hours-tag">~{{ p.estimated_learning_hours }}h to learn</span>
+          {% endif %}
+        </header>
+
+        <h4 class="topic-title">{{ p.topic }}</h4>
+        {% if p.headline_one_liner %}
+        <p class="headline-one-liner">{{ p.headline_one_liner }}</p>
+        {% endif %}
+
+        {% if p.skill_keywords %}
+        <p class="keywords">
+          {% for k in p.skill_keywords %}<code>{{ k }}</code>{% endfor %}
+        </p>
+        {% endif %}
+
+        <section class="finding-section">
+          <h4>Where it fits</h4>
+          {% if p.fits_in_course %}
+            <p class="replacement"><strong>{{ p.fits_in_course }}</strong>
+              {% if p.fits_in_course_rationale %}· {{ p.fits_in_course_rationale }}{% endif %}
+            </p>
+          {% else %}
+            <p class="muted">No existing course is a natural fit.
+              {% if p.fits_in_course_rationale %}{{ p.fits_in_course_rationale }}{% endif %}
+            </p>
+          {% endif %}
+        </section>
+
+        {% if p.prerequisite_chain %}
+        <section class="finding-section">
+          <h4>Prerequisites</h4>
+          <ul class="prereq-list">
+            {% for pr in p.prerequisite_chain %}
+            <li>
+              <strong>{{ pr.skill }}</strong>
+              {% if pr.already_taught_in %}
+                <span class="muted small">· already covered in {{ pr.already_taught_in }}</span>
+              {% else %}
+                <span class="verify-tag verify-warn small">not yet covered</span>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  {% endif %}
+</section>
+{% endif %}
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+const RUN_ID = {{ run_id|tojson }};
+const INITIAL_STATUS = {{ status|tojson }};
+const INITIAL_AGENTS = {{ agent_status|tojson }};
+const INITIAL_STAGE1_DONE = {{ stage1_done|tojson }};
+const INITIAL_STAGE2_STARTED = {{ (meta.role is defined and meta.role)|tojson }};
+</script>
+<script src="/static/run.js?v={{ run_script_version }}"></script>
+{% endblock %}

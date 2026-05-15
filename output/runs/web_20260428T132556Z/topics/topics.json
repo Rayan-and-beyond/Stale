@@ -1,0 +1,139 @@
+{
+  "target_role": "ml_data",
+  "prescriptions": [
+    {
+      "rank": 1,
+      "topic": "Descriptive vs inferential statistics \u2014 conceptual tour of distributions, sampling, and hypothesis testing",
+      "skill_keywords": [
+        "statistics",
+        "distributions",
+        "sampling",
+        "hypothesis testing",
+        "inference",
+        "descriptive statistics"
+      ],
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_045",
+        "post_047",
+        "post_048"
+      ],
+      "fits_in_course": "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)",
+      "fits_in_course_rationale": "Week 12 already names statistics as a DS foundation (p.7 'Principles can be statistical, computational, algorithmic, visual'; p.65 'Data Scientists have a strong background in statistics') and uses a few statistical objects operationally (Z-score normalization p.12, MAE/MSE p.59, median imputation p.12). The gap is that the slide naming statistics never opens into descriptive vs inferential framing. A conceptual one-section extension on the existing DS-foundations slide (what a distribution is, what sampling is, what inference is for) extends partial coverage without breaking survey depth.",
+      "prerequisite_chain": [
+        {
+          "skill": "Mean / median / Z-score as operational tools",
+          "already_taught_in": "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+        },
+        {
+          "skill": "MAE / MSE as average-error formulas",
+          "already_taught_in": "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+        },
+        {
+          "skill": "Train/test split mindset (samples drawn from a population)",
+          "already_taught_in": "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+        },
+        {
+          "skill": "Probability theory beyond point estimates",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 4,
+      "headline_one_liner": "The course already names statistics as the spine of data science \u2014 extend that one slide into a conceptual descriptive-vs-inferential tour so students leave with a vocabulary the 75% of ml_data postings demanding 'statistics' actually mean."
+    },
+    {
+      "rank": 2,
+      "topic": "Retrieval-Augmented Generation (RAG) as the modern bridge between knowledge representation and NLP question answering",
+      "skill_keywords": [
+        "rag",
+        "retrieval-augmented generation",
+        "information retrieval",
+        "question answering",
+        "llms",
+        "knowledge bases"
+      ],
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_039",
+        "post_044",
+        "post_046",
+        "post_047",
+        "post_048"
+      ],
+      "fits_in_course": "Artificial Intelligence (Week 10 \u2014 Intro to NLP)",
+      "fits_in_course_rationale": "Week 10 already names the exact ingredients of RAG without connecting them: p.23 lists 'Index and search large texts ... Information extraction ... Question answering; Knowledge acquisition' as NLP applications. Pair that with Week 7/8's deep treatment of knowledge bases (FOL KB, OWL ontologies, WordNet/ConceptNet/CYC reusable KBs at Week 8 p.29) and the conceptual story 'retrieve from a knowledge source, then have a generator answer' is a one-slide extension of an already-named application. Stays at survey depth \u2014 no LangChain code, no embedding math.",
+      "prerequisite_chain": [
+        {
+          "skill": "Information retrieval / question answering named as NLP applications",
+          "already_taught_in": "Artificial Intelligence (Week 10 \u2014 Intro to NLP)"
+        },
+        {
+          "skill": "Knowledge bases and ontologies as retrievable knowledge sources",
+          "already_taught_in": "Artificial Intelligence (Week 8 \u2014 Knowledge Representation: Ontology)"
+        },
+        {
+          "skill": "FOL knowledge base (tell/ask) intuition",
+          "already_taught_in": "Artificial Intelligence (Week 6 \u2014 Logical Agents 2; Week 7 \u2014 Knowledge Representation)"
+        },
+        {
+          "skill": "Modern LLMs as generators (transformer-era NLP)",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 3,
+      "headline_one_liner": "Week 10 already lists 'index large texts' and 'question answering' on the same slide and Weeks 7\u20138 already teach knowledge bases \u2014 a single conceptual slide on RAG ties those threads to what 5 of 12 ml_data postings now ask for."
+    },
+    {
+      "rank": 3,
+      "topic": "Vector / embedding-based knowledge representation as a sibling paradigm to symbolic KR",
+      "skill_keywords": [
+        "vector databases",
+        "embeddings",
+        "semantic search",
+        "dense representations",
+        "knowledge representation"
+      ],
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_039",
+        "post_040",
+        "post_042",
+        "post_044",
+        "post_046"
+      ],
+      "fits_in_course": "Artificial Intelligence (Week 8 \u2014 Knowledge Representation: Ontology)",
+      "fits_in_course_rationale": "Week 7 p.3 already presents a taxonomy of representation paradigms ('what they commit to as primitives' \u2014 Propositional / First-Order / Temporal / Probability / Fuzzy) and Week 8 deepens one specific branch ('Ontology is an explicit specification of conceptualization', p.3). Adding a conceptual sibling row \u2014 dense-vector / embedding representations and the semantic-similarity-search retrieval they enable \u2014 is the natural extension of an existing taxonomy slide. It also gives the Week 10 IR/QA application slide a second concrete substrate beyond keyword indexing. No Pinecone tutorial, no math \u2014 just the conceptual contrast 'symbolic vs distributed'.",
+      "prerequisite_chain": [
+        {
+          "skill": "KR paradigm taxonomy (logics compared by primitives)",
+          "already_taught_in": "Artificial Intelligence (Week 6 \u2014 Logical Agents 2; Week 7 \u2014 Knowledge Representation)"
+        },
+        {
+          "skill": "Ontologies as one concrete KR paradigm",
+          "already_taught_in": "Artificial Intelligence (Week 8 \u2014 Knowledge Representation: Ontology)"
+        },
+        {
+          "skill": "Information retrieval as an NLP application",
+          "already_taught_in": "Artificial Intelligence (Week 10 \u2014 Intro to NLP)"
+        },
+        {
+          "skill": "Linear-algebra intuition for high-dimensional vectors and cosine similarity",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 3,
+      "headline_one_liner": "Week 7's KR taxonomy already invites the question 'what other ways can knowledge be represented?' \u2014 adding embeddings/vector stores as a conceptual sibling closes the gap to the 5 ml_data postings demanding vector databases without leaving the survey lane."
+    }
+  ],
+  "summary": {
+    "total_prescriptions": 3,
+    "top_3_headline": "The three in-bound prescriptions all extend topics the course already names but stops short on: (1) lifting the existing 'statistics is foundational' slide into a conceptual descriptive-vs-inferential tour (75% of ml_data postings), (2) bridging Week 7/8 knowledge bases to Week 10's already-named IR/QA via a conceptual RAG slide (42%), and (3) adding vector/embedding representations as a sibling row to Week 7's KR-paradigm taxonomy (42%). Together they touch all 12 ml_data sample postings through the statistics+RAG+vector union.",
+    "coverage_note": "These three prescriptions are the only legitimate in-bound extensions surfaced by Market-fit. They touch all 12 ml_data sample postings on at least one of the named conceptual axes (statistics, RAG, vector DBs), but they do NOT close the much larger hands-on gap \u2014 Python, pandas, scikit-learn, PyTorch, SQL, Git, Docker, AWS, dbt, Spark, Airflow, Kafka, etc. \u2014 because those are implementation/tooling skills outside this introductory survey's stated depth bound. Honest framing: the course can become a credible conceptual on-ramp to ml_data work, but a separate hands-on sequence is required before graduates are job-ready for these postings."
+  }
+}

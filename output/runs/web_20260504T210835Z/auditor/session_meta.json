@@ -1,0 +1,10 @@
+{
+  "run_id": "20260504T210835Z",
+  "courses": {
+    "Database Concepts and Design": {
+      "filename": "database_concepts_and_design.txt",
+      "mount_path": "/workspace/curriculum/database_concepts_and_design.txt"
+    }
+  },
+  "started_at": "2026-05-04T21:11:04.039574+00:00"
+}

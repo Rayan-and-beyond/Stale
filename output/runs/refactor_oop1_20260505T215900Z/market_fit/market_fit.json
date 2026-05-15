@@ -1,0 +1,507 @@
+{
+  "target_role": "backend",
+  "taught_skillset": [
+    {
+      "skill": "Java syntax fundamentals (variables, primitive types, operators, casting)",
+      "courses": [
+        "Lecture 02 - Java Basics - Part I"
+      ],
+      "evidence": "Slide 21 'Variable Declaration': 'int x; double radius; char a;'; Slide 31 'Type Casting': 'int i = (int)3.0; (type narrowing)'"
+    },
+    {
+      "skill": "Java control flow (if/else, switch, ternary)",
+      "courses": [
+        "Lecture 02 - Java Basics - Part I"
+      ],
+      "evidence": "Slide 35 'One-way IF Statements'; Slide 45 'switch Statements'; Slide 50 '? : Conditional Operator': 'y = (x > 0) ? 1 : -1;'"
+    },
+    {
+      "skill": "Java loops (while, do-while, for, for-each, break/continue)",
+      "courses": [
+        "Lecture 03 - Java Basics - Part 2"
+      ],
+      "evidence": "Page 8 'while Loop'; Page 17 'Do \u2013 While Loop'; Page 20 'for Loops'; Page 73 'Enhanced FOR Loop (for-each loop)': 'for (type var : array) { statements using var; }'"
+    },
+    {
+      "skill": "Methods, parameters, overloading, scope",
+      "courses": [
+        "Lecture 03 - Java Basics - Part 2"
+      ],
+      "evidence": "Page 41 'Defining Methods (Example)': 'public static int max(int num1, int num2)'; Page 53 'Overloading Methods'; Page 55 'Scope and Lifetime of Variables'"
+    },
+    {
+      "skill": "1D and 2D arrays, anonymous arrays, java.util.Arrays.sort",
+      "courses": [
+        "Lecture 03 - Java Basics - Part 2"
+      ],
+      "evidence": "Page 65 'How to Create Array using Java?': 'int[] intArray = new int[100];'; Page 82 'Operation on Array: Sorting': 'java.util.Arrays.sort(numbers);'"
+    },
+    {
+      "skill": "Enumerated types (enum)",
+      "courses": [
+        "Lecture 03 - Java Basics - Part 2"
+      ],
+      "evidence": "Page 97 'Introduction': 'static enum Day {SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY};'"
+    },
+    {
+      "skill": "Console I/O via java.util.Scanner and System.out.print/println/printf",
+      "courses": [
+        "Lecture 02 - Java Basics - Part I"
+      ],
+      "evidence": "Slide 25 'Reading Input from the Console (Keyboard)': 'Scanner input = new Scanner(System.in); double d = input.nextDouble();'; Slide 75 'Formatting Output': 'System.out.printf(format, items);'"
+    },
+    {
+      "skill": "java.lang.Math class (trig, exp, rounding, abs/min/max/random)",
+      "courses": [
+        "Lecture 02 - Java Basics - Part I"
+      ],
+      "evidence": "Slide 57 'Mathematical Functions': 'mathematical functions are implemented as methods on the Math-Class'; 'Math.pow(2, 3) returns 8.0; Math.sqrt(4) returns 2.0'"
+    },
+    {
+      "skill": "java.lang.String API (length, charAt, substring, indexOf, concat, equals, compareTo)",
+      "courses": [
+        "Lecture 02 - Java Basics - Part I",
+        "Lecture 05 - Thinking in Objects"
+      ],
+      "evidence": "L02 Slide 67 'Simple Methods for String Objects': 'message.length()'; L02 Slide 70 'String Concatenation': 'String s3 = s1.concat(s2);'; L05 Page 28 'The String Class' lists length/concat/substring/equals/compareTo"
+    },
+    {
+      "skill": "Defining classes, fields, constructors, accessor/mutator (getters/setters)",
+      "courses": [
+        "Lecture 04 - OOP Basics"
+      ],
+      "evidence": "Page 9 'Class Example': 'class Circle { double radius = 1.0; Circle() {} Circle(double newRadius) {radius = newRadius;} double getArea() {...} }'; Page 35 'Accessor / Mutator Methods': 'public int getNumber() { return number; } public void setNumber(int newNumber) { number = newNumber; }'"
+    },
+    {
+      "skill": "Encapsulation and access/visibility modifiers (public, private, protected, default)",
+      "courses": [
+        "Lecture 04 - OOP Basics",
+        "Lecture 06 - Inheritance"
+      ],
+      "evidence": "L04 Page 30 'Access / Visibility Modifiers': 'There are four types of access/visibility modifiers available in java: Default, Public, Private, Protected'; L05 Page 6 'Class Abstraction and Encapsulation': 'We can create a fully encapsulated class in java by making all the data members of the class private.'"
+    },
+    {
+      "skill": "Static vs instance members, the 'this' keyword",
+      "courses": [
+        "Lecture 04 - OOP Basics"
+      ],
+      "evidence": "Page 28 'Instance Variables, and Methods': 'Static variables are shared by all the instances of the class.'; Page 46 'The this Keyword': 'this.i = i;'"
+    },
+    {
+      "skill": "Garbage collection / JVM memory management (introductory awareness)",
+      "courses": [
+        "Lecture 04 - OOP Basics"
+      ],
+      "evidence": "Page 25 'Garbage Collection': 'Garbage collection (GC) is a form of automatic memory management in Java. Garbage is automatically collected by JVM.'"
+    },
+    {
+      "skill": "Class relationships: association, aggregation, composition (UML)",
+      "courses": [
+        "Lecture 05 - Thinking in Objects"
+      ],
+      "evidence": "Page 9 'Object Association'; Page 11 'Aggregation and Composition': 'It represents Has-A relationship.'; Page 13 'Composition is a restricted form of Aggregation'"
+    },
+    {
+      "skill": "Wrapper classes (Integer, Double, etc.), autoboxing/unboxing",
+      "courses": [
+        "Lecture 05 - Thinking in Objects"
+      ],
+      "evidence": "Page 17 'Wrapper Classes': 'Converting primitive data types into object is called boxing (done by compiler), while Wrapper object converted back to a primitive data type is called unboxing.'"
+    },
+    {
+      "skill": "java.math.BigInteger and BigDecimal for arbitrary-precision arithmetic",
+      "courses": [
+        "Lecture 05 - Thinking in Objects"
+      ],
+      "evidence": "Page 25 'BigInteger and BigDecimal': 'The BigInteger and BigDecimal classes are defined in the java.math package.'"
+    },
+    {
+      "skill": "StringBuilder / StringBuffer (mutable strings)",
+      "courses": [
+        "Lecture 05 - Thinking in Objects"
+      ],
+      "evidence": "Page 36 'StringBuilder and StringBuffer': 'StringBuilder/StringBuffer is more flexible than String. You can add, insert, or append new contents...'"
+    },
+    {
+      "skill": "Regular expressions in Java (String.matches, replaceAll, split)",
+      "courses": [
+        "Lecture 05 - Thinking in Objects"
+      ],
+      "evidence": "Page 33 'Matching, Replacing and Splitting by Patterns': '\"Java is fun\".matches(\"Java.*\");'; Page 39 'Regular Expressions': 'A regular expression (regex) defines a search pattern for strings.'"
+    },
+    {
+      "skill": "Inheritance via extends, super keyword, constructor chaining",
+      "courses": [
+        "Lecture 06 - Inheritance"
+      ],
+      "evidence": "Page 8 'Inheritance': 'class derived-class extends base-class'; Page 14 'Using the Keyword super'; Page 18 'Constructor Chaining': 'the subclass constructor first invokes its superclass constructor before performing its own tasks.'"
+    },
+    {
+      "skill": "Method overriding (@Override) and overloading; rules and contrasts",
+      "courses": [
+        "Lecture 06 - Inheritance",
+        "Lecture 07 - Polymorphism"
+      ],
+      "evidence": "L06 Page 32 'Rules for Overriding Methods': 'place @Override before the method in the subclass'; L06 Page 34 'Overriding vs. Overloading'; L07 Page 6 'Compile-Time Polymorphism' (overloading) and Page 7 'Runtime Polymorphism' (overriding)"
+    },
+    {
+      "skill": "java.lang.Object root class, toString(), equals(), hashCode()",
+      "courses": [
+        "Lecture 06 - Inheritance",
+        "Lecture 07 - Polymorphism"
+      ],
+      "evidence": "L06 Page 36 'The Object Class and Its Methods': 'Every class in Java is derived from the java.lang.Object class'; L07 Page 21 'The equals Method': 'In java equals() method is used to compare equality of two Objects.'"
+    },
+    {
+      "skill": "Polymorphism, dynamic binding, upcasting, instanceof, explicit casting",
+      "courses": [
+        "Lecture 07 - Polymorphism"
+      ],
+      "evidence": "Page 8 'Runtime Polymorphism Upcasting': 'A a=new B();//upcasting'; Page 13 'Dynamic Binding'; Page 19 'The instanceof Operator': 'if (myObject instanceof Circle) {...}'"
+    },
+    {
+      "skill": "java.util.ArrayList<E> (introductory generics use)",
+      "courses": [
+        "Lecture 07 - Polymorphism"
+      ],
+      "evidence": "Page 23 'The ArrayList Class': 'ArrayList<E> ... <E> is a generic Datatype, used to store anytype of data in ArrayList.'; Page 26 'ArrayList<String> alist=new ArrayList<String>();'"
+    },
+    {
+      "skill": "Abstract classes and abstract methods",
+      "courses": [
+        "Lecture 08 - Abstract Classes and Interfaces"
+      ],
+      "evidence": "Page 6 'Abstract Class Declaration': 'abstract class A{ abstract void myMethod(); ... }'; Page 7 'An abstract method cannot be contained in a non-abstract class'"
+    },
+    {
+      "skill": "Interfaces, multiple-interface implementation, Comparable, Cloneable",
+      "courses": [
+        "Lecture 08 - Abstract Classes and Interfaces"
+      ],
+      "evidence": "Page 15 'Interface': 'public interface NameOfInterface { ... }'; Page 19 'The Comparable Interface': 'public interface Comparable<E> { public int compareTo(E o); }'; Page 23 'The Cloneable Interfaces'"
+    },
+    {
+      "skill": "java.util.Date / java.util.Calendar / GregorianCalendar",
+      "courses": [
+        "Lecture 04 - OOP Basics",
+        "Lecture 08 - Abstract Classes and Interfaces"
+      ],
+      "evidence": "L04 Page 26 'The Date Class': 'java.util.Date date = new java.util.Date();'; L08 Page 10 'Abstract Calendar Class and Its GregorianCalendar subclass'"
+    },
+    {
+      "skill": "java.util.Random class",
+      "courses": [
+        "Lecture 04 - OOP Basics"
+      ],
+      "evidence": "Page 27 'The Random Class': 'a more useful random number generator is provided in the java.util.Random class. Random random1 = new Random(3);'"
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "sql",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "rest api",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "postgres",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "docker",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "unit testing",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "aws",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "linux",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011"
+      ]
+    },
+    {
+      "skill": "git",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "ci/cd",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_008",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "microservices",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011"
+      ]
+    },
+    {
+      "skill": "python",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "oauth",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_005",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "redis",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_009",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "kafka",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_001",
+        "post_004",
+        "post_007",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "graphql",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_008",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "jwt",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_003",
+        "post_004",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "nginx",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_001",
+        "post_004",
+        "post_005",
+        "post_008",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "prometheus",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_007",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "go",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_005",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    }
+  ],
+  "gaps": [],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 27,
+    "skills_market_demands": 20,
+    "gap_count": 0,
+    "headline": "An introductory Java OOP course taught faithfully to its own scope: every market skill demanded by \u226530% of backend postings (SQL, REST APIs, Postgres, Docker, AWS, Linux, Git, CI/CD, microservices, Kubernetes, Kafka, OAuth/JWT, Redis, Prometheus, etc.) sits in databases, web protocols, infrastructure, or DevOps domains entirely outside this course's depth bound, and no slide partially covers them \u2014 so under the 'extend partial coverage only' rule there are no actionable in-scope gaps to surface."
+  }
+}

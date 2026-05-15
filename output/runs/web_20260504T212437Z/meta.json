@@ -1,0 +1,22 @@
+{
+  "course": "Fundamentals of Communications and Networks",
+  "course_dir_name": "Fundamentals of Communications and Networks",
+  "files_saved": [
+    "Week 1 - Introduction to Data Communication.pptx",
+    "Week 10 _ 11 - Transport Layer.pptx",
+    "Week 12 _13 _ 14 - Application Layer.pptx",
+    "Week 15 - VPNs.pptx",
+    "Week 2 _ 3 - Network layering_ and protocols.pptx",
+    "Week 4 _ 5 - Physical Layer wired and wireless connectivity.pptx",
+    "Week 6 _ 7 - Link Layer and LANs.pptx",
+    "Week 8 _ 9 - Network Layer.pptx"
+  ],
+  "files_skipped": [],
+  "started_at": "2026-05-04T21:24:37.992825+00:00",
+  "role_text": "network engineer",
+  "role": "devops_sre",
+  "specialization": null,
+  "role_confidence": "medium",
+  "role_reasoning": "Network engineering maps to devops_sre as the closest enum, covering infrastructure and reliability domains, though traditional network roles may sit outside these job-posting categories.",
+  "role_resolved_at": "2026-05-04T21:32:16.310175+00:00"
+}

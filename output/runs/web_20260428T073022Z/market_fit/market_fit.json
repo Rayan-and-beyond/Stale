@@ -1,0 +1,524 @@
+{
+  "target_role": "backend",
+  "taught_skillset": [
+    {
+      "skill": "Waterfall SDLC model",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch2 SW Processes, Slide 9: 'Waterfall model phases: Requirements analysis and definition; System and software design; Implementation and unit testing; Integration and system testing; Operation and maintenance.'"
+    },
+    {
+      "skill": "Incremental / iterative development",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch2 SW Processes, Slide 7: 'Incremental development - Specification, development and validation are interleaved. May be plan-driven or agile.'"
+    },
+    {
+      "skill": "Agile Manifesto principles",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch3 Agile, Slide 5: 'Individuals and interactions over processes... Customer collaboration over contract negotiation... Responding to change over following a plan.'"
+    },
+    {
+      "skill": "Extreme Programming (XP) practices: user stories, refactoring, test-first, pair programming",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch3 Agile, Slide 14: 'Key practices: User stories for specification; Refactoring; Test-first development; Pair programming.'"
+    },
+    {
+      "skill": "Scrum framework (sprints, product backlog, scrum master, daily scrums)",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch3 Agile, Slide 35-37: 'Sprints are fixed length, normally 2\u20134 weeks. The starting point for planning is the product backlog... The role of the Scrum master is to protect the development team from external distractions.'"
+    },
+    {
+      "skill": "Test-driven development (TDD) with JUnit",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch3 Agile, Slide 22: 'Writing tests before code clarifies the requirements to be implemented... Usually relies on a testing framework such as Junit.' Reinforced in Ch8 Testing, Slide 44."
+    },
+    {
+      "skill": "User stories and scenarios for requirements elicitation",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch3 Agile, Slide 15: 'User requirements are expressed as user stories or scenarios. These are written on cards and the development team break them down into implementation tasks.'"
+    },
+    {
+      "skill": "Functional vs. non-functional requirements specification",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch4 Req Eng, Slide 14: 'Functional requirements: Statements of services the system should provide... Non-functional requirements: Constraints on the services or functions offered by the system such as timing constraints.'"
+    },
+    {
+      "skill": "Requirements elicitation via interviews, ethnography, and use-case scenarios",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch4 Req Eng, Slide 38: 'Formal or informal interviews with stakeholders are part of most RE processes.' Slide 41: 'A social scientist spends a considerable time observing and analysing how people actually work.'"
+    },
+    {
+      "skill": "UML modeling: use-case, sequence, class, state-machine, and activity diagrams",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch5 System modeling, Slide 6: 'Activity diagrams... Use case diagrams... Sequence diagrams... Class diagrams... State diagrams, which show how the system reacts to internal and external events.'"
+    },
+    {
+      "skill": "Architectural patterns: MVC, Layered, Repository, Client-Server, Pipe-and-Filter",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch6 Architectural design, Slides 23-38: 'The Model-View-Controller (MVC) pattern... Layered architecture... Repository architecture... Client-server architecture... Pipe and filter architecture.'"
+    },
+    {
+      "skill": "4+1 architectural view model",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch6 Architectural design, Slide 19: '4 + 1 view model of software architecture: A logical view... A process view... A development view... A physical view... Related using use cases or scenarios (+1).'"
+    },
+    {
+      "skill": "GoF design patterns: Observer, Fa\u00e7ade, Iterator, Decorator",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch7 Implementation, Slide 38: 'Tell several objects that the state of some other object has changed (Observer pattern)... Fa\u00e7ade pattern... Iterator pattern... Decorator pattern.'"
+    },
+    {
+      "skill": "Generic configuration management / version management (no tool named)",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch7 Implementation, Slide 46: 'Version management, where support is provided to keep track of the different versions of software components. Version management systems include facilities to coordinate development by several programmers.' (No specific tool \u2014 Git, SVN, Mercurial \u2014 named anywhere in the curriculum.)"
+    },
+    {
+      "skill": "Unit, component, interface, system, regression, release, and acceptance testing",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch8 Testing, Slide 18: 'Unit testing... Component testing... System testing.' Slide 48: 'Regression testing is testing the system to check that changes have not broken previously working code.' Slide 59: 'Alpha testing... Beta testing... Acceptance testing.'"
+    },
+    {
+      "skill": "Equivalence partitioning and guideline-based test case design",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch8 Testing, Slide 27: 'Each of these classes is an equivalence partition or domain where the program behaves in an equivalent way for each class member. Test cases should be chosen from each partition.'"
+    },
+    {
+      "skill": "Performance and stress testing",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch8 Testing, Slide 56: 'Performance tests usually involve planning a series of tests where the load is steadily increased until the system performance becomes unacceptable. Stress testing is a form of performance testing where the system is deliberately overloaded to test its failure behavior.'"
+    },
+    {
+      "skill": "Software evolution, legacy reengineering, and refactoring",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch9 Evolution, Slide 49: 'Software reengineering: Restructuring or rewriting part or all of a legacy system without changing its functionality.' Slide 55: 'Refactoring is the process of making improvements to a program to slow down degradation through change.'"
+    },
+    {
+      "skill": "Risk management process (identification, analysis, planning, monitoring)",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch22 Project management, Slide 13: 'Risk identification... Risk analysis... Risk planning... Risk monitoring.'"
+    },
+    {
+      "skill": "Project scheduling with bar charts and activity networks",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch23 Project planning, Slide 30: 'Bar charts are the most commonly used representation for project schedules. They show the schedule as activities or resources against time. Activity networks show task dependencies.'"
+    },
+    {
+      "skill": "Agile planning game and team velocity estimation",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch23 Project planning, Slide 40: 'Stories are assigned effort points reflecting their size and difficulty of implementation. The number of effort points implemented per day is measured giving an estimate of the team's velocity.'"
+    },
+    {
+      "skill": "COCOMO II algorithmic cost estimation (application composition, early design, reuse, post-architecture sub-models)",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch23 Project planning, Slide 57: 'COCOMO 2 incorporates a range of sub-models... Application composition model... Early design model... Reuse model... Post-architecture model.' Slide 61 gives the formula PM = A * Size^B * M."
+    },
+    {
+      "skill": "SEI Capability Maturity Model (CMM) levels",
+      "courses": [
+        "software_engineering"
+      ],
+      "evidence": "Ch2 SW Processes, Slide 55: 'Initial... Repeatable... Defined... Managed... Optimising.'"
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "sql",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "docker",
+      "frequency_pct": 0.917,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "postgres",
+      "frequency_pct": 0.917,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "rest api",
+      "frequency_pct": 0.917,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "aws",
+      "frequency_pct": 0.833,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "unit testing",
+      "frequency_pct": 0.833,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "linux",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011"
+      ]
+    },
+    {
+      "skill": "git",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "ci/cd",
+      "frequency_pct": 0.667,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_008",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "microservices",
+      "frequency_pct": 0.667,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011"
+      ]
+    },
+    {
+      "skill": "python",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "oauth",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_005",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "redis",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_009",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "kafka",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_001",
+        "post_004",
+        "post_007",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "graphql",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_008",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "jwt",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_003",
+        "post_004",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "nginx",
+      "frequency_pct": 0.417,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_001",
+        "post_004",
+        "post_005",
+        "post_008",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "prometheus",
+      "frequency_pct": 0.333,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_007",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "go",
+      "frequency_pct": 0.333,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_005",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Git (modern distributed version control)",
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ],
+      "rationale": "Version control is squarely in scope (configuration management is a core software-engineering-process topic and IS taught in Ch7). However, the curriculum teaches it only at the abstract 'version management system' level \u2014 Ch7 Slide 46 says 'Version management, where support is provided to keep track of the different versions of software components,' but never names Git, GitHub, branching strategies, pull requests, merge conflicts, or distributed version control. In 2026 this is the single most universal backend tool (9/12 postings demand it explicitly). The taught form is the 2014 Sommerville-era abstraction; the market form is hands-on Git fluency. For a real-time distributed systems specialization, Git is the substrate on which trunk-based development and continuous delivery sit.",
+      "severity": "high"
+    },
+    {
+      "skill": "CI/CD pipelines (continuous integration and continuous delivery as a process practice)",
+      "market_frequency_pct": 0.667,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_008",
+        "post_010",
+        "post_012"
+      ],
+      "rationale": "Build/integrate/release automation is a software-engineering-PROCESS topic, not infrastructure \u2014 it belongs to this course's actual subject area. The curriculum touches automated test harnesses (JUnit) and 'frequent system builds' but never teaches CI/CD pipelines, build servers, or deployment automation. Worse, it teaches an outdated position: Ch3 Slide 53 explicitly states 'Continuous integration is practically impossible' (in the context of large-scale agile). That 2014-era assessment has been overturned in practice \u2014 8/12 backend postings now require CI/CD as a baseline expectation. For real-time distributed systems, where multi-service deployment cadence and automated rollback are routine, the absence of CI/CD pipelines in the process curriculum is a substantive gap.",
+      "severity": "high"
+    },
+    {
+      "skill": "Microservices architecture pattern",
+      "market_frequency_pct": 0.667,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011"
+      ],
+      "rationale": "Architectural design is in scope (Ch6 is dedicated to architectural patterns). The curriculum teaches MVC, Layered, Repository, Client-Server, and Pipe-and-Filter (Ch6 Slides 23-38) \u2014 the canonical 2014 pattern catalog \u2014 but never introduces microservices, service decomposition, bounded contexts, inter-service communication patterns, or distributed-system trade-offs (CAP, eventual consistency, saga patterns). 8/12 postings list 'microservices' as a required or preferred skill. Given the user's specialization on real-time distributed systems, this is the single most directly relevant architectural gap: the student leaves the course able to draw a 4+1 view of a monolith but without vocabulary for the dominant 2026 distributed-backend architectural style.",
+      "severity": "high"
+    }
+  ],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 23,
+    "skills_market_demands": 20,
+    "gap_count": 3,
+    "headline": "Within its declared scope (software engineering process), the curriculum is a faithful 2014 Sommerville-style course \u2014 strong on UML, Scrum/XP, GoF patterns, COCOMO II, and CMM \u2014 but its three in-scope process artifacts that haven't kept pace with 2026 backend practice are tool-less version control (no Git), the absence of CI/CD pipelines (with the curriculum still asserting CI is 'practically impossible' at scale), and an architectural pattern catalog that stops at client-server and never reaches microservices."
+  }
+}

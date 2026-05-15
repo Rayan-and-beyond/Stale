@@ -1,0 +1,27 @@
+{
+  "course": "Algorithm Analysis and Design",
+  "course_dir_name": "Algorithm Analysis and Design",
+  "files_saved": [
+    "CS 412 - T2311 - Ch 13-part-1_2.pptx",
+    "CS 412 - T2311 - Ch 6.pptx",
+    "CS 412 - T2311 - Ch 7.pptx",
+    "CS 412 - T2313 - Ch 2_part1_updated.pptx",
+    "CS 412 - T2313 - Ch 2_part2_updated.pptx",
+    "CS 412 - T2313 - Ch 3.pptx",
+    "CS 412 - T2313 - Ch 4_Part1.pptx",
+    "CS 412 - T2313 - Ch 4_Part2 _1_.pptx",
+    "CS 412 - T2411 - Chapter 1 updated.pptx",
+    "CS 412 - T2311 - Ch 15_part1.pptx",
+    "CS 412 - T2311 - Ch 15_part2.pptx",
+    "CS 412 - T2311 - Ch 22_part1 _1_.pptx",
+    "CS 412 - T2311 - Ch 22_part2 _1_.pptx"
+  ],
+  "files_skipped": [],
+  "started_at": "2026-04-30T10:41:01.153749+00:00",
+  "role_text": "backend engineer",
+  "role": "backend",
+  "specialization": null,
+  "role_confidence": "high",
+  "role_reasoning": "User explicitly stated 'backend engineer' with no additional specialization details.",
+  "role_resolved_at": "2026-04-30T10:48:25.497105+00:00"
+}

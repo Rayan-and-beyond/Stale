@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Start audit · Stale{% endblock %}
+{% block head_extra %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  (() => {
+    try {
+      const arrival = window.sessionStorage.getItem('staleStartArrival');
+      if (arrival === 'green-wash' || arrival === '1') {
+        document.documentElement.classList.add('start-arriving');
+        if (arrival === 'green-wash') {
+          document.documentElement.classList.add('start-wash-arrival');
+        }
+        window.sessionStorage.removeItem('staleStartArrival');
+      }
+    } catch {}
+  })();
+</script>
+{% endblock %}
+{% block body_class %}start-page{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+<nav class="start-page-nav" aria-label="Start navigation">
+  <a class="back-home" href="/" aria-label="Go home">
+    <span aria-hidden="true">←</span>
+    <svg class="back-home-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+      <path d="M3 10.5 12 3l9 7.5" />
+      <path d="M5.5 9.5V20h13V9.5" />
+      <path d="M9.5 20v-6h5v6" />
+    </svg>
+  </a>
+  <a class="start-centered-brand" href="/" aria-label="Go to Stale home">Stale</a>
+</nav>
+
+<section class="start-intro-grid">
+  <section class="start-hero">
+    <p class="section-kicker">Start audit</p>
+    <h1>Upload course material</h1>
+    <p class="muted">
+      Add .pptx or .pdf slide decks. Stale audits the course first, then asks
+      for a target role to compare it against industry expectations.
+    </p>
+  </section>
+
+  <section class="card upload-card home-upload" id="start-audit">
+    <h2>Upload slide decks</h2>
+    <form method="post" action="/upload" enctype="multipart/form-data">
+      <label>
+        <span>Course name</span>
+        <input type="text" name="course" required placeholder="e.g. Computer and Data Security">
+      </label>
+      <label>
+        <span>Slide decks</span>
+        <input type="file" name="files" multiple required accept=".pdf,.pptx">
+      </label>
+      <button type="submit">Start audit</button>
+    </form>
+  </section>
+</section>
+
+<section class="recent-card" id="recent-runs">
+  <h2>Recent runs</h2>
+  {% if not runs %}
+    <p class="muted">No runs yet.</p>
+  {% else %}
+    <div class="recent-grid" role="list">
+      {% for r in runs %}
+        <a class="recent-run-card" href="/run/{{ r.run_id }}" role="listitem">
+          <span class="recent-run-arrow" aria-hidden="true">→</span>
+          <strong class="recent-run-title">{{ r.course or r.run_id }}</strong>
+          <span class="recent-run-meta">
+            <span class="recent-run-count">
+              {% if r.findings_count is defined %}
+                {{ r.findings_count }} {{ 'Finding' if r.findings_count == 1 else 'Findings' }}
+              {% else %}
+                Audit report
+              {% endif %}
+            </span>
+            {% if r.role_text or r.role %}
+              <span class="recent-run-role">{{ (r.role_text or r.role)|title }}</span>
+            {% endif %}
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  (() => {
+    if (!document.documentElement.classList.contains('start-arriving')) return;
+    requestAnimationFrame(() => {
+      document.body.classList.add('start-arrived');
+      window.setTimeout(() => {
+        document.documentElement.classList.remove('start-arriving');
+        document.documentElement.classList.remove('start-wash-arrival');
+        document.body.classList.remove('start-arrived');
+      }, 2600);
+    });
+  })();
+</script>
+{% endblock %}

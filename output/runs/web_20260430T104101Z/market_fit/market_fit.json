@@ -1,0 +1,458 @@
+{
+  "target_role": "backend",
+  "taught_skillset": [
+    {
+      "skill": "Asymptotic notation (Big-O, Big-Theta, Big-Omega, little-o, little-omega)",
+      "courses": [
+        "CS 412 - Ch 3 (Growth of Functions)",
+        "CS 412 - Ch 2 part 1 (Insertion sort and Analyzing Algorithms)"
+      ],
+      "evidence": "Ch 3 slide 8: 'O notation: asymptotic less than ... \u03a9 notation: asymptotic greater than ... \u0398 notation: asymptotic equality.' Ch 2_part1 slide 57: 'Order of Growth ... We use \u0398-notation informally in this chapter, and we will define it precisely in Chapter 3.'"
+    },
+    {
+      "skill": "Recurrence-solving methods (iteration, substitution with induction, recursion-tree, Master Theorem)",
+      "courses": [
+        "CS 412 - Ch 4 part 1 (Divide-and-Conquer)"
+      ],
+      "evidence": "Ch 4_Part1 slide 21: 'This chapter offers four methods for solving recurrences: The iteration method ... The substitution method ... The recursion-tree method ... The master method provides bounds for recurrences of the form: T(n) = aT(n/b) + f(n).' Ch 4_Part1 slide 63: 'Theorem 4.1 (Master theorem) ... three cases.'"
+    },
+    {
+      "skill": "Divide-and-conquer paradigm (divide / conquer / combine; recurrence formulation)",
+      "courses": [
+        "CS 412 - Ch 2 part 2 (Merge sort)",
+        "CS 412 - Ch 4 part 1",
+        "CS 412 - Ch 4 part 2"
+      ],
+      "evidence": "Ch 4_Part1 slide 4: 'The divide-and-conquer design paradigm: Divide the problem (instance) into subproblems. Conquer the subproblems by solving them recursively. Combine subproblem solutions.'"
+    },
+    {
+      "skill": "Merge sort (recursive split, MERGE auxiliary procedure with sentinels, \u0398(n lg n) analysis)",
+      "courses": [
+        "CS 412 - Ch 2 part 2 (Merge sort)"
+      ],
+      "evidence": "Ch 2_part2 slide 10: 'Alg.: MERGE-SORT(A, p, r) if p < r then q = (p + r)/2 ; MERGE-SORT(A, p, q); MERGE-SORT(A, q + 1, r); MERGE(A, p, q, r).' Slide 49: 'Total = \u0398(n lg n).'"
+    },
+    {
+      "skill": "Quicksort and randomized quicksort (Lomuto partition; worst-case \u0398(n^2), expected \u0398(n lg n))",
+      "courses": [
+        "CS 412 - Ch 7 (Quicksort)"
+      ],
+      "evidence": "Ch 7 slide 12: 'PARTITION(A, p, r): x \u2190 A[r] // pivot = A[r]; i \u2190 p-1; for j \u2190 p to r-1: if A[j] \u2264 x then i \u2190 i+1; exchange A[i]\u2194A[j]; exchange A[i+1]\u2194A[r]; return i+1.' Slide 43: 'Randomized-Quicksort'."
+    },
+    {
+      "skill": "Heapsort and binary max-heap (MAX-HEAPIFY, BUILD-MAX-HEAP, array-as-tree representation)",
+      "courses": [
+        "CS 412 - Ch 6 (Heapsort)"
+      ],
+      "evidence": "Ch 6 slide 15: 'MAX-HEAPIFY(A, i): l \u2190 LEFT(i); r \u2190 RIGHT(i); ... if largest \u2260 i then exchange A[i]\u2194A[largest]; MAX-HEAPIFY(A, largest).' Slide 25: 'HEAPSORT(A): BUILD-MAX-HEAP(A); for i \u2190 A.length downto 2: exchange A[1]\u2194A[i]; A.heap-size = A.heap-size - 1; MAX-HEAPIFY(A, 1).'"
+    },
+    {
+      "skill": "Elementary comparison-based sorts: insertion sort, bubble sort, selection sort (\u0398(n^2))",
+      "courses": [
+        "CS 412 - Ch 2 part 1"
+      ],
+      "evidence": "Ch 2_part1 slide 23: 'INSERTION-SORT(A): for j \u2190 2 to n: do key \u2190 A[j]; i \u2190 j-1; while i>0 and A[i]>key: do A[i+1]\u2190A[i]; i \u2190 i-1; A[i+1] \u2190 key.' Slide 48: 'BUBBLESORT(A) ... ' Slide 52: 'SELECTION-SORT(A) ... '"
+    },
+    {
+      "skill": "Binary search (recursive halving on a sorted array; T(n) = T(n/2) + \u0398(1))",
+      "courses": [
+        "CS 412 - Ch 4 part 1"
+      ],
+      "evidence": "Ch 4_Part1 slide 13: 'BINARY-SEARCH (A, lo, hi, x): if (lo > hi) return FALSE; mid \u2190 (lo+hi)/2; if x = A[mid] return TRUE; if (x < A[mid]) BINARY-SEARCH (A, lo, mid-1, x); if (x > A[mid]) BINARY-SEARCH (A, mid+1, hi, x).'"
+    },
+    {
+      "skill": "Strassen's algorithm for matrix multiplication (7 recursive multiplies, \u0398(n^lg7) \u2248 \u0398(n^2.81))",
+      "courses": [
+        "CS 412 - Ch 4 part 2"
+      ],
+      "evidence": "Ch 4_Part2 slide 21: 'Multiply 2\u00d72 matrices with only 7 recursive mults. P1 = a \u00d7 (f \u2013 h); P2 = (a + b) \u00d7 h; ...' Slide 26: 'T(n) = 7 T(n/2) + \u0398(n^2) ... T(n) = \u0398(n^lg 7).'"
+    },
+    {
+      "skill": "Dynamic programming (optimal substructure, overlapping subproblems, top-down memoization, bottom-up tabulation)",
+      "courses": [
+        "CS 412 - Ch 15 part 1",
+        "CS 412 - Ch 15 part 2"
+      ],
+      "evidence": "Ch 15_part1 slide 13: 'How to design a dynamic-programming algorithm? 1. Characterize the structure of an optimal solution ... 2. Recursively define the value of an optimal solution ... 3. Compute the value of an optimal solution typically in a bottom-up fashion. 4. Construct an optimal solution from computed information.'"
+    },
+    {
+      "skill": "Rod-cutting DP problem (recurrence rn = max(pi + r(n-i)), \u0398(n^2))",
+      "courses": [
+        "CS 412 - Ch 15 part 1"
+      ],
+      "evidence": "Ch 15_part1 slide 32: 'Bottom-Up-Cut Rod(p, n): r[0] = 0; for j = 1 to n: q = -\u221e; for i = 1 to j: q = max(q, p[i] + r[j - i]); r[j] = q; return r[n].'"
+    },
+    {
+      "skill": "Longest Common Subsequence (LCS) DP (\u0398(mn) table c[i,j] with optimal-choice table b[i,j])",
+      "courses": [
+        "CS 412 - Ch 15 part 2"
+      ],
+      "evidence": "Ch 15_part2 slide 33: 'c[i,j] = 0 if i=0 or j=0; c[i-1,j-1]+1 if xi = yj; max(c[i,j-1], c[i-1,j]) if xi \u2260 yj.' Slide 35: 'LCS-LENGTH(X, Y, m, n) ... Running time: \u0398(mn).'"
+    },
+    {
+      "skill": "Binary Search Tree (BST) operations: insertion, deletion (3 cases), search, min/max, successor, predecessor in O(h)",
+      "courses": [
+        "CS 412 - Ch 13 part 1&2"
+      ],
+      "evidence": "Ch 13 slide 19: 'Operations: insertion, deletion, search, maximum, minimum, successor, predecessor. O(h), h is the height of the tree ... Best case: O(log n). Worst case: O(n).' Slides 14\u201316 cover the three deletion cases."
+    },
+    {
+      "skill": "Red-Black Trees (balanced BST with color invariant, O(lg n) worst-case dynamic-set operations)",
+      "courses": [
+        "CS 412 - Ch 13 part 1&2"
+      ],
+      "evidence": "Ch 13 slide 22: 'Properties of red-black tree: Every node is either red or black. The root is black. Every leaf (NIL) is black. If a node is red, then both its children are black ... For each node, all paths from that node to descendant leaves contain the same number of black nodes.'"
+    },
+    {
+      "skill": "Graph representations: adjacency list (\u0398(V+E)) and adjacency matrix (\u0398(V^2)); directed/undirected, weighted/unweighted",
+      "courses": [
+        "CS 412 - Ch 22 part 1 (Elementary Graph Algorithms)"
+      ],
+      "evidence": "Ch 22_part1 slide 21: 'Two standard ways: Adjacency List \u2014 Preferred for sparse graphs (|E| is much less than |V|^2) ... Adjacency Matrix \u2014 Preferred for dense graphs (|E| is close to |V|^2).' Slide 24: 'Memory required \u0398(V + E).' Slide 28: 'Memory required \u0398(V^2).'"
+    },
+    {
+      "skill": "Breadth-First Search (BFS): queue-based, white/gray/black coloring, BFS tree, shortest-path-in-edges, O(V+E)",
+      "courses": [
+        "CS 412 - Ch 22 part 2"
+      ],
+      "evidence": "Ch 22_part2 slide 28: 'Each vertex is enqueued once and dequeued once: O(V) ... the total time spent in scanning adjacency lists is O(E). Total: O(V+E).' Slide 29: 'd[v] = \u03b4(s,v) for all v in V.'"
+    },
+    {
+      "skill": "Depth-First Search (DFS): recursive, discovery/finish timestamps, edge classification (tree/back/forward/cross), parenthesis theorem, O(V+E)",
+      "courses": [
+        "CS 412 - Ch 22 part 2"
+      ],
+      "evidence": "Ch 22_part2 slide 59: 'DFS: Analysis Time complexity: O(V+E).' Slide 60: 'Parenthesis Theorem ... three conditions.' Slide 63: 'Tree edges ... Back edges ... Forward edges ... Cross edges.'"
+    },
+    {
+      "skill": "Loop-invariant proofs (initialization / maintenance / termination) for algorithm correctness",
+      "courses": [
+        "CS 412 - Ch 2 part 1",
+        "CS 412 - Ch 2 part 2"
+      ],
+      "evidence": "Ch 2_part1 slide 24: 'We must show three things about a loop invariant: Initialization: It is true prior to the first iteration of the loop. Maintenance: If it is true before an iteration of the loop, it remains true before the next iteration. Termination: When the loop terminates, the invariant gives us a useful property that helps show that the algorithm is correct.'"
+    },
+    {
+      "skill": "Mathematical induction for asymptotic-bound proofs",
+      "courses": [
+        "CS 412 - Ch 3 (Growth of Functions)"
+      ],
+      "evidence": "Ch 3 slide 41: 'Mathematical Induction: Basis step: prove that the statement is true for n = 1. Inductive step: assume that S(n) is true and prove that S(n+1) is true for all n \u2265 1.'"
+    },
+    {
+      "skill": "RAM (Random-Access Machine) model and primitive-operation step counting",
+      "courses": [
+        "CS 412 - Ch 2 part 1"
+      ],
+      "evidence": "Ch 2_part1 slide 30: 'we shall assume a generic one processor, random-access machine (RAM) model of computation ... Arithmetic (such as add, subtract, multiply, divide, remainder, floor, ceiling). Data movement (load, store, copy). Control (conditional and unconditional branch, subroutine call and return).'"
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "sql",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "docker",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "postgres",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "rest api",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "aws",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "unit testing",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_007",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "git",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "linux",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_003",
+        "post_004",
+        "post_006",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011"
+      ]
+    },
+    {
+      "skill": "ci/cd",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_008",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "microservices",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "oauth",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_005",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "python",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_005",
+        "post_006",
+        "post_007",
+        "post_010",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "redis",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_009",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "graphql",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_008",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "jwt",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_003",
+        "post_004",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "kafka",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_001",
+        "post_004",
+        "post_007",
+        "post_009",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "nginx",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_001",
+        "post_004",
+        "post_005",
+        "post_008",
+        "post_010"
+      ]
+    },
+    {
+      "skill": "go",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_005",
+        "post_010",
+        "post_011",
+        "post_012"
+      ]
+    },
+    {
+      "skill": "prometheus",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_007",
+        "post_010"
+      ]
+    }
+  ],
+  "gaps": [],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 20,
+    "skills_market_demands": 20,
+    "gap_count": 0,
+    "headline": "This is a well-scoped classical-algorithms course (asymptotic analysis, divide-and-conquer, DP, balanced BSTs, BFS/DFS at the pseudocode level), and every backend skill demanded by \u226530% of postings (SQL, Docker, Postgres, REST APIs, AWS, microservices, Kubernetes, OAuth, Kafka, Redis, etc.) is cross-domain to algorithm theory with 0% partial coverage in the slides \u2014 so under the extend-partial-coverage rule there are no in-scope gaps to recommend, even though the gap to the live backend job market is large."
+  }
+}

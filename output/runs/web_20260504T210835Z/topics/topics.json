@@ -1,0 +1,9 @@
+{
+  "target_role": "ml_data",
+  "prescriptions": [],
+  "summary": {
+    "total_prescriptions": 0,
+    "top_3_headline": "No prescriptions issued. The Market-fit agent surfaced zero in-scope gaps (gap_count: 0) for this single-node relational-fundamentals course against the ml_data role. The one skill the curriculum and the market share \u2014 SQL \u2014 is already taught thoroughly across Week 8 (Basic Query), Week 9 (Complex Query), Week 10 (Views/Authorization), and Week 11 (Relational Algebra), and every other \u226530%-demanded ml_data skill (Python, pandas, NumPy, scikit-learn, PyTorch, TensorFlow, Hugging Face, git, Docker, Kubernetes, AWS, dbt, Airflow, Spark, Ray, BigQuery, Snowflake, vector databases, RAG) is either a cross-domain language/tooling concern or sits beyond the course's stated depth bound (which explicitly excludes distributed databases, NoSQL engines, query-optimizer internals, and concurrency-control algorithms).",
+    "coverage_note": "Honest zero. Per Rule 1, prescriptions must extend a partially-covered topic; the Market-fit gap list is empty, so there is nothing to extend. Per Rule 3, padding with topics like 'add pandas labs' or 'introduce vector databases' would violate the depth bound (single-node relational fundamentals) and the course intent (ER/EER \u2192 SQL \u2192 normalization \u2192 file org/indexing). The correct curricular response is to leave this course as-is for its stated scope and address the ml_data market gap (Python data stack, distributed/lakehouse SQL engines, ML frameworks, MLOps tooling) in dedicated downstream courses, not by stretching a fundamentals course past its depth bound. The two Auditor findings on Week 10 password guidance are authorization-hygiene fixes, not ml_data market gaps, and are out of this agent's remit."
+  }
+}

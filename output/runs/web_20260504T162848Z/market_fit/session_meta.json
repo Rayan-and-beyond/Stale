@@ -1,0 +1,15 @@
+{
+  "run_id": "20260504T164242Z",
+  "role": "mobile",
+  "courses": {
+    "Mobile Application Development": {
+      "filename": "mobile_application_development.txt",
+      "mount_path": "/workspace/curriculum/mobile_application_development.txt"
+    }
+  },
+  "postings": {
+    "filename": "job_postings.json",
+    "mount_path": "/workspace/data/job_postings.json"
+  },
+  "started_at": "2026-05-04T16:44:51.118024+00:00"
+}

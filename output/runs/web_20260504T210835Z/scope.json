@@ -1,0 +1,31 @@
+{
+  "subject_area": "Relational database fundamentals \u2014 design, SQL, internals",
+  "pedagogical_level": "undergraduate fundamentals course with hands-on SQL practice",
+  "course_intent": "Teach the foundational theory and practice of relational databases \u2014 students should leave able to model data with ER/EER diagrams, map conceptual designs to relational schemas, write and reason about SQL queries, normalize schemas, and understand the basics of file organization and indexing that underlie a single-node DBMS.",
+  "depth_bound": "Recommendations stay at the relational-fundamentals + hands-on-SQL level, including conceptual coverage of single-node storage and indexing. Distributed databases, NoSQL engines, query optimizer internals, transaction/concurrency-control algorithms beyond ACID basics, and DBMS implementation internals are beyond this course's depth.",
+  "key_topics": [
+    "ER and EER modeling (entities, relationships, weak entities, specialization/generalization)",
+    "ER-to-relational schema mapping (seven-step algorithm)",
+    "Relational algebra (SELECT, PROJECT, JOIN variants, DIVISION)",
+    "SQL DDL and DML with hands-on queries (SELECT, INSERT, UPDATE, DELETE)",
+    "Complex SQL (nested queries, EXISTS, joins, GROUP BY/HAVING, aggregates)",
+    "Views and SQL authorization (GRANT/REVOKE, view-based access control)",
+    "Functional dependencies and normalization (1NF, 2NF, 3NF, BCNF)",
+    "File organization (heap, sorted, static and extendible/dynamic hashing)",
+    "Single-level and multilevel indexing (primary, clustering, secondary, B+-tree concepts)"
+  ],
+  "one_liner": "Single-node relational database fundamentals covering ER/EER design, schema mapping, relational algebra, SQL (basic and complex), normalization, and conceptual coverage of file organization and indexing \u2014 distributed databases, NoSQL, transaction/concurrency internals, and query optimizer engineering are out of scope.",
+  "relevant_roles": [
+    "backend",
+    "ml_data",
+    "fullstack"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 89243,
+    "cache_creation_input_tokens": 4684,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 780
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "skipped": [
+    {
+      "slide_ref": "Week 1 - Revision.pdf p.11",
+      "snippet": "private int empld / public void raiseSalary (double increase)",
+      "skip_reason": "other",
+      "explanation": "Internal slide-set inconsistency between an OCR-only UML diagram and the implementation that follows. Even if real, this is a course-quality issue rather than a stale CS pattern, and it does not match any taxonomy bucket; no primary source applies."
+    },
+    {
+      "slide_ref": "Week 1 - Revision.pdf p.25",
+      "snippet": "Private final int employeeShares = 10; ... return directorShares:;: }",
+      "skip_reason": "other",
+      "explanation": "Capitalised `Private` and `:;:` punctuation are visible only in the OCR layer; they are almost certainly OCR mangling of `private` and `;`. With from_ocr: true and no non-OCR corroboration on the same slide, this fails the OCR-caution bar (ocr_uncorroborated)."
+    },
+    {
+      "slide_ref": "Week 2+3 - Exception Handling.pdf p.9",
+      "snippet": "int num1=36, num2=6; System.out.println (\"Result: \"+toutput);",
+      "skip_reason": "other",
+      "explanation": "Both `Example1` and `ExceptionDemo2` snippets on this slide come solely from the OCR layer and are riddled with garbling (`tryt`, `\"+toutput`, `int a[J=new int[14]`, `/fArray has only 18 elements`). Without a non-OCR rendering of the same code we cannot tell whether the inconsistency is in the slide or in the OCR (ocr_uncorroborated)."
+    },
+    {
+      "slide_ref": "Week 2+3 - Exception Handling.pdf p.18",
+      "snippet": "at java.util.Scanner.throwFor(Unknown Source) ...",
+      "skip_reason": "no_primary_source",
+      "explanation": "\"Unknown Source\" in a stack trace simply means the JDK build supplying the classes was compiled without source-file/line-number debug attributes; current JDK builds may or may not include them. There is no primary source declaring this output stale or wrong, and the next slide explicitly explains the meaning of \"Unknown Source\" as a teaching point."
+    },
+    {
+      "slide_ref": "Week 2+3 - Exception Handling.pdf p.41",
+      "snippet": "https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html",
+      "skip_reason": "no_primary_source",
+      "explanation": "The Java SE 7 Throwable javadoc URL still resolves; the Throwable class hierarchy itself has not materially changed. There is no Oracle deprecation notice that says citing Java 7 documentation is incorrect \u2014 only that Java 7 is past public updates. Without a primary-source anchor for staleness this is a stylistic dating issue, not a flagged finding."
+    },
+    {
+      "slide_ref": "Week 2+3 - Exception Handling.pdf p.60-61, p.72; Week 9 - Accessing DB ( Part 3 ).pdf p.48",
+      "snippet": "throw new Exception(); / catch (Exception exception)",
+      "skip_reason": "no_primary_source",
+      "explanation": "Throwing/catching the bare `java.lang.Exception` is a style and design preference, not an officially deprecated pattern. Oracle's javadocs do not flag `new Exception()` as an anti-pattern, and there is no primary source declaring this code dead, deprecated, or wrong."
+    },
+    {
+      "slide_ref": "Week 4 - GUI Components ( Part 1 ).pdf p.4",
+      "snippet": "Copyright 2007-2008 Sun Microsystems, Inc. ... SwingSet3 application demonstrates many of Java's Swing GUI components.",
+      "skip_reason": "no_primary_source",
+      "explanation": "A dated Sun Microsystems copyright in a screenshot is a cosmetic vintage indicator, not an official deprecation. SwingSet3 itself is unmaintained but the Swing components it shows are still present in the JDK; no primary source says the screenshot is wrong to teach with."
+    },
+    {
+      "slide_ref": "Week 4 - GUI Components ( Part 1 ).pdf p.5-9",
+      "snippet": "swing.defaultlaf=com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel",
+      "skip_reason": "counterexample",
+      "explanation": "Slides 5-9 are explicitly tagged \"Self Study\" / \"FOR YOUR ADDITIONAL INFORMATION\" \u2014 i.e., not part of the lectured material and presented as supplementary background. Combined with the absence of a primary-source deprecation for the `com.sun.java.swing.plaf.nimbus` form (it is an internal package but still present in the JDK), the burden-of-proof bar is not met."
+    },
+    {
+      "slide_ref": "Week 4 - GUI Components ( Part 1 ).pdf p.17",
+      "snippet": "Swing GUI components ... AWT ... is another set of GUI components in Java.",
+      "skip_reason": "no_primary_source",
+      "explanation": "AWT and Swing both still ship in the JDK and are not deprecated. The candidate's concern is that JavaFX has overtaken Swing as the preferred GUI toolkit, but Oracle has not deprecated Swing or AWT, so there is no primary source to anchor the claim of staleness."
+    },
+    {
+      "slide_ref": "Week 4 - GUI Components ( Part 1 ).pdf pages 1-58 and Weeks 5-6 GUI material",
+      "snippet": "Swing-only GUI curriculum (JFrame, JLabel, JButton, JCheckBox, FlowLayout, BorderLayout, GridLayout, etc.)",
+      "skip_reason": "no_primary_source",
+      "explanation": "Swing is in maintenance mode but is not deprecated; Oracle still ships it in the JDK and continues to fix bugs. There is no primary-source deprecation notice for Swing as a whole, so a finding that the entire three-week GUI block is stale would have no anchor."
+    },
+    {
+      "slide_ref": "Week 5 - GUI Components ( Part 2 ).pdf p.16, p.21",
+      "snippet": "new Font(\"Serif\", Font.BOLD + Font.ITALIC, 14);",
+      "skip_reason": "no_primary_source",
+      "explanation": "Combining `Font.BOLD + Font.ITALIC` works correctly because the constants are non-overlapping power-of-two bits (1 and 2). It is stylistically less idiomatic than bitwise OR, but Oracle's `java.awt.Font` documentation does not flag `+` as wrong. No primary source supports a deprecation/correctness finding."
+    },
+    {
+      "slide_ref": "Week 7 - Accessing DB ( Part 1 ).pdf p.7",
+      "snippet": "Java Persistence API (JPA) ... we introduce Java Persistence API (JPA) ...",
+      "skip_reason": "counterexample",
+      "explanation": "The slide only mentions JPA in passing and explicitly defers to \"online Chapter 29.\" No `javax.persistence.*` imports or code appear on the slide, so there is nothing on this slide that demonstrates the renamed-to-jakarta pattern that could be flagged. The verbatim claim has no Java code to anchor a renamed/dead finding."
+    },
+    {
+      "slide_ref": "Week 7 - Accessing DB ( Part 1 ).pdf p.30",
+      "snippet": "21 DA URL \"\u00a2 . 'de itel' ;",
+      "skip_reason": "other",
+      "explanation": "Snippet is unintelligible OCR mangling; the underlying pattern (hard-coded `deitel` credentials in DisplayAuthors) is already covered by the Week 8/Week 9 hard-coded-credentials cluster. Skipping to avoid duplicate findings (ocr_uncorroborated for the snippet itself)."
+    },
+    {
+      "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf p.9",
+      "snippet": "authorsTable.getModel (DbUtils. resultSetToTableMoedel (rs)):",
+      "skip_reason": "other",
+      "explanation": "The misspelling `resultSetToTableMoedel` and use of `getModel` with an argument (instead of the correct `setModel(...)` shown one slide earlier) are visible only in the OCR layer; OCR consistently garbles `setModel` \u2194 `getModel` and the line ends with a colon instead of a semicolon. With from_ocr: true and no non-OCR text to corroborate, this fails the OCR-caution bar (ocr_uncorroborated)."
+    },
+    {
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf pages 4-11",
+      "snippet": "Package javax.sql.rowset contains two subinterfaces of RowSet \u2014 JdbcRowSet and CachedRowSet.",
+      "skip_reason": "no_primary_source",
+      "explanation": "`JdbcRowSet` and `CachedRowSet` are still present and supported in the current JDK and are not marked `@Deprecated`. The candidate is making a popularity-based argument (\"widely viewed as legacy\") for which there is no primary-source anchor."
+    },
+    {
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf p.20",
+      "snippet": "System.exit(0) or EXIT_SUCCESS; ---> Success / System.exit(1) or EXIT_FAILURE; ---> Exception / System.exit(-1) or EXIT_ERROR; ---> Error",
+      "skip_reason": "no_primary_source",
+      "explanation": "The claim that Java has `EXIT_SUCCESS`/`EXIT_FAILURE`/`EXIT_ERROR` symbols is genuinely wrong (those are C macros from `<stdlib.h>`; Java's `System.exit` takes a plain int), but proving the negative requires citing Java's `System` API for what *isn't* there. Without an explicit Oracle statement to that effect, there is no clean primary source to anchor the finding."
+    },
+    {
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf p.28, p.30",
+      "snippet": "finally { try { resultSet.close(); } catch (SQLException sqlException) { ... } }",
+      "skip_reason": "no_primary_source",
+      "explanation": "Manual `finally { close(); }` still works on every Java version and is not deprecated. The course's own Week 7 pages 28-29 already teach try-with-resources as the recommended alternative, so there is also a paired-correction signal nearby. Either way, no primary source exists to call manual finally-close stale."
+    },
+    {
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf pages 33-49",
+      "snippet": "public static void main(String args[]) { new AddressBookDisplay(); }",
+      "skip_reason": "no_primary_source",
+      "explanation": "Constructing a JFrame on the main thread instead of `EventQueue.invokeLater` is a long-standing Swing best-practice violation, but Oracle's docs do not declare it an error or deprecate this code path. No primary source to anchor a finding."
+    },
+    {
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf p.52",
+      "snippet": "java.sun.com/javase/6/docs/technotes/guides/jdbc/getstart/callablestatement.html#999652",
+      "skip_reason": "counterexample",
+      "explanation": "Slide is explicitly labelled \"Self Study\" and is the only place in Week 9 that uses the dead `java.sun.com` domain. Combined with the lack of an Oracle primary source declaring `java.sun.com` URLs stale (as opposed to redirect-only), the burden-of-proof bar is not met."
+    },
+    {
+      "slide_ref": "Week 11 Files Streams and Object Serialization ( Part 2 ).pdf p.7",
+      "snippet": "15 thisco, \"\", \"\", 0.0); // call other constructor",
+      "skip_reason": "other",
+      "explanation": "`thisco,` is OCR garbling of `this(0,` \u2014 the underlying source code almost certainly compiles fine. With from_ocr: true and only the OCR layer to evidence the bug, this fails the OCR-caution bar (ocr_uncorroborated)."
+    },
+    {
+      "slide_ref": "Week 11 Files Streams and Object Serialization ( Part 2 ).pdf p.8",
+      "snippet": "29 public void setAccount(int acct) { 31 this.account = account; }",
+      "skip_reason": "other",
+      "explanation": "The mismatch between the parameter name `acct` and the assigned variable `account` is visible only in the OCR layer; the surrounding setters (setFirstName, setLastName, setBalance) all use parameter names that match their fields, so the most likely explanation is OCR mangling of `account` \u2192 `acct` in the parameter list. ocr_uncorroborated."
+    },
+    {
+      "slide_ref": "Week 11 Files Streams and Object Serialization ( Part 2 ).pdf pages 1-32",
+      "snippet": "Object Serialization ... A class that implements Serializable is tagged as being a Serializable object.",
+      "skip_reason": "no_primary_source",
+      "explanation": "`java.io.Serializable` is not deprecated and the slides only show local file read/write of trusted application objects, not deserialization of untrusted network data. Oracle's serialization-vulnerabilities guidance only applies to the latter scenario. No primary source supports flagging the entire week's coverage."
+    },
+    {
+      "slide_ref": "Week 12 - Concurrency.pdf p.10",
+      "snippet": "use the synchronized keyword and Object methods wait, notify and notifyAll",
+      "skip_reason": "no_primary_source",
+      "explanation": "`Object.wait`/`notify`/`notifyAll` and the `synchronized` keyword are still part of the language and are not deprecated. The slide explicitly frames them as the second tier (\"For advanced programmers\"), with high-level concurrency utilities recommended first. No primary source anchors a stale-pattern claim."
+    },
+    {
+      "slide_ref": "Week 12 - Concurrency.pdf pages 30-37",
+      "snippet": "1st method: Extending Thread class ... 2nd method: Creating threads by implementing the Runnable interface.",
+      "skip_reason": "paired_correction_nearby",
+      "explanation": "Page 21 already states \"Do not explicitly create and use Thread objects to implement concurrency. Rather, use the Executor interface,\" and page 38 explicitly labels the Executor framework as \"3rd method (Recommended)\" with Software Engineering Observation 23.2 (\"it's recommended that you use the Executor interface\"). The Thread/Runnable pages are framed as historical/alternative methods with the modern recommendation marked nearby \u2014 sufficient paired correction."
+    },
+    {
+      "slide_ref": "Week 12 - Concurrency.pdf p.41",
+      "snippet": "private static final SecureRandom generator = new SecureRandom();",
+      "skip_reason": "no_primary_source",
+      "explanation": "`SecureRandom` is overkill for picking a sleep duration but is not deprecated or wrong; Oracle's docs do not say `SecureRandom` is incorrect for non-security purposes, only that it is more expensive. No primary source to anchor a stale-pattern flag."
+    }
+  ],
+  "summary": {
+    "total_candidates": 33,
+    "flagged": 9,
+    "skipped": 24,
+    "by_skip_reason": {
+      "counterexample": 3,
+      "paired_correction_nearby": 1,
+      "no_primary_source": 13,
+      "other": 7
+    },
+    "courses_audited": [
+      "object_oriented_programming_2"
+    ]
+  }
+}

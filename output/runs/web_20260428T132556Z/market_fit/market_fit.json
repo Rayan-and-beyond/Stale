@@ -1,0 +1,520 @@
+{
+  "target_role": "ml_data",
+  "taught_skillset": [
+    {
+      "skill": "Russell & Norvig (AIMA) classical-AI framing",
+      "courses": [
+        "Artificial Intelligence (Week 1 \u2014 Intro to AI)"
+      ],
+      "evidence": "Week 1 cover slide: 'Artificial Intelligence: A Modern Approach \u2014 Peter Norvig and Stuart J. Russell' (used as the textbook frame across all weeks)."
+    },
+    {
+      "skill": "Intelligent agents / PEAS (sensors, actuators, environments)",
+      "courses": [
+        "Artificial Intelligence (Week 2 \u2014 Intelligent Agents)"
+      ],
+      "evidence": "Week 1 p.12: 'An agent can be anything that perceives the environment through sensors and act upon that environment through actuators.'"
+    },
+    {
+      "skill": "Uninformed search (BFS, DFS, IDS) and Informed search (Greedy best-first, A* with admissible heuristics)",
+      "courses": [
+        "Artificial Intelligence (Week 3 \u2014 Problem Solving Agents; Week 4 \u2014 Informed Search)"
+      ],
+      "evidence": "Week 4 p.28: 'A* Search ... f(n) = g(n) + h(n)'; comparison table on p.38 lists BFS/DFS/IDS/Greedy/A*."
+    },
+    {
+      "skill": "Propositional and First-Order/Predicate Logic with quantifiers (\u2200, \u2203)",
+      "courses": [
+        "Artificial Intelligence (Week 6 \u2014 Logical Agents 2; Week 7 \u2014 Knowledge Representation)"
+      ],
+      "evidence": "Week 7 p.7: 'Syntax of FOL: Constant, Variable, Predicate, Connectives \u00ac \u2227 \u2228 \u21d2 \u21d4, Equality =, Functions, quantifier \u2200 \u2203'."
+    },
+    {
+      "skill": "Knowledge representation via ontologies (OWL, Prot\u00e9g\u00e9, WordNet, ConceptNet, CYC), Open vs Closed World Assumption",
+      "courses": [
+        "Artificial Intelligence (Week 8 \u2014 Knowledge Representation: Ontology)"
+      ],
+      "evidence": "Week 8 p.8: 'OWL (stands for Web Ontology Language) is a formal language used to create and define ontologies'; p.29 lists 'WordNet ... ConceptNet ... CYC' as reusable knowledge bases; p.12 contrasts CWA vs OWA."
+    },
+    {
+      "skill": "Expert systems (rule-based reasoning)",
+      "courses": [
+        "Artificial Intelligence (Week 9 \u2014 Expert Systems)"
+      ],
+      "evidence": "Week 1 p.11 goal of AI: 'To Create Expert Systems \u2014 The systems which exhibit intelligent behavior, learn, demonstrate, explain, and advice its users.'"
+    },
+    {
+      "skill": "Classical NLP pipeline (lexical/morphology, syntactic parsing, semantics, discourse, pragmatics)",
+      "courses": [
+        "Artificial Intelligence (Week 10 \u2014 Intro to NLP)"
+      ],
+      "evidence": "Week 10 p.7\u20138: '1. Lexical Analysis (Morphological) ... 2. Syntactic Analysis (Parsing) ... 3. Semantic Analysis ... 4. Discourse Integration ... 5. Pragmatic Analysis'."
+    },
+    {
+      "skill": "Phrase-structure grammars, parse trees, POS tagging",
+      "courses": [
+        "Artificial Intelligence (Week 10 \u2014 Intro to NLP)"
+      ],
+      "evidence": "Week 10 p.41: 'Phrase Structure Rules ... S \u2192 NP VP ... NP \u2192 DET N ... VP \u2192 V NP'; p.29 'PoS tagging: Assign tags to each word from the lexicon'."
+    },
+    {
+      "skill": "Information retrieval / question answering as an NLP application area (named only)",
+      "courses": [
+        "Artificial Intelligence (Week 10 \u2014 Intro to NLP)"
+      ],
+      "evidence": "Week 10 p.23: 'NLP is used in many applications such: Classify text into categories; Index and search large texts; ... Information extraction ... Question answering; Knowledge acquisition'."
+    },
+    {
+      "skill": "Type-1 fuzzy logic (degrees of truth)",
+      "courses": [
+        "Artificial Intelligence (Week 11 \u2014 Fuzzy Logic)"
+      ],
+      "evidence": "Week 11: 'Fuzzy logic calculates the shades of gray between black/white' (Week 11 p. on fuzzy sets)."
+    },
+    {
+      "skill": "ML problem framing (Mitchell <P,T,E>) and the four ML paradigms: supervised, unsupervised, semi-supervised, reinforcement",
+      "courses": [
+        "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+      ],
+      "evidence": "Week 12 p.17: 'Machine Learning is the study of algorithms that: improve their performance P at some task T with experience E'; p.23 lists '1. Supervised ... 2. Unsupervised ... 3. Semi-supervised ... 4. Reinforcement learning'."
+    },
+    {
+      "skill": "Named classical ML algorithms (linear/logistic regression, decision trees, random forest, naive Bayes, k-means, PCA)",
+      "courses": [
+        "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+      ],
+      "evidence": "Week 12 p.48: 'Example: Logistic Regression, Liner regression, Random forest, Decision trees and Naive Bayes ... Example: K-means clustering and Principal component analysis PCA'."
+    },
+    {
+      "skill": "Classification metrics (confusion matrix, accuracy, precision, recall, F1) and regression metrics (MAE, MSE)",
+      "courses": [
+        "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+      ],
+      "evidence": "Week 12 p.53\u201360 walk through Confusion Matrix, Accuracy = (TP+TN)/(TP+TN+FP+FN), Precision, Recall, F1 = 2\u00b7P\u00b7R/(P+R), MAE, MSE."
+    },
+    {
+      "skill": "Train/test split (70/30), model/training/prediction terminology",
+      "courses": [
+        "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+      ],
+      "evidence": "Week 12 p.51: 'Training set 70% ... Test Set 30% ... Features (X) ... Label / Target (Y)'."
+    },
+    {
+      "skill": "Data preprocessing concepts (missing-value imputation, outlier handling, Min-Max / Z-score normalization, one-hot & label encoding, feature engineering, PCA dim-reduction)",
+      "courses": [
+        "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+      ],
+      "evidence": "Week 12 p.12: 'Normalize or scale features to bring them into a uniform range (e.g., Min-Max Scaling, Z-score). Encode categorical data (e.g., one-hot encoding, label encoding). Create new features (feature engineering) ... Reduce dimensionality using techniques like PCA'."
+    },
+    {
+      "skill": "EDA visualizations (histograms, box plots, bar charts, scatter plots, heatmaps)",
+      "courses": [
+        "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+      ],
+      "evidence": "Week 12 p.13\u201315: 'Histograms ... Box Plots ... Bar Charts ... Scatter Plots ... Heatmaps'."
+    },
+    {
+      "skill": "Statistics as a foundation of data science (named, plus thin operational use: mean, median, Z-score, MSE)",
+      "courses": [
+        "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+      ],
+      "evidence": "Week 12 p.7: 'Principles can be statistical, computational, algorithmic, visual ... Statistics and Mathematics'; p.65: 'Data Scientists have a strong background in statistics'."
+    },
+    {
+      "skill": "Awareness of DS/ML job roles (data engineer, data analyst, data scientist, ML engineer) and that they use Python/SQL/R",
+      "courses": [
+        "Artificial Intelligence (Week 12 \u2014 Intro to DS and ML)"
+      ],
+      "evidence": "Week 12 p.63\u201366 name 'SQL, Java, Scala, or Python', 'SQL, spreadsheets, Tableau, Power BI, or Looker', 'SQL, Python, and R'. (Listed in job-description slides only \u2014 never taught syntactically.)"
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "python",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "sql",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "git",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "pandas",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "numpy",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_037",
+        "post_039",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "scikit-learn",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_042",
+        "post_043",
+        "post_044",
+        "post_045",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "statistics",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_045",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "docker",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_042",
+        "post_043",
+        "post_046",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "pytorch",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_044",
+        "post_045",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "dbt",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_041",
+        "post_043"
+      ]
+    },
+    {
+      "skill": "aws",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_037",
+        "post_039",
+        "post_041",
+        "post_043",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "hugging face",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_037",
+        "post_041",
+        "post_043",
+        "post_044",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "spark",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_038",
+        "post_039",
+        "post_040",
+        "post_043",
+        "post_046"
+      ]
+    },
+    {
+      "skill": "bigquery",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_038",
+        "post_041",
+        "post_042",
+        "post_044",
+        "post_047"
+      ]
+    },
+    {
+      "skill": "rag",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_039",
+        "post_044",
+        "post_046",
+        "post_047",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "snowflake",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_039",
+        "post_041",
+        "post_043",
+        "post_045",
+        "post_047"
+      ]
+    },
+    {
+      "skill": "vector databases",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_039",
+        "post_040",
+        "post_042",
+        "post_044",
+        "post_046"
+      ]
+    },
+    {
+      "skill": "ray",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_041",
+        "post_043",
+        "post_044",
+        "post_046",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "tensorflow",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_037",
+        "post_041",
+        "post_042",
+        "post_045"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_040",
+        "post_043",
+        "post_045",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "airflow",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_041",
+        "post_042",
+        "post_046",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "prompt engineering",
+      "frequency_pct": 0.25,
+      "posting_count": 3,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_043"
+      ]
+    },
+    {
+      "skill": "llms",
+      "frequency_pct": 0.25,
+      "posting_count": 3,
+      "posting_refs": [
+        "post_042",
+        "post_044",
+        "post_046"
+      ]
+    },
+    {
+      "skill": "feature store",
+      "frequency_pct": 0.25,
+      "posting_count": 3,
+      "posting_refs": [
+        "post_037",
+        "post_039",
+        "post_048"
+      ]
+    },
+    {
+      "skill": "kafka",
+      "frequency_pct": 0.25,
+      "posting_count": 3,
+      "posting_refs": [
+        "post_041",
+        "post_045",
+        "post_047"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Statistics \u2014 extending the partial DS treatment beyond named-only foundations and a handful of formulas to a conceptual tour of distributions, sampling, and inferential statistics (still survey-depth, no proofs)",
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_037",
+        "post_038",
+        "post_040",
+        "post_041",
+        "post_042",
+        "post_043",
+        "post_045",
+        "post_047",
+        "post_048"
+      ],
+      "rationale": "The course names statistics as a DS foundation and operationally uses a few statistical objects \u2014 Z-score normalization (Week 12 p.12), MAE/MSE means (Week 12 p.59), median imputation (Week 12 p.12), and the assertion 'Data Scientists have a strong background in statistics' (Week 12 p.65) \u2014 but never introduces distributions, sampling, hypothesis testing, or inference even at a conceptual level. Market demand is 75% (9/12 ml_data postings). Extending the existing DS-foundations slide with a conceptual overview of descriptive vs inferential statistics fits the survey depth bound (no formal proofs, no Python tutorials).",
+      "severity": "high"
+    },
+    {
+      "skill": "Retrieval-Augmented Generation (RAG) \u2014 connecting the existing knowledge-representation and information-retrieval material to modern retrieval-augmented LLM pipelines at a conceptual level",
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_039",
+        "post_044",
+        "post_046",
+        "post_047",
+        "post_048"
+      ],
+      "rationale": "The course teaches knowledge representation deeply (Week 7 FOL KB; Week 8 ontologies \u2014 'An ontology = concepts+properties+axioms+values' p.39; WordNet/ConceptNet/CYC reusable KBs p.29) and separately names information retrieval and question-answering as NLP applications (Week 10 p.23: 'Index and search large texts ... Question answering; Knowledge acquisition'). These two partially-covered threads are the natural conceptual bridge to RAG and make it a fair in-scope extension. 5/12 ml_data postings demand RAG. Survey-depth conceptual coverage only \u2014 no LangChain code, no embedding-math derivations.",
+      "severity": "high"
+    },
+    {
+      "skill": "Vector databases / embedding-based knowledge representation \u2014 extending the symbolic-KR unit with a conceptual contrast between ontology/FOL representations and dense-vector representations used for semantic search",
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_039",
+        "post_040",
+        "post_042",
+        "post_044",
+        "post_046"
+      ],
+      "rationale": "Week 8 teaches one specific paradigm of knowledge representation \u2014 ontologies and OWL ('Ontology is an explicit specification of conceptualization', p.3) \u2014 and Week 10 names information retrieval as an NLP application (p.23). The course's KR taxonomy (Week 7 p.3 contrasts Propositional / First-Order / Temporal / Probability / Fuzzy logics by 'what they commit to as primitives') is the obvious place to add a conceptual sibling: vector / embedding representations and how they enable semantic similarity search. 5/12 ml_data postings demand vector databases. This is a conceptual extension of two partially-covered topics, not a Pinecone tutorial \u2014 it stays inside the depth bound.",
+      "severity": "medium"
+    }
+  ],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 18,
+    "skills_market_demands": 25,
+    "gap_count": 3,
+    "headline": "This curriculum delivers a faithful Russell & Norvig classical/symbolic-AI tour with an introductory ML chapter, but the ml_data job market it lists on its own job-description slides has moved on \u2014 most demanded skills (Python, pandas, scikit-learn, PyTorch, hugging face) sit outside this survey's depth bound, while the three legitimate, in-bound extensions are deepening statistics, and bridging the existing KR/IR material to RAG and vector-database concepts."
+  }
+}

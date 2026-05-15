@@ -1,0 +1,15 @@
+{
+  "run_id": "20260504T163505Z",
+  "role": "fullstack",
+  "courses": {
+    "Software Engineering": {
+      "filename": "software_engineering.txt",
+      "mount_path": "/workspace/curriculum/software_engineering.txt"
+    }
+  },
+  "postings": {
+    "filename": "job_postings.json",
+    "mount_path": "/workspace/data/job_postings.json"
+  },
+  "started_at": "2026-05-04T16:35:09.889779+00:00"
+}

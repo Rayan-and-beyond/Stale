@@ -1,0 +1,38 @@
+{
+  "findings": [
+    {
+      "course": "ai",
+      "slide_ref": "Week 4-Informed Search Algorithms.pdf, Page 37 (Properties of A* Search)",
+      "claim": "Optimal? YES if used Admissible Heuristic",
+      "status": "wrong",
+      "severity": "medium",
+      "citation_url": "https://inst.eecs.berkeley.edu/~cs188/fa22/assets/notes/cs188-fa22-note02.pdf",
+      "citation_excerpt": "An additional caveat of graph search is that it tends to ruin the optimality of A*, even under admissible heuristics. ... Hence, to maintain optimality under A* graph search, we need an even stronger property than admissibility, consistency.",
+      "suggested_replacement": "State the optimality claim conditional on the search variant: A* tree search is optimal with an admissible heuristic; A* graph search (which the course teaches in Week 3 with a closed/reached set to avoid revisiting states) is optimal only with a consistent (monotonic) heuristic h(n) <= c(n,n') + h(n'), because an admissible-but-inconsistent heuristic can cause a state to be locked into the reached set via a suboptimal path before the optimal path is discovered.",
+      "verification": {
+        "status": "verified",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/fa22/assets/notes/cs188-fa22-note02.pdf",
+        "content_type": "application/pdf"
+      }
+    }
+  ],
+  "summary": {
+    "total_findings": 1,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 1
+    },
+    "courses_audited": [
+      "ai"
+    ],
+    "verification": {
+      "kept": 1,
+      "dropped_total": 1,
+      "dropped_by_reason": {
+        "url_failed": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "subject_area": "Software engineering \u2014 process, requirements, and project management",
+  "pedagogical_level": "undergraduate process/methodology course",
+  "course_intent": "Teach the discipline of software engineering as a managed process \u2014 students should leave able to describe software lifecycle models, elicit and specify requirements, model systems with UML, plan and manage software projects, and reason about evolution and maintenance, without writing production code.",
+  "depth_bound": "Recommendations stay at the level of process artifacts, methodology, lifecycle models, and project-management practice. Framework-specific tutorials, programming-language implementations, deep architectural patterns, and DevOps tooling internals are beyond this course's depth bound.",
+  "key_topics": [
+    "SDLC models (waterfall, incremental, reuse-oriented)",
+    "Agile methods, XP practices, and Scrum sprint ceremonies",
+    "Requirements engineering (elicitation, specification, validation, change management)",
+    "UML system modeling (use case, sequence, class, state, activity diagrams)",
+    "Software testing strategy (unit, system, release, acceptance, test-driven development)",
+    "Software evolution, legacy systems, reengineering, and refactoring",
+    "Project management (risk management, people/team management, planning)",
+    "Project scheduling (Gantt-style bar charts, milestones, agile planning game)",
+    "COCOMO II algorithmic cost estimation"
+  ],
+  "one_liner": "Undergraduate software-engineering process course covering lifecycle models, agile/Scrum, requirements engineering, UML modeling, testing strategy, evolution/maintenance, and project management/cost estimation \u2014 does NOT teach specific programming languages, frameworks, or hands-on implementation tooling.",
+  "relevant_roles": [
+    "fullstack",
+    "backend",
+    "devops_sre"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 64771,
+    "cache_creation_input_tokens": 4684,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 626
+  }
+}

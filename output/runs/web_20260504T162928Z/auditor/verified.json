@@ -1,0 +1,68 @@
+{
+  "findings": [
+    {
+      "course": "software_engineering",
+      "slide_ref": "Ch3. Agile SW Dev-V2.pptx slide 5",
+      "claim": "The slide presents the Agile Manifesto values as: 'Individuals and interactions over processes / Tools over comprehensive documentation / Customer collaboration over contract negotiation / Responding to change over following a plan'",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://agilemanifesto.org/",
+      "citation_excerpt": "Individuals and interactions over processes and tools  \nWorking software over comprehensive documentation  \nCustomer collaboration over contract negotiation  \nResponding to change over following a plan",
+      "suggested_replacement": "Teach the four values verbatim from the canonical Manifesto for Agile Software Development: 'Individuals and interactions over processes and tools', 'Working software over comprehensive documentation', 'Customer collaboration over contract negotiation', and 'Responding to change over following a plan'. The slide currently splits 'processes and tools' across two values and replaces 'Working software' with 'Tools', producing an incorrect version of the manifesto.",
+      "verification": {
+        "status": "verified",
+        "url": "https://agilemanifesto.org/",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "software_engineering",
+      "slide_ref": "L2-Ch2 SW Processes.pptx slide 55",
+      "claim": "Slide presents 'The SEI capability maturity model' with five levels (Initial, Repeatable, Defined, Managed, Optimising) as the current SEI model for process improvement.",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://www.sei.cmu.edu/history-of-innovation/transforming-software-quality-assessment/",
+      "citation_excerpt": "Eventually, the Capability Maturity Model Integration (CMMI) framework, managed with software community guidance by the SEI for more than a decade, evolved from the Software CMM.",
+      "suggested_replacement": "Replace references to the original Software CMM with CMMI (Capability Maturity Model Integration), which superseded it. The CMMI staged maturity levels are: Initial, Managed, Defined, Quantitatively Managed, Optimizing (note 'Repeatable' is no longer a level, and 'Quantitatively Managed' replaces the old 'Managed' level). Note also that CMMI is now stewarded by the CMMI Institute (a subsidiary of ISACA), not the SEI.",
+      "verification": {
+        "status": "verified",
+        "url": "https://www.sei.cmu.edu/history-of-innovation/transforming-software-quality-assessment/",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "software_engineering",
+      "slide_ref": "L2-Ch2 SW Processes.pptx slide 15",
+      "claim": "'Collections of objects that are developed as a package to be integrated with a component framework such as .NET or J2EE.'",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://www.oracle.com/java/technologies/java-ee-glance.html",
+      "citation_excerpt": "Java Platform, Enterprise Edition (Java EE) is the standard in community-driven enterprise software.",
+      "suggested_replacement": "Replace 'J2EE' with 'Jakarta EE' (or at minimum 'Java EE'). The 'J2EE' brand was retired when the platform was renamed to 'Java EE' starting with version 5 in 2006, and the platform was further transferred to the Eclipse Foundation and renamed 'Jakarta EE' in 2017\u20132018. Modern courses should reference Jakarta EE.",
+      "verification": {
+        "status": "verified",
+        "url": "https://www.oracle.com/java/technologies/java-ee-glance.html",
+        "content_type": "text/html"
+      }
+    }
+  ],
+  "summary": {
+    "total_findings": 3,
+    "by_severity": {
+      "critical": 0,
+      "high": 1,
+      "medium": 1,
+      "low": 1
+    },
+    "courses_audited": [
+      "software_engineering"
+    ]
+  },
+  "verification_summary": {
+    "by_status": {
+      "verified": 3
+    },
+    "kept": 3,
+    "dropped": 0
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "run_id": "20260504T162849Z",
+  "courses": {
+    "Mobile Application Development": {
+      "filename": "mobile_application_development.txt",
+      "mount_path": "/workspace/curriculum/mobile_application_development.txt"
+    }
+  },
+  "started_at": "2026-05-04T16:31:17.936162+00:00"
+}

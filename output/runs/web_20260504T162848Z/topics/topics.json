@@ -1,0 +1,214 @@
+{
+  "target_role": "mobile",
+  "prescriptions": [
+    {
+      "rank": 1,
+      "topic": "REST API consumption from Android: HttpURLConnection GET/POST + JSONObject parsing, executed on a java.util.concurrent.Executor with results posted back via Handler(Looper.getMainLooper())",
+      "skill_keywords": [
+        "rest api",
+        "http",
+        "httpurlconnection",
+        "json",
+        "jsonobject",
+        "executor",
+        "handler",
+        "looper",
+        "background thread"
+      ],
+      "market_frequency_pct": 0.83,
+      "posting_refs": [
+        "post_049",
+        "post_050",
+        "post_051",
+        "post_053",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_057",
+        "post_059",
+        "post_060"
+      ],
+      "fits_in_course": "Mobile Application Programming",
+      "fits_in_course_rationale": "Replaces \u2014 not extends \u2014 the AsyncTask material in Lecture 11 'Threads in Android' (pages 33-52, flagged outdated by the Auditor). The lecture currently teaches AsyncTask as the way to do 'Network lookups' (L11 p12), but never actually issues an HTTP request. The fix is to swap the AsyncTask example for an Executors.newSingleThreadExecutor() + Handler(Looper.getMainLooper()) pattern that performs an HttpURLConnection GET/POST against a public REST endpoint and parses the response with org.json.JSONObject. The INTERNET permission slide (L10 p22) already supplies the manifest piece; this lecture supplies the missing client code.",
+      "prerequisite_chain": [
+        {
+          "skill": "Java basics (try/catch, streams, classes)",
+          "already_taught_in": "Mobile Application Programming (L2 p9, L1 p46)"
+        },
+        {
+          "skill": "INTERNET permission in AndroidManifest.xml",
+          "already_taught_in": "Mobile Application Programming (L10 p22)"
+        },
+        {
+          "skill": "Concept that network I/O must not run on the UI thread",
+          "already_taught_in": "Mobile Application Programming (L11 p12 'Network lookups' listed as blocking)"
+        },
+        {
+          "skill": "Handler / Looper / runOnUiThread for UI updates from a background thread",
+          "already_taught_in": "Mobile Application Programming (L11 p59, p64)"
+        },
+        {
+          "skill": "java.util.concurrent.Executor for background work (modern replacement for AsyncTask)",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 8,
+      "headline_one_liner": "Teach students to actually call a REST endpoint from Android \u2014 HttpURLConnection + JSONObject on an Executor with a main-thread Handler \u2014 replacing the deprecated AsyncTask walk-through that 10 of 12 postings have made obsolete."
+    },
+    {
+      "rank": 2,
+      "topic": "Hands-on unit testing for Android: JUnit4 local tests in src/test/java plus a minimal AndroidJUnit4 instrumentation test in src/androidTest/java",
+      "skill_keywords": [
+        "unit testing",
+        "junit",
+        "junit4",
+        "assertequals",
+        "androidjunit4",
+        "instrumentation test",
+        "test runner"
+      ],
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_049",
+        "post_050",
+        "post_052",
+        "post_053",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_058",
+        "post_059"
+      ],
+      "fits_in_course": "Mobile Application Programming",
+      "fits_in_course_rationale": "Extends Lecture 1 page 70 ('Test your application using the Android testing and instrumentation framework'), which today is a single bullet in the development-process diagram with no worked example. Promote this bullet to a short hands-on unit: write a JUnit4 test of a pure-Java helper used by an existing activity (e.g. a roll-number / marks validator from the StudentDB lab \u2014 once that lab is rewritten with parameterised SQL per the Auditor's fix), and a single @RunWith(AndroidJUnit4.class) instrumentation test that launches an activity and asserts a TextView's text. Stays at SDK-fundamentals depth \u2014 no Mockito, no Espresso flows, no CI.",
+      "prerequisite_chain": [
+        {
+          "skill": "Java classes and methods",
+          "already_taught_in": "Mobile Application Programming (L2 p9)"
+        },
+        {
+          "skill": "Gradle build configuration (build.gradle)",
+          "already_taught_in": "Mobile Application Programming (L1 p71)"
+        },
+        {
+          "skill": "Activity lifecycle and findViewById",
+          "already_taught_in": "Mobile Application Programming (L3 p38, L1 p75)"
+        },
+        {
+          "skill": "JUnit4 @Test / assertEquals API and src/test vs src/androidTest source set distinction",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 6,
+      "headline_one_liner": "Turn the one-bullet 'Test your application' diagram into an actual JUnit4 lab plus a one-screen AndroidJUnit4 instrumentation test \u2014 the testing skill 9 of 12 postings list as required."
+    },
+    {
+      "rank": 3,
+      "topic": "Modern Android notifications: NotificationCompat.Builder + NotificationChannel for local notifications, with a conceptual walk-through of receiving a Firebase Cloud Messaging (FCM) remote push in a service",
+      "skill_keywords": [
+        "push notifications",
+        "notificationcompat",
+        "notificationmanager",
+        "notificationchannel",
+        "firebase cloud messaging",
+        "fcm",
+        "firebasemessagingservice"
+      ],
+      "market_frequency_pct": 0.67,
+      "posting_refs": [
+        "post_052",
+        "post_054",
+        "post_055",
+        "post_056",
+        "post_057",
+        "post_058",
+        "post_059",
+        "post_060"
+      ],
+      "fits_in_course": "Mobile Application Programming",
+      "fits_in_course_rationale": "Extends Lecture 2 page 22 (Notification Manager) with a concrete NotificationCompat.Builder + NotificationChannel (mandatory since API 26) example that calls NotificationManager.notify(). Simultaneously *replaces* the 'Cloud to Device Messaging' bullet on Lecture 1 page 50 \u2014 flagged dead by the Auditor (C2DM was shut down in 2015) \u2014 with a brief Firebase Cloud Messaging conceptual segment showing a FirebaseMessagingService.onMessageReceived() handler that builds the same NotificationCompat notification. Per the depth bound this stays at SDK-level construction; no full Firebase backend setup or token-management deep dive.",
+      "prerequisite_chain": [
+        {
+          "skill": "AndroidManifest.xml service/receiver registration",
+          "already_taught_in": "Mobile Application Programming (L3 p14)"
+        },
+        {
+          "skill": "PendingIntent / Intent to launch an activity from a notification tap",
+          "already_taught_in": "Mobile Application Programming (L8 p10)"
+        },
+        {
+          "skill": "BroadcastReceiver / Service onReceive style callback (used as analogy for FirebaseMessagingService)",
+          "already_taught_in": "Mobile Application Programming (L9 p6, p14)"
+        },
+        {
+          "skill": "NotificationChannel API (required since Android 8.0, API 26)",
+          "already_taught_in": null
+        },
+        {
+          "skill": "Firebase project setup + google-services.json (introductory)",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 6,
+      "headline_one_liner": "Replace the dead 'Cloud to Device Messaging' bullet with a working NotificationCompat.Builder + FCM walk-through \u2014 covering the push-notification skill 8 of 12 postings demand."
+    },
+    {
+      "rank": 4,
+      "topic": "App store deployment workflow: generate an upload-keystore-signed Android App Bundle (AAB) in Android Studio and upload to the Google Play Console (with the Xcode Archive \u2192 App Store Connect equivalent for the iOS intro)",
+      "skill_keywords": [
+        "app store deployment",
+        "google play console",
+        "signed apk",
+        "aab",
+        "android app bundle",
+        "keystore",
+        "release build",
+        "xcode archive",
+        "app store connect"
+      ],
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_050",
+        "post_051",
+        "post_054",
+        "post_056",
+        "post_058"
+      ],
+      "fits_in_course": "Mobile Application Programming",
+      "fits_in_course_rationale": "Extends the release-step slide on Lecture 1 page 70 ('Prepare your application for release \u2014 Configure, build, and test your application in release mode' / 'Release your application \u2014 Publicize, sell, and distribute your application') and the App Store / Google Play distribution mention on L1 p23. The course currently stops at the concept; this prescription adds a concrete walk-through: Build \u2192 Generate Signed Bundle/APK in Android Studio, generation of an upload keystore, an AAB upload to a Google Play Console internal-testing track, plus a parallel Product \u2192 Archive \u2192 Distribute App flow for the Lecture 12 Xcode/Swift intro. Stays at hands-on SDK depth \u2014 no Fastlane, no CI/CD pipeline per the depth bound.",
+      "prerequisite_chain": [
+        {
+          "skill": "Android Studio IDE (build menu, project structure)",
+          "already_taught_in": "Mobile Application Programming (L1 p66)"
+        },
+        {
+          "skill": "Gradle build.gradle (versionCode / versionName / signingConfigs)",
+          "already_taught_in": "Mobile Application Programming (L1 p71)"
+        },
+        {
+          "skill": "AndroidManifest.xml application metadata",
+          "already_taught_in": "Mobile Application Programming (L3 p14)"
+        },
+        {
+          "skill": "Xcode installation",
+          "already_taught_in": "Mobile Application Programming (L12 p3)"
+        },
+        {
+          "skill": "Google Play Console account setup + Play App Signing concept",
+          "already_taught_in": null
+        },
+        {
+          "skill": "App Store Connect account setup + provisioning profile concept",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 5,
+      "headline_one_liner": "Take the 'Release your application' bullet on the dev-process slide all the way to a signed AAB on the Play Console \u2014 the deployment skill 5 of 12 postings ask for."
+    }
+  ],
+  "summary": {
+    "total_prescriptions": 4,
+    "top_3_headline": "The top three prescriptions \u2014 REST API consumption via HttpURLConnection on an Executor (83% of postings), hands-on JUnit4 + AndroidJUnit4 unit testing (75%), and modern NotificationCompat + FCM push notifications (67%) \u2014 together address the three skills that more than two-thirds of the analysed mobile postings demand and that the current curriculum only gestures at. Crucially, prescription #1 doubles as the Auditor's mandated replacement of the deprecated AsyncTask chapter, and prescription #3 doubles as the replacement of the dead 'Cloud to Device Messaging' bullet, so adopting them retires two flagged patterns at the same time as closing two market gaps.",
+    "coverage_note": "These four prescriptions cover every gap surfaced by Market-fit (REST 83%, unit testing 75%, push 67%, store deployment 42%). They do NOT close the Kotlin (33%), Jetpack Compose (50%), MVVM (50%), CI/CD (50%), SwiftUI (58%), UIKit (58%), or React Native (42%) gaps \u2014 those sit outside the course's stated depth bound (Java + Android SDK fundamentals with a brief Swift intro), so they are intentionally omitted rather than padded in. A future Kotlin-first or architecture-patterns elective would be the right home for them; this course's honest ceiling is the four items above."
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "findings": [
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 6, Week 9 - Accessing DB ( Part 3 ).pdf page 24",
+      "claim": "private static final String PASSWORD = \"deitel\";",
+      "interpretation": "The course teaches embedding database credentials directly in source as static final String constants \u2014 a textbook insecure pattern that ships authentication material with the binary and cannot be rotated without rebuilding. The username/password literal pair is repeated across three JDBC examples (mona/i243 in QueryVersion2, deitel/deitel in JdbcRowSetTest and PersonQueries) and is presented as the way to connect to a database, not as a counterexample.",
+      "category": "outdated_teaching",
+      "status": "insecure",
+      "severity": "critical",
+      "citation_url": "https://cwe.mitre.org/data/definitions/798.html",
+      "citation_excerpt": "The product contains hard-coded credentials, such as a password or cryptographic key.",
+      "suggested_replacement": "Read credentials from environment variables, an external configuration file with restricted permissions, or a secrets manager (Vault, AWS Secrets Manager, etc.). Show students how to keep secrets out of source control from day one.",
+      "adjudication_reasoning": "Three JDBC code examples in the curriculum literally hard-code the database username and password as `static final String` fields with no warning or contrast slide; no nearby slide marks the pattern as insecure or shows a corrected version, so the burden-of-proof default is FLAG.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Week 8 - Accessing DB ( Part 2 ).pdf p.5, Week 9 - Accessing DB ( Part 3 ).pdf p.6, Week 9 - Accessing DB ( Part 3 ).pdf p.24"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://cwe.mitre.org/data/definitions/798.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 9",
+      "claim": "executeQuery (\"SELECT * FROM AUTHORS WHERE FIRSTNAME LIKE",
+      "interpretation": "The Filter button's listener concatenates user input from `filterText.getText()` directly into a SQL string that is then passed to `Statement.executeQuery` \u2014 the canonical SQL-injection anti-pattern. The slide presents this as the way to implement a filter; nothing on or near the slide marks it as insecure.",
+      "category": "outdated_teaching",
+      "status": "insecure",
+      "severity": "critical",
+      "citation_url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
+      "citation_excerpt": "Prepared statements ensure that an attacker is not able to change the intent of a query, even if SQL commands are inserted by an attacker.",
+      "suggested_replacement": "Use a `PreparedStatement` with `?` placeholders and `setString(1, filterText.getText())` from the start. The course already shows `PreparedStatement` later \u2014 that pattern should appear here, on the very first user-input query, not be deferred to a later chapter as a performance optimization.",
+      "adjudication_reasoning": "Although Week 9 later introduces `PreparedStatement` and includes a generic Error-Prevention Tip about SQL injection, that tip is not framed as a correction of the Week 8 example, no contrast marker (\"\u274c\", \"don't do this\", \"wrong way\") is attached to the Statement-based filter, and the same Statement+concat pattern is repeated for the Submit button on the prior slide. Burden of proof falls on SKIP and is not met.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Week 8 - Accessing DB ( Part 2 ).pdf p.9"
+      },
+      "verification": {
+        "status": "excerpt_not_found",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
+        "content_type": "text/html",
+        "excerpt_preview": "Prepared statements ensure that an attacker is not able to change the intent of a query, even if SQL commands are insert"
+      }
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 20",
+      "claim": "Any local variable that will be used in an anonymous inner class must be declared final; otherwise, a compilation error occurs.",
+      "interpretation": "Since Java 8 the rule is that captured local variables must be `final` *or effectively final* \u2014 an unmodified local that is never reassigned needs no `final` keyword. The slide's blanket \"must be declared final\" is the pre-Java-8 rule and will mislead students into adding redundant `final` modifiers (or worse, doubting working code).",
+      "category": "conceptual",
+      "status": "outdated",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html",
+      "citation_excerpt": "Any local variable, formal parameter, or exception parameter used but not declared in an inner class must either be declared final or be effectively final",
+      "suggested_replacement": "Update the wording to: \"Any local variable used in an anonymous inner class must be either `final` or *effectively final* (Java 8+); attempting to reassign a captured local is a compile-time error.\"",
+      "adjudication_reasoning": "The Java Language Specification \u00a78.1.3 (Java SE 8 onward) explicitly relaxed this rule. The slide is taught as a hard rule with no contrast or paired correction nearby \u2014 straightforward FLAG.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Week 8 - Accessing DB ( Part 2 ).pdf p.20"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 91",
+      "claim": "Run with Java Web Start",
+      "interpretation": "The slide is a NetBeans Project Properties screenshot showing the \"Run with Java Web Start\" option as a current way to run/debug the application. Java Web Start was removed from Oracle JDK distributions in JDK 11; on a current toolchain this checkbox does nothing and the deployment mechanism it enables no longer exists in the JDK.",
+      "category": "dead",
+      "status": "dead",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/migrate/removed-tools-and-components.html",
+      "citation_excerpt": "Java applet and Web Start functionality, including the Java plug-in, the Java Applet Viewer, Java Control Panel, and Java Web Start, along with javaws tool, have been removed in JDK 11.",
+      "suggested_replacement": "Drop the screenshot and the assertion-debugging instructions that depend on Web Start. For local debugging, point students at the IDE's standard Run/Debug configuration; for deployment, mention `jlink`/`jpackage` or third-party reimplementations such as OpenWebStart if Web Start compatibility is genuinely needed.",
+      "adjudication_reasoning": "The Oracle JDK 17 migration guide explicitly lists Web Start among components removed in JDK 11. The slide presents the option without any \"this is legacy\" caveat. FLAG.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Week 2+3 - Exception Handling.pdf p.91"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/17/migrate/removed-tools-and-components.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 79",
+      "claim": "public Image getImage(URL url, String name) {",
+      "interpretation": "The Javadoc-tutorial worked example documents a method from the Java Applet API (`Applet.getImage`). The Applet API and `appletviewer` tool were deprecated in JDK 9 (JEP 289) and the entire API has since been deprecated for removal (JEP 398), so building a Javadoc lesson around the Applet class teaches students to read documentation for an effectively dead API.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://openjdk.org/jeps/289",
+      "citation_excerpt": "Add the @Deprecated(since=\"9\") annotation to the following classes:",
+      "suggested_replacement": "Replace the Javadoc example with code from a non-deprecated API (e.g. a `java.util.List` method, an `HttpClient` example, or a custom domain class). The Javadoc tags being demonstrated (@param, @return, @link, @see) are independent of the Applet API.",
+      "adjudication_reasoning": "JEP 289 (Deprecate the Applet API) marks `java.applet.Applet` and related classes `@Deprecated(since=\"9\")`. The slide presents the applet-based getImage docstring as a current Javadoc example without any deprecation caveat \u2014 FLAG, low severity since the lesson is about Javadoc syntax, not applets.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Week 2+3 - Exception Handling.pdf p.79"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://openjdk.org/jeps/289",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 57",
+      "claim": "Finalize is used to perform clean up processing just before object is garbage collected.",
+      "interpretation": "The slide compares `final`, `finally`, and `finalize` as three current language features and instructs students to remember `finalize` as \"a method ... used to perform clean up processing just before object is garbage collected.\" `Object.finalize()` is `@Deprecated(since=\"9\")` and Oracle's own docs label finalization \"inherently problematic\" \u2014 teaching it as a current cleanup tool builds the wrong mental model.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html",
+      "citation_excerpt": "Deprecated. The finalization mechanism is inherently problematic.",
+      "suggested_replacement": "Keep the `final`/`finally` half of the comparison, and replace the `finalize` row with `try-with-resources` + `AutoCloseable`/`Cleaner` as the modern way to release resources. Mention `Object.finalize()` only as a historical/deprecated artifact.",
+      "adjudication_reasoning": "Oracle's `Object.finalize` Javadoc carries `@Deprecated(since=\"9\")` and the rationale text \"The finalization mechanism is inherently problematic.\" The slide presents finalize as a normal language feature \u2014 FLAG.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Week 2+3 - Exception Handling.pdf p.57"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html",
+        "content_type": "text/html"
+      },
+      "claim_expansion": {
+        "status": "expanded",
+        "original": "Finalize is used to perform"
+      }
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 6 - GUI Components ( Part 3 ).pdf page 11",
+      "claim": "Method getModifiers determines whether any modifier keys (such as Shift, Alt and Ctrl) were pressed when the key event occurred.",
+      "interpretation": "The slide instructs students to use `InputEvent.getModifiers()` and the static `KeyEvent.getKeyModifiersText()` to handle modifier keys. Both have been `@Deprecated(since=\"9\")` in Oracle's API docs in favor of `getModifiersEx()` / `getModifiersExText()`; using the legacy methods produces deprecation warnings on a modern JDK and silently ignores extended modifiers.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/event/InputEvent.html",
+      "citation_excerpt": "It is recommended that extended modifier keys and getModifiersEx() be used instead",
+      "suggested_replacement": "Teach `getModifiersEx()` with the `*_DOWN_MASK` constants (`SHIFT_DOWN_MASK`, `CTRL_DOWN_MASK`, etc.) and `KeyEvent.getModifiersExText(int)` for the human-readable string. Show the `(event.getModifiersEx() & (onmask | offmask)) == onmask` idiom from the Oracle docs.",
+      "adjudication_reasoning": "The Oracle Java SE 17 InputEvent API page documents `getModifiers()` and the legacy `*_MASK` constants as `@Deprecated(since=\"9\")` with the recommendation to use `getModifiersEx()` instead. The slide teaches the deprecated form as the way to do modifier-key handling \u2014 FLAG.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Week 6 - GUI Components ( Part 3 ).pdf p.11"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/event/InputEvent.html",
+        "content_type": "text/html"
+      },
+      "claim_expansion": {
+        "status": "expanded",
+        "original": "Method getModifiers determines whether any modifier"
+      }
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 7 - Accessing DB ( Part 1 ).pdf page 11",
+      "claim": "see the Java DB Developer's Guide at",
+      "interpretation": "The course leans on \"Java DB\" \u2014 Oracle's distribution of Apache Derby that used to ship inside the JDK \u2014 and points students at `docs.oracle.com/javadb/10.10.1.1/devguide/derbydev.pdf` plus a `jdbc:derby:` URL described as Java DB-specific. JavaDB has not been in the JDK since JDK 9; lab setups that assume the JDK ships the database will silently break on any current toolchain.",
+      "category": "dead",
+      "status": "dead",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/migrate/removed-tools-and-components.html",
+      "citation_excerpt": "JavaDB, which was a rebranding of Apache Derby, is no longer included in the JDK.",
+      "suggested_replacement": "Drop the \"Java DB\" branding and the Oracle javadb URL. If Derby is still desired, install Apache Derby externally (https://db.apache.org/derby/derby_downloads.html); otherwise switch the lab to a more current teaching DB (H2, SQLite, or PostgreSQL).",
+      "adjudication_reasoning": "Oracle's JDK 17 migration guide states JavaDB is no longer included in the JDK. The slides treat Java DB as a current bundled component and link to its documentation as if it were live \u2014 FLAG.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Week 7 - Accessing DB ( Part 1 ).pdf p.11, Week 7 - Accessing DB ( Part 1 ).pdf p.33"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/17/migrate/removed-tools-and-components.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 10 - Files Streams and Object Serialization ( Part 1 ).pdf page 5",
+      "claim": "sequence of characters in which every character is two",
+      "interpretation": "The slide claims \"every character is two bytes,\" conflating the width of a Java `char` (a UTF-16 code unit) with a Unicode character. Supplementary code points (emoji, many CJK characters, historical scripts) require *two* `char` values \u2014 a surrogate pair \u2014 totalling four bytes, so the blanket \"every character is two bytes\" rule is wrong and gives students the same broken mental model that produces off-by-one bugs in `length()`/`charAt()` over emoji.",
+      "category": "conceptual",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html",
+      "citation_excerpt": "supplementary characters are represented as a pair of char values, the first from the high-surrogates range, (\\uD800-\\uDBFF), the second from the low-surrogates range (\\uDC00-\\uDFFF)",
+      "suggested_replacement": "Rewrite the bullet as: \"Java's `char` is a 16-bit UTF-16 *code unit*. BMP characters (U+0000 to U+FFFF) fit in one `char`; supplementary characters (emoji and many CJK glyphs) are encoded as a surrogate pair \u2014 two `char`s, four bytes \u2014 so `String.length()` counts code units, not characters. Use `codePointAt`/`codePointCount` when you need the actual character count.\"",
+      "adjudication_reasoning": "Oracle's `java.lang.Character` documentation directly contradicts the slide's claim by spelling out the surrogate-pair representation of supplementary characters. The slide states the rule unconditionally \u2014 FLAG.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Week 10 - Files Streams and Object Serialization ( Part 1 ).pdf p.5"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html",
+        "content_type": "text/html"
+      }
+    }
+  ],
+  "summary": {
+    "total_candidates": 33,
+    "flagged": 9,
+    "skipped": 24,
+    "by_skip_reason": {
+      "counterexample": 3,
+      "paired_correction_nearby": 1,
+      "no_primary_source": 13,
+      "other": 7
+    },
+    "courses_audited": [
+      "object_oriented_programming_2"
+    ],
+    "slide_ref_verification": {
+      "total": 9,
+      "matched": 0,
+      "rewritten": 9,
+      "not_found": 0
+    },
+    "claim_expansion": {
+      "total": 9,
+      "expanded": 2
+    }
+  },
+  "verification_summary": {
+    "by_status": {
+      "verified": 8,
+      "excerpt_not_found": 1
+    },
+    "kept": 8,
+    "dropped": 1
+  }
+}

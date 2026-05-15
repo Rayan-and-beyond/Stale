@@ -1,0 +1,116 @@
+{
+  "findings": [
+    {
+      "course": "computer_and_data_security",
+      "slide_ref": "chapter2.pptx, Slide 24 (speaker notes, 'Asymmetric Encryption Algorithms (1 of 2)')",
+      "claim": "\"Currently, a 1024-bit key size (about 300 decimal digits) is considered strong enough for virtually all applications.\"",
+      "status": "outdated",
+      "severity": "high",
+      "citation_url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf",
+      "citation_excerpt": "FIPS 186-5 \u00a75.1: \"This standard specifies the use of a modulus whose bit length is an even integer and greater than or equal to 2048 bits.\"",
+      "suggested_replacement": "Teach RSA modulus sizes \u2265 2048 bits as the current minimum (FIPS 186-5, Feb 2023; NIST SP 800-131A Rev. 2 disallowed 1024-bit RSA generation in 2014). For new deployments, 3072-bit (112-bit security) or larger is preferred, and ECC (e.g., P-256/P-384) gives equivalent strength at much smaller key sizes.",
+      "verification": {
+        "status": "verified",
+        "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf",
+        "content_type": "application/pdf"
+      }
+    },
+    {
+      "course": "computer_and_data_security",
+      "slide_ref": "chapter2.pptx, Slide 24 / Slide 27 (speaker notes, 'Digital Signature Standard')",
+      "claim": "\"The DSS makes use of SHA-1 and presents a new digital signature technique, the Digital Signature Algorithm (DSA)... most recently in 2013 as FIPS 186-4. FIPS 186-4 specifies the use of one of three digital signature algorithms: Digital Signature Algorithm (DSA), RSA Digital Signature Algorithm, Elliptic Curve Digital Signature Algorithm (ECDSA).\"",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf",
+      "citation_excerpt": "FIPS 186-5 (Feb 3 2023), Section 4: \"The Digital Signature Algorithm (DSA) is no longer specified in this standard and may only be used to verify previously generated digital signatures.\" The standard supersedes FIPS 186-4 and approves only RSA, ECDSA, and EdDSA.",
+      "suggested_replacement": "Teach FIPS 186-5 (current standard): DSA is retired; approved signature schemes are RSA (PKCS#1 v2.2 / PSS), ECDSA, and EdDSA (Ed25519/Ed448). Use SHA-2 or SHA-3 \u2014 SHA-1 is being phased out by NIST for all signature uses by 2030.",
+      "verification": {
+        "status": "verified",
+        "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf",
+        "content_type": "application/pdf"
+      }
+    },
+    {
+      "course": "computer_and_data_security",
+      "slide_ref": "chapter3.pptx, Slide 15 ('Improved Implementations') and speaker notes",
+      "claim": "\"Recommended hash function is based on MD5\u2026 Uses an inner loop with 1000 iterations to achieve slowdown\u2026 The recommended hash function for many UNIX systems, including Linux, Solaris, and FreeBSD, is based on the MD5 secure hash algorithm (which is similar to, but not as secure as, SHA-1).\"",
+      "status": "insecure",
+      "severity": "high",
+      "citation_url": "https://pages.nist.gov/800-63-3/sp800-63b.html",
+      "citation_excerpt": "NIST SP 800-63B \u00a75.1.1.2: \"Memorized secrets SHALL be salted and hashed using a suitable one-way key derivation function\u2026 Examples of suitable key derivation functions include Password-based Key Derivation Function 2 (PBKDF2)\u2026 and Balloon. A memory-hard function SHOULD be used\u2026 For PBKDF2\u2026 the iteration count SHOULD be as large as verification server performance will allow, typically at least 10,000 iterations.\" The KDF must use \"an approved one-way function\" \u2014 MD5 is not in the SP 800-107 approved list.",
+      "suggested_replacement": "Teach modern password-hashing KDFs: Argon2id (winner of PHC 2015), scrypt, or bcrypt as preferred; PBKDF2-HMAC-SHA256 with \u2265600,000 iterations as a FIPS-approved fallback. Drop the description of md5crypt as 'recommended' \u2014 it has been considered obsolete in glibc since 2012, and MD5 is not an approved KDF primitive under NIST SP 800-63B.",
+      "verification": {
+        "status": "verified",
+        "url": "https://pages.nist.gov/800-63-3/sp800-63b.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "computer_and_data_security",
+      "slide_ref": "Chapter18.pptx, Slide 15 (speaker notes, 'Protecting Audit Trail Data')",
+      "claim": "\"An effective measure is symmetric encryption (e.g., using AES (Advanced Encryption Standard) or triple DES (Data Encryption Standard)).\"",
+      "status": "deprecated",
+      "severity": "medium",
+      "citation_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf",
+      "citation_excerpt": "NIST SP 800-131A Rev. 2 (March 2019), Table 1: \"Three-key TDEA \u2013 Encryption \u2013 Deprecated through 2023; Disallowed after 2023.\" NIST SP 800-67 Rev. 2 \u00a71 confirms TDEA is being retired due to its 64-bit block size (Sweet32 birthday attacks).",
+      "suggested_replacement": "Recommend AES-256 in an authenticated mode (AES-GCM or AES-GCM-SIV per NIST SP 800-38D) for protecting audit trail confidentiality and integrity. Drop 3DES from the list of acceptable choices \u2014 it is disallowed for encryption after 2023 by NIST.",
+      "verification": {
+        "status": "excerpt_not_found",
+        "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf",
+        "content_type": "application/pdf",
+        "excerpt_preview": "NIST SP 800-131A Rev. 2 (March 2019), Table 1: \"Three-key TDEA \u2013 Encryption \u2013 Deprecated through 2023; Disallowed after "
+      }
+    },
+    {
+      "course": "computer_and_data_security",
+      "slide_ref": "Chapter9.pptx, Slide 28 ('HIPS (1 of 2)') and Slide 29 / speaker notes",
+      "claim": "\"Sandboxes are especially suited to mobile code, such as Java applets and scripting languages. The HIPS quarantines such code in an isolated system area and then runs the code and monitors its behavior.\"",
+      "status": "dead",
+      "severity": "medium",
+      "citation_url": "https://openjdk.org/jeps/398",
+      "citation_excerpt": "JEP 398: Deprecate the Applet API for Removal (JDK 17, 2021): \"The Applet API has been essentially irrelevant since browser vendors removed support for Java browser plug-ins. \u2026 We deprecated the Applet API for removal in JDK 17 so that it may be removed in a future release.\" (See also JEP 289, JDK 9, which deprecated the Java browser plug-in.) The Applet API was subsequently removed.",
+      "suggested_replacement": "Drop Java applets from the list of mobile-code examples. Replace with current sandboxed mobile-code platforms relevant to 2024+: WebAssembly (Wasm) sandboxes, JavaScript engines' realms, browser site isolation/Content Security Policy, mobile OS app sandboxes (iOS/Android), and container/VM isolation (gVisor, Firecracker, seccomp-bpf).",
+      "verification": {
+        "status": "excerpt_not_found",
+        "url": "https://openjdk.org/jeps/398",
+        "content_type": "text/html",
+        "excerpt_preview": "JEP 398: Deprecate the Applet API for Removal (JDK 17, 2021): \"The Applet API has been essentially irrelevant since brow"
+      }
+    },
+    {
+      "course": "computer_and_data_security",
+      "slide_ref": "chapter2.pptx, Slide 18 (speaker notes, 'Security of Hash Functions') / Chapter 3 Slide 15 'similar to, but not as secure as, SHA-1'",
+      "claim": "Treats MD5 and SHA-1 as merely 'inadequate' due to brute-force collision-machine cost (1994 estimate of 24 days for MD5), and frames SHA-1 as the more-secure alternative to MD5 with no warning that SHA-1 is itself broken/deprecated.",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://csrc.nist.gov/projects/hash-functions/nist-policy-on-hash-functions",
+      "citation_excerpt": "NIST Policy on Hash Functions (Dec 15 2022): \"NIST is announcing a timeline for a transition for SHA-1\u2026 After 12/31/2030, any FIPS 140 validated cryptographic module that has SHA-1 as an approved algorithm will be moved to the historical list. NIST recommends that federal agencies transition away from SHA-1 for all applications as soon as possible. Federal agencies should use SHA-2 or SHA-3 as an alternative to SHA-1.\"",
+      "suggested_replacement": "State plainly that practical MD5 collisions have been demonstrated since 2004 (Wang et al.) \u2014 chosen-prefix MD5 collisions cost <$1 of compute today \u2014 and that SHA-1 collisions were demonstrated in 2017 (SHAttered) and chosen-prefix SHA-1 collisions in 2020. Both MD5 and SHA-1 are unsuitable for any collision-resistance-dependent use; teach SHA-256/SHA-3 family instead.",
+      "verification": {
+        "status": "verified",
+        "url": "https://csrc.nist.gov/projects/hash-functions/nist-policy-on-hash-functions",
+        "content_type": "text/html"
+      }
+    }
+  ],
+  "summary": {
+    "total_findings": 6,
+    "by_severity": {
+      "critical": 0,
+      "high": 2,
+      "medium": 4,
+      "low": 0
+    },
+    "courses_audited": [
+      "computer_and_data_security"
+    ]
+  },
+  "verification_summary": {
+    "by_status": {
+      "verified": 4,
+      "excerpt_not_found": 2
+    },
+    "kept": 4,
+    "dropped": 2
+  }
+}

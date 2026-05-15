@@ -1,0 +1,31 @@
+{
+  "subject_area": "Mobile application programming \u2014 Android with iOS/Swift intro",
+  "pedagogical_level": "undergraduate fundamentals course with hands-on Android implementation",
+  "course_intent": "Teach students to build native Android applications using the Android SDK and Java \u2014 students should leave able to design Android UIs, manage activity/fragment lifecycles, persist data with SQLite, communicate via intents and broadcast receivers, integrate maps and location services, and handle background work, with a brief introduction to iOS/Swift game development.",
+  "depth_bound": "Recommendations stay at the level of Android SDK fundamentals and hands-on app construction (Java-based, single-app focus). Modern Kotlin-first idioms, Jetpack Compose, advanced architecture patterns (MVVM, Clean Architecture), reactive frameworks (RxJava, Coroutines, Flow), CI/CD for mobile, and cross-platform frameworks (Flutter, React Native) beyond brief mention are out of scope.",
+  "key_topics": [
+    "Android architecture stack and Dalvik/ART runtime",
+    "Activity lifecycle and intents (explicit, implicit, sub-activities with results)",
+    "UI building with layouts, widgets, and fragments (static/dynamic)",
+    "SQLite persistence via SQLiteOpenHelper, Cursors, and ContentValues",
+    "Content Providers and ContentResolver (custom and built-in like Contacts)",
+    "Broadcast Receivers (manifest-registered and dynamic) for system/custom intents",
+    "Background work with AsyncTask, Threads, and Handlers; ANR avoidance",
+    "Google Maps integration, Geocoder, and location-based services with permissions",
+    "Introduction to iOS development with Swift basics and Xcode"
+  ],
+  "one_liner": "Hands-on undergraduate Android application development course using Java and the Android SDK, covering UI, lifecycle, persistence, intents, background work, and maps \u2014 does NOT cover Kotlin, Jetpack Compose, modern architecture patterns, reactive programming, or cross-platform frameworks beyond a brief Swift/iOS intro.",
+  "relevant_roles": [
+    "mobile",
+    "fullstack",
+    "backend"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 82569,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 4684,
+    "output_tokens": 774
+  }
+}

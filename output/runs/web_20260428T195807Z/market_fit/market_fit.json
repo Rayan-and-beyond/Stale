@@ -1,0 +1,642 @@
+{
+  "target_role": "devops_sre",
+  "taught_skillset": [
+    {
+      "skill": "POSIX system calls (open, read, write, close, fork, exec, wait, exit, kill)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch1-2 Slide 15: 'On Unix, Unix-like and other POSIX-compatible Operating Systems, popular system calls are open, read, write, close, wait, exec, fork, exit, and kill.'"
+    },
+    {
+      "skill": "Kernel-mode vs user-mode and the mode bit",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch1-2 Slide 12: 'Dual-mode operation allows OS to protect itself... Mode bit provided by hardware... Some instructions designated as privileged, only executable in kernel mode.'"
+    },
+    {
+      "skill": "fork()/exec()/wait()/exit() process lifecycle (UNIX)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch3 Slide 21 speaker notes: 'A new process is created by the fork() system call... one of the two processes typically uses the exec() system call to replace the process's memory space... it can issue a wait() system call to move itself off the ready queue.'"
+    },
+    {
+      "skill": "Process Control Block (PCB) layout (state, PC, registers, scheduling info, memory-mgmt info, I/O list)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch3 Slide 10: 'PCB... Process state, Program counter, CPU registers, CPU scheduling information, Memory-management information, Accounting information, I/O status information.'"
+    },
+    {
+      "skill": "Zombie/orphan processes; init/systemd as orphan reaper",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch3 Slide 29: 'A process that has terminated, but whose parent has not yet called wait(), is known as a zombie process... Traditional UNIX systems addressed this scenario by assigning the init (or systemd) process as the new parent to orphan processes.'"
+    },
+    {
+      "skill": "IPC: shared memory and message-passing (direct/indirect, sync/async, buffered)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch3 Slides 30\u201341: 'Two models of IPC: Shared memory... Message passing'; 'Synchronous / Asynchronous communication'; 'Zero capacity / Bounded / Unbounded' buffers."
+    },
+    {
+      "skill": "Bounded-buffer producer\u2013consumer problem",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch3 Slide 33 / Ch6 Slides 15\u201320: 'Producer-Consumer Problem... bounded-buffer assumes that there is a fixed buffer size... Producer must wait if all buffers are full.'"
+    },
+    {
+      "skill": "POSIX Pthreads, Windows threads, Java threads APIs",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch4 Slide 19\u201320: 'Three main thread libraries are in use today: POSIX Pthreads, Windows, and Java'; 'A POSIX standard (IEEE 1003.1c) API for thread creation and synchronization.'"
+    },
+    {
+      "skill": "Java Runnable interface, Thread.start(), Java Executor framework / thread pools",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch4 Slides 26\u201334: 'Implementing the Runnable interface... Calling start()'; 'Java also allows thread creation around the Executor interface'; 'Three factory methods for creating thread pools in Executors class.'"
+    },
+    {
+      "skill": "Multithreading models (many-to-one, one-to-one, many-to-many)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch4 Slides 14\u201317: 'Many-to-One Model... One-to-One Model... Many-to-Many Model.'"
+    },
+    {
+      "skill": "Concurrency vs. parallelism; data vs. task parallelism",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch4 Slide 10\u201311: 'A system is parallel if it can perform more than one task simultaneously. A concurrent system supports more than one task by allowing all the tasks to make progress'; 'Data parallelism... Task parallelism.'"
+    },
+    {
+      "skill": "Implicit threading frameworks named (OpenMP, Grand Central Dispatch, Intel TBB, Fork-Join)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch4 Slide 31: 'Five alternative methods explored: Thread Pools, Fork-Join, OpenMP, Grand Central Dispatch, Intel Threading Building Blocks.'"
+    },
+    {
+      "skill": "CPU scheduling algorithms: FCFS, SJF, SRTF, Priority, Round-Robin",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch5 Slides 13\u201328: 'First-Come, First-Served (FCFS)'; 'Shortest-Job-First (SJF)... Shortest-Remaining-Time-First (SRTF)'; 'Round Robin (RR) Algorithm... time quantum q.'"
+    },
+    {
+      "skill": "Multilevel queue and multilevel feedback queue scheduling; aging",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch5 Slides 36\u201341: 'A multilevel queue scheduling algorithm partitions the ready queue into several separate queues'; 'Multilevel Feedback Queue: A process can move between the various queues... Aging.'"
+    },
+    {
+      "skill": "Preemptive vs non-preemptive scheduling; dispatcher and dispatch latency",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch5 Slides 8\u201310: 'Virtually all modern operating systems including Windows, MacOS, Linux, and UNIX use preemptive scheduling algorithms'; 'Dispatcher module gives control of the CPU... Dispatch latency.'"
+    },
+    {
+      "skill": "Race conditions and the critical-section problem (mutual exclusion, progress, bounded waiting)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch6 Slide 23: 'Mutual Exclusion... Progress... Bounded Waiting - A bound must exist on the number of times that other processes are allowed to enter their critical sections.'"
+    },
+    {
+      "skill": "Peterson's software-based mutual-exclusion algorithm",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch6 Slides 27\u201334: 'Software-based Solution: Peterson's Solution... The two processes share two variables: int turn; boolean flag[2].'"
+    },
+    {
+      "skill": "Memory barriers / memory-ordering models (strongly vs weakly ordered)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch6 Slide 36: 'Strongly ordered \u2013 where a memory modification of one processor is immediately visible... A memory barrier is an instruction that forces any change in memory to be propagated to all other processors.'"
+    },
+    {
+      "skill": "Atomic hardware instructions: test_and_set() and compare_and_swap() (CAS); spinlocks",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch6 Slides 39\u201346: 'Test-and-Set() instruction... Compare-and-Swap() instruction'; 'while (test_and_set(&lock)) ... This is called a spinlock.'"
+    },
+    {
+      "skill": "Atomic variables built on CAS",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch6 Slide 48\u201349: 'an atomic variable that provides atomic (uninterruptible) updates on basic data types... void increment(atomic_int *v)... compare_and_swap(v,temp,temp+1).'"
+    },
+    {
+      "skill": "Mutex locks (acquire/release) and Dijkstra counting/binary semaphores (P/V, wait/signal)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch6 Slides 50\u201355: 'mutex lock... acquire() and release()'; 'Semaphore S \u2013 integer variable... wait() and signal()... Originally called P() and V().'"
+    },
+    {
+      "skill": "Deadlock characterization (mutual exclusion, hold-and-wait, no preemption, circular wait)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch8 Slide 8: 'Deadlock can arise if four conditions hold simultaneously... Mutual exclusion... Hold and wait... No preemption... Circular wait.'"
+    },
+    {
+      "skill": "Resource-allocation graph and wait-for graph cycle detection",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch8 Slides 9\u201312, 21\u201322: 'Resource-Allocation Graph... request edge / assignment edge'; 'Maintain wait-for graph... Periodically invoke an algorithm that searches for a cycle.'"
+    },
+    {
+      "skill": "Deadlock prevention / avoidance / detection / recovery (incl. resource ordering, victim selection, rollback)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch8 Slides 15\u201325: 'Deadlock prevention'; 'Impose a total ordering of all resource types'; 'Recovery from Deadlock: Process/Thread Termination'; 'Resource Preemption: Selecting a victim... Rollback... Starvation.'"
+    },
+    {
+      "skill": "Address binding (compile/load/execution time); base & limit registers; MMU and relocation register",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch9 Slides 8\u201313: 'Address binding of instructions and data to memory addresses can happen at three different stages: Compile time... Load time... Execution time'; 'memory-management unit (MMU).'"
+    },
+    {
+      "skill": "Static vs. dynamic linking; shared libraries / DLLs",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch9 Slide 15\u201316: 'Static linking... Dynamic linking \u2013 linking postponed until execution time... Dynamically linked libraries (DLLs)... shared libraries... Windows and Linux systems.'"
+    },
+    {
+      "skill": "Contiguous allocation: first-fit / best-fit / worst-fit; internal vs external fragmentation; 50% rule; compaction",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch9 Slides 23\u201326: 'First-fit... Best-fit... Worst-fit'; 'External Fragmentation... Internal Fragmentation'; '50-percent rule'; 'Reduce external fragmentation by compaction.'"
+    },
+    {
+      "skill": "Segmentation (segment table with base/limit)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch9 Slide 31: 'Segment Table... base \u2013 contains the starting physical address... limit \u2013 specifies the length of the segment.'"
+    },
+    {
+      "skill": "Paging (page number/offset, page table, frame table)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch9 Slides 35\u201338: 'Divide physical memory into fixed-sized blocks called frames... Set up a page table to translate logical to physical addresses'; 'Extract the page number p and use it as an index into the page table.'"
+    },
+    {
+      "skill": "Demand paging; valid\u2013invalid bit; page-fault handling",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch10 Slides 9\u201314: 'demand paging... pages are loaded only when they are demanded'; 'valid\u2013invalid bit'; 'Steps in Handling Page Fault.'"
+    },
+    {
+      "skill": "Page replacement: FIFO, OPT, LRU; Belady's anomaly; modify (dirty) bit",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch10 Slides 28\u201336: 'First-In-First-Out (FIFO)'; 'Optimal Algorithm'; 'Least Recently Used (LRU)'; 'Belady's anomaly'; 'modify bit (or dirty bit).'"
+    },
+    {
+      "skill": "Free-frame list and zero-fill-on-demand",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch10 Slide 17: 'Most operating systems maintain a free-frame list... zero-fill-on-demand -- the content of the frames zeroed-out before being allocated.'"
+    },
+    {
+      "skill": "File concept, attributes, operations (create/open/read/write/seek/close/delete/truncate)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch13 Slides 4\u20137: 'File Attributes: Name, Identifier, Type, Location, Size, Protection, Time...'; 'Operations: Create... Write... Read... Reposition within file \u2013 seek... Delete... Truncate.'"
+    },
+    {
+      "skill": "Sequential vs direct access; IBM ISAM indexing",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch13 Slides 11\u201314: 'Sequential Access... Direct Access \u2013 Random Access to any file block'; 'IBM indexed sequential-access method (ISAM).'"
+    },
+    {
+      "skill": "Layered file-system architecture (logical FS, file-organization, basic FS, I/O control, device driver)",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch13/14 Slide 18: 'Application Programs / Logical File System / File-Organization module / Basic File System / I/O Control / Device driver.'"
+    },
+    {
+      "skill": "Specific file systems named: FAT, FAT32, NTFS, UFS, FFS, ext3, ext4, ZFS, GoogleFS, FUSE, ISO 9660",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch13/14 Slide 19: 'CD-ROM is ISO 9660; Unix has UFS, FFS; Windows has FAT, FAT32, NTFS... Linux... ext3 and ext4... ZFS, GoogleFS, Oracle ASM, FUSE.'"
+    },
+    {
+      "skill": "On-disk structures: boot block / superblock / FCB / inode; NTFS master file table",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch14 Slide 20: 'Boot Control Block... Volume Control Block... In UFS, this is called a superblock. In NTFS, it is stored in the master file table'; 'inode... data structure in a Unix-style file system.'"
+    },
+    {
+      "skill": "File allocation methods: contiguous, linked (FAT), indexed",
+      "courses": [
+        "Operating Systems"
+      ],
+      "evidence": "Ch14 Slides 22\u201328: 'Contiguous allocation'; 'Linked allocation \u2013 each file is a linked list of disk blocks... use of a FAT (File Allocation Table)'; 'Indexed allocation.'"
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "docker",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "bash",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "git",
+      "frequency_pct": 0.917,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "python",
+      "frequency_pct": 0.917,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.833,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "linux",
+      "frequency_pct": 0.833,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "monitoring",
+      "frequency_pct": 0.833,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "ci/cd",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "terraform",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_061",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "aws",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_066",
+        "post_069",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "go",
+      "frequency_pct": 0.667,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_068",
+        "post_069",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "github actions",
+      "frequency_pct": 0.667,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_070",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "on-call rotation",
+      "frequency_pct": 0.667,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_070"
+      ]
+    },
+    {
+      "skill": "prometheus",
+      "frequency_pct": 0.667,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_064",
+        "post_065",
+        "post_067",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "helm",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_061",
+        "post_063",
+        "post_064",
+        "post_066",
+        "post_067",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "datadog",
+      "frequency_pct": 0.583,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "jenkins",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_061",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "grafana",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_067",
+        "post_070"
+      ]
+    },
+    {
+      "skill": "slos/slis",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_063",
+        "post_064",
+        "post_066",
+        "post_068",
+        "post_069",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "ansible",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_069",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "gitlab ci",
+      "frequency_pct": 0.417,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_062",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "argocd",
+      "frequency_pct": 0.417,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_067",
+        "post_070"
+      ]
+    },
+    {
+      "skill": "vault",
+      "frequency_pct": 0.417,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_064",
+        "post_068",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "incident response",
+      "frequency_pct": 0.417,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_068",
+        "post_071"
+      ]
+    }
+  ],
+  "gaps": [],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 38,
+    "skills_market_demands": 24,
+    "gap_count": 0,
+    "headline": "This Silberschatz-based undergraduate OS-fundamentals course teaches classical kernel-side concepts (processes, semaphores, scheduling, paging, file allocation) cleanly within its stated depth bound, but every devops_sre skill the market demands at \u226530% (Docker 100%, Bash 100%, Kubernetes 83%, Terraform/CI-CD/AWS 75%, Prometheus/GitHub Actions/on-call 67%, Helm/Datadog 58%, etc.) belongs to the modern container/cloud/observability tooling domain that is explicitly out of this course's scope and has 0% partial coverage in any slide \u2014 so no in-domain extensions can legitimately be recommended; these are out-of-domain curriculum-design gaps, not in-course gaps."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "subject_area": "Software engineering \u2014 process, lifecycle, and project management",
+  "key_topics": [
+    "SDLC models (waterfall, incremental development, reuse-oriented)",
+    "Agile methods and Scrum sprint ceremonies",
+    "Extreme Programming practices (TDD, pair programming, refactoring, user stories)",
+    "Requirements engineering (elicitation, specification, validation, change management)",
+    "UML system modeling (use case, sequence, class, state diagrams)",
+    "Software testing strategies (unit, integration, system, acceptance testing)",
+    "Software evolution, legacy systems, and reengineering",
+    "Project risk management (identification, analysis, planning, monitoring)",
+    "Project scheduling and cost estimation (COCOMO II, algorithmic models)",
+    "Software engineering ethics and ACM/IEEE Code of Ethics"
+  ],
+  "one_liner": "Software engineering process, lifecycle, and project management \u2014 covering SDLC models, agile/Scrum, requirements engineering, UML modeling, testing strategies, software evolution, project planning, and cost estimation (COCOMO II) \u2014 does NOT cover programming language implementation, specific frameworks, databases, infrastructure, or deployment.",
+  "relevant_roles": [
+    "fullstack",
+    "backend",
+    "devops_sre"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "input_tokens": 45881,
+    "cache_creation_input_tokens": 2132,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 318
+  }
+}

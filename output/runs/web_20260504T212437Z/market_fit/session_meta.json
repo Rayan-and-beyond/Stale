@@ -1,0 +1,15 @@
+{
+  "run_id": "20260504T213216Z",
+  "role": "devops_sre",
+  "courses": {
+    "Fundamentals of Communications and Networks": {
+      "filename": "fundamentals_of_communications_and_networks.txt",
+      "mount_path": "/workspace/curriculum/fundamentals_of_communications_and_networks.txt"
+    }
+  },
+  "postings": {
+    "filename": "job_postings.json",
+    "mount_path": "/workspace/data/job_postings.json"
+  },
+  "started_at": "2026-05-04T21:32:38.809147+00:00"
+}

@@ -1,0 +1,10 @@
+{
+  "run_id": "20260428T132558Z",
+  "courses": {
+    "AI": {
+      "filename": "ai.txt",
+      "mount_path": "/workspace/curriculum/ai.txt"
+    }
+  },
+  "started_at": "2026-04-28T13:26:01.352862+00:00"
+}

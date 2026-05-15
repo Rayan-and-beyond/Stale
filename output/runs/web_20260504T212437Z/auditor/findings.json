@@ -1,0 +1,66 @@
+{
+  "findings": [
+    {
+      "course": "fundamentals_of_communications_and_networks",
+      "slide_ref": "Week 12 _13 _ 14 - Application Layer.pptx slide 14",
+      "claim": "HTTP 1.1 [RFC 7320]",
+      "status": "wrong",
+      "severity": "medium",
+      "citation_url": "https://www.rfc-editor.org/rfc/rfc7320",
+      "citation_excerpt": "URI Design and Ownership",
+      "suggested_replacement": "RFC 7320 is titled 'URI Design and Ownership' and has nothing to do with HTTP/1.1. The HTTP/1.1 messaging spec is currently RFC 9112 (which obsoletes RFC 7230); HTTP semantics are in RFC 9110. Update the citation to RFC 9110/9112 (or, if older material is desired, RFC 7230)."
+    },
+    {
+      "course": "fundamentals_of_communications_and_networks",
+      "slide_ref": "Week 12 _13 _ 14 - Application Layer.pptx slide 16",
+      "claim": "object can be HTML file, JPEG image, Java applet, audio file,\u2026",
+      "status": "dead",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/applet/Applet.html",
+      "citation_excerpt": "The Applet API is deprecated, no replacement.",
+      "suggested_replacement": "Remove 'Java applet' from the list of web-page object types. The Applet API was deprecated in JDK 9 (JEP 289), deprecated for removal in JDK 17 (JEP 398), and all major browsers have removed support for the NPAPI Java plug-in. Use HTML5/JavaScript/WebAssembly instead."
+    },
+    {
+      "course": "fundamentals_of_communications_and_networks",
+      "slide_ref": "Week 12 _13 _ 14 - Application Layer.pptx slide 42",
+      "claim": "RFC 2822 defines syntax for e-mail message itself",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://www.rfc-editor.org/rfc/rfc5322",
+      "citation_excerpt": "Obsoletes: 2822",
+      "suggested_replacement": "Cite RFC 5322 (Internet Message Format, October 2008), which obsoletes RFC 2822. RFC 5322 has itself been updated by RFC 6854."
+    },
+    {
+      "course": "fundamentals_of_communications_and_networks",
+      "slide_ref": "Week 15 - VPNs.pptx slide 5",
+      "claim": "Most common VPN communications protocol standards: Point-to-Point Tunneling Protocol (PPTP) for individual client to server connections; Layer 2 Tunneling Protocol (L2TP) for individual client to server connections",
+      "status": "insecure",
+      "severity": "high",
+      "citation_url": "https://learn.microsoft.com/en-us/windows-server/remote/remote-access/configure-vpn-protocols",
+      "citation_excerpt": "Beginning with Windows Server 2025, new RRAS setups don't accept VPN connections based on PPTP and L2TP protocols.",
+      "suggested_replacement": "Do not present PPTP and L2TP as 'most common' VPN standards. Microsoft formally deprecated both in Windows Server and explicitly recommends against their use 'due to their lack of security features'. Teach IKEv2/IPsec, OpenVPN, WireGuard, and SSTP instead; if PPTP/L2TP are mentioned, frame them as legacy/insecure for historical context only (PPTP's MS-CHAPv2 has been broken since 2012)."
+    },
+    {
+      "course": "fundamentals_of_communications_and_networks",
+      "slide_ref": "Week 15 - VPNs.pptx slide 5",
+      "claim": "IPsec is built into IPv6 standard and is implemented as an add-on to IPv4",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://www.rfc-editor.org/rfc/rfc6434",
+      "citation_excerpt": "Previously, IPv6 mandated implementation of IPsec and recommended the key management approach of IKE.  This document updates that recommendation by making support of the IPsec Architecture [RFC4301] a SHOULD for all IPv6 nodes.",
+      "suggested_replacement": "Update the slide to reflect that IPv6 no longer mandates IPsec. RFC 6434 (Dec 2011), and its successor RFC 8504, downgraded IPsec from MUST to SHOULD for IPv6 nodes. IPsec is available for both IPv4 and IPv6 but is not a built-in mandatory part of IPv6 in current standards."
+    }
+  ],
+  "summary": {
+    "total_findings": 5,
+    "by_severity": {
+      "critical": 0,
+      "high": 1,
+      "medium": 3,
+      "low": 1
+    },
+    "courses_audited": [
+      "fundamentals_of_communications_and_networks"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "target_role": "backend",
+  "prescriptions": [],
+  "summary": {
+    "total_prescriptions": 0,
+    "top_3_headline": "No prescriptions are issued. The Market-fit agent surfaced zero in-scope gaps (gap_count = 0) because every backend skill demanded by \u226530% of postings \u2014 SQL (100%), Docker (92%), Postgres (92%), REST APIs (92%), AWS (83%), unit testing (83%), Git (75%), Linux (75%), CI/CD (67%), microservices (67%), Kubernetes (58%), OAuth (58%), Redis (58%), GraphQL (50%), JWT (50%), Kafka (50%) \u2014 has 0% partial coverage in the slides and is cross-domain to algorithm theory. Under the extend-partial-coverage rule (Rule 1) and the course's depth bound (classical pseudocode-level algorithms, Rule 2), none of these can be honestly grafted onto an existing CS 412 chapter without becoming a new course.",
+    "coverage_note": "These prescriptions close 0% of the live backend job-market gap, and that is the correct, honest answer for this course. CS 412 is doing exactly what a classical algorithms course should do \u2014 asymptotic analysis, divide-and-conquer, DP, balanced BSTs, BFS/DFS at the pseudocode level \u2014 and the backend market gap (SQL/Docker/Postgres/REST/AWS/K8s/Kafka/Redis/OAuth/JWT/microservices) is a curriculum-level concern that belongs in a separate Databases, Systems, Networks, or Cloud/DevOps course, not in CS 412. Recommending those topics here would violate the course's stated depth bound and the extend-partial-coverage rule. The top backend-market signals to relay to the program's curriculum committee (not to CS 412) are: SQL + Postgres (~96% combined), containerization with Docker/Kubernetes (~75% combined), REST/GraphQL API design (~71% combined), and AWS cloud deployment (83%) \u2014 these warrant dedicated coursework elsewhere in the major."
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "target_role": "backend",
+  "prescriptions": [
+    {
+      "rank": 1,
+      "topic": "Hands-on Git: distributed version control, branching strategies, pull requests, merge-conflict resolution, and trunk-based development",
+      "skill_keywords": [
+        "git",
+        "branching",
+        "pull request",
+        "merge conflict",
+        "trunk-based development",
+        "distributed version control"
+      ],
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_002",
+        "post_003",
+        "post_006",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_010",
+        "post_011",
+        "post_012"
+      ],
+      "fits_in_course": "software_engineering",
+      "fits_in_course_rationale": "Configuration management / version management is already a declared topic in Ch7 Implementation (Slide 46). The natural fix is to replace the abstract 'version management system' treatment with a concrete Git module that still belongs to the process-and-lifecycle scope of the course \u2014 branching strategies, pull-request review workflow, and merge-conflict resolution are process practices, not infrastructure or framework knowledge.",
+      "prerequisite_chain": [
+        {
+          "skill": "Generic configuration management / version management concept",
+          "already_taught_in": "software_engineering"
+        },
+        {
+          "skill": "Incremental / iterative development",
+          "already_taught_in": "software_engineering"
+        },
+        {
+          "skill": "Command-line basics",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 14,
+      "headline_one_liner": "Upgrade Ch7's tool-less 'version management' slide to a real Git workflow \u2014 the substrate every real-time distributed-systems team commits, reviews, and ships on."
+    },
+    {
+      "rank": 2,
+      "topic": "Microservices architecture pattern: service decomposition, bounded contexts, inter-service communication, and distributed-system trade-offs (CAP, eventual consistency, saga patterns)",
+      "skill_keywords": [
+        "microservices",
+        "service decomposition",
+        "bounded contexts",
+        "cap theorem",
+        "eventual consistency",
+        "saga"
+      ],
+      "market_frequency_pct": 0.667,
+      "posting_refs": [
+        "post_001",
+        "post_002",
+        "post_004",
+        "post_005",
+        "post_007",
+        "post_008",
+        "post_009",
+        "post_011"
+      ],
+      "fits_in_course": "software_engineering",
+      "fits_in_course_rationale": "Architectural design is an explicit chapter (Ch6) and currently teaches MVC / Layered / Repository / Client-Server / Pipe-and-Filter. Microservices is the next architectural pattern in that same catalog \u2014 the addition stays inside the course's declared 'architectural patterns' subject area without bleeding into framework-specific implementation. It can be taught as a pattern with structure, when-to-use, and trade-offs, in the same shape as the existing GoF and architectural patterns.",
+      "prerequisite_chain": [
+        {
+          "skill": "Architectural patterns: MVC, Layered, Repository, Client-Server, Pipe-and-Filter",
+          "already_taught_in": "software_engineering"
+        },
+        {
+          "skill": "4+1 architectural view model",
+          "already_taught_in": "software_engineering"
+        },
+        {
+          "skill": "Functional vs. non-functional requirements specification",
+          "already_taught_in": "software_engineering"
+        },
+        {
+          "skill": "UML modeling: component / sequence diagrams for inter-service interaction",
+          "already_taught_in": "software_engineering"
+        }
+      ],
+      "estimated_learning_hours": 18,
+      "headline_one_liner": "Extend Ch6's pattern catalog past client-server into microservices \u2014 the architectural vocabulary 8 of 12 backend roles, and every real-time distributed-systems posting, expect graduates to already speak."
+    },
+    {
+      "rank": 3,
+      "topic": "CI/CD pipelines as a software-engineering process practice: automated build, integration, test, and release pipelines",
+      "skill_keywords": [
+        "ci/cd",
+        "continuous integration",
+        "continuous delivery",
+        "build automation",
+        "release pipeline",
+        "automated rollback"
+      ],
+      "market_frequency_pct": 0.667,
+      "posting_refs": [
+        "post_001",
+        "post_003",
+        "post_004",
+        "post_005",
+        "post_006",
+        "post_008",
+        "post_010",
+        "post_012"
+      ],
+      "fits_in_course": "software_engineering",
+      "fits_in_course_rationale": "Build/integrate/release automation is squarely a software-engineering PROCESS topic \u2014 it is the modern realization of 'frequent system builds' and the test-harness culture the course already endorses (Ch3 TDD, Ch8 Testing). The fix also requires retiring Ch3 Slide 53's 2014-era claim that 'continuous integration is practically impossible' at scale, which is no longer the industry consensus. Treated as a process practice (pipelines, gates, automated rollback), it fits the course scope without crossing into infrastructure-tool teaching.",
+      "prerequisite_chain": [
+        {
+          "skill": "Test-driven development (TDD) with JUnit",
+          "already_taught_in": "software_engineering"
+        },
+        {
+          "skill": "Unit, component, interface, system, regression, release, and acceptance testing",
+          "already_taught_in": "software_engineering"
+        },
+        {
+          "skill": "Generic configuration management / version management",
+          "already_taught_in": "software_engineering"
+        },
+        {
+          "skill": "Hands-on Git workflow",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 12,
+      "headline_one_liner": "Replace Ch3's 'CI is practically impossible' slide with a real CI/CD pipeline module \u2014 the deploy-cadence backbone real-time distributed-systems teams rely on for safe multi-service rollout and rollback."
+    }
+  ],
+  "summary": {
+    "total_prescriptions": 3,
+    "top_3_headline": "The three in-scope, market-validated process gaps are: (1) hands-on Git as the concrete instantiation of the course's 'version management' abstraction (75% of postings, 9/12), (2) microservices added to Ch6's architectural-pattern catalog (66.7%, 8/12) \u2014 the most directly relevant gap to the student's real-time distributed-systems specialization, and (3) CI/CD pipelines as a first-class process practice replacing the curriculum's outdated 'CI is practically impossible' position (66.7%, 8/12). Together these touch every one of the 12 backend postings analyzed.",
+    "coverage_note": "These three prescriptions close 100% of the gaps surfaced by Market-fit (3 of 3) and are the only in-scope deltas \u2014 Market-fit's other top-frequency demands (SQL, Docker, Postgres, REST API, AWS, Linux, Redis, Kubernetes, Kafka, Python, Go, OAuth/JWT, Nginx, Prometheus, GraphQL) are out of this course's declared scope (programming-language implementation, frameworks, databases, infrastructure, deployment) and therefore cannot be addressed here without violating the scope contract \u2014 they are gaps for OTHER courses in the curriculum to own, not this one. Honest read: fixing these three brings the software-engineering-process course up to 2026 backend practice; it does not by itself make a student job-ready for backend roles."
+  }
+}

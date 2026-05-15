@@ -1,0 +1,26 @@
+{
+  "course": "AI",
+  "course_dir_name": "AI",
+  "files_saved": [
+    "Week 1 - Intro to AI.pdf",
+    "Week 10 Introduction to Natural Language Processing.pdf",
+    "Week 11 Fuzzy Logic _Type-1 Fuzzy Logic_.pdf",
+    "Week 12 Intro to DS and ML.pdf",
+    "Week 2 - Intelligent Agents .pdf",
+    "Week 3.1 Problem solving Agents PART 1.pdf",
+    "Week 3.2.pdf",
+    "Week 4-Informed Search Algorithms .pdf",
+    "Week 6 Logical Agents 2.pdf",
+    "Week 7  Knowledge Representation _Knowledge based Agents_.pdf",
+    "Week 8 Knowledge Representation _Ontology_.pdf",
+    "Week 9 Expert Systems.pdf"
+  ],
+  "files_skipped": [],
+  "started_at": "2026-04-28T13:25:57.030489+00:00",
+  "role_text": "ML / data engineer",
+  "role": "ml_data",
+  "specialization": null,
+  "role_confidence": "high",
+  "role_reasoning": "User explicitly stated ML and data engineering roles, which map directly to the ml_data enum.",
+  "role_resolved_at": "2026-04-28T13:26:28.964287+00:00"
+}

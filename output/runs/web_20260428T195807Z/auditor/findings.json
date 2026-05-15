@@ -1,0 +1,56 @@
+{
+  "findings": [
+    {
+      "course": "operating_systems",
+      "slide_ref": "Ch1-2 - Introduction_1_.pptx, Slide 2 (and footer of every slide deck in the course)",
+      "claim": "Textbook cited as 'Silberschatz, Galvin and Gagne, Operating System Concepts \u2013 9th Edition' (\u00a92013); footer 'Operating System Concepts \u2013 9th Edition' appears on virtually every slide.",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://www.os-book.com/OS10/",
+      "citation_excerpt": "Welcome to the Web Page supporting Operating System Concepts, Tenth Edition. This new edition (April 15, 2018), which is published by John Wiley & Sons, is available for purchase\u2026",
+      "suggested_replacement": "Adopt the 10th Edition (2018) of Operating System Concepts. The 10th edition revises terminology (e.g., 'NVM device' alongside HDD), updates examples (drops obsolete Solaris/Mac-OS-X references), and corrects sector-size guidance (512 B or 4,096 B). Update the footer and bibliographic citations accordingly."
+    },
+    {
+      "course": "operating_systems",
+      "slide_ref": "ch4 - Threads.pptx, Slide 12 ('Mac OS X iOS Android'); ch4 - Threads.pptx, Slide 20 ('Common in UNIX operating systems (Solaris, Linux & Mac OS X)'); Ch1-2 - Introduction_1_.pptx, Slide 17 ('POSIX API for POSIX-based systems (including \u2026 Mac OS X)')",
+      "claim": "Slides repeatedly refer to Apple's desktop operating system as 'Mac OS X'.",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://www.apple.com/newsroom/2016/06/apple-previews-major-update-with-macos-sierra/",
+      "citation_excerpt": "With its debut on Mac, Siri is now on all four Apple software platforms \u2014 iOS, macOS, watchOS and tvOS\u2026 Apple today previewed macOS Sierra, a major update to the world's most advanced desktop operating system\u2026",
+      "suggested_replacement": "Use the current name 'macOS' (rebranded from OS X / Mac OS X at WWDC 2016 with the release of macOS 10.12 Sierra). Where a historical context is intended, write 'macOS (formerly Mac OS X / OS X)'."
+    },
+    {
+      "course": "operating_systems",
+      "slide_ref": "ch4 - Threads.pptx, Slide 15 ('Many-to-One Model'): 'Few systems currently use this model: Solaris Green Threads, GNU Portable Threads'",
+      "claim": "Slide presents 'GNU Portable Threads' (and 'Solaris Green Threads') as current example implementations of the many-to-one threading model.",
+      "status": "dead",
+      "severity": "medium",
+      "citation_url": "https://www.gnu.org/software/pth/",
+      "citation_excerpt": "Copyright \u00a9 1999-2006 Ralf S. Engelschall <rse@gnu.org>\u2026 Last Modified: 2006-06-08 20:20:09",
+      "suggested_replacement": "Drop 'GNU Portable Threads' as a current example \u2014 the project's last release (2.0.7) is from 8 June 2006 and the GNU page itself has not been updated since then; even GnuPG, its largest historical user, has migrated to a replacement (nPth) that wraps the system's native threads. 'Solaris Green Threads' was likewise removed from Solaris in the early 2000s. If a many-to-one example is needed, present it as historical (e.g., 'early Solaris (Green Threads, removed in Solaris 9, 2002), early Java threads on Linux (Green Threads, removed when LinuxThreads/NPTL became standard)') and note that essentially all general-purpose OSes today use the one-to-one model."
+    },
+    {
+      "course": "operating_systems",
+      "slide_ref": "ch13_ch14_File System.pptx, Slide 17 ('File-System Structure')",
+      "claim": "'I/O transfers performed in blocks of sectors (usually 512 bytes)'.",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://docs.kernel.org/admin-guide/abi-stable.html",
+      "citation_excerpt": "Storage devices may report a physical block size that is bigger than the logical block size (for instance a drive with 4KB physical sectors exposing 512-byte logical blocks to the operating system).",
+      "suggested_replacement": "State that modern storage devices use either 512-byte or 4,096-byte (4 KiB / 'Advanced Format') sectors, and that solid-state / NVM devices essentially always use 4 KiB blocks. (The 10th-edition speaker notes already say this \u2014 'Depending on the disk drive, sector size is usually 512 bytes or 4,096 bytes. NVM devices usually have blocks of 4,096 bytes' \u2014 but the slide text was not updated to match.) Also distinguish 'logical block size' (often still 512 B for compatibility) from 'physical block size' (commonly 4 KiB)."
+    }
+  ],
+  "summary": {
+    "total_findings": 4,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 3
+    },
+    "courses_audited": [
+      "operating_systems"
+    ]
+  }
+}

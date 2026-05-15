@@ -1,0 +1,15 @@
+{
+  "run_id": "20260428T132628Z",
+  "role": "ml_data",
+  "courses": {
+    "AI": {
+      "filename": "ai.txt",
+      "mount_path": "/workspace/curriculum/ai.txt"
+    }
+  },
+  "postings": {
+    "filename": "job_postings.json",
+    "mount_path": "/workspace/data/job_postings.json"
+  },
+  "started_at": "2026-04-28T13:26:34.593047+00:00"
+}

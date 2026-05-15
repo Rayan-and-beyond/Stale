@@ -1,0 +1,218 @@
+{
+  "findings": [
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 10 Exploring Maps and Location Based Services_.pdf page 3",
+      "claim": "3- Replace YOUR_API_KEY with You API KEY: AIza<REDACTED> -OR- AIza<REDACTED>",
+      "status": "insecure",
+      "severity": "critical",
+      "citation_url": "https://cloud.google.com/docs/authentication/api-keys-best-practices",
+      "citation_excerpt": "API keys hardcoded in the source code or stored in a repository are open to interception or theft by bad actors.",
+      "suggested_replacement": "Never display real Google API keys in lecture slides or code samples. Teach students to load keys from local.properties (excluded via .gitignore), Android Keystore, environment variables, or a backend proxy, and to apply API key restrictions in the Google Cloud console (application restrictions to the app's package name + SHA-1, plus API restrictions to the Maps SDK only). The two keys shown should be revoked from the project they belong to.",
+      "verification": {
+        "status": "verified",
+        "url": "https://cloud.google.com/docs/authentication/api-keys-best-practices",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 11 Threads in Android-2.pdf pages 33-52",
+      "claim": "The AsyncTask class implements a best practice pattern for moving your time-consuming(short-lived) operations onto a background Thread and synchronizing with the UI Thread...",
+      "status": "outdated",
+      "severity": "high",
+      "citation_url": "https://developer.android.com/reference/android/os/AsyncTask",
+      "citation_excerpt": "This class was deprecated in API level 30. Use the standard java.util.concurrent or Kotlin concurrency utilities instead.",
+      "suggested_replacement": "Replace AsyncTask instruction with Kotlin coroutines (viewModelScope/lifecycleScope with Dispatchers.IO), java.util.concurrent.Executors + Handler(Looper.getMainLooper()), or WorkManager for deferrable background work. Note that AsyncTask leaks Context across configuration changes, swallows exceptions in doInBackground, and has been deprecated since Android 11.",
+      "verification": {
+        "status": "verified",
+        "url": "https://developer.android.com/reference/android/os/AsyncTask",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 4.pdf pages 15-19",
+      "claim": "Commonly\u2010used Android containers are: \u2022 Absolute Layout ... An Absolute Layout lets you specify exact locations (x/y coordinates) of its children.",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://developer.android.com/reference/android/widget/AbsoluteLayout",
+      "citation_excerpt": "This class was deprecated in API level 3. Use FrameLayout, RelativeLayout or a custom layout instead.",
+      "suggested_replacement": "Drop AbsoluteLayout from the curriculum entirely. It has been deprecated since 2009 (API 3, Cupcake). Modern Android UI should be taught with ConstraintLayout (the default in Android Studio templates), LinearLayout, FrameLayout, or \u2014 preferably \u2014 Jetpack Compose.",
+      "verification": {
+        "status": "verified",
+        "url": "https://developer.android.com/reference/android/widget/AbsoluteLayout",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 4.pdf pages 6-50 (XML examples throughout)",
+      "claim": "android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\"",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://developer.android.com/reference/android/view/ViewGroup.LayoutParams#FILL_PARENT",
+      "citation_excerpt": "This value is deprecated starting in API Level 8 and replaced by MATCH_PARENT",
+      "suggested_replacement": "Replace every `fill_parent` in XML examples with `match_parent`. fill_parent has been deprecated since Android 2.2 (API 8, May 2010); the slides also use `match_parent` in some examples (Lecture 5), so the inconsistency teaches outdated naming.",
+      "verification": {
+        "status": "verified",
+        "url": "https://developer.android.com/reference/android/view/ViewGroup.LayoutParams#FILL_PARENT",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 6 _Database and Content Providers_.pdf page 6",
+      "claim": "MODE_WORLD_READABLE: File creation mode: allow all other applications to have read access to the created file. MODE_WORLD_WRITEABLE: File creation mode: allow all other applications to have write access to the created file.",
+      "status": "insecure",
+      "severity": "high",
+      "citation_url": "https://developer.android.com/reference/android/content/Context#MODE_WORLD_READABLE",
+      "citation_excerpt": "This constant was deprecated in API level 17. Creating world-readable files is very dangerous, and likely to cause security holes in applications.",
+      "suggested_replacement": "Remove MODE_WORLD_READABLE / MODE_WORLD_WRITEABLE from the curriculum. They have been deprecated since Android 4.2 (API 17) and throw SecurityException on targetSdk \u2265 24. Teach MODE_PRIVATE plus a properly-exported ContentProvider (with android:permission) for cross-app data sharing, or FileProvider with content:// URIs for sharing files.",
+      "verification": {
+        "status": "verified",
+        "url": "https://developer.android.com/reference/android/content/Context#MODE_WORLD_READABLE",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 5 _week 5_.pdf pages 5-25",
+      "claim": "FragmentManager fragmentManager = getFragmentManager(); ... 1. Extend Fragment OR one of its subclasses (DialogFragment, ListFragment, PreferenceFragment, WebViewFragment) ... import android.app.Fragment;",
+      "status": "outdated",
+      "severity": "high",
+      "citation_url": "https://developer.android.com/reference/android/app/Fragment",
+      "citation_excerpt": "This class was deprecated in API level 28. Use the Jetpack Fragment Library Fragment for consistent behavior across all devices and access to Lifecycle.",
+      "suggested_replacement": "Migrate the entire Fragment chapter from `android.app.Fragment` to `androidx.fragment.app.Fragment`. Have the activity extend `AppCompatActivity` (or `FragmentActivity`) and use `getSupportFragmentManager()`. The platform Fragment, ListFragment, DialogFragment, PreferenceFragment, and WebViewFragment have all been deprecated since API 28 (Android 9, 2018) and do not receive Lifecycle/ViewModel integration.",
+      "verification": {
+        "status": "verified",
+        "url": "https://developer.android.com/reference/android/app/Fragment",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 6 _Database and Content Providers_.pdf pages 9, 10, 22, 23, 24",
+      "claim": "db.execSQL(\"INSERT INTO student VALUES('\"+editRollno.getText()+\"','\"+editName.getText()+ \"','\"+editMarks.getText()+\"');\"); ... Cursor c=db.rawQuery(\"SELECT * FROM student WHERE rollno='\"+editRollno.getText()+\"'\", null);",
+      "status": "insecure",
+      "severity": "critical",
+      "citation_url": "https://owasp.org/www-community/attacks/SQL_Injection",
+      "citation_excerpt": "A successful SQL injection exploit can read sensitive data from the database, modify database data (Insert/Update/Delete), execute administration operations on the database",
+      "suggested_replacement": "Every CRUD example in the StudentDB / EmployeeDB lectures concatenates `EditText` user input directly into SQL strings \u2014 a textbook SQL injection vulnerability. Rewrite using parameterised APIs: `db.execSQL(sql, new Object[]{name, marks})` for writes, `db.rawQuery(\"SELECT ... WHERE rollno = ?\", new String[]{rollno})` for reads, or `db.insert/update/delete(...)` with `ContentValues` and `?`-placeholder selection arguments. Even better, teach Room, which forces compile-time-checked parameterised queries.",
+      "verification": {
+        "status": "verified",
+        "url": "https://owasp.org/www-community/attacks/SQL_Injection",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 8.pdf pages 12, 17-24",
+      "claim": "startActivityForResult(in, 1); ... startActivityForResult(intent, SHOW_SUBACTIVITY); ... public void onActivityResult(int requestCode, int resultCode, Intent data) {...}",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://developer.android.com/training/basics/intents/result",
+      "citation_excerpt": "Google strongly recommends using the Activity Result APIs introduced in AndroidX Activity and Fragment classes.",
+      "suggested_replacement": "Replace the `startActivityForResult` / `onActivityResult` examples with the Activity Result APIs: `registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result -> ... }`. The new APIs are deprecation-free, type-safe via `ActivityResultContract`, survive process death, and work uniformly inside Fragments. The old APIs are flagged deprecated in androidx.activity 1.2+ (released 2021).",
+      "verification": {
+        "status": "verified",
+        "url": "https://developer.android.com/training/basics/intents/result",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 6 _Database and Content Providers_.pdf page 2",
+      "claim": "Datasets \u2013can't exceed file system limit or 2TB",
+      "status": "wrong",
+      "severity": "low",
+      "citation_url": "https://www.sqlite.org/limits.html",
+      "citation_excerpt": "the database file can grow to be as large as about 281 terabytes",
+      "suggested_replacement": "Update the SQLite size limit. Per the official SQLite limits page, the theoretical maximum database size is approximately 281 terabytes (with the maximum 65,536-byte page size), bounded in practice by the host filesystem. The 2 TB figure in the slide is off by more than two orders of magnitude.",
+      "verification": {
+        "status": "verified",
+        "url": "https://www.sqlite.org/limits.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 2 _week 2_.pdf pages 32-36",
+      "claim": "Dalvik Virtual Machine \u2713Providing environment on which every Android application runs ... Dalvik interprets Java bytecode.",
+      "status": "outdated",
+      "severity": "high",
+      "citation_url": "https://source.android.com/docs/core/runtime",
+      "citation_excerpt": "Android runtime (ART) is the managed runtime used by apps and some system services on Android. ART and its predecessor Dalvik were originally created specifically for the Android project.",
+      "suggested_replacement": "Rewrite the runtime section to teach ART (Android Runtime) as the current runtime \u2014 Dalvik was replaced by ART as the default runtime in Android 5.0 (Lollipop, 2014) and removed entirely in later versions. Cover ART's hybrid AOT + JIT + profile-guided compilation, dex2oat, and improved garbage collection. Mention Dalvik only as historical context (and note that .dex bytecode is still the distribution format consumed by ART).",
+      "verification": {
+        "status": "verified",
+        "url": "https://source.android.com/docs/core/runtime",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 1 _Mobile Application Trends_ Android OS_.pdf page 50",
+      "claim": "Android SDK Features ... \u2022 Cloud to Device Messaging",
+      "status": "dead",
+      "severity": "high",
+      "citation_url": "https://developers.google.com/android/c2dm",
+      "citation_excerpt": "C2DM was officially deprecated on June 26, 2012, and was shut down completely as of July 30, 2015.",
+      "suggested_replacement": "Replace 'Cloud to Device Messaging' with 'Firebase Cloud Messaging (FCM)'. C2DM was deprecated in 2012 and the servers were turned off in 2015; its successor GCM was also deprecated and shut down in 2019. Any push-notification material in the course should be taught against FCM via the Firebase SDK.",
+      "verification": {
+        "status": "verified",
+        "url": "https://developers.google.com/android/c2dm",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 10 Exploring Maps and Location Based Services_.pdf pages 30-31",
+      "claim": "Geocoder geocoder = new Geocoder(this); try { addressList = geocoder.getFromLocationName(locatiion, 1); ... }",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://developer.android.com/reference/android/location/Geocoder",
+      "citation_excerpt": "This method was deprecated in API level 33. Use getFromLocationName(String,int,GeocodeListener) instead to avoid blocking a thread waiting for results.",
+      "suggested_replacement": "Replace the synchronous `getFromLocationName(String, int)` call (which blocks the calling thread on a network lookup and was deprecated in API 33 / Android 13) with the asynchronous overload `getFromLocationName(String, int, Geocoder.GeocodeListener)` on Android 13+, falling back to running the legacy call inside a coroutine / Executor on older devices. The current code, executed on the UI thread, will trigger a NetworkOnMainThreadException on any modern device.",
+      "verification": {
+        "status": "verified",
+        "url": "https://developer.android.com/reference/android/location/Geocoder",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "mobile_application_development",
+      "slide_ref": "Lecture 7.pdf pages 26-31",
+      "claim": "Android 3.0 (API level 11) introduced the Loader class. ... CursorLoader(Context context, Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://developer.android.com/reference/android/content/CursorLoader",
+      "citation_excerpt": "This class was deprecated in API level 28. Use the Support Library CursorLoader",
+      "suggested_replacement": "Stop teaching the platform `android.content.CursorLoader` and `LoaderManager` \u2014 both were deprecated in API 28 (2018). For new content-provider/database UIs, teach Room + Flow/LiveData + ViewModel (officially recommended) or, if students must use a Cursor pipeline, the AndroidX `androidx.loader.content.CursorLoader`. The slide's `getSupportLoaderManager()` already hints at the AndroidX path; align the rest of the lecture with it.",
+      "verification": {
+        "status": "verified",
+        "url": "https://developer.android.com/reference/android/content/CursorLoader",
+        "content_type": "text/html"
+      }
+    }
+  ],
+  "summary": {
+    "total_findings": 13,
+    "by_severity": {
+      "critical": 2,
+      "high": 6,
+      "medium": 4,
+      "low": 2
+    },
+    "courses_audited": [
+      "mobile_application_development"
+    ]
+  },
+  "verification_summary": {
+    "by_status": {
+      "verified": 13
+    },
+    "kept": 13,
+    "dropped": 0
+  }
+}

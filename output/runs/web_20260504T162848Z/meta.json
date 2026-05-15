@@ -1,0 +1,26 @@
+{
+  "course": "Mobile Application Development",
+  "course_dir_name": "Mobile Application Development",
+  "files_saved": [
+    "Lecture 1 _Mobile Application Trends_ Android OS_.pdf",
+    "Lecture 10 Exploring Maps and Location Based Services_.pdf",
+    "Lecture 11 Threads in Android-2.pdf",
+    "Lecture 12 iOS Development.pdf",
+    "Lecture 2 _week 2_.pdf",
+    "Lecture 3 _week 3_ _1_.pdf",
+    "Lecture 4.pdf",
+    "Lecture 5 _week 5_.pdf",
+    "Lecture 6 _Database and Content Providers_.pdf",
+    "Lecture 7.pdf",
+    "Lecture 8.pdf",
+    "Lecture 9.pdf"
+  ],
+  "files_skipped": [],
+  "started_at": "2026-05-04T16:28:48.711652+00:00",
+  "role_text": "mobile developer",
+  "role": "mobile",
+  "specialization": null,
+  "role_confidence": "high",
+  "role_reasoning": "User specified mobile development with no distinctive focus area beyond the core role.",
+  "role_resolved_at": "2026-05-04T16:42:42.217045+00:00"
+}

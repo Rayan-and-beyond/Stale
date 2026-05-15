@@ -1,0 +1,22 @@
+{
+  "course": "Object Oriented Programming 2",
+  "course_dir_name": "Object Oriented Programming 2",
+  "files_saved": [
+    "Week 1 - Revision.pdf",
+    "Week 10 - Files Streams and Object Serialization ( Part 1 ).pdf",
+    "Week 11 Files Streams and Object Serialization ( Part 2 ).pdf",
+    "Week 12 - Concurrency.pdf",
+    "Week 2+3 - Exception Handling.pdf",
+    "Week 4 - GUI Components ( Part 1 ).pdf",
+    "Week 5 - GUI Components ( Part 2 ).pdf",
+    "Week 6 - GUI Components ( Part 3 ).pdf",
+    "Week 7 - Accessing DB ( Part 1 ).pdf",
+    "Week 8 - Accessing DB ( Part 2 ).pdf",
+    "Week 9 - Accessing DB ( Part 3 ).pdf"
+  ],
+  "files_skipped": [],
+  "started_at": "2026-05-06T13:52:57.676227+00:00",
+  "_purpose": "OOP 2 stress test on refactored two-stage auditor",
+  "role": "backend",
+  "role_text": "backend engineer"
+}

@@ -1,0 +1,535 @@
+{
+  "target_role": "fullstack",
+  "taught_skillset": [
+    {
+      "skill": "Software lifecycle models (Waterfall, Incremental, Reuse-oriented / Integration & Configuration)",
+      "courses": [
+        "L2-Ch2 SW Processes.pptx"
+      ],
+      "evidence": "Ch2 Slide 7: 'The waterfall model \u2014 Plan-driven model. Separate and distinct phases of specification and development. Incremental development \u2014 Specification, development and validation are interleaved... Integration and configuration \u2014 The system is assembled from existing configurable components.'"
+    },
+    {
+      "skill": "Agile manifesto principles",
+      "courses": [
+        "Ch3. Agile SW Dev-V2.pptx"
+      ],
+      "evidence": "Ch3 Slide 5 (Agile manifesto): 'Individuals and interactions over processes / Tools over comprehensive documentation / Customer collaboration over contract negotiation / Responding to change over following a plan.'"
+    },
+    {
+      "skill": "Scrum (sprints, product backlog, Scrum master, daily Scrum, Scrum-of-Scrums)",
+      "courses": [
+        "Ch3. Agile SW Dev-V2.pptx"
+      ],
+      "evidence": "Ch3 Slide 35: 'Sprints are fixed length, normally 2\u20134 weeks. The starting point for planning is the product backlog... selection phase involves all of the project team who work with the customer to select the features...'"
+    },
+    {
+      "skill": "Extreme Programming practices (pair programming, refactoring, user stories, on-site customer)",
+      "courses": [
+        "Ch3. Agile SW Dev-V2.pptx"
+      ],
+      "evidence": "Ch3 Slide 14 (Influential XP practices): 'User stories for specification / Refactoring / Test-first development / Pair programming.'"
+    },
+    {
+      "skill": "Test-Driven Development (TDD) using JUnit-style automated test frameworks",
+      "courses": [
+        "Ch3. Agile SW Dev-V2.pptx",
+        "Ch8.Testing.pptx"
+      ],
+      "evidence": "Ch8 Slide 23 (Automated testing): 'In automated unit testing, you make use of a test automation framework (such as JUnit) to write and run your program tests.' Ch3 Slide 22: 'Usually relies on a testing framework such as Junit.'"
+    },
+    {
+      "skill": "Requirements engineering process (elicitation, specification, validation, change management)",
+      "courses": [
+        "Ch4 Req Eng.pptx"
+      ],
+      "evidence": "Ch4 Slide 28: 'a number of generic activities common to all processes \u2014 Requirements elicitation; Requirements analysis; Requirements validation; Requirements management.'"
+    },
+    {
+      "skill": "Functional vs non-functional requirements with measurable metrics",
+      "courses": [
+        "Ch4 Req Eng.pptx"
+      ],
+      "evidence": "Ch4 Slide 25 (Usability requirements example): 'Medical staff shall be able to use all the system functions after four hours of training. After this training, the average number of errors made by experienced users shall not exceed two per hour of system use. (Testable non-functional requirement)'"
+    },
+    {
+      "skill": "User stories and scenarios for requirements specification",
+      "courses": [
+        "Ch3. Agile SW Dev-V2.pptx",
+        "Ch4 Req Eng.pptx"
+      ],
+      "evidence": "Ch4 Slide 45: 'Scenarios and user stories are real-life examples of how a system can be used. Stories and scenarios are a description of how a system may be used for a particular task.'"
+    },
+    {
+      "skill": "Ethnography for requirements discovery",
+      "courses": [
+        "Ch4 Req Eng.pptx"
+      ],
+      "evidence": "Ch4 Slide 41 (Ethnography): 'A social scientist spends a considerable time observing and analysing how people actually work.'"
+    },
+    {
+      "skill": "UML modeling \u2014 class diagrams, sequence diagrams, use case diagrams, state machine diagrams, activity diagrams",
+      "courses": [
+        "Ch5 System modeling.pptx"
+      ],
+      "evidence": "Ch5 Slide 6 (UML diagram types): 'Activity diagrams... Use case diagrams... Sequence diagrams... Class diagrams, which show the object classes in the system and the associations between these classes. State diagrams...'"
+    },
+    {
+      "skill": "Model-Driven Engineering / MDA (CIM, PIM, PSM)",
+      "courses": [
+        "Ch5 System modeling.pptx"
+      ],
+      "evidence": "Ch5 Slide 50 (Types of model): 'A computation independent model (CIM)... A platform independent model (PIM)... Platform specific models (PSM).'"
+    },
+    {
+      "skill": "Architectural patterns \u2014 MVC, Layered, Client-Server, Repository, Pipe-and-Filter",
+      "courses": [
+        "Ch6 Architectural design.pptx"
+      ],
+      "evidence": "Ch6 Slide 23: 'The Model-View-Controller (MVC) pattern.' Ch6 Slide 33: 'Client-server architecture / Distributed system model which shows how data and processing is distributed across a range of components.' Ch6 Slide 36: 'Pipe and filter architecture.'"
+    },
+    {
+      "skill": "Multi-tier web/application architecture (web server / app server / database server)",
+      "courses": [
+        "Ch6 Architectural design.pptx"
+      ],
+      "evidence": "Ch6 Slide 51: 'These systems are often implemented as multi-tier client server/architectures... The web server is responsible for all user communications, with the user interface implemented using a web browser; The application server is responsible for implementing application-specific logic... The database server moves information to and from the database and handles transaction management.'"
+    },
+    {
+      "skill": "Service-oriented systems and APIs (conceptual)",
+      "courses": [
+        "Ch1 Introduction.pptx",
+        "Ch5 System modeling.pptx"
+      ],
+      "evidence": "Ch5 Slide 55 (iLearn service integration): 'Integrated services are services which offer an API (application programming interface) and which can be accessed by other services through that API. Direct service-to-service communication is therefore possible.'"
+    },
+    {
+      "skill": "Object-oriented design process (context modeling, object identification, interface specification)",
+      "courses": [
+        "Ch7 Implementation.pptx"
+      ],
+      "evidence": "Ch7 Slide 7 (Process stages): 'Define the context and modes of use of the system; Design the system architecture; Identify the principal system objects; Develop design models; Specify object interfaces.'"
+    },
+    {
+      "skill": "Gang-of-Four design patterns (Observer, Fa\u00e7ade, Iterator, Decorator)",
+      "courses": [
+        "Ch7 Implementation.pptx"
+      ],
+      "evidence": "Ch7 Slide 38 (Design problems): 'Tell several objects that the state of some other object has changed (Observer pattern). Tidy up the interfaces to a number of related objects... (Fa\u00e7ade pattern). Provide a standard way of accessing the elements in a collection... (Iterator pattern). Allow for the possibility of extending the functionality of an existing class at run-time (Decorator pattern).'"
+    },
+    {
+      "skill": "Configuration management \u2014 version management, system integration, problem tracking (tool-agnostic)",
+      "courses": [
+        "Ch7 Implementation.pptx"
+      ],
+      "evidence": "Ch7 Slide 46 (Configuration management activities): 'Version management, where support is provided to keep track of the different versions of software components. Version management systems include facilities to coordinate development by several programmers. System integration... Problem tracking...'"
+    },
+    {
+      "skill": "Open-source license models (GPL, LGPL, BSD)",
+      "courses": [
+        "Ch7 Implementation.pptx"
+      ],
+      "evidence": "Ch7 Slide 59 (License models): 'The GNU General Public License (GPL)... The GNU Lesser General Public License (LGPL)... The Berkley Standard Distribution (BSD) License.'"
+    },
+    {
+      "skill": "Software testing levels (unit, component, system, release, user/acceptance)",
+      "courses": [
+        "Ch8.Testing.pptx"
+      ],
+      "evidence": "Ch8 Slide 18 (Development testing): 'Unit testing, where individual program units or object classes are tested... Component testing, where several individual units are integrated... System testing, where some or all of the components in a system are integrated...'"
+    },
+    {
+      "skill": "Equivalence partitioning and partition-based test case design",
+      "courses": [
+        "Ch8.Testing.pptx"
+      ],
+      "evidence": "Ch8 Slide 27: 'Each of these classes is an equivalence partition or domain where the program behaves in an equivalent way for each class member. Test cases should be chosen from each partition.'"
+    },
+    {
+      "skill": "Regression testing and automated test harnesses",
+      "courses": [
+        "Ch8.Testing.pptx"
+      ],
+      "evidence": "Ch8 Slide 48 (Regression testing): 'Regression testing is testing the system to check that changes have not \"broken\" previously working code... with automated testing, it is simple and straightforward. All tests are rerun every time a change is made to the program.'"
+    },
+    {
+      "skill": "Performance and stress testing (release-stage)",
+      "courses": [
+        "Ch8.Testing.pptx"
+      ],
+      "evidence": "Ch8 Slide 56 (Performance testing): 'Performance tests usually involve planning a series of tests where the load is steadily increased until the system performance becomes unacceptable. Stress testing is a form of performance testing where the system is deliberately overloaded...'"
+    },
+    {
+      "skill": "Software evolution, legacy-system management, refactoring and re-engineering",
+      "courses": [
+        "Ch9 Evolution.pptx"
+      ],
+      "evidence": "Ch9 Slide 55 (Refactoring): 'Refactoring involves modifying a program to improve its structure, reduce its complexity or make it easier to understand. When you refactor a program, you should not add functionality but rather concentrate on program improvement.'"
+    },
+    {
+      "skill": "Risk management process (identification, analysis, planning, monitoring)",
+      "courses": [
+        "L3-Ch22 Project management.pptx"
+      ],
+      "evidence": "Ch22 Slide 13 (The risk management process): 'Risk identification \u2014 Identify project, product and business risks; Risk analysis \u2014 Assess the likelihood and consequences of these risks; Risk planning... Risk monitoring...'"
+    },
+    {
+      "skill": "Team composition and motivation (task/self/interaction-oriented; Maslow needs)",
+      "courses": [
+        "L3-Ch22 Project management.pptx"
+      ],
+      "evidence": "Ch22 Slide 35: 'Task-oriented people, who are motivated by the work they do... Interaction-oriented people, who are motivated by the presence and actions of co-workers. Self-oriented people, who are principally motivated by personal success and recognition.'"
+    },
+    {
+      "skill": "Project scheduling \u2014 bar charts, activity networks, milestones, deliverables",
+      "courses": [
+        "L4-Ch23 Project planning-v2.pptx"
+      ],
+      "evidence": "Ch23 Slide 30 (Schedule presentation): 'Bar charts are the most commonly used representation for project schedules. They show the schedule as activities or resources against time. Activity networks \u2014 Show task dependencies.'"
+    },
+    {
+      "skill": "Algorithmic cost estimation with COCOMO II (application composition, early design, reuse, post-architecture)",
+      "courses": [
+        "L4-Ch23 Project planning-v2.pptx"
+      ],
+      "evidence": "Ch23 Slide 57 (COCOMO 2 models): 'Application composition model... Early design model... Reuse model... Post-architecture model.'"
+    },
+    {
+      "skill": "Agile planning game / story-points / team velocity / iteration & release planning",
+      "courses": [
+        "L4-Ch23 Project planning-v2.pptx"
+      ],
+      "evidence": "Ch23 Slide 40 (Story-based planning): 'Stories are assigned \"effort points\" reflecting their size and difficulty of implementation. The number of effort points implemented per day is measured giving an estimate of the team\u2019s \"velocity\".'"
+    },
+    {
+      "skill": "SEI Capability Maturity Model (Initial \u2192 Repeatable \u2192 Defined \u2192 Managed \u2192 Optimising)",
+      "courses": [
+        "L2-Ch2 SW Processes.pptx"
+      ],
+      "evidence": "Ch2 Slide 55 (The SEI capability maturity model): 'Initial \u2014 Essentially uncontrolled / Repeatable... / Defined... / Managed \u2014 Quality management strategies defined and used / Optimising \u2014 Process improvement strategies defined and used.'"
+    },
+    {
+      "skill": "Continuous integration (mentioned, framed as difficult at scale)",
+      "courses": [
+        "Ch3. Agile SW Dev-V2.pptx"
+      ],
+      "evidence": "Ch3 Slide 53 (Scaling up to large systems): 'Continuous integration is practically impossible. However, it is essential to maintain frequent system builds and regular releases of the system.' Ch3 Slide 9 (XP): 'New versions may be built several times per day; Increments are delivered to customers every 2 weeks; All tests must be run for every build and the build is only accepted if tests run successfully.'"
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "node.js",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_030",
+        "post_031",
+        "post_032",
+        "post_033",
+        "post_034",
+        "post_035",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "typescript",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_030",
+        "post_031",
+        "post_032",
+        "post_033",
+        "post_034",
+        "post_035",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "git",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_030",
+        "post_031",
+        "post_033",
+        "post_034",
+        "post_035",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "postgres",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_030",
+        "post_031",
+        "post_032",
+        "post_033",
+        "post_035",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "css",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_026",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_030",
+        "post_031",
+        "post_032",
+        "post_033",
+        "post_034",
+        "post_035",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "docker",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_028",
+        "post_030",
+        "post_031",
+        "post_032",
+        "post_033",
+        "post_035"
+      ]
+    },
+    {
+      "skill": "rest api",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_025",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_031",
+        "post_032",
+        "post_033",
+        "post_034",
+        "post_035"
+      ]
+    },
+    {
+      "skill": "react",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_028",
+        "post_030",
+        "post_031",
+        "post_033",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "html",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_025",
+        "post_027",
+        "post_028",
+        "post_030",
+        "post_034",
+        "post_035",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "ci/cd",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_030",
+        "post_031",
+        "post_032",
+        "post_035"
+      ]
+    },
+    {
+      "skill": "aws",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_027",
+        "post_028",
+        "post_032",
+        "post_033",
+        "post_034",
+        "post_035",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "tailwind css",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_025",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_032",
+        "post_035"
+      ]
+    },
+    {
+      "skill": "javascript",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_028",
+        "post_029",
+        "post_030",
+        "post_035"
+      ]
+    },
+    {
+      "skill": "jest",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_026",
+        "post_029",
+        "post_031",
+        "post_033",
+        "post_035",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "next.js",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_030",
+        "post_033",
+        "post_035"
+      ]
+    },
+    {
+      "skill": "graphql",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_033",
+        "post_036"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.33,
+      "posting_count": 4,
+      "posting_refs": [
+        "post_025",
+        "post_028",
+        "post_030",
+        "post_033"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Modern distributed version control with Git (branching strategies, pull-request code review workflow)",
+      "market_frequency_pct": 0.92,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_030",
+        "post_031",
+        "post_033",
+        "post_034",
+        "post_035",
+        "post_036"
+      ],
+      "rationale": "The course covers configuration management at a tool-agnostic level. Ch7 Slide 46 (Configuration management activities) only goes as far as: 'Version management, where support is provided to keep track of the different versions of software components. Version management systems include facilities to coordinate development by several programmers.' No specific tool, branching model, or code-review workflow is named. The fullstack market has standardized on Git-based workflows (branching, pull-request review, trunk-based vs. GitFlow). Extending this slide conceptually \u2014 distributed VCS vs. centralized, branching strategies, and pull-request review as a process artifact \u2014 fits the course's process/methodology depth bound without crossing into hands-on `git` syntax (which would exceed it).",
+      "severity": "high"
+    },
+    {
+      "skill": "REST as an architectural style for HTTP APIs (resources, statelessness, HTTP verbs)",
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_025",
+        "post_027",
+        "post_028",
+        "post_029",
+        "post_031",
+        "post_032",
+        "post_033",
+        "post_034",
+        "post_035"
+      ],
+      "rationale": "The architecture chapter teaches client-server abstractly and mentions web APIs in passing. Ch6 Slide 33 (Client-server architecture): 'Distributed system model which shows how data and processing is distributed across a range of components... Set of stand-alone servers which provide specific services... Set of clients which call on these services.' Ch5 Slide 55 (iLearn service integration): 'Integrated services are services which offer an API (application programming interface) and which can be accessed by other services through that API.' REST is never named as the dominant style of modern client-server APIs, even though 9/12 fullstack postings demand it. Extending the architectural-patterns module with a conceptual treatment of REST (resource modeling, HTTP verbs as a uniform interface, statelessness) extends partial coverage at the conceptual level the course already operates at \u2014 without descending into framework-specific endpoint coding.",
+      "severity": "high"
+    },
+    {
+      "skill": "Continuous integration and continuous delivery pipelines as a process discipline",
+      "market_frequency_pct": 0.58,
+      "posting_refs": [
+        "post_025",
+        "post_026",
+        "post_027",
+        "post_030",
+        "post_031",
+        "post_032",
+        "post_035"
+      ],
+      "rationale": "The course already touches CI but stops short. Ch3 Slide 53 (Scaling up to large systems) explicitly says: 'Continuous integration is practically impossible. However, it is essential to maintain frequent system builds and regular releases of the system' \u2014 framing CI as infeasible. Ch3 Slide 9 (XP) says 'New versions may be built several times per day... All tests must be run for every build and the build is only accepted if tests run successfully', and Ch8 Slide 48 covers automated regression testing. The pieces of CI/CD (automated tests + frequent builds + incremental releases) are taught separately but not assembled into the modern pipeline concept that 7/12 fullstack postings name explicitly. Extending these slides to cover CI/CD as a process model (automated build + test + deploy on every commit; staging vs production environments; release vs deploy decoupling) stays within the methodology depth bound; specific YAML pipeline tooling would not.",
+      "severity": "high"
+    }
+  ],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 30,
+    "skills_market_demands": 17,
+    "gap_count": 3,
+    "headline": "A 2014-vintage Sommerville-based process course that is well-aligned with timeless software-engineering fundamentals (Scrum, XP, UML, requirements engineering, testing levels, COCOMO II) but presents version control, web APIs, and continuous integration in pre-DevOps abstract terms \u2014 leaving fullstack-bound students to learn Git/PR workflows, REST API design, and CI/CD pipelines elsewhere."
+  }
+}

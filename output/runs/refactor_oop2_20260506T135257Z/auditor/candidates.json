@@ -1,0 +1,580 @@
+{
+  "candidates": [
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 5",
+      "snippet": "Private static final String DATABASE URL = \"jdbe:derby://localhost:1527/books\":\nprivate static final String USERNAME = \"mona\";\nprivate static final String PASSWORD = \"i243\";\n\nprivate static final String DEFAULT QUERY = \"SELECT * FROM authors\";",
+      "from_ocr": true,
+      "pattern_kind": "insecure_pattern",
+      "prima_facie_concern": "Hard-coded database credentials (username 'mona', password 'i243') embedded in source as static final String constants \u2014 a textbook insecure pattern.",
+      "context_before": "Week 8 starts: 'CHAPTER 24: ACCESSING DATABASES WITH JDBC (PART2)'. Previous slide is the title and outline (24.6 Manipulating Databases with JDBC).",
+      "context_after": "Page 6 onward continues the same QueryVersion2 example showing constructor, scrollPane setup, query submission, and the SQL injection-vulnerable filter (page 9).",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 6",
+          "note": "Same anti-pattern with USERNAME = \"deitel\" and PASSWORD = \"deitel\" hard-coded in the JdbcRowSetTest example."
+        },
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 24",
+          "note": "PersonQueries class repeats the pattern: USERNAME = \"deitel\", PASSWORD = \"deitel\" as static final String constants."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 6",
+      "snippet": "private static final String DATABASE_URL = \"jdbc:derby:books\";\nprivate static final String USERNAME = \"deitel\";\nprivate static final String PASSWORD = \"deitel\";",
+      "from_ocr": true,
+      "pattern_kind": "insecure_pattern",
+      "prima_facie_concern": "Hard-coded credentials with the password identical to the username ('deitel'/'deitel'). Repeated in another example on page 24 (PersonQueries class).",
+      "context_before": "Beginning of Part 3 of the JDBC chapter. Outline lists RowSet, PreparedStatements, Stored Procedures, Transaction Processing.",
+      "context_after": "Subsequent slides walk through JdbcRowSetTest, then move to PreparedStatements (page 12+), with an explicit Error-Prevention Tip later that PreparedStatements help prevent SQL injection.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 5",
+          "note": "Same anti-pattern with username 'mona' and password 'i243'."
+        },
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 24",
+          "note": "PersonQueries class \u2014 USERNAME = \"deitel\", PASSWORD = \"deitel\"."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 9",
+      "snippet": "rs=st.executeQuery (\"SELECT * FROM AUTHORS WHERE FIRSTNAME LIKE '%\"+filterText.getText ()+\"%'\");",
+      "from_ocr": true,
+      "pattern_kind": "insecure_pattern",
+      "prima_facie_concern": "Classic SQL injection: user input from filterText.getText() is concatenated into a SQL string and executed via Statement.executeQuery \u2014 taught without warning at this point.",
+      "context_before": "Page 8 set up the submitButton handler (which also runs queryArea.getText() through executeQuery, another injection vector).",
+      "context_after": "Page 10 closes out the QueryVersion2 example. Week 9 then introduces PreparedStatement with placeholders ('?') and an Error-Prevention Tip 24.3 explicitly stating that PreparedStatements help prevent SQL injection.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 7",
+          "note": "rs=st.executeQuery(queryArea.getText()) \u2014 also accepts arbitrary user-supplied SQL."
+        },
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 13-16",
+          "note": "Teaches PreparedStatement with '?' placeholders as the safe alternative."
+        }
+      ],
+      "intentional_contrast_signals": [
+        "Later week's lecture explicitly recommends PreparedStatement to prevent SQL injection (Error-Prevention Tip 24.3 on Week 9 page 16) \u2014 could be an unmarked 'before' example for the upcoming 'after'."
+      ]
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 20",
+      "snippet": "Any local variable that will be used in an anonymous inner class must be declared final; otherwise, a compilation error occurs.",
+      "from_ocr": false,
+      "pattern_kind": "factual_error",
+      "prima_facie_concern": "This rule has been outdated since Java 8 (2014) \u2014 anonymous/inner classes now accept *effectively final* local variables; the explicit 'final' keyword is not required.",
+      "context_before": "Earlier slides walk through the QueryVersion2 example with anonymous ActionListeners.",
+      "context_after": "End of Week 8 file.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 91",
+      "snippet": "[_] Run with Java Web Start\n(To run and debug the application with Java Web Start, first enable Java Web Start)",
+      "from_ocr": true,
+      "pattern_kind": "dead_library",
+      "prima_facie_concern": "Java Web Start was deprecated in Java 9 and removed entirely in Java 11. NetBeans screenshot still shows the option as if current.",
+      "context_before": "Page 90 explains how to enable assertions via -ea flag and shows where to add it in NetBeans Project Properties > Run > VM Options.",
+      "context_after": "Page 92: 'QUESTION? Thanks' (end of deck).",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 79",
+      "snippet": "* Returns an Image object that can then be painted on the screen.\n* The url argument must specify an absolute {@link URL}. The name\n* argument is a specifier that is relative to the url argument.\n...\n* This method always returns immediately, whether or not the\n* image exists. When this applet attempts to draw the image on\n* the screen, the data will be loaded.\n...\npublic Image getImage(URL url, String name) {",
+      "from_ocr": true,
+      "pattern_kind": "dead_library",
+      "prima_facie_concern": "Javadoc tutorial example uses the Java Applet API as its illustrative case. Applets have been deprecated since Java 9 and removed from the JDK in Java 17.",
+      "context_before": "Pages 77\u201378 introduce Preconditions and Postconditions / Programming by Contract.",
+      "context_after": "Page 80 continues with another Javadoc example (`addNum`) showing @param/@return/@exception/@see tags.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 41",
+      "snippet": "https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html",
+      "from_ocr": false,
+      "pattern_kind": "obsolete_tool",
+      "prima_facie_concern": "Reference URL points to Java SE 7 API documentation \u2014 Java 7 reached end of public updates in 2015; current LTS releases are 17, 21, etc.",
+      "context_before": "Pages 39\u201340 describe class Throwable and the Exception/Error split.",
+      "context_after": "Page 42 shows hierarchy diagram of checked exceptions.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 52",
+          "note": "Another out-of-date URL: java.sun.com/javase/6/docs/technotes/guides/jdbc/getstart/callablestatement.html \u2014 domain java.sun.com is dead and the doc is for Java 6."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 52",
+      "snippet": "To learn more about CallableStatements, visit\njava.sun.com/javase/6/docs/technotes/guides/jdbc/getstart/callablestatement.html#999652",
+      "from_ocr": false,
+      "pattern_kind": "obsolete_tool",
+      "prima_facie_concern": "Cited URL uses the now-defunct java.sun.com domain (replaced by docs.oracle.com after Oracle's Sun acquisition) and points at Java 6 docs.",
+      "context_before": "Pages 49\u201351 show the AddressBookDisplay end-to-end example.",
+      "context_after": "Page 53 onward covers Portability Tip 24.6 and Transaction Processing.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": [
+        "Slide is marked 'Self Study'."
+      ]
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 4 - GUI Components ( Part 1 ).pdf page 4",
+      "snippet": "* Copyright 2007-2008 Sun Microsystems, Inc. All Rights Reserved.\n* Redistribution and use in source and binary forms, with or without\n* modification, are permitted provided that the following conditions\nFig. 12.1 | SwingSet3 application demonstrates many of Java's Swing GUI components.",
+      "from_ocr": true,
+      "pattern_kind": "obsolete_tool",
+      "prima_facie_concern": "Screenshot shows the SwingSet3 demo with a 2007-2008 Sun Microsystems copyright. Sun no longer exists (acquired by Oracle in 2010), and SwingSet3 itself is unmaintained. Flagging as a dated reference.",
+      "context_before": "Page 3 introduces GUI/Swing concepts and IDE-generated code.",
+      "context_after": "Page 5 introduces 'Java's Nimbus Look-and-Feel'.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 4 - GUI Components ( Part 1 ).pdf pages 5-9",
+      "snippet": "swing.defaultlaf=\ncom.sun.java.swing.plaf.nimbus.\nNimbusLookAndFeel\n...\nimport javax.swing.UIManager.*;\ntry { for (LookAndFeelInfo info:UIManager.getInstalledLookAndFeels()) {\n  if (\"Nimbus\".equals(info.getName())) {\n    UIManager.setLookAndFeel(info.getClassName());\n    break;\n  }\n}",
+      "from_ocr": false,
+      "pattern_kind": "obsolete_tool",
+      "prima_facie_concern": "Teaches Swing's Nimbus look-and-feel via com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel \u2014 an internal com.sun.* package whose use is discouraged. Modern recommendation since Java 7 is javax.swing.plaf.nimbus.NimbusLookAndFeel. Also references swing.properties file in JDK/JRE lib folder, which is a fading configuration mechanism. Surrounding curriculum teaches Swing exclusively (no JavaFX), and Swing GUI guidance is increasingly considered legacy.",
+      "context_before": "Page 4 SwingSet3 image with Sun Microsystems copyright.",
+      "context_after": "Page 10+ moves to JOptionPane example.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": [
+        "Slides 5-9 are tagged 'Self Study' / 'FOR YOUR ADDITIONAL INFORMATION'."
+      ]
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 11 Files Streams and Object Serialization ( Part 2 ).pdf page 8",
+      "snippet": "28 // set account number\n29 public void setAccount(int acct)\n30 {\n31    this.account = account;\n32 }",
+      "from_ocr": true,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "Method declares parameter `acct` but assigns `this.account = account;` \u2014 `account` resolves to the field, so this is effectively `this.account = this.account` (no-op). Either the parameter name or the assignment is wrong; as printed the code is broken.",
+      "context_before": "Pages 7-8 declare class Account implements Serializable with fields account, firstName, lastName, balance and a default + 4-arg constructor.",
+      "context_after": "Page 9 shows getter/setter pairs for firstName/lastName; page 10 shows balance getters/setters.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 1 - Revision.pdf page 11",
+      "snippet": "Employee\nprivate int empld\nprivate String name\nprivate String ssn\nprivate double sala\npublic void setName (String name)\npublic void raiseSalary (double increase)\n// other getter methods",
+      "from_ocr": true,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "UML diagram declares Employee with field `empId` and method `raiseSalary(double increase)`, but the actual Java class on page 16 declares `private int ID;` (not empId) and never defines `raiseSalary`. Names and methods in the UML do not match the implementation that follows.",
+      "context_before": "Page 10 says 'Extend your existing Employee class to create new classes for Engineers, Admins, Managers, and Directors.'",
+      "context_after": "Pages 12-15 give Admin/Engineers/Manager/Director subclasses; page 16 changes the Employee constructor to use ID (not empId) and never adds raiseSalary.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 1 - Revision.pdf page 4",
+          "note": "First sketch of the Employee class uses `int ID; String name, ssn; double salary;` \u2014 same fields, different name from the UML's empId."
+        },
+        {
+          "slide_ref": "Week 1 - Revision.pdf page 16",
+          "note": "Change-the-constructor slide finalizes Employee with `private int ID;` and never declares raiseSalary."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 10 - Files Streams and Object Serialization ( Part 1 ).pdf page 5",
+      "snippet": "Byte-based streams output and input data in its binary format\u2014a char is two bytes, an int is four bytes, a double is eight bytes, etc.\nCharacter-based streams output and input data as a sequence of characters in which every character is two bytes\u2014the number of bytes for a given value depends on the number of characters in that value.",
+      "from_ocr": false,
+      "pattern_kind": "factual_error",
+      "prima_facie_concern": "Claim that 'every character is two bytes' conflates Java's UTF-16 `char` code-unit width with Unicode code-points. Supplementary code points (e.g. emoji, many CJK characters) require surrogate pairs (4 bytes in UTF-16) or 4 bytes in UTF-8/UTF-32 \u2014 so 'every character is two bytes' is not true in modern Unicode terms.",
+      "context_before": "Page 4 introduces Java's view of files as a stream of bytes.",
+      "context_after": "Page 6 distinguishes binary files vs text files.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 12 - Concurrency.pdf pages 30-37",
+      "snippet": "1st method: Extending Thread class\nclass MyThread extends Thread {\n  public void run() {\n    // thread body of execution\n  }\n}\nMyThread thread1 = new MyThread();\nthread1.start();\n...\n2nd method: Creating threads by implementing the Runnable interface.\nclass Task1 implements Runnable { public void run() { ... } }\nTask1 myTask = new Task1();\nThread thread1 = new Thread(myTask);\nthread1.start();",
+      "from_ocr": false,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Teaches three thread-creation idioms with explicit `extends Thread` and `new Thread(runnable).start()` as primary methods. Modern Java guidance (since the Executor framework in Java 5, and especially with virtual threads in Java 21+) discourages explicit Thread subclassing/instantiation in favor of ExecutorService / Executors / structured concurrency.",
+      "context_before": "Pages 4-28 cover concurrency theory, thread states, priorities, deadlock.",
+      "context_after": "Page 38 explicitly labels the Executor Framework as the '3rd method (Recommended)' and quotes Software Engineering Observation 23.2: 'though it\u2019s possible to create threads explicitly, it\u2019s recommended that you use the Executor interface'.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": [
+        "Page 38 explicitly marks the Executor framework as 'Recommended'.",
+        "Page 21 already says 'Do not explicitly create and use Thread objects to implement concurrency. Rather, use the Executor interface'."
+      ]
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 57",
+      "snippet": "Difference between final, finally and finalize\n...\nFinalize is used to perform clean up processing just before object is garbage collected.\n...\nFinalize is a method.",
+      "from_ocr": true,
+      "pattern_kind": "deprecated_api",
+      "prima_facie_concern": "Slide compares `finalize` to `final`/`finally` as a current language feature. `Object.finalize()` was deprecated in Java 9 and marked for removal (forRemoval=true) in Java 18 \u2014 recommended replacement is `java.lang.ref.Cleaner` or try-with-resources.",
+      "context_before": "Page 56 shows InputStream try/catch/finally example.",
+      "context_after": "Page 58 returns to discussion of finally block semantics.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 6 - GUI Components ( Part 3 ).pdf page 11",
+      "snippet": "Method getModifiers determines whether any modifier keys (such as Shift, Alt and Ctrl) were pressed when the key event occurred.\nmodifier keys can be passed to static KeyEvent method getKeyModifiersText to get a string containing the names of the pressed modifier keys.",
+      "from_ocr": false,
+      "pattern_kind": "deprecated_api",
+      "prima_facie_concern": "InputEvent.getModifiers() and KeyEvent.getKeyModifiersText() were deprecated in Java 9 in favor of getModifiersEx() / getModifiersExText(); using the old methods produces deprecation warnings on modern JDKs.",
+      "context_before": "Page 10 introduces KeyEvent.getKeyText / getKeyChar / isActionKey.",
+      "context_after": "Page 12 begins Layout Managers.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 7 - Accessing DB ( Part 1 ).pdf pages 33-34",
+      "snippet": "The URL jdbc:derby:books specifies\n\u2022 the protocol for communication (jdbc)\n\u2022 the subprotocol for communication (derby)\n\u2022 the location of the database (books).\nThe subprotocol derby indicates that the program uses a Java DB/Apache Derby-specific subprotocol to connect to the database.",
+      "from_ocr": false,
+      "pattern_kind": "obsolete_tool",
+      "prima_facie_concern": "Course relies on 'Java DB' as the bundled database. Java DB (Oracle's distribution of Apache Derby that shipped inside the JDK) was removed from the JDK starting in Java 9; modern recommendation is to use Apache Derby externally or another RDBMS. Apache Derby itself remains alive but is much less common today than SQLite, H2, or Postgres for teaching examples.",
+      "context_before": "Pages 27-32 walk through DisplayAuthors.java connecting via DriverManager.getConnection.",
+      "context_after": "Page 35 explains the AutoCloseable / try-with-resources pattern for JDBC interfaces.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 5",
+          "note": "DATABASE_URL = \"jdbc:derby://localhost:1527/books\" \u2014 same dependency on Java DB/Derby."
+        },
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 6",
+          "note": "DATABASE_URL = \"jdbc:derby:books\" in JdbcRowSetTest."
+        },
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 24",
+          "note": "URL = \"jdbc:derby:AddressBook\" in PersonQueries."
+        },
+        {
+          "slide_ref": "Week 7 - Accessing DB ( Part 1 ).pdf page 11",
+          "note": "Reference URL http://docs.oracle.com/javadb/10.10.1.1/devguide/derbydev.pdf \u2014 'Java DB Developer's Guide' for a JDK-bundled DB that has since been unbundled."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 9",
+      "snippet": "tryt\nint a[J=new int[14];\n/fArray has only 18 elements\na[11] = 9;\n}\ncatch(ArrayIndexOutOfBoundsException e){\nSystem.out.printin (\"ArrayIndexOutOfBounds\" ) 5\n}",
+      "from_ocr": true,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "Comment claims 'Array has only 18 elements' but allocation is `new int[14]` (or whatever the OCR-mangled number is) and the access is `a[11] = 9` \u2014 with size 14, index 11 is valid, so this code would not actually throw ArrayIndexOutOfBoundsException as the example purports to demonstrate. The numbers in the comment, declaration, and access do not agree.",
+      "context_before": "Page 8 gives the syntax of try/catch.",
+      "context_after": "Pages 10-11 show extended try/catch syntax with multiple catches and multi-catch.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 5 - GUI Components ( Part 2 ).pdf page 16",
+      "snippet": "font = new Font(\"Serif\", Font.BOLD + Font.ITALIC, 14);",
+      "from_ocr": true,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Combines style flags with arithmetic `+` rather than the bitwise OR `|` that flag-style constants are designed for. Works only because Font.BOLD=1 and Font.ITALIC=2; would silently produce wrong results if Font defined an additional flag overlapping bit 0 or 1.",
+      "context_before": "Page 15 sets up a JCheckBox example with bold/italic checkboxes.",
+      "context_after": "Page 17 wires up the listeners.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 5 - GUI Components ( Part 2 ).pdf page 21",
+          "note": "Same pattern repeated: `boldItalicFont = new Font(\"Serif\", Font.BOLD + Font.ITALIC, 14);`"
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf pages 4-11",
+      "snippet": "Package javax.sql.rowset contains two subinterfaces of RowSet\u2014JdbcRowSet and CachedRowSet.\nJdbcRowSet, a connected RowSet, acts as a wrapper around a ResultSet object and allows you to scroll through and update the rows in the ResultSet.\n... try (JdbcRowSet rowSet = RowSetProvider.newFactory().createJdbcRowSet()) { ... }",
+      "from_ocr": true,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Spends significant lecture time on JdbcRowSet/CachedRowSet \u2014 these RowSet implementations are still in the JDK but are widely viewed as legacy and not commonly used in modern JDBC code; current practice favors plain JDBC + DTO classes, JPA/Hibernate, or higher-level frameworks.",
+      "context_before": "End of Week 8 introduced the Statement-based query example.",
+      "context_after": "Page 12 onward introduces PreparedStatement (which is contemporary).",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 60-61",
+      "snippet": "21 public static void throwException() throws Exception\n...\n26 throw new Exception(); // generate exception\n...\n12 catch (Exception exception) // exception thrown by throwException",
+      "from_ocr": true,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Throws and catches the raw `java.lang.Exception` type \u2014 modern style guides discourage throwing/catching the bare Exception in favor of more specific (or custom) exception types. Same pattern occurs in Fig. 11.6 stack-unwinding example (`throw new Exception(\"Exception thrown in method3\");`).",
+      "context_before": "Pages 58-59 explain finally-block semantics.",
+      "context_after": "Page 62 continues the same `UsingExceptions` example.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 2+3 - Exception Handling.pdf page 72",
+          "note": "Fig. 11.6 method3 throws `new Exception(\"Exception thrown in method3\")` \u2014 same generic-Exception antipattern."
+        },
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 48",
+          "note": "browseButtonActionPerformed catches the bare `Exception e` and only calls e.printStackTrace()."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 9",
+      "snippet": "authorsTable.getModel (DbUtils. resultSetToTableMoedel (rs)):",
+      "from_ocr": true,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "Filter button's listener calls `authorsTable.getModel(...)` with an argument \u2014 JTable.getModel() takes no arguments and returns a TableModel. The submit-button handler immediately above (page 7) correctly uses `authorsTable.setModel(DbUtils.resultSetToTableModel(rs))`. Either OCR garbling or a real typo, but as printed the line will not compile.",
+      "context_before": "Page 8 shows the submitButton handler with the correct setModel call.",
+      "context_after": "Page 10 closes out the QueryVersion2 class with frame setup.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 7",
+          "note": "Submit handler uses the correct authorsTable.setModel(DbUtils.resultSetToTableModel(rs)); on line 11262."
+        },
+        {
+          "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 19",
+          "note": "Subsequent slide repeats authorsTable.setModel(DbUtils.resultSetToTableModel(rs)); pattern correctly."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 1 - Revision.pdf page 25",
+      "snippet": "public class EmployeeStockPlan{\nPrivate final int employeeShares = 10;\nPrivate final int managerShares = 100;\nPrivate final int directorShares = 1000;\n\npublic int grantStock(Employee emp) {\nif (emp instanceof Director)\n{ return directorShares:;: }\nelse\n{\nif (emp instanceof Manager)\n{ return managerSharess: }\nelse\n{return employeeShares: }\n}\n}",
+      "from_ocr": true,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "Field declarations show capitalised `Private` and statements end with `:;:` / `:;` rather than `;`. As literally typeset the code does not compile. (Likely OCR mangling of `private` \u2192 `Private` and `;` \u2192 `:`, but the Adjudicator should confirm.)",
+      "context_before": "Page 24 shows `THE OUTPUT` for the polymorphism example.",
+      "context_after": "Page 26 'APPLYING THE OVERLOADING' shows the printEmployee/printEmployee+stockPlan overload pair.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 9",
+      "snippet": "public static void main(String args[])\n{\ntry{\nint num1=36, num2=6;\nSystem.out.println (\"Result: \"+toutput);\n}\ncatch(ArithmeticException e){\nSystem.out.println (\"You Shouldn't divide a number by zero\");\n}",
+      "from_ocr": true,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "Variable named `toutput` is referenced in System.out.println but never declared (only `num1=36, num2=6` are declared). No division operation is performed in the try block, so the surrounding ArithmeticException catch can never fire. Even allowing for OCR (`toutput` may be `output`), `output` is also undeclared. As printed the code is non-compiling.",
+      "context_before": "Page 8 introduces try/catch syntax.",
+      "context_after": "Page 10 onward shows multi-catch syntax.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 4 - GUI Components ( Part 1 ).pdf pages 1-58",
+      "snippet": "GUI COMPONENTS \u2013 PART 1 ... Java's Nimbus Look-and-Feel ... Build Simple GUI-Based Input/Output ... Overview of Swing Components ... Displaying Text and Images in a Window ... Common GUI Event Types and Listener Interfaces",
+      "from_ocr": false,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Three full weeks (4-6) of GUI material are taught entirely in Swing/AWT (JFrame, JLabel, JTextField, JButton, JCheckBox, JRadioButton, JComboBox, JList, FlowLayout, BorderLayout, GridLayout, JTextArea). Swing is in maintenance mode; modern Java GUI guidance favors JavaFX (or web/native frameworks). No mention of JavaFX anywhere in the course.",
+      "context_before": "Week 2+3 covered exception handling.",
+      "context_after": "Week 7 starts JDBC.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 5 - GUI Components ( Part 2 ).pdf",
+          "note": "Continues with AbstractButton/JButton/JCheckBox/JRadioButton/JComboBox/JList/MouseListener \u2014 all Swing."
+        },
+        {
+          "slide_ref": "Week 6 - GUI Components ( Part 3 ).pdf",
+          "note": "Key event handling, layout managers, JTextArea \u2014 all Swing."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 7 - Accessing DB ( Part 1 ).pdf page 7",
+      "snippet": "Java Persistence API (JPA)\nIn online Chapter 29, we introduce Java Persistence API (JPA) to auto generate Java classes that represent the tables in a database and the relationships between them\u2014known as object-relational mapping\u2014then use objects of those classes to interact with a database. As you'll see, storing data in and retrieving data from a database will be handled for you\u2014the techniques you learn in this chapter will typically be hidden from you by JPA.",
+      "from_ocr": false,
+      "pattern_kind": "obsolete_tool",
+      "prima_facie_concern": "References Java Persistence API (JPA) in javax.persistence \u2014 package was renamed to jakarta.persistence after the Eclipse Foundation took over Jakarta EE; modern Java EE/Jakarta EE applications use jakarta.persistence imports. Slides predate the namespace switch.",
+      "context_before": "Page 6 introduces JDBC and the portability tip.",
+      "context_after": "Page 8 onward describes relational tables and the books database.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": [
+        "Slide explicitly defers JPA discussion to 'online Chapter 29' and frames it as outside the immediate JDBC topic."
+      ]
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 7 - Accessing DB ( Part 1 ).pdf page 11",
+      "snippet": "For more information on using the IDENTITY keyword and creating databases, see the Java DB Developer's Guide at http://docs.oracle.com/javadb/10.10.1.1/devguide/derbydev.pdf.",
+      "from_ocr": true,
+      "pattern_kind": "obsolete_tool",
+      "prima_facie_concern": "Reference URL is plain HTTP (not HTTPS) and points at Java DB 10.10.1.1 documentation \u2014 Java DB has been unbundled from the JDK since Java 9 and Oracle no longer distributes/maintains it.",
+      "context_before": "Page 10 introduces the Authors/AuthorISBN/Titles tables.",
+      "context_after": "Page 12 lists Titles and AuthorISBN columns.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 2+3 - Exception Handling.pdf page 18",
+      "snippet": "Exception in thread \"main\" java.lang.ArithmeticException: / by zero\nat DivideByZeroNoExceptionHandling.quotient(\nDivideByZeroNoExceptionHandling.java:10)\n... at java.util.Scanner.throwFor(Unknown Source)\nat java.util.Scanner.next(Unknown Source)\nat java.util.Scanner.nextInt(Unknown Source)",
+      "from_ocr": true,
+      "pattern_kind": "obsolete_tool",
+      "prima_facie_concern": "Stack-trace example labels Scanner methods as `(Unknown Source)`. Modern JDK builds (with module info / JEP 178 attributes) include Source File and Line numbers for java.util.Scanner \u2014 '(Unknown Source)' was characteristic of older JDK distributions without debug attributes for the standard library.",
+      "context_before": "Page 17 prints stack trace for the / by zero example.",
+      "context_after": "Pages 19-20 describe how to interpret stack traces.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 12 - Concurrency.pdf page 10",
+      "snippet": "Guidelines:\nThe vast majority of programmers should use existing collection classes and interfaces from the concurrency APIs that manage synchronization for you.\nFor advanced programmers who want to control synchronization, use the synchronized keyword and Object methods wait, notify and notifyAll.\nOnly the most advanced programmers should use Locks and Conditions",
+      "from_ocr": false,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Recommends `Object.wait()/notify()/notifyAll()` as the next step beyond high-level concurrency utilities. Modern guidance treats these as a low-level mechanism rarely needed in application code; java.util.concurrent (BlockingQueue, CountDownLatch, CompletableFuture, etc.) and StructuredTaskScope (Java 21) are preferred.",
+      "context_before": "Page 9 Performance Tip 23.1 about multithreading benefits.",
+      "context_after": "Page 11 explains synchronized-block semantics.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 11 Files Streams and Object Serialization ( Part 2 ).pdf pages 1-32",
+      "snippet": "Object Serialization ... Classes ObjectInputStream and ObjectOutputStream (package java.io) ... A class that implements Serializable is tagged as being a Serializable object.",
+      "from_ocr": false,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Entire week is dedicated to Java built-in object serialization (java.io.Serializable / ObjectInputStream / ObjectOutputStream). Java's built-in serialization is widely considered legacy/dangerous (multiple CVEs, JEP 154 'Serialization 2.0' in flight, Oracle has long recommended using JSON, Protocol Buffers, or other formats). Includes no warning about the security implications of deserializing untrusted data.",
+      "context_before": "Week 10 covered text-file streams.",
+      "context_after": "Week 12 covers Concurrency.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 7 - Accessing DB ( Part 1 ).pdf page 30",
+      "snippet": "1 // Fig. 24.23: DisplayAuthors.java\n2 // Displaying the contents of the Authors table.\n3 import java.sql.Connection;\n... 21 DA URL \"\u00a2 . 'de itel' ;",
+      "from_ocr": true,
+      "pattern_kind": "insecure_pattern",
+      "prima_facie_concern": "OCR-garbled but the substance appears to be the same hard-coded JDBC URL/USERNAME/PASSWORD pattern used by the rest of the JDBC chapter (e.g. 'deitel' literal visible). Surfacing for completeness because it precedes the explicit hard-coded credentials shown in Weeks 8-9.",
+      "context_before": "Page 29 introduces try-with-resources syntax.",
+      "context_after": "Pages 31-32 continue the DisplayAuthors example showing while(resultSet.next()) and the output.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 8 - Accessing DB ( Part 2 ).pdf page 5",
+          "note": "Hard-coded mona/i243 credentials in QueryVersion2."
+        },
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf pages 6,24",
+          "note": "Hard-coded deitel/deitel credentials in JdbcRowSetTest and PersonQueries."
+        }
+      ],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 28",
+      "snippet": "77 finally\n78 {\n79   try\n80   {\n81     resultSet.close();\n82   }\n83   catch (SQLException sqlException)\n84   {\n85     sqlException.printStackTrace() ;\n86     close();\n87   }\n88 }",
+      "from_ocr": true,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Manually closes ResultSet in a finally block instead of using try-with-resources. Java 7+ try-with-resources is taught earlier in Week 7 (page 28-29) but the PreparedStatement examples in Week 9 revert to manual finally-close. Inconsistent with the same course's earlier guidance.",
+      "context_before": "Pages 26-27 use plain Statement with manual finally-close pattern.",
+      "context_after": "Pages 29-32 repeat the manual finally-close pattern in getPeopleByLastName / addPerson methods.",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 7 - Accessing DB ( Part 1 ).pdf page 28-29",
+          "note": "Same course teaches try-with-resources as the recommended alternative."
+        },
+        {
+          "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 30",
+          "note": "getPeopleByLastName again uses finally { try { resultSet.close(); } catch ... } }."
+        }
+      ],
+      "intentional_contrast_signals": [
+        "Earlier slides in the same course explicitly recommend try-with-resources, so the manual finally pattern here may be intentional contrast \u2014 but is not labelled as such."
+      ]
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 20",
+      "snippet": "System.exit(0) or EXIT_SUCCESS; ---> Success\nSystem.exit(1) or EXIT_FAILURE; ---> Exception\nSystem.exit(-1) or EXIT_ERROR; ---> Error",
+      "from_ocr": true,
+      "pattern_kind": "factual_error",
+      "prima_facie_concern": "Java does not define EXIT_SUCCESS, EXIT_FAILURE, or EXIT_ERROR symbols (those are C macros from <stdlib.h>). System.exit takes an int \u2014 the slide is conflating C standard-library names with Java. Also, claiming -1 means 'Error' vs 1 = 'Exception' is editorial; on Linux exit codes 0 are success and any non-zero is failure with no further OS-level distinction.",
+      "context_before": "Earlier on the same page introduces JTable index 0 vs ResultSet index 1.",
+      "context_after": "Slide closes Week 8.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 11 Files Streams and Object Serialization ( Part 2 ).pdf page 7",
+      "snippet": "12 // initializes an Account with default values\n13 public Account()\n14 {\n15   thisco, \"\", \"\", 0.0); // call other constructor\n16 }",
+      "from_ocr": true,
+      "pattern_kind": "internal_inconsistency",
+      "prima_facie_concern": "Default constructor body reads `thisco, \"\", \"\", 0.0);` \u2014 `thisco` is not a valid token. Most likely OCR mangling of `this(0, \"\", \"\", 0.0);` (delegating to the 4-arg constructor), but as printed it does not compile.",
+      "context_before": "Page 6 explains Serializable as a tagging interface.",
+      "context_after": "Pages 8-10 show the rest of the Account class.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 12 - Concurrency.pdf page 41",
+      "snippet": "I // Fig. 23.3: PrintTask.java\n2 // PrintTask class sleeps for a random time from 0 to 5 seconds\n3 import java.security.SecureRandom;\n...\n7 private static final SecureRandom generator = new SecureRandom() ;\n...\n17 sleepTime = generator.nextInt(5000); // milliseconds",
+      "from_ocr": true,
+      "pattern_kind": "factual_error",
+      "prima_facie_concern": "Uses `java.security.SecureRandom` to pick a sleep duration for a demonstration thread \u2014 SecureRandom is a cryptographically strong RNG intended for keys/tokens; for non-security-sensitive purposes like 'pick a random sleep time' it is overkill and can block on entropy starvation. The example unnecessarily teaches SecureRandom as the default for any random number.",
+      "context_before": "Page 40 introduces PrintTask implementing Runnable.",
+      "context_after": "Page 42 shows the run() method body.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 4 - GUI Components ( Part 1 ).pdf page 17",
+      "snippet": "Swing GUI components located in package javax.swing.\nAbstract Window Toolkit (AWT) in package java.awt is another set of GUI components in Java.\n... AWT components are tied to the local platform and are called heavyweight components, because they rely on the local platform's windowing system to determine their functionality and their look-and-feel.",
+      "from_ocr": false,
+      "pattern_kind": "dead_library</",
+      "prima_facie_concern": "Presents AWT and Swing as the two viable choices for Java GUIs. Pure-AWT GUIs are essentially unused in 2020s Java; modern Java GUI development uses JavaFX or non-Java toolkits. Frame-of-reference is mid-2000s.",
+      "context_before": "Page 16 message-dialog enum constants.",
+      "context_after": "Page 18 lists basic Swing components.",
+      "also_appears_at": [],
+      "intentional_contrast_signals": []
+    },
+    {
+      "course": "object_oriented_programming_2",
+      "slide_ref": "Week 9 - Accessing DB ( Part 3 ).pdf page 33-49",
+      "snippet": "21 public class AddressBookDisplay extends JFrame\n22 {\n... 354 // main method\n355 public static void main(String args[])\n356 {\n357   new AddressBookDisplay();\n358 }",
+      "from_ocr": true,
+      "pattern_kind": "outdated_paradigm",
+      "prima_facie_concern": "Constructs a JFrame subclass directly from main without calling SwingUtilities.invokeLater / EventQueue.invokeLater \u2014 Swing components are not thread-safe and should be created on the EDT, but the example creates the GUI on the main thread. Long-standing Swing best-practice violation.",
+      "context_before": "Pages 24-32 set up PersonQueries with PreparedStatements.",
+      "context_after": "End of Week 9 deck (pages 50-56 Self Study on stored procedures and transactions).",
+      "also_appears_at": [
+        {
+          "slide_ref": "Week 4-6 GUI Components",
+          "note": "All GUI test classes (LabelTest, ButtonTest, CheckBoxTest, RadioButtonTest, ComboBoxTest, ListTest, MouseTracker, KeyDemo, FlowLayoutDemo, BorderLayoutDemo, GridLayoutDemo, PanelDemo, TextAreaDemo) construct their JFrame on the main thread."
+        }
+      ],
+      "intentional_contrast_signals": []
+    }
+  ],
+  "summary": {
+    "total_candidates": 33,
+    "courses_scanned": [
+      "object_oriented_programming_2"
+    ]
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "target_role": "security",
+  "prescriptions": [
+    {
+      "rank": 1,
+      "topic": "OWASP Top 10 (2021) \u2014 enumerate all ten categories and map each to an existing course unit",
+      "skill_keywords": [
+        "owasp top 10",
+        "broken access control",
+        "cryptographic failures",
+        "injection",
+        "ssrf",
+        "security misconfiguration"
+      ],
+      "market_frequency_pct": 0.83,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_083"
+      ],
+      "fits_in_course": "Computer and Data Security \u2014 Ch4 (Access Control), with explicit cross-references to Ch2, Ch3, Ch9, Ch18",
+      "fits_in_course_rationale": "Ch4 Slide 1 already cites the OWASP 2021 report's #1 finding (Broken Access Control) and Ch2 Slide 1 cites the same report's #2 (Cryptographic Failures). One added enumeration slide in Ch4 listing all ten A01\u2013A10 categories with cross-references back to Ch2 (A02), Ch3 (A07), Ch4 (A01), Ch9 (A05/A06), Ch18 (A09) turns two passing footnotes into the organising framework security engineers are expected to recite.",
+      "prerequisite_chain": [
+        {
+          "skill": "Access control models (DAC/MAC/RBAC/ABAC)",
+          "already_taught_in": "Computer and Data Security \u2014 Ch4 Slide 12"
+        },
+        {
+          "skill": "Hash/HMAC primitives behind cryptographic failures",
+          "already_taught_in": "Computer and Data Security \u2014 Ch2 Slides 16\u201318"
+        },
+        {
+          "skill": "Authentication failure modes",
+          "already_taught_in": "Computer and Data Security \u2014 Ch3 Slides 13\u201317"
+        },
+        {
+          "skill": "Logging & monitoring (A09)",
+          "already_taught_in": "Computer and Data Security \u2014 Ch18 Slides 17\u201337"
+        }
+      ],
+      "estimated_learning_hours": 3,
+      "headline_one_liner": "Promote OWASP from a name dropped twice in the slides to the top-of-mind taxonomy every security engineer is interviewed on, mapped directly onto the units already taught."
+    },
+    {
+      "rank": 2,
+      "topic": "TLS handshake, certificate validation, and modern transport-security configuration",
+      "skill_keywords": [
+        "tls",
+        "tls handshake",
+        "x.509 chain validation",
+        "ephemeral diffie-hellman",
+        "aead",
+        "mtls",
+        "cipher downgrade"
+      ],
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_073",
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_080",
+        "post_082",
+        "post_083",
+        "post_084"
+      ],
+      "fits_in_course": "Computer and Data Security \u2014 Ch2 (Cryptographic Tools)",
+      "fits_in_course_rationale": "Ch2 Slide 28 already names TLS as a consumer of the X.509 certificates and public-key primitives the chapter teaches, but never opens the protocol. Adding 1\u20132 mechanism-level slides \u2014 handshake message flow, server-cert chain validation, ephemeral key agreement, AEAD record layer, common deployment failures (expired certs, weak ciphers, downgrade), and mTLS as the cryptographic substrate of zero-trust \u2014 composes the primitives the chapter already teaches into the protocol every security engineer touches daily.",
+      "prerequisite_chain": [
+        {
+          "skill": "X.509 certificates and CAs",
+          "already_taught_in": "Computer and Data Security \u2014 Ch2 Slide 28"
+        },
+        {
+          "skill": "RSA / ECC / Diffie-Hellman",
+          "already_taught_in": "Computer and Data Security \u2014 Ch2 Slides 24\u201326"
+        },
+        {
+          "skill": "AES and modes of operation",
+          "already_taught_in": "Computer and Data Security \u2014 Ch2 Slides 9\u201311"
+        },
+        {
+          "skill": "HMAC for message authentication",
+          "already_taught_in": "Computer and Data Security \u2014 Ch2 Slide 18"
+        }
+      ],
+      "estimated_learning_hours": 4,
+      "headline_one_liner": "Turn the chapter's X.509/AES/DH primitives into the TLS handshake \u2014 the one protocol every security-engineer interview will ask you to draw on a whiteboard."
+    },
+    {
+      "rank": 3,
+      "topic": "OAuth 2.0 (authorization code + PKCE) and OpenID Connect as the web realisation of NIST SP 800-63-3 federation roles",
+      "skill_keywords": [
+        "oauth",
+        "oauth 2.0",
+        "oidc",
+        "authorization code",
+        "pkce",
+        "id token",
+        "access token",
+        "relying party"
+      ],
+      "market_frequency_pct": 0.75,
+      "posting_refs": [
+        "post_073",
+        "post_075",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_083",
+        "post_084"
+      ],
+      "fits_in_course": "Computer and Data Security \u2014 Ch3 (User Authentication)",
+      "fits_in_course_rationale": "Ch3 Slide 5 already teaches the NIST SP 800-63-3 actors (CSP, claimant, verifier, relying party) \u2014 these are exactly OAuth's authorization server / resource server / RP triad in different wording. Ch3 Slide 32 already walks a redirect-based eID authentication flow at the right sequence-diagram level. Adding one slide that names OAuth 2.0 authorization-code-with-PKCE and OIDC ID tokens as the dominant web realisation of the same model lets the course's existing concepts land under the names recruiters search for.",
+      "prerequisite_chain": [
+        {
+          "skill": "NIST SP 800-63-3 identity model",
+          "already_taught_in": "Computer and Data Security \u2014 Ch3 Slides 5, 8\u201310"
+        },
+        {
+          "skill": "Redirect-based authentication flows",
+          "already_taught_in": "Computer and Data Security \u2014 Ch3 Slide 32 (eID)"
+        },
+        {
+          "skill": "TLS as transport security",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 3,
+      "headline_one_liner": "Re-label the NIST 800-63-3 identity actors the course already teaches as the OAuth/OIDC roles every modern web security engineer is expected to name."
+    },
+    {
+      "rank": 4,
+      "topic": "Secrets management as a discipline \u2014 centralised vault, short-lived credentials, automated rotation, machine identity",
+      "skill_keywords": [
+        "secrets management",
+        "vault",
+        "key rotation",
+        "short-lived credentials",
+        "machine identity",
+        "credential scoping"
+      ],
+      "market_frequency_pct": 0.67,
+      "posting_refs": [
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082",
+        "post_084"
+      ],
+      "fits_in_course": "Computer and Data Security \u2014 Ch15 (IT Security Controls), extending Slide 19 (NIST SP 800-53 'System and Communications Protection' family)",
+      "fits_in_course_rationale": "Ch15 Slide 19 already lists 'Cryptographic Key Establishment and Management' as a NIST SP 800-53 control family, and Ch2 Slide 33 already discusses 'effective encryption key management scheme.' Extending those slides with the operational pattern \u2014 central secrets store, rotation, scoped/short-lived credentials, separation of secret material from application code (analogous to the shadow-password split already taught in Ch3) \u2014 keeps the discussion at the standards-and-mechanism level the chapter already operates at.",
+      "prerequisite_chain": [
+        {
+          "skill": "Cryptographic key management (NIST 800-53 SC family)",
+          "already_taught_in": "Computer and Data Security \u2014 Ch15 Slide 19"
+        },
+        {
+          "skill": "Encryption key management for data at rest",
+          "already_taught_in": "Computer and Data Security \u2014 Ch2 Slide 33"
+        },
+        {
+          "skill": "Separation of credentials from application (shadow files)",
+          "already_taught_in": "Computer and Data Security \u2014 Ch3"
+        }
+      ],
+      "estimated_learning_hours": 3,
+      "headline_one_liner": "Extend the course's cryptographic-key-management slides into the operational secrets-management discipline that 8 of 12 security postings explicitly demand."
+    },
+    {
+      "rank": 5,
+      "topic": "STRIDE threat modeling as a structured complement to the attack-tree analysis already taught",
+      "skill_keywords": [
+        "threat modeling",
+        "stride",
+        "spoofing",
+        "tampering",
+        "repudiation",
+        "information disclosure",
+        "denial of service",
+        "elevation of privilege"
+      ],
+      "market_frequency_pct": 0.58,
+      "posting_refs": [
+        "post_074",
+        "post_075",
+        "post_077",
+        "post_079",
+        "post_080",
+        "post_082",
+        "post_083"
+      ],
+      "fits_in_course": "Computer and Data Security \u2014 Ch1 (Overview), with worked example pulled from Ch14",
+      "fits_in_course_rationale": "Ch1 Slide 22 already presents 'An Attack Tree for Internet Banking Authentication' with hierarchical breakdown, and Ch14 Slide 23 already teaches the NIST SP 800-30 threat-source taxonomy (Motivation/Capability/Resources/Probability/Deterrence). STRIDE is the canonical six-category elicitation taxonomy that pairs with attack trees to systematically generate the leaves. One slide naming STRIDE plus a worked walk-through using the Ch14 Silver Star Mines case study extends what is already there into the methodology security engineers are interviewed on, without requiring any tool-specific lab.",
+      "prerequisite_chain": [
+        {
+          "skill": "Attack trees",
+          "already_taught_in": "Computer and Data Security \u2014 Ch1 Slide 22"
+        },
+        {
+          "skill": "Threat-source taxonomy (NIST SP 800-30)",
+          "already_taught_in": "Computer and Data Security \u2014 Ch14 Slide 23"
+        },
+        {
+          "skill": "Security design principles (least privilege, complete mediation)",
+          "already_taught_in": "Computer and Data Security \u2014 Ch1 Slides 17\u201322"
+        }
+      ],
+      "estimated_learning_hours": 3,
+      "headline_one_liner": "Name STRIDE as the systematic six-category lens that pairs with the attack tree the course already draws \u2014 the single most-listed core skill on security-engineer postings."
+    },
+    {
+      "rank": 6,
+      "topic": "SAML / SSO federation as an XML-based realisation of the same RP/IdP/verifier triad",
+      "skill_keywords": [
+        "saml",
+        "sso",
+        "sp-initiated sso",
+        "saml assertion",
+        "identity provider",
+        "service provider"
+      ],
+      "market_frequency_pct": 0.5,
+      "posting_refs": [
+        "post_074",
+        "post_076",
+        "post_077",
+        "post_080",
+        "post_081",
+        "post_083"
+      ],
+      "fits_in_course": "Computer and Data Security \u2014 Ch3 (User Authentication), paired with the OAuth/OIDC slide",
+      "fits_in_course_rationale": "Same anchor as OAuth/OIDC: Ch3 Slide 5 already presents the NIST SP 800-63-3 'assertion about the identity of the subscriber to the relying party' \u2014 that is literally the SAML assertion model. Ch3 Slide 36 already discusses WebAuthn's broker pattern between authenticator and authenticating service, which mirrors SAML's IdP/SP broker. One slide presenting SAML SP-initiated SSO and contrasting it with OIDC for protocol selection completes the federation picture at the protocol-flow depth the chapter already uses.",
+      "prerequisite_chain": [
+        {
+          "skill": "NIST SP 800-63-3 identity model",
+          "already_taught_in": "Computer and Data Security \u2014 Ch3 Slide 5"
+        },
+        {
+          "skill": "Broker authentication patterns (WebAuthn)",
+          "already_taught_in": "Computer and Data Security \u2014 Ch3 Slide 36"
+        },
+        {
+          "skill": "OAuth 2.0 / OIDC for comparison",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 2,
+      "headline_one_liner": "Add SAML alongside OIDC as the two competing protocols that realise the federation triad the course already teaches in NIST 800-63-3 vocabulary."
+    },
+    {
+      "rank": 7,
+      "topic": "Zero-trust architecture as the perimeter-less realisation of complete mediation + least privilege",
+      "skill_keywords": [
+        "zero trust",
+        "ztna",
+        "continuous verification",
+        "perimeter-less",
+        "least-privilege access",
+        "mtls everywhere"
+      ],
+      "market_frequency_pct": 0.5,
+      "posting_refs": [
+        "post_073",
+        "post_078",
+        "post_079",
+        "post_080",
+        "post_081",
+        "post_082"
+      ],
+      "fits_in_course": "Computer and Data Security \u2014 Ch9 (Firewalls), extending Slide 8's discussion of perimeter limits",
+      "fits_in_course_rationale": "Ch9 Slide 8 already enumerates the limits of perimeter firewalls ('cannot protect against attacks bypassing firewall ... laptop ... infected outside the corporate network and then used internally'), and Ch1 Slide 17 already teaches 'Complete mediation: Every access must be checked' and 'Least privilege.' Zero trust is the architectural pattern that operationalises both Ch1 principles in answer to the Ch9 limits \u2014 one slide framing it that way ties two existing parts of the course together rather than introducing a new vendor framework.",
+      "prerequisite_chain": [
+        {
+          "skill": "Limits of perimeter firewalls",
+          "already_taught_in": "Computer and Data Security \u2014 Ch9 Slide 8"
+        },
+        {
+          "skill": "Complete mediation, least privilege",
+          "already_taught_in": "Computer and Data Security \u2014 Ch1 Slide 17"
+        },
+        {
+          "skill": "mTLS for service-to-service auth",
+          "already_taught_in": null
+        }
+      ],
+      "estimated_learning_hours": 2,
+      "headline_one_liner": "Frame zero trust as the architectural answer to the perimeter limits Ch9 already names, applying the complete-mediation principle Ch1 already teaches."
+    },
+    {
+      "rank": 8,
+      "topic": "Argon2 password hashing \u2014 the modern PHC winner extending the bcrypt slide",
+      "skill_keywords": [
+        "argon2",
+        "argon2id",
+        "memory-hard kdf",
+        "phc",
+        "password hashing competition",
+        "owasp asvs"
+      ],
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_075",
+        "post_076",
+        "post_077",
+        "post_078",
+        "post_079"
+      ],
+      "fits_in_course": "Computer and Data Security \u2014 Ch3 Slide 15",
+      "fits_in_course_rationale": "Ch3 Slide 15 already enumerates the password-hash progression crypt(3) \u2192 MD5-crypt \u2192 Bcrypt and discusses Bcrypt's tunable cost variable. Adding Argon2 (Password Hashing Competition winner, 2015; current OWASP-recommended algorithm) with a one-sentence note on memory-hard parameters m/t/p directly continues the timeline on the same slide and explicitly defeats the GPU/ASIC threat already quantified two slides later (Ch3 Slide 17, '8.2 \u00d7 10\u2079 password combinations each second'). Pure conceptual extension of an existing slide.",
+      "prerequisite_chain": [
+        {
+          "skill": "Bcrypt and salted password hashing",
+          "already_taught_in": "Computer and Data Security \u2014 Ch3 Slides 13\u201315"
+        },
+        {
+          "skill": "GPU-accelerated password attacks",
+          "already_taught_in": "Computer and Data Security \u2014 Ch3 Slide 17"
+        }
+      ],
+      "estimated_learning_hours": 1,
+      "headline_one_liner": "Extend the bcrypt slide one bullet forward to Argon2 \u2014 the algorithm OWASP currently recommends and 5 of 12 postings explicitly name."
+    },
+    {
+      "rank": 9,
+      "topic": "PCI-DSS and SOC 2 as the commercial compliance regimes that ride on the NIST/ISO control catalogues already taught",
+      "skill_keywords": [
+        "pci-dss",
+        "soc2",
+        "trust services criteria",
+        "cardholder data environment",
+        "compliance mapping"
+      ],
+      "market_frequency_pct": 0.42,
+      "posting_refs": [
+        "post_074",
+        "post_078",
+        "post_080",
+        "post_081",
+        "post_083"
+      ],
+      "fits_in_course": "Computer and Data Security \u2014 Ch14 (IT Security Management), extending the standards survey on Slides 3\u20134",
+      "fits_in_course_rationale": "Ch14 Slides 3\u20134 already catalogue the ISO/IEC 27000 series, Ch15 Slides 11\u201320 walk through NIST SP 800-53 control families, and Ch18 Slide 28 already frames audits as 'verify compliance with the security plan ... use checklists.' Adding one slide that names PCI-DSS (cardholder-data scope) and SOC 2 (trust-services criteria) and shows which existing 800-53 control families satisfy the most common SOC 2 / PCI requirements stays at the standards-and-mappings level the course already operates at and answers the most common 'what compliance regimes have you worked under?' interview question.",
+      "prerequisite_chain": [
+        {
+          "skill": "ISO/IEC 27000 series",
+          "already_taught_in": "Computer and Data Security \u2014 Ch14 Slides 3\u20134"
+        },
+        {
+          "skill": "NIST SP 800-53 control families",
+          "already_taught_in": "Computer and Data Security \u2014 Ch15 Slides 11\u201320"
+        },
+        {
+          "skill": "Security audit / compliance process",
+          "already_taught_in": "Computer and Data Security \u2014 Ch18 Slide 28"
+        }
+      ],
+      "estimated_learning_hours": 2,
+      "headline_one_liner": "Map the NIST/ISO control catalogues the course already teaches onto PCI-DSS and SOC 2 \u2014 the two commercial compliance regimes security engineers are most often hired to evidence."
+    }
+  ],
+  "summary": {
+    "total_prescriptions": 9,
+    "top_3_headline": "The top three prescriptions \u2014 OWASP Top 10 enumeration (0.83), TLS handshake mechanics (0.75), and OAuth 2.0 / OIDC framing of NIST 800-63-3 (0.75) \u2014 are each pure conceptual extensions of slides already in the course (Ch4/Ch2, Ch2 Slide 28, Ch3 Slide 5) and together address the modern security engineer's three most-listed vocabulary gaps: web-app risk taxonomy, transport security, and federated identity.",
+    "coverage_note": "These nine prescriptions cover every gap surfaced by the market-fit agent at the conceptual / mechanism depth this introductory survey is bounded to. They close roughly 75\u201385% of the named market gap for a security-engineer entry role; the remaining unaddressed market signals (Python tooling fluency, Burp/SAST/DAST hands-on, Kubernetes security, AWS IAM specifics) are intentionally omitted because they require hands-on lab depth or framework-specific tutorials beyond this course's stated scope, and would violate the depth bound if prescribed here. They belong in a follow-on hands-on secure-engineering course, not as extensions to this survey."
+  }
+}

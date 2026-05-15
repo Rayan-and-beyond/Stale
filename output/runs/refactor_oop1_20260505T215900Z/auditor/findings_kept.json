@@ -1,0 +1,258 @@
+{
+  "findings": [
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 10",
+      "claim": "Java Standard Edition (Java SE) to develop client-side applications. The applications  can run standalone or as applets running from a Web browser.",
+      "interpretation": "The slide presents Java applets as a current capability of Java SE. Applet support has been deprecated for removal across multiple JDK versions (browsers stopped supporting the plug-in years ago) and the Applet API is being eliminated from the platform \u2014 students should not be told this is a real deployment target.",
+      "category": "dead",
+      "status": "dead",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/25/migrate/removed-tools-and-components.html",
+      "citation_excerpt": "The Applet API has been deprecated for removal as all web-browser vendors have either removed support for Java browser plug-ins or announced plans to do so.",
+      "suggested_replacement": "Drop the applet line entirely. Java SE today targets desktop apps via JavaFX/Swing or command-line/server processes; there is no supported way to run applets in a modern browser. Alternatives are JNLP-less Java Web Start replacements, JPackage-built native installers, or just running Java as a standalone process.",
+      "adjudication_reasoning": "The slide unambiguously presents applets as a current Java SE feature, with no nearby contrast slide marking it as obsolete. Oracle's own migration documentation confirms the Applet API is gone.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 02 - Java Basics - Part I.pptx slide 10"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/25/migrate/removed-tools-and-components.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 02 - Java Basics - Part I.pptx slide 63",
+      "claim": "Java characters use Unicode, a 16-bit encoding scheme established by the Unicode Consortium to support the interchange, processing, and display of written texts in the world's diverse languages. Unicode takes two bytes, preceded by \\u, expressed in four hexadecimal numbers that run from '\\u0000' to '\\uFFFF'. So, Unicode can represent 65535 + 1 characters.",
+      "interpretation": "The slide conflates Java's 16-bit `char` with Unicode itself. Unicode is not a 16-bit encoding scheme and is not capped at 65,536 characters; it defines code points up to U+10FFFF. Java's `char` is one UTF-16 code unit, and characters outside the Basic Multilingual Plane require surrogate pairs.",
+      "category": "conceptual",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html",
+      "citation_excerpt": "The char data type (and therefore the value that a Character object encapsulates) are based on the original Unicode specification, which defined characters as fixed-width 16-bit entities. The Unicode Standard has since been changed to allow for characters whose representation requires more than 16 bits. The range of legal code points is now U+0000 to U+10FFFF, known as Unicode scalar value.",
+      "suggested_replacement": "Teach: Unicode defines code points from U+0000 to U+10FFFF. Java's `char` is a 16-bit UTF-16 code unit and only represents BMP code points directly; supplementary characters (U+10000\u2013U+10FFFF) are represented as a surrogate pair of two `char` values. Use `String.codePointAt`, `Character.codePointCount`, or `String.codePoints()` when iterating real characters.",
+      "adjudication_reasoning": "Slide presents the 16-bit/65,536 claim as fact, with no follow-up on supplementary characters or surrogate pairs anywhere in the lecture. Oracle's own Character class documentation explicitly contrasts the original 16-bit assumption with the current U+0000\u2013U+10FFFF range.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 02 - Java Basics - Part I.pptx slide 63"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 04 - OOP Basics.pdf page 26",
+      "claim": "java.util.Date date = new java.util.Date();",
+      "interpretation": "The course teaches `java.util.Date`, `java.util.Calendar`, and `java.util.GregorianCalendar` as the standard date/time abstractions. This API has been formally superseded since Java 8 by `java.time` (`LocalDate`, `LocalDateTime`, `Instant`, `ZonedDateTime`). The legacy classes also expose deprecated members (e.g. most date-component getters/setters and several `Date` constructors are `@Deprecated` since JDK 1.1) \u2014 students learning these as the canonical API leave with an outdated mental model.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html",
+      "citation_excerpt": "As of JDK 1.1, the Calendar class should be used to convert between dates and time fields and the DateFormat class should be used to format and parse date strings. The corresponding methods in Date are deprecated.",
+      "suggested_replacement": "Teach `java.time` (introduced in Java 8): `LocalDate.now()`, `LocalDateTime.now()`, `Instant.now()`, `ZonedDateTime.of(...)`. Use `DateTimeFormatter` for formatting and parsing. `java.util.Date`/`Calendar`/`GregorianCalendar` are kept only for legacy-API interop.",
+      "adjudication_reasoning": "Multiple slides introduce these classes as the prescribed API for working with dates and times, with no slide pointing students at `java.time`. Oracle's own Date javadoc has long deprecated most of the API; the modern replacement is the `java.time` package.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Lecture 04 - OOP Basics.pdf page 26, Lecture 08 - Abstract Classes and Interfaces.pdf page 10, Lecture 08 - Abstract Classes and Interfaces.pdf page 11, Lecture 08 - Abstract Classes and Interfaces.pdf page 13, Lecture 08 - Abstract Classes and Interfaces.pdf page 20"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 18, Lecture 08 - Abstract Classes and Interfaces.pdf page 9",
+      "claim": "+longVlaue(): long",
+      "interpretation": "The UML method label is misspelled `longVlaue` instead of `longValue`. The standard `Number` superclass declares `longValue()`; `longVlaue()` is not a method on Integer, Double, or Number. A student translating the diagram literally will get 'cannot find symbol method longVlaue'.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html",
+      "citation_excerpt": "abstract long\n  longValue()\n  \n  Returns the value of the specified number as a long.",
+      "suggested_replacement": "Correct the diagram label to `+longValue(): long`. Same for any other UML diagrams in the deck that copy this typo.",
+      "adjudication_reasoning": "The misspelling appears as plain (non-OCR) UML text on Lecture 05 page 18 and is corroborated by the OCR'd Number-class diagram on Lecture 08 page 9, so it is genuinely on the slide and not an OCR artifact. The Number javadoc lists the correct spelling `longValue()`.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 18, Lecture 08 - Abstract Classes and Interfaces.pdf page 9"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 23",
+      "claim": "Double.parseDouble(number, 23); // with default Base 23",
+      "interpretation": "`java.lang.Double` does not have a 2-argument `parseDouble(String, int)` overload, nor a 2-argument `valueOf(String, int)`. Floating-point parsing in the JDK is base-10 only \u2014 radix arguments only exist on integer wrapper classes (`Integer`, `Long`, `Short`, `Byte`). The slide explicitly tells students they can parse base-23 floating point numbers, which is wrong and will not compile.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html",
+      "citation_excerpt": "public static double parseDouble(String s) throws NumberFormatException",
+      "suggested_replacement": "Drop the radix line for `Double`. If the goal is parsing a decimal: `Double.parseDouble(\"10.3\")`. If the goal is integer parsing in another base, use `Integer.parseInt(s, radix)` or `Long.parseLong(s, radix)` and accept that it returns an integral type.",
+      "adjudication_reasoning": "The phantom signature appears both in the page 18 UML and as concrete code on page 23 with no contrast slide. The Double javadoc lists only the single-argument `parseDouble(String)` and the single-argument `valueOf(String)`.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 18, Lecture 05 - Thinking in Objects.pdf page 23"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 19",
+      "claim": "Integer Val3 = Integer.valueOf(\"10.3\");",
+      "interpretation": "`Integer.valueOf(String)` is for integer literals only; `\"10.3\"` is not a parsable integer, so this line throws `NumberFormatException` at runtime. The slide presents it as a working autoboxing example with no error annotation.",
+      "category": "runtime_wrong",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html",
+      "citation_excerpt": "Throws:\nNumberFormatException - if the string cannot be parsed as an integer.",
+      "suggested_replacement": "If the input is `\"10.3\"`, parse with `Double.valueOf(\"10.3\")` or `Double.parseDouble(\"10.3\")`. If the intent is to truncate to an int, do `(int) Double.parseDouble(\"10.3\")`. `Integer.valueOf(String)` only accepts characters that form a valid signed integer in base 10.",
+      "adjudication_reasoning": "Slide groups this with two valid `Integer.valueOf` calls and labels the whole block 'autoboxing' \u2014 it is presented as a runnable demonstration with no warning. The Integer.valueOf(String) javadoc explicitly throws NumberFormatException for non-integer input.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 19"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 19",
+      "claim": "Integer Val1 = new Integer(1);",
+      "interpretation": "The `Integer(int)` and `Integer(String)` constructors have been formally `@Deprecated` since JDK 9 in favor of `Integer.valueOf(int)` (which caches small values). The slide shows `new Integer(1)` as a recommended construction style alongside `Integer.valueOf(1)`.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/javase/9/docs/api/java/lang/Integer.html",
+      "citation_excerpt": "Deprecated. It is rarely appropriate to use this constructor. The static factory valueOf(int) is generally a better choice, as it is likely to yield significantly better space and time performance.",
+      "suggested_replacement": "Replace with `Integer.valueOf(1)` or just rely on autoboxing: `Integer val1 = 1;`. Same idea for `new Integer(3).compareTo(new Integer(5))` on Lecture 08 page 20 \u2014 write `Integer.valueOf(3).compareTo(5)` or `Integer.compare(3, 5)`.",
+      "adjudication_reasoning": "Both slides use `new Integer(...)` as live example code with no note that the constructor is deprecated. Oracle's Integer javadoc has carried the `@Deprecated` annotation since Java 9.",
+      "slide_ref_verification": {
+        "status": "rewritten",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 19, Lecture 08 - Abstract Classes and Interfaces.pdf page 20"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/javase/9/docs/api/java/lang/Integer.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 22",
+      "claim": "Double DVal1 = Double.ValueOf(34.5);\nDouble DVal2 = Double.ValueOf(\u201c10.3\u201d);",
+      "interpretation": "The static factory method on `Double` is `valueOf` (lowercase v), not `ValueOf`. Java is case-sensitive, so `Double.ValueOf(...)` resolves to nothing and produces a compile error 'cannot find symbol method ValueOf'.",
+      "category": "doesnt_compile",
+      "status": "wrong",
+      "severity": "high",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html",
+      "citation_excerpt": "public static Double valueOf(String s) throws NumberFormatException",
+      "suggested_replacement": "Use lowercase `valueOf`: `Double dVal1 = Double.valueOf(34.5); Double dVal2 = Double.valueOf(\"10.3\");`. (Also rename the variables to camelCase to match Java convention.)",
+      "adjudication_reasoning": "Same slide shows `Integer.valueOf` with the correct lowercase name two lines earlier, then uses `Double.ValueOf` capitalized \u2014 this is a typo, not a stylistic alternative, and Java's case sensitivity makes it a hard compile error. Double javadoc confirms the correct name is `valueOf`.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 22"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 26",
+      "claim": "BigDecimal c = a.divide(b, 20, BigDecimal.ROUND_UP);",
+      "interpretation": "The integer rounding-mode constants on `BigDecimal` (`ROUND_UP`, `ROUND_HALF_EVEN`, etc.) are formally deprecated since JDK 9; the corresponding `divide(BigDecimal, int, int)` overload is also deprecated. New code should use the `java.math.RoundingMode` enum. The example will compile but emits deprecation warnings.",
+      "category": "deprecated",
+      "status": "outdated",
+      "severity": "medium",
+      "citation_url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigDecimal.html",
+      "citation_excerpt": "Using the integer fields in this class (such as ROUND_HALF_UP) to represent rounding mode is deprecated; the enumeration values of the RoundingMode enum, (such as RoundingMode.HALF_UP) should be used instead.",
+      "suggested_replacement": "Replace with the enum form: `BigDecimal c = a.divide(b, 20, RoundingMode.UP);` (and `import java.math.RoundingMode;`). Also prefer `BigDecimal.valueOf(1.0)` or `new BigDecimal(\"1.0\")` over the `double`-taking `BigDecimal(double)` constructor for non-trivial values.",
+      "adjudication_reasoning": "Slide uses `BigDecimal.ROUND_UP` as the recommended rounding mode in a worked example. The BigDecimal javadoc explicitly says the integer rounding-mode fields are deprecated and `RoundingMode` should be used instead.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 26"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigDecimal.html",
+        "content_type": "text/html"
+      }
+    },
+    {
+      "course": "object_oriented_programming_1",
+      "slide_ref": "Lecture 05 - Thinking in Objects.pdf page 28",
+      "claim": "String s = new String();",
+      "interpretation": "The slide teaches `new String()` and `new String(\"...\")` as standard String construction styles. Both constructors are documented in the JDK as unnecessary because Strings are immutable; `new String(literal)` in particular bypasses string interning and creates a redundant object. Modern Java style guides and IDE inspections flag both as code smells.",
+      "category": "conceptual",
+      "status": "outdated",
+      "severity": "low",
+      "citation_url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html",
+      "citation_excerpt": "Initializes a newly created String object so that it represents an empty character sequence. Note that use of this constructor is unnecessary since Strings are immutable.",
+      "suggested_replacement": "Use string literals: `String message = \"Welcome to Java\";` for the empty case `String s = \"\";`. Reserve `new String(...)` constructors for the few cases where you really need a fresh object (e.g. defeating string interning intentionally, or copying a substring's underlying char[]).",
+      "adjudication_reasoning": "Page 28 introduces all three forms under the heading 'Creating a String' with no caveat. The Java SE 21 String javadoc explicitly states 'use of this constructor is unnecessary since Strings are immutable' for both `String()` and `String(String original)`.",
+      "slide_ref_verification": {
+        "status": "matched",
+        "original": "Lecture 05 - Thinking in Objects.pdf page 28"
+      },
+      "verification": {
+        "status": "verified",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html",
+        "content_type": "text/html"
+      }
+    }
+  ],
+  "summary": {
+    "total_candidates": 25,
+    "flagged": 21,
+    "skipped": 4,
+    "by_skip_reason": {
+      "counterexample": 0,
+      "paired_correction_nearby": 0,
+      "no_primary_source": 3,
+      "other": 1
+    },
+    "courses_audited": [
+      "object_oriented_programming_1"
+    ],
+    "slide_ref_verification": {
+      "total": 20,
+      "matched": 17,
+      "rewritten": 3,
+      "not_found": 0
+    },
+    "total_findings": 10,
+    "by_severity": {
+      "critical": 0,
+      "high": 6,
+      "medium": 3,
+      "low": 1
+    },
+    "verification": {
+      "kept": 10,
+      "dropped_total": 10,
+      "dropped_by_reason": {
+        "excerpt_not_found": 10
+      }
+    }
+  }
+}

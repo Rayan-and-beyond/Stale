@@ -1,0 +1,18 @@
+{
+  "run_id": "20260506T192322Z",
+  "role": "backend",
+  "course_list": [
+    "Week 1 - Revision",
+    "Week 10 - Files Streams and Object Serialization Part 1",
+    "Week 11 - Files Streams and Object Serialization Part 2",
+    "Week 12 - Concurrency",
+    "Week 2+3 - Exception Handling",
+    "Week 4 - GUI Components Part 1",
+    "Week 5 - GUI Components Part 2",
+    "Week 6 - GUI Components Part 3",
+    "Week 7 - Accessing DB Part 1",
+    "Week 8 - Accessing DB Part 2",
+    "Week 9 - Accessing DB Part 3"
+  ],
+  "started_at": "2026-05-06T19:23:24.687814+00:00"
+}

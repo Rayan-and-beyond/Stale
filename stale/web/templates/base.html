@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Stale{% endblock %}</title>
+{% block head_extra %}{% endblock %}
+<link rel="stylesheet" href="/static/style.css?v={{ static_version }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+{% block header %}
+<header class="site-header">
+  <a class="brand" href="/">
+    <span class="brand-mark">S</span>
+    <span>Stale</span>
+  </a>
+  <span class="tagline">Curriculum audits for local course files</span>
+</header>
+{% endblock %}
+<main>
+{% block content %}{% endblock %}
+</main>
+{% block scripts %}{% endblock %}
+</body>
+</html>

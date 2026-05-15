@@ -1,0 +1,32 @@
+{
+  "subject_area": "Operating systems \u2014 core concepts and mechanisms",
+  "pedagogical_level": "undergraduate fundamentals course",
+  "course_intent": "Teach the foundational concepts and mechanisms of operating systems \u2014 students should leave able to explain how an OS manages processes, memory, files, and concurrency, and reason about classical algorithms (scheduling, page replacement, deadlock handling, synchronization) using the Silberschatz textbook framing.",
+  "depth_bound": "Recommendations stay at the level of classical OS concepts and algorithm-level reasoning aligned with the Silberschatz textbook. Kernel-internals deep dives, hands-on systems programming projects (e.g., writing a scheduler in C), distributed OS theory, and modern container/virtualization internals are beyond this course's depth.",
+  "key_topics": [
+    "OS structure, kernel/user mode, and system calls",
+    "Process concept and process lifecycle",
+    "Critical-section problem and Peterson's solution",
+    "Hardware synchronization (test_and_set, compare_and_swap, memory barriers)",
+    "Semaphores and mutex locks",
+    "Deadlock characterization, prevention, avoidance, and detection",
+    "Contiguous memory allocation, segmentation, and paging",
+    "Virtual memory, demand paging, and page replacement (FIFO, OPT, LRU)",
+    "File system interface, access methods, and FCB structures",
+    "File allocation methods (contiguous, linked, indexed, FAT)"
+  ],
+  "one_liner": "Classical undergraduate operating systems course covering processes, synchronization, deadlocks, memory management, virtual memory, and file systems at a conceptual + algorithmic level \u2014 does NOT include hands-on kernel implementation, modern OS topics like containers/virtualization internals, or distributed systems.",
+  "relevant_roles": [
+    "backend",
+    "devops_sre",
+    "embedded"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 64717,
+    "cache_creation_input_tokens": 4684,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 683
+  }
+}

@@ -1,0 +1,552 @@
+{
+  "target_role": "devops_sre",
+  "taught_skillset": [
+    {
+      "skill": "TCP protocol mechanics (3-way handshake, sequence/ACK numbers, retransmission, fast retransmit)",
+      "courses": [
+        "Week 10 _ 11 - Transport Layer"
+      ],
+      "evidence": "Slide 42: 'TCP 3-way handshake ... clientSocket.connect((serverName,serverPort))'; Slide 34: 'TCP fast retransmit ... arrival of three duplicate ACK causes the sender to retransmit its oldest unACKed segment'"
+    },
+    {
+      "skill": "TCP congestion control (AIMD, slow start, Tahoe/Reno, BBR, ECN)",
+      "courses": [
+        "Week 10 _ 11 - Transport Layer"
+      ],
+      "evidence": "Slide 50: 'Cut in half on loss detected by triple duplicate ACK (TCP Reno) ... Cut to 1 MSS ... when loss detected by timeout (TCP Tahoe)'; Slide 59: 'BBR deployed on Google's (internal) backbone network'; Slide 60: 'Explicit congestion notification (ECN)'"
+    },
+    {
+      "skill": "TCP flow control (rwnd, receive buffer)",
+      "courses": [
+        "Week 10 _ 11 - Transport Layer"
+      ],
+      "evidence": "Slide 39: 'TCP receiver advertises free buffer space in rwnd field in TCP header ... RcvBuffer size set via socket options (typical default is 4096 bytes)'"
+    },
+    {
+      "skill": "UDP (connectionless, header format, use cases: DNS/SNMP/HTTP/3)",
+      "courses": [
+        "Week 10 _ 11 - Transport Layer"
+      ],
+      "evidence": "Slide 11: 'UDP use: streaming multimedia apps ... DNS, SNMP, HTTP/3'; Slide 16: 'UDP segment header ... source port # ... checksum'"
+    },
+    {
+      "skill": "HTTP/1.1 (persistent vs non-persistent, methods, status codes, conditional GET, web caches/proxies)",
+      "courses": [
+        "Week 12 _13 _ 14 - Application Layer"
+      ],
+      "evidence": "Slide 23: 'Persistent HTTP (HTTP1.1): server leaves connection open after sending response'; Slide 26: 'POST method ... GET method ... HEAD method ... PUT method'; Slide 28: '200 OK ... 301 Moved Permanently ... 404 Not Found'; Slide 29: 'A Web cache\u2014also called a proxy server'"
+    },
+    {
+      "skill": "DNS (hierarchical name servers, root/.com/.edu, hostname-to-IP resolution, DNSSEC)",
+      "courses": [
+        "Week 12 _13 _ 14 - Application Layer"
+      ],
+      "evidence": "Slide 48: 'client queries root server to find .com DNS server ... client queries .com DNS server to get amazon.com DNS server'; Slide 50: 'DNSSEC \u2013 provides security (authentication, message integrity)'"
+    },
+    {
+      "skill": "Email protocols (SMTP RFC 5321, IMAP RFC 3501)",
+      "courses": [
+        "Week 12 _13 _ 14 - Application Layer"
+      ],
+      "evidence": "Slide 38: 'SMTP RFC (5321) uses TCP to reliably transfer email message from client ... to server, port 25'; Slide 43: 'IMAP: Internet Mail Access Protocol [RFC 3501]'"
+    },
+    {
+      "skill": "FTP (control/data connections, port 21/20, ASCII commands)",
+      "courses": [
+        "Week 12 _13 _ 14 - Application Layer"
+      ],
+      "evidence": "Slide 34: 'FTP client contacts FTP server at port 21 ... server opens 2nd TCP connection (for file) to client ... TCP data connection port 20'"
+    },
+    {
+      "skill": "P2P / BitTorrent (chunks, tracker, tit-for-tat)",
+      "courses": [
+        "Week 12 _13 _ 14 - Application Layer"
+      ],
+      "evidence": "Slide 53: 'P2P file distribution: BitTorrent ... file divided into 256Kb chunks ... tracker: tracks peers'"
+    },
+    {
+      "skill": "Video streaming concepts (CDNs, jitter buffer, playout)",
+      "courses": [
+        "Week 12 _13 _ 14 - Application Layer"
+      ],
+      "evidence": "Slide 61: 'continuous playout constraint ... but network delays are variable (jitter), so will need client-side buffer'"
+    },
+    {
+      "skill": "IP datagram, IPv4 32-bit addressing, dotted-decimal notation",
+      "courses": [
+        "Week 8 _ 9 - Network Layer"
+      ],
+      "evidence": "Slide 26: 'IP address: 32-bit identifier associated with each host or router interface ... dotted-decimal IP address notation'"
+    },
+    {
+      "skill": "CIDR / subnetting / longest prefix matching",
+      "courses": [
+        "Week 8 _ 9 - Network Layer"
+      ],
+      "evidence": "Slide 32: 'CIDR: Classless InterDomain Routing ... address format: a.b.c.d/x'; Slide 15: 'Longest prefix matching ... use longest address prefix that matches destination address'"
+    },
+    {
+      "skill": "NAT (private address space, port translation, NAT table)",
+      "courses": [
+        "Week 8 _ 9 - Network Layer"
+      ],
+      "evidence": "Slide 40: 'private IP address space (10/8, 172.16/12, 192.168/16 prefixes)'; Slide 41: 'replace (source IP address, port #) ... with (NAT IP address, new port #)'"
+    },
+    {
+      "skill": "IPv6 (128-bit addresses, transition tunneling)",
+      "courses": [
+        "Week 8 _ 9 - Network Layer"
+      ],
+      "evidence": "Slide 44: 'IPv6 increases the size of the IP address from 32 to 128 bits'; Slide 47: 'tunneling: IPv6 datagram carried as payload in IPv4 datagram'"
+    },
+    {
+      "skill": "Router data plane vs control plane (incl. SDN concept)",
+      "courses": [
+        "Week 8 _ 9 - Network Layer"
+      ],
+      "evidence": "Slide 5: 'two control-plane approaches: traditional routing algorithms ... software-defined networking (SDN): implemented in (remote) servers'"
+    },
+    {
+      "skill": "Ethernet (frame structure, MAC addresses, CSMA/CD with binary backoff)",
+      "courses": [
+        "Week 6 _ 7 - Link Layer and LANs"
+      ],
+      "evidence": "Slide 28: 'Ethernet CSMA/CD algorithm ... after mth collision, chooses K at random from {0,1,2, \u2026, 2m-1}'; Slide 51: 'addresses: 6 byte source, destination MAC addresses'"
+    },
+    {
+      "skill": "ARP (IP\u2192MAC resolution, ARP table, broadcast FF-FF-FF-FF-FF-FF)",
+      "courses": [
+        "Week 6 _ 7 - Link Layer and LANs"
+      ],
+      "evidence": "Slide 38: 'B's MAC address not in A's ARP table, so A uses ARP to find B's MAC address ... Ethernet frame (sent to FF-FF-FF-FF-FF-FF)'"
+    },
+    {
+      "skill": "Multiple access protocols (TDMA, FDMA, CSMA/CD, CSMA/CA, polling, token passing)",
+      "courses": [
+        "Week 6 _ 7 - Link Layer and LANs"
+      ],
+      "evidence": "Slide 32: 'CSMA/CD used in Ethernet ... CSMA/CA used in 802.11 ... taking turns: polling from central site, token passing'"
+    },
+    {
+      "skill": "Error detection (parity, Internet checksum, CRC)",
+      "courses": [
+        "Week 6 _ 7 - Link Layer and LANs"
+      ],
+      "evidence": "Slide 15: 'Cyclic Redundancy Check (CRC) ... can detect all burst errors less than r+1 bits ... widely used in practice (Ethernet, 802.11 WiFi)'"
+    },
+    {
+      "skill": "Physical-layer signals (analog/digital, sine waves, bandwidth in Hz)",
+      "courses": [
+        "Week 4 _ 5 - Physical Layer wired and wireless connectivity"
+      ],
+      "evidence": "Slide 25: 'The range of frequencies contained in a composite signal is its bandwidth'; Slide 30: '1 can be encoded as a positive voltage and a 0 as zero voltage'"
+    },
+    {
+      "skill": "Signal impairment (attenuation, distortion, thermal/induced/crosstalk/impulse noise)",
+      "courses": [
+        "Week 4 _ 5 - Physical Layer wired and wireless connectivity"
+      ],
+      "evidence": "Slide 41: 'Attenuation ... is the loss of energy'; Slide 44: 'Thermal noise ... Induced noise ... Crosstalk ... Impulse noise'"
+    },
+    {
+      "skill": "Network performance metrics (bandwidth in bps, throughput, latency components, jitter)",
+      "courses": [
+        "Week 4 _ 5 - Physical Layer wired and wireless connectivity",
+        "Week 1 - Introduction to Data Communication"
+      ],
+      "evidence": "Slide 52 (Wk 4/5): 'Latency is made of four components: propagation time, transmission time, queuing time, processing delay'; Slide 57 (Wk 4/5): 'Jitter is a problem if different packets of data encounter different delays'"
+    },
+    {
+      "skill": "Network types and topologies (LAN/WAN/MAN/PAN; mesh/star/bus/ring)",
+      "courses": [
+        "Week 1 - Introduction to Data Communication"
+      ],
+      "evidence": "Slide 19: 'Personal Area Network (1-10m) ... Local Area Network ... Metropolitan Area Network ... Wide Area Network'; Slides 14\u201317 cover Mesh/Star/Bus/Ring"
+    },
+    {
+      "skill": "VPNs (IPsec, SSL, MPLS, PPTP, L2TP, tunneling)",
+      "courses": [
+        "Week 15 - VPNs"
+      ],
+      "evidence": "Slide 3: 'VPN uses virtual connections based on IPsec/SSL ... Most network providers also offer private VPNs based on MPLS'; Slide 5: 'PPTP ... L2TP ... IPsec for network-to-network connectivity'"
+    },
+    {
+      "skill": "SNMP (mentioned as a UDP-based application)",
+      "courses": [
+        "Week 10 _ 11 - Transport Layer"
+      ],
+      "evidence": "Slide 11: 'UDP use: ... SNMP'; Slides 13\u201315 use 'SNMP server / SNMP client' as the running example for UDP transport-layer actions"
+    }
+  ],
+  "market_demand": [
+    {
+      "skill": "docker",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "bash",
+      "frequency_pct": 1.0,
+      "posting_count": 12,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "python",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "git",
+      "frequency_pct": 0.92,
+      "posting_count": 11,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "monitoring (observability stacks)",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "linux",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "frequency_pct": 0.83,
+      "posting_count": 10,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "terraform",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_061",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "ci/cd",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "aws",
+      "frequency_pct": 0.75,
+      "posting_count": 9,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_066",
+        "post_069",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "prometheus",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_064",
+        "post_065",
+        "post_067",
+        "post_069",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "github actions",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_070",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "on-call rotation",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_070"
+      ]
+    },
+    {
+      "skill": "go (golang)",
+      "frequency_pct": 0.67,
+      "posting_count": 8,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_068",
+        "post_069",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "helm",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_061",
+        "post_063",
+        "post_064",
+        "post_066",
+        "post_067",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "datadog",
+      "frequency_pct": 0.58,
+      "posting_count": 7,
+      "posting_refs": [
+        "post_061",
+        "post_062",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "jenkins",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_061",
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_070",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "grafana",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_062",
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_067",
+        "post_070"
+      ]
+    },
+    {
+      "skill": "slos/slis",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_063",
+        "post_064",
+        "post_066",
+        "post_068",
+        "post_069",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "ansible",
+      "frequency_pct": 0.5,
+      "posting_count": 6,
+      "posting_refs": [
+        "post_063",
+        "post_065",
+        "post_066",
+        "post_067",
+        "post_069",
+        "post_071"
+      ]
+    },
+    {
+      "skill": "gitlab ci",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_062",
+        "post_066",
+        "post_067",
+        "post_068",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "argocd",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_063",
+        "post_064",
+        "post_065",
+        "post_067",
+        "post_070"
+      ]
+    },
+    {
+      "skill": "vault",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_064",
+        "post_068",
+        "post_070",
+        "post_071",
+        "post_072"
+      ]
+    },
+    {
+      "skill": "incident response",
+      "frequency_pct": 0.42,
+      "posting_count": 5,
+      "posting_refs": [
+        "post_064",
+        "post_065",
+        "post_066",
+        "post_068",
+        "post_071"
+      ]
+    }
+  ],
+  "gaps": [],
+  "summary": {
+    "total_postings_analyzed": 12,
+    "skills_taught": 25,
+    "skills_market_demands": 24,
+    "gap_count": 0,
+    "headline": "Course is a TCP/IP networking-fundamentals survey; every high-frequency DevOps/SRE demand (Docker, Kubernetes, Terraform, CI/CD, Prometheus/Grafana/Datadog, AWS, Linux, Bash, Git, Go, on-call/SLOs) is cross-domain to networking with zero partial coverage to extend, so no in-scope gaps can be surfaced under the extend-only and depth-bound rules."
+  }
+}

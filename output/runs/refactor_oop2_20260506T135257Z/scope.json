@@ -1,0 +1,32 @@
+{
+  "subject_area": "Object-oriented Java programming \u2014 applied APIs and GUI",
+  "pedagogical_level": "undergraduate fundamentals course with hands-on Java coding",
+  "course_intent": "Build on introductory OOP by teaching students to write working Java applications that use exception handling, Swing GUIs, file I/O and serialization, JDBC database access, and basic multithreading \u2014 students should leave able to implement small Java desktop applications that integrate these standard library APIs.",
+  "depth_bound": "Recommendations stay at the level of standard-library Java API usage and small application-level code. JVM internals, advanced concurrency theory (memory models, lock-free algorithms), modern GUI frameworks (JavaFX/web), ORM frameworks (Hibernate/JPA depth), enterprise frameworks (Spring), and build/deployment tooling are beyond this course's depth.",
+  "key_topics": [
+    "Inheritance, polymorphism, method overriding/overloading with Employee hierarchy",
+    "try/catch/finally exception handling and custom exception types",
+    "Swing GUI components (JFrame, JButton, JTextArea, JTable, layout managers)",
+    "Sequential text file I/O with Formatter and Scanner",
+    "Object serialization with ObjectInputStream/ObjectOutputStream",
+    "NIO Path/Paths/Files for file and directory information",
+    "JDBC: Connection, Statement, ResultSet, PreparedStatement, RowSet",
+    "SQL fundamentals (SELECT, WHERE, ORDER BY, INNER JOIN, INSERT/UPDATE/DELETE)",
+    "Thread life cycle and states; Runnable interface and ExecutorService",
+    "Transaction processing with commit/rollback"
+  ],
+  "one_liner": "Second-semester Java OOP course teaching applied use of standard Java APIs \u2014 exception handling, Swing GUIs, file/serialization I/O, JDBC with SQL, and basic threading via Executors \u2014 at hands-on code level, but does NOT cover modern frameworks (Spring, JavaFX, Hibernate), advanced concurrency theory, or build/deployment tooling.",
+  "relevant_roles": [
+    "backend",
+    "fullstack",
+    "mobile"
+  ],
+  "ambiguity_note": null,
+  "_usage": {
+    "model": "claude-opus-4-7",
+    "input_tokens": 84112,
+    "cache_creation_input_tokens": 4684,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 876
+  }
+}
