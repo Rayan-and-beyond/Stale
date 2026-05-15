@@ -3,7 +3,7 @@
 **Audit your CS curriculum for what's gone stale — and see what the job market is asking for that your school isn't teaching.**
 
 Drop in slide decks from a university course, pick a target job role, and Stale tells you:
-(1) what's outdated, deprecated, insecure, or just plain wrong.
+(1) what's outdated, deprecated, insecure, or just plain wrong, and corrects it.
 (2) where the curriculum diverges from what employers in that role actually hire for.
 
 > Built on Anthropic's Beta Managed Agents API with two Claude models in production: **Sonnet 4.6** for high-recall candidate surfacing, **Opus 4.7** for final flag/skip judgment. A deterministic Python pass re-fetches every cited URL and re-anchors every slide reference against the course text — fabricated quotes and mis-attribution caught at zero LLM cost.
