@@ -1,18 +1,18 @@
 # Stale
 
-**A multi-agent system that audits CS course materials for outdated, deprecated, insecure, or factually wrong content — and grounds every finding in a primary-source citation.**
+**Audit your CS curriculum for what's gone stale — and see what the job market is asking for that your school isn't teaching.**
 
-Stale reads slide decks (`.pdf` / `.pptx`, with speaker notes and OCR for code screenshots), runs a two-stage agent pipeline against them, and produces a structured report you can click through in a web UI. It also compares what a course *actually teaches* against role-tagged job-market demand and ranks the missing topics.
+Drop in slide decks from a university course, pick a target job role, and Stale tells you (1) what's outdated, deprecated, insecure, or just plain wrong, and (2) where the curriculum diverges from what employers in that role actually hire for. Every flag comes with a verbatim slide quote and a primary-source citation that's been re-fetched and substring-checked.
 
-> Built with Anthropic's Beta Managed Agents API. Two Claude models in production: **Sonnet 4.6** for high-recall candidate surfacing, **Opus 4.7** for final flag/skip judgment with primary-source citations. Deterministic Python verifiers re-fetch every cited URL, substring-match the agent's quoted excerpt, and re-anchor every `slide_ref` against the course text — catching fabrications and mis-attribution at zero LLM cost.
+> Built on Anthropic's Beta Managed Agents API with two Claude models in production: **Sonnet 4.6** for high-recall candidate surfacing, **Opus 4.7** for final flag/skip judgment. A deterministic Python pass re-fetches every cited URL and re-anchors every slide reference against the course text — fabricated quotes and mis-attribution caught at zero LLM cost.
 
 ---
 
-## What it does
+## What you get back
 
-Given a folder of course slide decks and a target job role, Stale produces three artifacts:
+Three reports, generated end-to-end from your slide decks:
 
-1. **Audit** — every code snippet, claim, library mention, or syntax pattern in the curriculum that is dead / deprecated / won't compile / breaks at runtime / outdated teaching / conceptually wrong. Each finding carries:
+1. **An audit of what's broken.** Every code snippet, claim, library mention, or syntax pattern in the curriculum that's dead, deprecated, won't compile today, breaks at runtime, teaches an outdated mental model, or is conceptually wrong. Each finding carries:
    - The verbatim slide quote (grep-checkable against the PDF)
    - A category from a 7-bucket taxonomy
    - A primary-source citation (Oracle docs, JLS sections, JEPs/PEPs, RFCs, CVEs, MDN)
@@ -20,9 +20,9 @@ Given a folder of course slide decks and a target job role, Stale produces three
    - A "what to teach instead" suggested replacement
    - An audit-trail note explaining why this wasn't a counterexample
 
-2. **Market-fit gap analysis** — extracts the actual skillset taught (not just course titles), compares it against role-tagged job postings, returns gaps with severity, market-frequency percentages, and posting citations. Strict-scope: only flags gaps the course already partially covers.
+2. **A market-fit gap analysis.** Stale extracts the *actual* skillset the course teaches (not just titles on the schedule), compares it against role-tagged job postings, and returns gaps with severity, market-frequency percentages, and posting citations. Strict-scope: it only flags gaps the course already partially covers — never inventing topics out of thin air.
 
-3. **Topics ranking** — converts gaps into prescriptions ordered by market frequency, with prerequisite chains and "where it fits in the existing curriculum" recommendations.
+3. **A topics ranking.** Gaps converted into prescriptions, ordered by how often the market mentions them, with prerequisite chains and recommendations for where each one fits into the existing curriculum.
 
 ## Architecture
 
@@ -69,13 +69,13 @@ Given a folder of course slide decks and a target job role, Stale produces three
 Detailed design: [`docs/architecture.md`](docs/architecture.md).
 Decision history: [`docs/decisions.md`](docs/decisions.md).
 
-## Why two stages
+## How we ended up with two stages
 
-The original auditor was a single Opus session that decided FLAG vs SKIP inline as it read the curriculum. It silently rationalized away real deprecations as "probably a counterexample" — high precision, terrible recall.
+The first version was a single Opus session that read the slides and decided FLAG-vs-SKIP inline. It silently rationalized real deprecations away as "probably a counterexample" — high precision, terrible recall.
 
-Splitting into **Extractor** (high-recall: surface every candidate, do not decide) → **Adjudicator** (per-candidate FLAG/SKIP with full course context and burden-of-proof on SKIP) was the architectural fix. Validated on two real courses (OOP 1, OOP 2) with reviewer-graded output:
+The fix was to split recall from judgment. **Extractor** (Sonnet 4.6) surfaces every candidate without deciding anything; **Adjudicator** (Opus 4.7) judges each candidate one at a time, with the full course as context and burden-of-proof on SKIP. Validated on two real courses (OOP 1, OOP 2) with reviewer-graded output:
 
-"Findings (verified)" is the subset that survives deterministic citation re-fetch + slide_ref re-anchoring — what the UI shows. The Adjudicator's raw output (`findings.json`) is larger; the verified subset is in `findings_kept.json`.
+The "Findings (verified)" column below is the subset that survives deterministic citation re-fetch + slide_ref re-anchoring — what the UI actually shows. The Adjudicator's raw output (`findings.json`) is larger; the verified subset is in `findings_kept.json`.
 
 | Course | Files | Candidates | Adjudicator FLAGs | Skipped | Findings (verified) | Categories used |
 |---|---:|---:|---:|---:|---:|:--|
@@ -171,13 +171,13 @@ The market-fit agent reads from a deterministic local dataset (`SEED=42`), not l
 
 This is a deliberate choice: live scraping LinkedIn / Indeed is fragile and ToS-questionable; the differentiator here is the *system architecture*, not where the rows came from. The `.invalid` TLD on every posting URL flags them as non-resolvable so no downstream consumer can mistake them for real listings.
 
-## Run another role (no extra audit cost)
+## Run another role
 
-Once a course has been audited, you can re-run it against a different target role from its run page — the pipeline reuses the existing audit findings and only re-runs market-fit + topics. A typical retest takes ~15 minutes and skips the most expensive stage entirely. Look for the "Run another role" card on any completed run page; the new run links back to its source.
+Once a course is audited, you can re-run it against a different target job role from its run page. The audit findings are reused and only the market-fit + topics stages re-fire — about 15 minutes per retest, skipping the most expensive part of the pipeline entirely. Look for the "Run another role" card on any completed run page.
 
 ## Status
 
-Working end-to-end on 11 (course, role) pairs across 8 distinct courses. Three reviewer passes plus a feature drop for role re-testing landed 2026-05-06/07 — see Decisions 12, 13, 14, 15. Pre-ship hardening covered red tests, false-success status pill, Auditor → Market-fit consistency wiring, package-data declarations, shared SSE reconnect helper, ghost-run filter on the index, and repo-wide secrets redaction with a regression scan in CI. Detection quality reviewer-rated shippable on the Mobile run (hardcoded keys, SQL injection, AsyncTask, deprecated fragments/loaders, C2DM, Dalvik, `MODE_WORLD_*` all caught with matched citations). See [`STATE.md`](STATE.md) for the current truth and [`docs/decisions.md`](docs/decisions.md) for the running design log (15 entries).
+**v1 shipped 2026-05-15.** Working end-to-end on 11 curated (course, role) pairs across 8 distinct courses — all browsable in the UI on a fresh clone without an API key. The Mobile run is the strongest demo of detection quality: hardcoded keys, SQL injection, AsyncTask, deprecated fragments/loaders, C2DM, Dalvik, and `MODE_WORLD_*` were all caught with matched primary-source citations. See [`STATE.md`](STATE.md) for the current truth and [`docs/decisions.md`](docs/decisions.md) for the 15-entry design log.
 
 ## License
 
