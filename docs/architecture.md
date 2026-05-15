@@ -179,7 +179,7 @@ Outputs: `verified.json` (every finding annotated) + `findings_kept.json` (only 
 ## Repo layout
 
 ```
-LegacyLifter/
+Stale/
 ├── README.md                   # 100-200 word summary + run instructions
 ├── pyproject.toml
 ├── .env.example                # ANTHROPIC_API_KEY

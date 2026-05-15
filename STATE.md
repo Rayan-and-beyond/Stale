@@ -97,7 +97,7 @@ Each run keeps `meta.json`, `scope.json`, `done.marker`, `stage1.marker`, and th
 ## Where everything lives
 
 ```
-LegacyLifter/
+Stale/
 ├── README.md                            ← portfolio-facing entry point
 ├── STATE.md                             ← you are here
 ├── LICENSE                              ← MIT

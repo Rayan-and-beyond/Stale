@@ -87,7 +87,7 @@ Splitting into **Extractor** (high-recall: surface every candidate, do not decid
 ```bash
 # 1. clone + install (editable install — see "Installation" below)
 git clone <this-repo>
-cd LegacyLifter
+cd Stale
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
