@@ -246,6 +246,42 @@ html.start-arriving body.start-page.start-arrived .start-ambient {
   animation: ambient-float-d 19s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
 }
 
+.start-page .ambient-blob--e {
+  width: 28rem;
+  height: 28rem;
+  top: 46%;
+  left: -8rem;
+  background: radial-gradient(circle, rgba(120, 170, 130, 0.48) 0%, rgba(120, 170, 130, 0.14) 45%, transparent 70%);
+  animation: ambient-float-e 24s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.start-page .ambient-blob--f {
+  width: 30rem;
+  height: 30rem;
+  bottom: -12rem;
+  right: -14rem;
+  background: radial-gradient(circle, rgba(89, 132, 102, 0.5) 0%, rgba(89, 132, 102, 0.15) 45%, transparent 70%);
+  animation: ambient-float-f 31s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.start-page .ambient-blob--g {
+  width: 18rem;
+  height: 18rem;
+  top: 16%;
+  left: 36%;
+  background: radial-gradient(circle, rgba(184, 220, 184, 0.42) 0%, rgba(184, 220, 184, 0.12) 45%, transparent 70%);
+  animation: ambient-float-g 17s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.start-page .ambient-blob--h {
+  width: 22rem;
+  height: 22rem;
+  bottom: 26%;
+  left: 6%;
+  background: radial-gradient(circle, rgba(154, 192, 138, 0.4) 0%, rgba(154, 192, 138, 0.12) 45%, transparent 70%);
+  animation: ambient-float-h 26s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
 @keyframes ambient-float-a {
   0% { transform: translate3d(0, 0, 0) scale(1); }
   100% { transform: translate3d(7rem, 4rem, 0) scale(1.14); }
@@ -264,6 +300,26 @@ html.start-arriving body.start-page.start-arrived .start-ambient {
 @keyframes ambient-float-d {
   0% { transform: translate3d(0, 0, 0) scale(1); }
   100% { transform: translate3d(-4rem, 6rem, 0) scale(0.88); }
+}
+
+@keyframes ambient-float-e {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(5rem, -4rem, 0) scale(1.1); }
+}
+
+@keyframes ambient-float-f {
+  0% { transform: translate3d(0, 0, 0) scale(0.96); }
+  100% { transform: translate3d(-6rem, -5rem, 0) scale(1.12); }
+}
+
+@keyframes ambient-float-g {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(3rem, 5rem, 0) scale(0.9); }
+}
+
+@keyframes ambient-float-h {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-4rem, -3rem, 0) scale(1.08); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2987,7 +3043,7 @@ blockquote.excerpt {
 }
 
 .home-page .demo-issue-tag {
-  color: rgba(240, 244, 240, 0.62);
+  color: #d67a70;
   font-size: 10.5px;
   font-weight: 600;
   flex-shrink: 0;

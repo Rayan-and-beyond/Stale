@@ -17,7 +17,7 @@ def test_curated_run_renders():
 
     assert response.status_code == 200
     assert "Object Oriented Programming 1" in response.text
-    assert "Target Role:" in response.text
+    assert "Role:" in response.text
     assert "backend" in response.text
 
 
@@ -50,9 +50,9 @@ def test_run_tabs_have_plain_english_tooltips():
     response = client.get("/run/refactor_oop2_20260506T135257Z")
 
     assert response.status_code == 200
-    assert 'data-tooltip="Issues found in the course content."' in response.text
-    assert 'data-tooltip="How well the course fits the target role."' in response.text
-    assert 'data-tooltip="Suggested updates to make the course stronger."' in response.text
+    assert 'data-tooltip="Issues found in the course content"' in response.text
+    assert 'data-tooltip="How well the course fits the target role"' in response.text
+    assert 'data-tooltip="Suggested updates to make the course stronger"' in response.text
     assert 'data-tooltip="Items hidden because checks did not pass."' not in response.text
     assert 'class="tab" data-tab="activity"' not in response.text
     assert 'class="tab" data-tab="dropped"' not in response.text
@@ -82,6 +82,8 @@ def test_index_uses_plain_finding_counts():
     assert "shouldn't!" in response.text
     assert "Upload your slides" in response.text
     assert "Upload your slides and Stale reads through them" in response.text
+    assert "Issue:" in response.text
+    assert "Why it&#39;s wrong" not in response.text
     assert "what to learn instead" in response.text
     assert "Hello" in response.text
     assert "real" in response.text
@@ -107,7 +109,7 @@ def test_start_page_contains_upload_and_recent_runs():
     assert 'id="start-audit"' in response.text
     assert "1 verified findings" not in response.text
     assert "verified findings" not in response.text
-    assert "1 finding" in response.text
+    assert "1 Finding" in response.text
 
 
 def test_run_page_no_longer_points_to_removed_activity_tab():
@@ -121,7 +123,7 @@ def test_run_page_no_longer_points_to_removed_activity_tab():
 
 
 def test_retest_button_appears_when_audit_done_and_curriculum_reachable():
-    """The 'Test with another role' retest form should render on a completed
+    """The 'Run another role' retest form should render on a completed
     run when the curriculum is reachable (own dir or repo-level fallback)."""
     from stale.web.app import _can_retest_with_new_role
     client = TestClient(app)
@@ -137,7 +139,7 @@ def test_retest_button_appears_when_audit_done_and_curriculum_reachable():
 
     response = client.get("/run/refactor_oop1_20260505T215900Z")
     assert response.status_code == 200
-    assert "Test with another role" in response.text
+    assert "Run another role" in response.text
     assert 'action="/run/refactor_oop1_20260505T215900Z/retest"' in response.text
 
 
@@ -153,7 +155,7 @@ def test_retest_button_appears_for_mobile_with_fuzzy_curriculum_match():
 
     response = client.get("/run/web_20260504T162848Z")
     assert response.status_code == 200
-    assert "Test with another role" in response.text
+    assert "Run another role" in response.text
     assert 'action="/run/web_20260504T162848Z/retest"' in response.text
 
 
@@ -172,7 +174,7 @@ def test_retest_button_appears_for_all_completed_demo_runs():
         assert _can_retest_with_new_role(run_dir), run_dir.name
         response = client.get(f"/run/{run_dir.name}")
         assert response.status_code == 200
-        assert "Test with another role" in response.text
+        assert "Run another role" in response.text
 
 
 def test_retest_endpoint_rejects_unknown_run():

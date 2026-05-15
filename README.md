@@ -109,7 +109,7 @@ python -m stale.web
 Do not commit `.env`; it contains your API key and your own Managed Agent IDs. Drop a folder of `.pdf` / `.pptx` slide decks via the upload form, pick a target role, then review Findings, Market-fit, and Topics in the run page. **No API key?** The repo ships with 11 curated demo runs visible in the UI on a fresh clone.
 
 ```bash
-# run the test suite (22 tests)
+# run the test suite (26 tests)
 pytest
 ```
 
@@ -171,9 +171,9 @@ The market-fit agent reads from a deterministic local dataset (`SEED=42`), not l
 
 This is a deliberate choice: live scraping LinkedIn / Indeed is fragile and ToS-questionable; the differentiator here is the *system architecture*, not where the rows came from. The `.invalid` TLD on every posting URL flags them as non-resolvable so no downstream consumer can mistake them for real listings.
 
-## Test with another role (no extra audit cost)
+## Run another role (no extra audit cost)
 
-Once a course has been audited, you can re-test it against a different target role from its run page — the pipeline reuses the existing audit findings and only re-runs market-fit + topics. A typical retest takes ~15 minutes and skips the most expensive stage entirely. Look for the "Test with another role" card on any completed run page; the new run links back to its source.
+Once a course has been audited, you can re-run it against a different target role from its run page — the pipeline reuses the existing audit findings and only re-runs market-fit + topics. A typical retest takes ~15 minutes and skips the most expensive stage entirely. Look for the "Run another role" card on any completed run page; the new run links back to its source.
 
 ## Status
 

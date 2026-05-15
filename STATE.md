@@ -1,4 +1,4 @@
-# Stale — Project State (last updated 2026-05-06)
+# Stale — Project State (last updated 2026-05-15)
 
 > Quick-start hand-off doc. Read this first if you're picking up the project. Design docs live in [`docs/`](docs/); decision history in [`docs/decisions.md`](docs/decisions.md).
 
