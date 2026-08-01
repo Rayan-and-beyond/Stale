@@ -71,18 +71,28 @@ Three reports, generated end-to-end from your slide decks:
 Detailed design: [`docs/architecture.md`](docs/architecture.md).
 Decision history: [`docs/decisions.md`](docs/decisions.md).
 
-## How we ended up with two stages
+## Engineering decisions
+
+### Separate recall from judgment
 
 The first version was a single Opus session that read the slides and decided FLAG-vs-SKIP inline. It silently rationalized real deprecations away as "probably a counterexample" — high precision, terrible recall.
 
 The fix was to split recall from judgment. **Extractor** (Sonnet 4.6) surfaces every candidate without deciding anything; **Adjudicator** (Opus 4.7) judges each candidate one at a time, with the full course as context and burden-of-proof on SKIP. Validated on two real courses (OOP 1, OOP 2) with reviewer-graded output:
 
-The "Findings (verified)" column below is the subset that survives deterministic citation re-fetch + slide_ref re-anchoring — what the UI actually shows. The Adjudicator's raw output (`findings.json`) is larger; the verified subset is in `findings_kept.json`.
-
 | Course | Files | Candidates | Adjudicator FLAGs | Skipped | Findings (verified) | Categories used |
 |---|---:|---:|---:|---:|---:|:--|
 | OOP 1 | 8 | 25 | 20 | 5 | 10 | dead · doesnt_compile · runtime_wrong · deprecated · conceptual |
 | OOP 2 | 11 | 37 | 9 | 25 | 8 | dead · deprecated · outdated_teaching · conceptual |
+
+### Verify every citation outside the model
+
+Every flagged claim passes through deterministic Python verification. Stale re-fetches the source URL, substring-matches the quoted excerpt, and re-anchors the slide reference against the original course text. If the evidence is missing, the finding never reaches the report.
+
+The "Findings (verified)" column above is what the UI actually shows. The Adjudicator's raw output is kept in `findings.json`; the verified subset is written to `findings_kept.json`.
+
+### Keep market-fit recommendations in scope
+
+The Market-fit Agent can only flag gaps the course already partially covers. It cannot invent missing topics from nothing. This keeps the report tied to the curriculum instead of turning it into an unlimited wish list no syllabus could satisfy.
 
 ## Quick start
 
