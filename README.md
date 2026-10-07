@@ -2,15 +2,21 @@
 
 **Audit your CS curriculum for what's gone stale — and see what the job market is asking for that your school isn't teaching.**
 
-**Website:** [getstale.dev](https://getstale.dev) · **Contact:** [rayan@getstale.dev](mailto:rayan@getstale.dev)
+**Website:** [getstale.dev](https://getstale.dev) · **Contact:** [rayan@getstale.dev](mailto:rayan@getstale.dev) · **Founder:** [Rayan Alhusennan](https://www.linkedin.com/in/rayan-alhusennan/)
 
 Drop in slide decks from a university course, pick a target job role, and Stale tells you:
 (1) what's outdated, deprecated, insecure, or just plain wrong, and corrects it.
 (2) where the curriculum diverges from what employers in that role actually hire for.
 
-> Built on Anthropic's Beta Managed Agents API with two Claude models in production: **Sonnet 4.6** for high-recall candidate surfacing, **Opus 4.7** for final flag/skip judgment. A deterministic Python pass re-fetches every cited URL and re-anchors every slide reference against the course text — fabricated quotes and mis-attribution caught at zero LLM cost.
+> Built on Anthropic's Managed Agents API with **Sonnet** for high-recall candidate surfacing and **Opus** for final flag/skip judgment. A deterministic Python pass re-fetches every cited URL and re-anchors every slide reference against the course text, so unsupported findings are discarded before they reach the report.
 
 ---
+
+## Where Stale is going
+
+The audit engine is the first layer. Stale is being expanded into a persistent academic companion that can understand a student's degree from first year to graduation: courses, prerequisites, syllabi, schedules, and how knowledge connects across semesters.
+
+The goal is to make a degree compound. Through GitHub, Stale can help students carry projects forward instead of abandoning them after each course: a database project can become the backend of a later web application, then become the system hardened in an application-security course. Over time, Stale can build study plans, surface prerequisite gaps, keep course material current, and expose academic context through a CLI and MCP server for personal agents.
 
 ## What you get back
 
@@ -42,7 +48,7 @@ Three reports, generated end-to-end from your slide decks:
             │                                       │
             │   ┌─────────────┐    ┌────────────┐  │
             │   │  Extractor  │───▶│Adjudicator │  │
-            │   │ (Sonnet 4.6)│    │ (Opus 4.7) │  │
+            │   │ (Sonnet)│    │ (Opus) │  │
             │   │             │    │            │  │
             │   │  high recall│    │ FLAG/SKIP  │  │
             │   │  candidates │    │ + cite     │  │
@@ -61,7 +67,7 @@ Three reports, generated end-to-end from your slide decks:
             │                                       │
             │   ┌─────────────┐    ┌────────────┐  │
             │   │ Market-fit  │───▶│   Topics   │  │
-            │   │ (Opus 4.7)  │    │ (Opus 4.7) │  │
+            │   │ (Opus)  │    │ (Opus) │  │
             │   └─────────────┘    └────────────┘  │
             │       gaps.json       prescriptions  │
             └──────────────────────────────────────┘
@@ -79,7 +85,7 @@ Decision history: [`docs/decisions.md`](docs/decisions.md).
 
 The first version was a single Opus session that read the slides and decided FLAG-vs-SKIP inline. It silently rationalized real deprecations away as "probably a counterexample" — high precision, terrible recall.
 
-The fix was to split recall from judgment. **Extractor** (Sonnet 4.6) surfaces every candidate without deciding anything; **Adjudicator** (Opus 4.7) judges each candidate one at a time, with the full course as context and burden-of-proof on SKIP. Validated on two real courses (OOP 1, OOP 2) with reviewer-graded output:
+The fix was to split recall from judgment. **Extractor** (Sonnet) surfaces every candidate without deciding anything; **Adjudicator** (Opus) judges each candidate one at a time, with the full course as context and burden-of-proof on SKIP. Validated on two real courses (OOP 1, OOP 2) with reviewer-graded output:
 
 | Course | Files | Candidates | Adjudicator FLAGs | Skipped | Findings (verified) | Categories used |
 |---|---:|---:|---:|---:|---:|:--|
@@ -143,10 +149,10 @@ Caching is automatic on Managed Agents. A typical end-to-end run:
 
 | Phase | Model | Tokens read from cache | Cost / course |
 |---|---|---:|---:|
-| Extractor | Sonnet 4.6 | 9.6 M | ~$5 |
-| Adjudicator | Opus 4.7 | 8.9 M | ~$25 |
-| Market-fit | Opus 4.7 | — | ~$5 |
-| Topics | Opus 4.7 | — | ~$3 |
+| Extractor | Sonnet | 9.6 M | ~$5 |
+| Adjudicator | Opus | 8.9 M | ~$25 |
+| Market-fit | Opus | — | ~$5 |
+| Topics | Opus | — | ~$3 |
 
 90% input-rate discount on cached tokens, so input cost is dominated by the small uncached fraction. Adjudicator sits on Opus because that's where judgment quality lives.
 
@@ -191,7 +197,7 @@ Once a course is audited, you can re-run it against a different target job role 
 
 ## Status
 
-**v1 shipped 2026-05-15.** Working end-to-end on 11 curated (course, role) pairs across 8 distinct courses — all browsable in the UI on a fresh clone without an API key. The Mobile run is the strongest demo of detection quality: hardcoded keys, SQL injection, AsyncTask, deprecated fragments/loaders, C2DM, Dalvik, and `MODE_WORLD_*` were all caught with matched primary-source citations. See [`STATE.md`](STATE.md) for the current truth and [`docs/decisions.md`](docs/decisions.md) for the 15-entry design log.
+**v1 shipped 2026-05-15.** Working end-to-end on 11 curated (course, role) runs across 10 distinct CS courses — all browsable at [getstale.dev/start](https://getstale.dev/start) and in the UI on a fresh clone without an API key. The Mobile run is the strongest demo of detection quality: hardcoded keys, SQL injection, AsyncTask, deprecated fragments/loaders, C2DM, Dalvik, and `MODE_WORLD_*` were all caught with matched primary-source citations. See [`STATE.md`](STATE.md) for the current truth and [`docs/decisions.md`](docs/decisions.md) for the 15-entry design log.
 
 ## License
 
