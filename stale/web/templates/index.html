@@ -22,6 +22,7 @@
 {% endblock %}
 {% block body_class %}home-page{% endblock %}
 {% block header %}{% endblock %}
+{% block footer %}{% endblock %}
 {% block content %}
 <div class="snap-viewport">
   <div class="snap-deck">
@@ -213,6 +214,9 @@
           <polyline points="12 5 19 12 12 19" />
         </svg>
       </a>
+      <footer class="site-footer home-footer">
+        {% include "_footer.html" %}
+      </footer>
     </section>
   </div>
 </div>
