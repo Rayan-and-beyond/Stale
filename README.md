@@ -8,6 +8,8 @@ Drop in slide decks from a university course, pick a target job role, and Stale 
 (1) what's outdated, deprecated, insecure, or just plain wrong, and corrects it.
 (2) where the curriculum diverges from what employers in that role actually hire for.
 
+Across 10 CS courses, Stale has surfaced **75 verified issues**, including insecure practices, factually wrong concepts, outdated standards and guidance, and examples that no longer work on modern toolchains.
+
 > Built on Anthropic's Managed Agents API with **Sonnet** for high-recall candidate surfacing and **Opus** for final flag/skip judgment. A deterministic Python pass re-fetches every cited URL and re-anchors every slide reference against the course text, so unsupported findings are discarded before they reach the report.
 
 ---
