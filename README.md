@@ -2,6 +2,8 @@
 
 **Audit your CS curriculum for what's gone stale — and see what the job market is asking for that your school isn't teaching.**
 
+**Website:** [getstale.dev](https://getstale.dev) · **Contact:** [rayan@getstale.dev](mailto:rayan@getstale.dev)
+
 Drop in slide decks from a university course, pick a target job role, and Stale tells you:
 (1) what's outdated, deprecated, insecure, or just plain wrong, and corrects it.
 (2) where the curriculum diverges from what employers in that role actually hire for.
